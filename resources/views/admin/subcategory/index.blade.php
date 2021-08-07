@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                 @endif
-                
+
                 <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
 
                 </button>

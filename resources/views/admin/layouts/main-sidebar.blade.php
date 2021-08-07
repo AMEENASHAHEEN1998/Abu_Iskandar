@@ -30,7 +30,7 @@
                             <li><a href="{{ route('admin.categories.index') }}">{{ trans('admin/dashboard.primary_category') }}</a></li>
 
 
-                            <li><a href="">{{ trans('admin/dashboard.sub_category') }}</a></li>
+                            <li><a href="{{ route('admin.subcategories.index') }}">{{ trans('admin/dashboard.sub_category') }}</a></li>
 
                         </ul>
                     </li>
