@@ -17,6 +17,11 @@ class CreateDriverRequestsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('product_id');
+            $table->string('size');
+            $table->string('price');
+            $table->string('number');
+            $table->string('status');
+            $table->string('status_value');
             $table->softDeletes();
             $table->timestamps();
         });
