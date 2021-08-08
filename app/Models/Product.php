@@ -21,6 +21,11 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function DriversRequests()
+    {
+        return $this->belongsToMany(DriverRequest::class);
+    }
+
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }

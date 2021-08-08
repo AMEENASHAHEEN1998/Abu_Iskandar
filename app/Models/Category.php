@@ -9,7 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Category extends Model
 {
     use HasFactory;
-    
+
+    public $translatable = ['category_name' ];
+
+    protected $guarded  = [];
+
     public function User()
     {
         return $this->belongsTo(User::class , 'user_id');
@@ -20,6 +24,11 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function SubCategories()
+    {
+        return $this->hasMany(SubCategory::class);
+
+    }
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }

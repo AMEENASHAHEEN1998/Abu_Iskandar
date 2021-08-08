@@ -13,4 +13,9 @@ class DriverRequest extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function Products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
