@@ -17,6 +17,7 @@ return [
     'pending_orders' => 'Pending Orders  ',
     'orders_delivered' => 'Orders Delivered  ',
     'offers' => 'Offers',
+    'all_order' => 'All Order',
     'add_offer' => 'Add Offer ',
     'show_offers' => 'Show Offers ',
     'old_offers' => 'old Offers ',

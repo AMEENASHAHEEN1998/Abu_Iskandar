@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\DriverRequest;
 use Illuminate\Http\Request;
 
 class DriverRequestController extends Controller
@@ -14,7 +15,9 @@ class DriverRequestController extends Controller
      */
     public function index()
     {
-        //
+        $orders=DriverRequest::all();
+        // dd($orders);
+        return view('admin.driverRequest.index',compact('orders'));
     }
 
     /**
@@ -24,7 +27,7 @@ class DriverRequestController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.driverRequest.create');
     }
 
     /**
@@ -81,5 +84,17 @@ class DriverRequestController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function orderwait(){
+
+        $orders=DriverRequest::where('status' ,0)->get();
+        return view('admin.driverRequest.orderwait',compact('orders'));
+    }
+    public function orderdeliver(){
+
+        $orders=DriverRequest::where('status' ,1)->get();
+        return view('admin.driverRequest.orderdeliver',compact('orders'));
     }
 }

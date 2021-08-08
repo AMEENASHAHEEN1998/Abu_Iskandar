@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\SubCategoryController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\HomeController;
-
 
 Route::group(
     [
@@ -24,6 +24,9 @@ Route::group(
         Route::get('/dashboard' , [DashboardController::class , 'index'])->name('dashboard');
         Route::resource('categories', CategoryController::class);
         Route::resource('subcategories', SubCategoryController::class);
+        Route::resource('driverrequest',DriverRequestController::class);
+        Route::get('orderwait',[DriverRequestController::class,'orderwait'])->name('orderwait');
+        Route::get('orderdeliver',[DriverRequestController::class,'orderdeliver'])->name('orderdeliver');
 
         });
 });

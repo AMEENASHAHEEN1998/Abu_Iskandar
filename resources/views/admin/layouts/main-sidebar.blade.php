@@ -64,9 +64,10 @@
 
 
                             <ul id="join_reporters" class="collapse" data-parent="#sidebarnav">
-                                <li> <a href=""> {{ trans('admin/dashboard.add_order') }}</a> </li>
-                                <li> <a href=""> {{ trans('admin/dashboard.pending_orders') }}</a> </li>
-                                <li> <a href=""> {{ trans('admin/dashboard.orders_delivered') }}</a> </li>
+                                <li> <a href="{{ route('admin.driverrequest.index') }}"> {{ trans('admin/dashboard.all_order') }}</a> </li>
+                                <li> <a href="{{ route('admin.driverrequest.create') }}"> {{ trans('admin/dashboard.add_order') }}</a> </li>
+                                <li> <a href="{{route('admin.orderwait')}}"> {{ trans('admin/dashboard.pending_orders') }}</a> </li>
+                                <li> <a href="{{route('admin.orderdeliver')}}"> {{ trans('admin/dashboard.orders_delivered') }}</a> </li>
 
                             </ul>
                         </li>
@@ -81,9 +82,7 @@
 
                         <ul id="elementsuser" class="collapse" data-parent="#sidebarnav">
 
-                            <li><a  href="">{{ trans('admin.dashboard.add_offer') }}</a></li>
-
-
+                            <li><a  href="">{{ trans('admin/dashboard.add_offer') }}</a></li>
                             <li><a  href=""> {{ trans('admin/dashboard.show_offers') }}</a></li>
                             <li><a  href=""> {{ trans('admin/dashboard.old_offers') }}</a></li>
 

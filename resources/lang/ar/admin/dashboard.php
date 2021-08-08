@@ -12,6 +12,7 @@ return [
     'add_product' => 'اضافة منتج',
     'show_products' => 'عرض المنتجات',
     'orders' => 'الطلبيات',
+    'all_order' => 'عرض الطلبيات',
     'add_order' => 'اضافة طلبية ',
     'pending_orders' => 'طلبيات قيد الانتظار',
     'orders_delivered' => 'طلبيات تم تسليمها',
@@ -37,6 +38,5 @@ return [
     'show_members' => 'عرض الأعضاء ',
     'information_company' => 'معلومات الشركة ',
     'logout' => 'تسجيل خروج',
-    // end sidebar
 
 ];
