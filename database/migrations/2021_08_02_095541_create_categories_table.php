@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->text('category_name_ar' )->unique();
             $table->text('category_name_en' )->unique();
+            $table->string('image');
             $table->integer('views');
             $table->foreignId('user_id');
             $table->softDeletes();

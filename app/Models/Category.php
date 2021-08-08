@@ -29,7 +29,7 @@ class Category extends Model
         return $this->hasMany(SubCategory::class);
 
     }
-    public function Image() {
-        return $this->morphOne(Image::class, 'imageable');
-    }
+    // public function Image() {
+    //     return $this->morphOne(Image::class, 'imageable');
+    // }
 }

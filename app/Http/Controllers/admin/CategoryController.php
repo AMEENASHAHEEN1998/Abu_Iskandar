@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Image;
 
 class CategoryController extends Controller
 {
@@ -14,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index');
+        $Categorys = Category::all();
+        return view('admin.category.index', compact('Categorys'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +38,37 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        try{
+            // $request->validate([
+            //     'category_name_ar' => 'required|unique:categories|max:155',
+            //     'category_name_en' => 'required|unique:categories|max:155',
+            // ]);
+            $category_image_ex = $request->file('image')->getClientOriginalExtension();
+            $category_image_name = 'AroundWorldNews_' .time() . '_'. rand() . '.'. $category_image_ex;
+
+
+        Category::create([
+            'category_name_ar' =>  $request->name ,
+            'category_name_en' =>  $request->name_en,
+            'image' => $category_image_name,
+            'views' => 0,
+            'user_id' => auth()->user()->id,
+        ]);
+        // dd($request->id);
+        // $category = Category::where('category_name_ar' , $request->name );
+
+        // $category->Image()->create([
+        //     'url' => $category_image_name,
+        //     'title' => 'Category Image',
+        //     'alt' =>'Category Image',
+        // ]);
+        $request->file('image')->move(public_path('uploads') , $category_image_name);
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.categories.index')->with('success' , 'تم اضافة القسم بنجاح');
     }
 
     /**
