@@ -23,7 +23,7 @@ class Product extends Model
 
     public function DriversRequests()
     {
-        return $this->belongsToMany(DriverRequest::class);
+        return $this->belongsToMany(DriverRequest::class , 'driver_request_id');
     }
 
     public function Image() {
