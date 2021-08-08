@@ -21,7 +21,7 @@ class CreateDriverRequestsTable extends Migration
             $table->string('price');
             $table->string('number');
             $table->string('status');
-            $table->string('status_value');
+            $table->integer('status_value');
             $table->softDeletes();
             $table->timestamps();
         });
