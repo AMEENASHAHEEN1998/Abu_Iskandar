@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\DashboardController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\DriverRequestController;
-use App\Http\Controllers\admin\OfferController;
-use App\Http\Controllers\admin\SubCategoryController;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admin\OfferController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\InformationController;
+use App\Http\Controllers\admin\SubCategoryController;
+use App\Http\Controllers\admin\DriverRequestController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
     [
@@ -32,6 +33,8 @@ Route::group(
         Route::resource('offer', OfferController::class);
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
+
+        Route::resource('information', InformationController::class);
 
 
         });

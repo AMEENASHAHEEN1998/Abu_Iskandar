@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Information;
 use Illuminate\Http\Request;
 
 class InformationController extends Controller
@@ -14,7 +15,8 @@ class InformationController extends Controller
      */
     public function index()
     {
-        //
+        $information = Information::get();
+        return view('admin.information.index' , compact('information'));
     }
 
     /**
@@ -24,7 +26,7 @@ class InformationController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.information.create');
     }
 
     /**
@@ -35,7 +37,34 @@ class InformationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $company_image_ex = $request->file('image')->getClientOriginalExtension();
+            $company_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $company_image_ex;
+
+            Information::create([
+                'company_name_ar'  => $request->company_name_ar,
+                'company_name_en'  => $request->company_name_en,
+                'city_ar'          => $request->city_name_ar,
+                'city_en'          => $request->city_name_en,
+                'address_ar'       => $request->address_ar,
+                'address_en'       => $request->address_ar,
+                'telephone_number' => $request->telephone_number,
+                'phone_number'     => $request->phone_number,
+                'email'            => $request->email,
+                'facebook_link'    => $request->facebook_link,
+                'instagram_link'   => $request->instagram_link,
+                'tweeter_link'     => $request->tweeter_link,
+                'image'            => $company_image_name,
+                'user_id'          => auth()->user()->id,
+            ]);
+
+            $request->file('image')->move(public_path('uploads') , $company_image_name);
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.information.index')->with('success' , trans('admin/categories.success_message'));
+    
     }
 
     /**

@@ -39,6 +39,7 @@ return [
     'show_members' => 'Show Members  ',
     'information_company' => 'Information Company  ',
     'logout' => 'Logout ',
+    'add_information_company' => 'Add Information Company',
     // end sidebar
 
 ];

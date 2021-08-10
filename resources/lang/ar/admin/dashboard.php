@@ -40,5 +40,6 @@ return [
     'information_company' => 'معلومات الشركة ',
     'logout' => 'تسجيل خروج',
     'Back' => 'العودة' ,
+    'add_information_company' => 'اضافة معلومات الشركة',
 
 ];

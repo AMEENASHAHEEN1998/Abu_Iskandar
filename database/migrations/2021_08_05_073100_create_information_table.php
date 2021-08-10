@@ -27,6 +27,7 @@ class CreateInformationTable extends Migration
             $table->string('facebook_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('tweeter_link')->nullable();
+            $table->string('image');
             $table->softDeletes();
             $table->string('user_id');
             $table->timestamps();
