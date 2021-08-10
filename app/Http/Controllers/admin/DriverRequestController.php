@@ -38,7 +38,23 @@ class DriverRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->has('status') == 1) {
+            $request->status = 1;
+        } else {
+            $request->status = 0;
+        }
+
+        // return   $request;
+        DriverRequest::create([
+            'user_id' => $request->user_id,
+            'product_id' => $request->product_id,
+            'price' => $request->price,
+            'size' => $request->size,
+            'number' => $request->number,
+            'status' => $request->status,
+
+        ]);
+        return redirect()->route('admin.driverrequest.index');
     }
 
     /**
@@ -49,7 +65,8 @@ class DriverRequestController extends Controller
      */
     public function show($id)
     {
-        //
+        $order =DriverRequest::find($id);
+        return view('admin.driverRequest.show',compact('order'));
     }
 
     /**
@@ -60,7 +77,8 @@ class DriverRequestController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order =DriverRequest::find($id);
+        return view('admin.driverRequest.edit',compact('order'));
     }
 
     /**
@@ -72,7 +90,7 @@ class DriverRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -83,7 +101,8 @@ class DriverRequestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DriverRequest::find($id)->delete();
+        return redirect()->back();
     }
 
 

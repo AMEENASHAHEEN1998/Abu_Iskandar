@@ -33,9 +33,10 @@
                             <thead>
                                 <tr>
                                     <th>{{ trans('admin/offer.id') }}</th>
-                                    <th>{{ trans('admin/offer.user_id') }}</th>
+                                    <th>{{ trans('admin/offer.user_name') }}</th>
                                     <th>{{ trans('admin/offer.offer_title') }}</th>
                                     <th>{{ trans('admin/offer.description') }}</th>
+                                    <th>{{ trans('admin/offer.image') }}</th>
                                     <th>{{ trans('admin/offer.price') }}</th>
                                     <th>{{ trans('admin/offer.status') }}</th>
                                     <th>{{ trans('admin/offer.action') }}</th>
@@ -50,11 +51,24 @@
                                 @foreach ($offers as $offer)
                                     <tr>
                                         <td>{{ $offer->id }}</td>
-                                        <td>{{ $offer->User->name }}</td>
+                                        <td>{{ $offer->user->name }}</td>
                                         <td>{{ $offer->offer_title }}</td>
                                         <td>{{ $offer->description }}</td>
+                                        <td>
+                                            <img src="{{asset('upload/admin/offer/'.$offer->image)}}" style="width: 85px" alt="">
+
+                                        </td>
                                         <td>{{ $offer->price }}</td>
-                                        <td>{{ $offer->status }}</td>
+                                        <td>
+                                            @if($offer->status == 1)
+                                                <button  class="btn btn-success">{{trans('admin/offer.active')}} </button>
+                                            @endif
+                                            @if($offer->status == 0)
+                                                <button  class="btn btn-danger">{{trans('admin/offer.noactive')}} </button>
+                                            @endif
+
+
+                                        </td>
 
                                         <td>
                                             <a href="{{route('admin.offer.show',$offer->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>

@@ -4,7 +4,7 @@
 
 
     <!--=================================
-                     Main content -->
+                         Main content -->
     <!-- main-content -->
     <!-- row -->
     <div class="row">
@@ -21,13 +21,19 @@
                             </ul>
                         </div>
                     @endif
+
+                    <a href="{{ route('admin.offer.index') }}" class="btn btn-success">
+                        {{ trans('admin/dashboard.Back') }}
+                    </a>
+
+                    <hr>
                     <h2>{{ trans('admin/dashboard.add_offer') }}</h2>
 
 
-                    <form action="{{ route('admin.offer.store') }}" method="POST">
+                    <form action="{{ route('admin.offer.store') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
-                        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
 
                         <div class="col-md-8">
@@ -38,7 +44,7 @@
                         </div>
 
                         @error('offer_title')
-                        <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
 
                         <div class="col-md-8">
@@ -49,29 +55,36 @@
                         </div>
 
                         @error('description')
-                        <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
 
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/offer.price') }}</label>
-                                <input type="number" name="price" class="form-control" id="formGroupExampleInput">
+                                <input type="text" name="price" class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
                         @error('price')
-                        <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
 
-                        <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">image</label>
+                            <input type="file" class="form-control"  name="image" />
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+
+                        {{-- <div class="col-md-8">
 
                             <div class="form-group">
-                                <input type="checkbox" name="status" class="switchery" data-color="success"
-                                    value="1"
-                                />
+                                <input type="checkbox" name="status" class="switchery" data-color="success" value="1" />
                                 <label for="switcheryColor4"
                                     class="card-title ml-1">{{ trans('admin/offer.status') }}</label>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <button class="btn btn-success btn-lg">{{ trans('admin/offer.save') }}</button>

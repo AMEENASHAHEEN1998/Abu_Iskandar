@@ -9,7 +9,7 @@ class Offer extends Model
 {
 
     use HasFactory;
-    protected $fillable =['user_id' ,'description' ,'offer_title','price','status'];
+    protected $fillable =['user_id' ,'description' ,'offer_title','price','status','image'];
 
     public function User()
     {
@@ -19,4 +19,6 @@ class Offer extends Model
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+
 }

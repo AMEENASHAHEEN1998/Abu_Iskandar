@@ -26,7 +26,8 @@ class OfferRequest extends FormRequest
         return [
             'offer_title' => 'required',
             'description' => 'required',
-            'price' => 'required|numeric',
+            'price' => 'required',
+            // 'image' => 'required',
         ];
     }
 }

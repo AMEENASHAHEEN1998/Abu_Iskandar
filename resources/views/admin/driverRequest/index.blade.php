@@ -22,9 +22,9 @@
                         </div>
                     @endif
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                            create
-                    </button>
+                    <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-success">
+                     Create
+                    </a>
 
 
                     <br><br>
@@ -36,7 +36,7 @@
                             <thead>
                                 <tr>
                                     <th>{{ trans('admin/driverrequest.ID') }}</th>
-                                    <th>{{ trans('admin/driverrequest.user_id') }}</th>
+                                    <th>{{ trans('admin/driverrequest.user_name') }}</th>
                                     <th>{{ trans('admin/driverrequest.product_id') }}</th>
                                     <th>{{ trans('admin/driverrequest.size') }}</th>
                                     <th>{{ trans('admin/driverrequest.price') }}</th>
@@ -60,9 +60,10 @@
                                         <td>{{ $order->number }}</td>
                                         <td>{{ $order->status }}</td>
                                         <td>
-                                            <a href="" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <form class="d-inline" action="" method="POST">
+                                            <a href="{{route('admin.driverrequest.show',$order->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                            <a href="{{route('admin.driverrequest.edit',$order->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            <form class="d-inline" action="{{ route('admin.driverrequest.destroy', $order->id) }}"
+                                                method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button onclick="return confirm('are you sure?')"

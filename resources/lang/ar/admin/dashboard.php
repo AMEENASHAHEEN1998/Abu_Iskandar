@@ -39,5 +39,6 @@ return [
     'show_members' => 'عرض الأعضاء ',
     'information_company' => 'معلومات الشركة ',
     'logout' => 'تسجيل خروج',
+    'Back' => 'العودة' ,
 
 ];

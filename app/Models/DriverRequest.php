@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class DriverRequest extends Model
 {
     use HasFactory;
-    // protected $guarded =[];
+
+    // protected $guarded =['user_id
+    // product_id
+    // price
+    // size
+    // number
+    // status'];
     public function User()
     {
         return $this->belongsTo(User::class);
