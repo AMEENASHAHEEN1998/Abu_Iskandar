@@ -20,9 +20,9 @@ return [
     'delete' => 'Delete',
     'delete_category' => 'Delete Primary Category',
     'warning_category' => 'Are sure of the deleting process?',
-    'success_message' => 'Product added successfully',
-    'update_message' => 'The product has been modified successfully',
-    'delete_message' => 'The product has been deleted successfully', 
+    'success_message' => 'Primary category added successfully',
+    'update_message' => 'The primary category has been modified successfully',
+    'delete_message' => 'The primary category has been deleted successfully', 
     'title' => 'Primary Category',
 
 ];

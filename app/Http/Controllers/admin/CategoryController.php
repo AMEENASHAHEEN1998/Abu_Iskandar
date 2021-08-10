@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $Categorys = Category::all();
+        $Categorys = Category::paginate(5);
         return view('admin.category.index', compact('Categorys'));
     }
 
@@ -45,7 +45,7 @@ class CategoryController extends Controller
             //     'category_name_en' => 'required|unique:categories|max:155',
             // ]);
             $category_image_ex = $request->file('image')->getClientOriginalExtension();
-            $category_image_name = 'AroundWorldNews_' .time() . '_'. rand() . '.'. $category_image_ex;
+            $category_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $category_image_ex;
 
 
         Category::create([
@@ -108,7 +108,7 @@ class CategoryController extends Controller
             //dd($request);
             if ($request->file('image')) {
                 $category_image_ex = $request->file('image')->getClientOriginalExtension();
-                $category_image_name = 'AroundWorldNews_' .time() . '_'. rand() . '.'. $category_image_ex;
+                $category_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $category_image_ex;
                 $request->file('image')->move(public_path('uploads'), $category_image_name);
             }
             $category->update([
