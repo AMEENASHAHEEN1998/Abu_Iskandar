@@ -15,9 +15,12 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
-            $table->string('city');
-            $table->string('address');
+            $table->string('company_name_ar');
+            $table->string('company_name_en');
+            $table->string('city_ar');
+            $table->string('city_en');
+            $table->string('address_ar');
+            $table->string('address_en');
             $table->string('telephone_number');
             $table->string('phone_number');
             $table->string('email');

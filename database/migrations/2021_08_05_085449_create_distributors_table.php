@@ -15,7 +15,8 @@ class CreateDistributorsTable extends Migration
     {
         Schema::create('distributors', function (Blueprint $table) {
             $table->id();
-            $table->string('distributor_name');
+            $table->string('distributor_name_ar');
+            $table->string('distributor_name_en');
             $table->string('phone_number');
             $table->foreignId('user_id');
             $table->foreignId('distributor_type_id');

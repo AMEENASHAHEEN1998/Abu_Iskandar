@@ -15,8 +15,10 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->string('offer_title');
-            $table->text('description')->nullable();
+            $table->string('offer_title_ar');
+            $table->string('offer_title_en');
+            $table->text('description_ar')->nullable();
+            $table->text('description_en')->nullable();
             $table->string('price');
             $table->string('status');
             $table->integer('status_value');

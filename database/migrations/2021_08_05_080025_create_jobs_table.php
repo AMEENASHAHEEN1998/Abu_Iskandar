@@ -15,8 +15,10 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('job_name');
-            $table->string('job_description');
+            $table->string('job_name_ar');
+            $table->string('job_name_en');
+            $table->string('job_description_ar');
+            $table->string('job_description_en');
             $table->string('status');
             $table->integer('status_value');
             $table->integer('views');
