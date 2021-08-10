@@ -15,6 +15,13 @@ return [
     'close' =>'Close',
     'submit' => 'Submit',
     'success' => 'Category added successfully',
-
+    'edit_category' => 'Edit Primary Category',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'delete_category' => 'Delete Primary Category',
+    'warning_category' => 'Are sure of the deleting process?',
+    'success_message' => 'Product added successfully',
+    'update_message' => 'The product has been modified successfully',
+    'delete_message' => 'The product has been deleted successfully', 
 
 ];

@@ -11,6 +11,12 @@
     @if (session('success'))
       <div class="alert alert-success">{{ session('success') }}</div>
     @endif
+    @if (session('update'))
+      <div class="alert alert-info">{{ session('update') }}</div>
+    @endif
+    @if (session('delete'))
+      <div class="alert alert-danger">{{ session('delete') }}</div>
+    @endif
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
@@ -87,7 +93,7 @@
                             </tr>
 
 
-                            <!-- edit_modal_Grade -->
+                            <!-- edit_modal_Category -->
                             <div class="modal fade" id="edit{{ $Category->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                <div class="modal-dialog" role="document">
@@ -104,7 +110,7 @@
                                        </div>
                                        <div class="modal-body">
                                            <!-- add_form -->
-                                           <form action="{{route('NewsCategory.update','test')}}" method="post">
+                                           <form action="{{route('admin.categories.update' , $Category->id ) }}" method="post" enctype="multipart/form-data">
                                                {{method_field('patch')}}
                                                @csrf
                                                <div class="row">
@@ -112,13 +118,13 @@
                                                     <label for="Name"
                                                            class="mr-sm-2">{{ trans('admin/categories.category_name_ar') }}
                                                         :</label>
-                                                    <input id="Name" type="text" name="name" class="form-control" required autocomplete="off">
+                                                    <input id="Name" type="text" name="name" value= " {{ $Category->category_name_ar}}" class="form-control" required autocomplete="off">
                                                 </div>
                                                 <div class="col">
                                                     <label for="Name_en"
                                                            class="mr-sm-2">{{ trans('admin/categories.category_name_en') }}
                                                         :</label>
-                                                    <input type="text" class="form-control" name="name_en" required autocomplete="off">
+                                                    <input type="text" class="form-control" name="name_en" value= " {{$Category->category_name_en}}" required autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -128,16 +134,17 @@
                                                         <label
                                                     for="exampleFormControlTextarea1">{{ trans('admin/categories.category_image') }}
                                                     :</label>
-                                                        <input type="file" name="image" class="form-control-file" required id="exampleFormControlFile1">
-                                                      </div>
+                                                        <input type="file" name="image" class="form-control-file"  id="exampleFormControlFile1">
+                                                    </div>
+                                                    <img src="{{asset('uploads/'.$Category->image)}}" width="200px" height="100px">
                                             </div>
                                                <br><br>
 
                                                <div class="modal-footer">
                                                    <button type="button" class="btn btn-secondary"
-                                                           data-dismiss="modal">{{ trans('admin/news.Close') }}</button>
+                                                           data-dismiss="modal">{{ trans('admin/categories.close') }}</button>
                                                    <button type="submit"
-                                                           class="btn btn-success">{{ trans('admin/news.submit') }}</button>
+                                                           class="btn btn-success">{{ trans('admin/categories.submit') }}</button>
                                                </div>
                                            </form>
 
@@ -146,17 +153,17 @@
                                </div>
                            </div>
 
-{{--
-                            @can('حذف صنف')
-                                <!-- delete_modal_Grade -->
-                                <div class="modal fade" id="delete{{ $NewsCategory->id }}" tabindex="-1" role="dialog"
+
+                            
+                                <!-- delete_modal_Category -->
+                                <div class="modal fade" id="delete{{ $Category->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                 id="exampleModalLabel">
-                                                {{ trans('admin/news.delete_category_news') }}
+                                                {{ trans('admin/categories.delete_category') }}
                                             </h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
@@ -164,26 +171,25 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{route('NewsCategory.destroy','test')}}" method="post">
+                                            <form action="{{route('admin.categories.destroy',$Category->id)}}" method="post">
                                                 {{method_field('Delete')}}
                                                 @csrf
-                                                {{ trans('admin/news.warning_category_news') }}
+                                                {{ trans('admin/categories.warning_category') }}
                                                 <input id="id" type="hidden" name="id" class="form-control"
-                                                        value="{{ $NewsCategory->id }}">
+                                                        value="{{ $Category->id }}">
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">{{ trans('admin/news.Close') }}</button>
+                                                            data-dismiss="modal">{{ trans('admin/categories.close') }}</button>
                                                     <button type="submit"
-                                                            class="btn btn-danger">{{ trans('admin/news.Delete') }}</button>
+                                                            class="btn btn-danger">{{ trans('admin/categories.delete') }}</button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 </div>
-                            @endcan
+                           
 
---}}
 
                         @endforeach
                     </table>

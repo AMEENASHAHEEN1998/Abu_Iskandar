@@ -68,7 +68,7 @@ class CategoryController extends Controller
         }catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-        return redirect()->route('admin.categories.index')->with('success' , 'تم اضافة القسم بنجاح');
+        return redirect()->route('admin.categories.index')->with('success' , trans('admin/categories.success_message'));
     }
 
     /**
@@ -102,7 +102,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $category = Category::findOrFail($id);
+            $category_image_name = $category->image;
+            //dd($request);
+            if ($request->file('image')) {
+                $category_image_ex = $request->file('image')->getClientOriginalExtension();
+                $category_image_name = 'AroundWorldNews_' .time() . '_'. rand() . '.'. $category_image_ex;
+                $request->file('image')->move(public_path('uploads'), $category_image_name);
+            }
+            $category->update([
+            'category_name_ar' =>  $request->name ,
+            'category_name_en' =>  $request->name_en,
+            'image' => $category_image_name,
+        ]);
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.categories.index')->with('update' , trans('admin/categories.update_message'));
+    
     }
 
     /**
@@ -113,6 +131,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('delete' ,  trans('admin/categories.delete_message'));
     }
 }
