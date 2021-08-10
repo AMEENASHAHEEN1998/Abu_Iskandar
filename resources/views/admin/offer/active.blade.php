@@ -16,10 +16,15 @@
                     @include('admin.include.alerts.success')
                     @include('admin.include.alerts.errors')
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                        create
-                    </button>
 
+
+                    <a href="{{ route('admin.offer.create') }}"  class="btn btn-success">
+                     {{ trans('admin/dashboard.add_offer') }}
+                    </a>
+
+                    <?php
+                    $lng = app()->getLocale();
+                   ?>
 
                     <br><br>
                     <h1>{{ trans('admin/offer.offer') }}</h1>
@@ -30,9 +35,10 @@
                             <thead>
                                 <tr>
                                     <th>{{ trans('admin/offer.id') }}</th>
-                                    <th>{{ trans('admin/offer.user_id') }}</th>
+                                    <th>{{ trans('admin/offer.user_name') }}</th>
                                     <th>{{ trans('admin/offer.offer_title') }}</th>
                                     <th>{{ trans('admin/offer.description') }}</th>
+                                    <th>{{ trans('admin/offer.image') }}</th>
                                     <th>{{ trans('admin/offer.price') }}</th>
                                     <th>{{ trans('admin/offer.status') }}</th>
                                     <th>{{ trans('admin/offer.action') }}</th>
@@ -47,11 +53,24 @@
                                 @foreach ($offers as $offer)
                                     <tr>
                                         <td>{{ $offer->id }}</td>
-                                        <td>{{ $offer->User->name }}</td>
-                                        <td>{{ $offer->offer_title }}</td>
-                                        <td>{{ $offer->description }}</td>
+                                        <td>{{ $offer->user->name}}</td>
+                                        <td>{{ $offer->{'offer_title_' . $lng} }}</td>
+                                        <td>{{ $offer->{'description_' . $lng} }}</td>
+                                        <td>
+                                            <img src="{{asset('upload/admin/offer/'.$offer->image)}}" style="width: 85px" alt="">
+
+                                        </td>
                                         <td>{{ $offer->price }}</td>
-                                        <td>{{ $offer->status }}</td>
+                                        <td>
+                                            @if($offer->status == 1)
+                                                <button  class="btn btn-success">{{trans('admin/offer.active')}} </button>
+                                            @endif
+                                            @if($offer->status == 0)
+                                                <button  class="btn btn-danger">{{trans('admin/offer.noactive')}} </button>
+                                            @endif
+
+
+                                        </td>
 
                                         <td>
                                             <a href="{{route('admin.offer.show',$offer->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
@@ -73,54 +92,6 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
-                            {{ trans('admin/news.add_news_type') }}
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- add_form -->
-                        <form action="" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col">
-                                    <label for="Name" class="mr-sm-2">{{ trans('admin/news.news_category_name_ar') }}
-                                        :</label>
-                                    <input id="Name" type="text" name="Name" class="form-control">
-                                </div>
-                                <div class="col">
-                                    <label for="Name_en" class="mr-sm-2">{{ trans('admin/news.news_category_name_en') }}
-                                        :</label>
-                                    <input type="text" class="form-control" name="Name_en" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">{{ trans('admin/news.Notes') }}
-                                    :</label>
-                                <textarea class="form-control" name="Notes" id="exampleFormControlTextarea1"
-                                    rows="3"></textarea>
-                            </div>
-                            <br><br>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{ trans('admin/news.Close') }}</button>
-                                <button type="submit" class="btn btn-success">{{ trans('admin/news.submit') }}</button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
 
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ArticleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
@@ -33,6 +34,7 @@ Route::group(
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
 
+        Route::resource('article', ArticleController::class);
 
         });
 });
