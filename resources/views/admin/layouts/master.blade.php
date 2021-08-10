@@ -34,7 +34,6 @@
         <!-- main-content -->
         <div class="content-wrapper">
 
-            @yield('page-header')
 
             @yield('content')
 

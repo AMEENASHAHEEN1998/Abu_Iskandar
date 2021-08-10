@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('title')
+    {{ trans('admin/categories.title') }}
+@endsection
 @section('content')
 
 
@@ -70,7 +73,7 @@
                                 @else
                                 <td>{{ $Category->category_name_ar }}</td>
                                 @endif
-                                <td>{{ $Category->image }}</td>
+                                <td> <img src="{{asset('uploads/'.$Category->image)}}" width="80px" height="80px"></td>
                                 <td>{{ $Category->User->name }}</td>
                                 <td>{{ $Category->views }}</td>
                                 <td>{{ $Category->created_at }}</td>

@@ -23,5 +23,6 @@ return [
     'success_message' => 'Product added successfully',
     'update_message' => 'The product has been modified successfully',
     'delete_message' => 'The product has been deleted successfully', 
+    'title' => 'Primary Category',
 
 ];

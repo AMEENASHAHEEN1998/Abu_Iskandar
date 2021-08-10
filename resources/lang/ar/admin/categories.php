@@ -23,4 +23,5 @@ return [
     'success_message' => 'تم اضافة المنتج بنجاح',
     'update_message' => 'تم تعديل المنتج بنجاح ',
     'delete_message' => 'تم حذف المنتج بنجاح ',
+    'title' => 'الأقسام الرئيسية',
 ];
