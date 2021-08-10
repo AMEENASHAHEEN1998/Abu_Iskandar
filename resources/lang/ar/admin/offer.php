@@ -18,4 +18,5 @@ return
     'noactive' =>' غير مفعل ' ,
     'detail_offer' =>'تفاصيل العرض',
     'update' => 'تعديل' ,
+
 ];

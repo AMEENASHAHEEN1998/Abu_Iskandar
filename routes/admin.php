@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
+use App\Http\Controllers\admin\OfferController;
 use App\Http\Controllers\admin\SubCategoryController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\HomeController;
@@ -27,6 +28,11 @@ Route::group(
         Route::resource('driverrequest',DriverRequestController::class);
         Route::get('orderwait',[DriverRequestController::class,'orderwait'])->name('orderwait');
         Route::get('orderdeliver',[DriverRequestController::class,'orderdeliver'])->name('orderdeliver');
+
+        Route::resource('offer', OfferController::class);
+        Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
+        Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
+
 
         });
 });

@@ -16,9 +16,12 @@
                     @include('admin.include.alerts.success')
                     @include('admin.include.alerts.errors')
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                        create
-                    </button>
+
+
+                    <a href="{{ route('admin.offer.create') }}"  class="btn btn-success">
+                     {{ trans('admin/dashboard.add_offer') }}
+                    </a>
+
 
 
                     <br><br>
@@ -73,54 +76,6 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
-                            {{ trans('admin/news.add_news_type') }}
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- add_form -->
-                        <form action="" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col">
-                                    <label for="Name" class="mr-sm-2">{{ trans('admin/news.news_category_name_ar') }}
-                                        :</label>
-                                    <input id="Name" type="text" name="Name" class="form-control">
-                                </div>
-                                <div class="col">
-                                    <label for="Name_en" class="mr-sm-2">{{ trans('admin/news.news_category_name_en') }}
-                                        :</label>
-                                    <input type="text" class="form-control" name="Name_en" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">{{ trans('admin/news.Notes') }}
-                                    :</label>
-                                <textarea class="form-control" name="Notes" id="exampleFormControlTextarea1"
-                                    rows="3"></textarea>
-                            </div>
-                            <br><br>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{ trans('admin/news.Close') }}</button>
-                                <button type="submit" class="btn btn-success">{{ trans('admin/news.submit') }}</button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
 
 

@@ -82,9 +82,10 @@
 
                         <ul id="elementsuser" class="collapse" data-parent="#sidebarnav">
 
-                            <li><a  href="">{{ trans('admin/dashboard.add_offer') }}</a></li>
-                            <li><a  href=""> {{ trans('admin/dashboard.show_offers') }}</a></li>
-                            <li><a  href=""> {{ trans('admin/dashboard.old_offers') }}</a></li>
+                            <li><a  href="{{route('admin.offer.index')}}">{{ trans('admin/dashboard.all_offer') }}</a></li>
+                            <li><a  href="{{route('admin.offer.create')}}">{{ trans('admin/dashboard.add_offer') }}</a></li>
+                            <li><a  href="{{route('admin.activeoffer')}}"> {{ trans('admin/dashboard.show_offers') }}</a></li>
+                            <li><a  href="{{route('admin.noactiveoffer')}}"> {{ trans('admin/dashboard.old_offers') }}</a></li>
 
 
                         </ul>

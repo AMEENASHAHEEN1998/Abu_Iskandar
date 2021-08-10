@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OfferRequest;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -14,7 +16,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        //
+        $offers = Offer::all();
+        // dd($offers->User);
+        return view('admin.offer.index', compact('offers'));
     }
 
     /**
@@ -24,7 +28,8 @@ class OfferController extends Controller
      */
     public function create()
     {
-        //
+
+        return  view('admin.offer.create');
     }
 
     /**
@@ -33,9 +38,25 @@ class OfferController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OfferRequest $request)
     {
-        //
+
+        if ($request->has('status') == 1) {
+            $request->status = 1;
+        } else {
+            $request->status = 0;
+        }
+
+        // return   $request;
+        Offer::create([
+            'user_id' => $request->user_id,
+            'offer_title' => $request->offer_title,
+            'description' => $request->description,
+            'price' => $request->price,
+            'status' => $request->status,
+
+        ]);
+        return redirect()->route('admin.offer.index');
     }
 
     /**
@@ -46,7 +67,8 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-        //
+        $offer =Offer::find($id);
+        return view('admin.offer.show',compact('offer'));
     }
 
     /**
@@ -57,19 +79,31 @@ class OfferController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $offer =Offer::find($id);
+        // return $offer;
+        return view('admin.offer.edit',compact('offer'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(OfferRequest $request, $id)
     {
-        //
+        if ($request->has('status') == 1) {
+            $request->status = 1;
+        } else {
+            $request->status = 0;
+        }
+
+        // return   $request;
+        Offer::find($id)->update([
+            'user_id' => $request->user_id,
+            'offer_title' => $request->offer_title,
+            'description' => $request->description,
+            'price' => $request->price,
+            'status' => $request->status,
+
+        ]);
+        return redirect()->route('admin.offer.index');
     }
 
     /**
@@ -80,6 +114,17 @@ class OfferController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        Offer::find($id)->delete();
+        return redirect()->back();
+    }
+
+    public function activeoffer(){
+        $offers=Offer::where('status' ,1)->get();
+        return view('admin.offer.active',compact('offers'));
+    }
+    public function noactiveoffer(){
+        $offers=Offer::where('status' ,0)->get();
+        return view('admin.offer.noactive',compact('offers'));
     }
 }
