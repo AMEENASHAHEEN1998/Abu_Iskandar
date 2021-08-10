@@ -11,4 +11,10 @@ return [
     'size' => ' Size' ,
     'price' => ' Price' ,
     'number' => ' Number' ,
+    'detail_order' => 'Detail Order' ,
+    'user_name' => 'User Name' ,
+    'edit_order' => 'Update Order' ,
+    'update' =>'Update' ,
+    'save' =>'Save' ,
+    'Back' =>'Back' ,
 ];

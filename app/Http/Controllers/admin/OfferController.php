@@ -41,19 +41,27 @@ class OfferController extends Controller
     public function store(OfferRequest $request)
     {
 
-        if ($request->has('status') == 1) {
-            $request->status = 1;
-        } else {
-            $request->status = 0;
-        }
+        // if ($request->has('status') == 1) {
+        //     $request->status = 1;
+        // } else {
+        //     $request->status = 0;
+        // }
+        // return $request;
 
-        // return   $request;
+        $file=$request->file;
+
+        $FileEx=$request->file('image')->getClientOriginalExtension();
+        $file_name=time().'_'.rand().'_'.$FileEx;
+        $request->file('image')->move(public_path('upload/admin/offer'),$file_name);
+
+        // return   $file_name;
         Offer::create([
             'user_id' => $request->user_id,
             'offer_title' => $request->offer_title,
             'description' => $request->description,
             'price' => $request->price,
-            'status' => $request->status,
+            'status' => 1,
+            'image' => $file_name,
 
         ]);
         return redirect()->route('admin.offer.index');

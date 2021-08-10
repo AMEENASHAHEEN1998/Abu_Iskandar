@@ -10,6 +10,7 @@ return
     'price' =>'Price',
     'status' =>'Status',
     'user_id' =>' User Name',
+    'user_name' => 'Add By' ,
     'action' => 'action' ,
     'save' => 'save' ,
     'succesMsg' => 'Added Offer Succesfully',
@@ -18,4 +19,6 @@ return
     'noactive' =>' noactive' ,
     'detail_offer' => 'Offer Detail',
     'update' =>'update',
+    'Back' =>'Back' ,
+    'image' =>'Image' ,
 ];
