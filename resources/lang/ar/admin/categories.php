@@ -20,8 +20,8 @@ return [
     'delete' => 'حذف',
     'delete_category' => 'حذف القسم الرئيسي',
     'warning_category' => '?هل أنت متأكد من عملية الحذف',
-    'success_message' => 'تم اضافة المنتج بنجاح',
-    'update_message' => 'تم تعديل المنتج بنجاح ',
-    'delete_message' => 'تم حذف المنتج بنجاح ',
+    'success_message' => 'تم اضافة القسم الرئيسي بنجاح',
+    'update_message' => 'تم تعديل القسم الرئيسي بنجاح ',
+    'delete_message' => 'تم حذف القسم الرئيسي بنجاح ',
     'title' => 'الأقسام الرئيسية',
 ];
