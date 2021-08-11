@@ -63,7 +63,7 @@
 
                             <?php $i = 0; ?>
 
-                         @foreach ($Categorys as $Category)
+                         @foreach ($Categories as $Category)
                             <tr>
                                 <?php $i++; ?>
                                 <td>{{ $i }}</td>
@@ -157,7 +157,7 @@
                            </div>
 
 
-                            
+
                                 <!-- delete_modal_Category -->
                                 <div class="modal fade" id="delete{{ $Category->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -191,13 +191,13 @@
                                     </div>
                                 </div>
                                 </div>
-                           
+
 
 
                         @endforeach
                     </table>
                 </div>
-                {{ $Categorys->links() }}
+                {{ $Categories->links() }}
            </div>
         </div>
     </div>
