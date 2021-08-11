@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\OfferController;
+use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\InformationController;
@@ -35,7 +36,7 @@ Route::group(
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
 
         Route::resource('information', InformationController::class);
-
+        Route::resource('products', ProductController::class);
 
         });
 });

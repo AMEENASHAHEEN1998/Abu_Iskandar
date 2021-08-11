@@ -43,7 +43,7 @@
                         </a>
 
                         <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="">{{ trans('admin/dashboard.add_product') }} </a> </li>
+                            <li> <a href="{{ route('admin.products.create') }}">{{ trans('admin/dashboard.add_product') }} </a> </li>
 
                                 <li> <a href=""> {{ trans('admin/dashboard.show_products') }}</a> </li>
 
