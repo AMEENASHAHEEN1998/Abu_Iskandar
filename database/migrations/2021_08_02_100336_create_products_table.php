@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->string('price');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
-            $table->foreignId('subcategory_id');
             $table->softDeletes();
             $table->timestamps();
         });
