@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsuser">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#offers">
                             <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.offers') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
@@ -80,7 +80,7 @@
                         </a>
 
 
-                        <ul id="elementsuser" class="collapse" data-parent="#sidebarnav">
+                        <ul id="offers" class="collapse" data-parent="#sidebarnav">
 
                             <li><a  href="{{route('admin.offer.index')}}">{{ trans('admin/dashboard.all_offer') }}</a></li>
                             <li><a  href="{{route('admin.offer.create')}}">{{ trans('admin/dashboard.add_offer') }}</a></li>
@@ -93,13 +93,13 @@
 
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobs">
                             <div class="pull-left"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.jobs') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="jobs" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="">{{ trans('admin/dashboard.add_job') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.show_job') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.old_job') }}</a></li>
@@ -108,13 +108,13 @@
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#request_job">
                             <div class="pull-left"><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.request_job') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="request_job" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="">{{ trans('admin/dashboard.show_request_job') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.accepted_request') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.rejected_request') }}</a></li>
@@ -123,13 +123,13 @@
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#articles">
                             <div class="pull-left"><i class="fa fa-file-text-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.articles') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="articles" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="">{{ trans('admin/dashboard.add_articles') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.show_articles') }}</a></li>
 
@@ -137,13 +137,13 @@
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#distributors">
                             <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.distributors') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="distributors" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="">{{ trans('admin/dashboard.distributors') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.category_distributors') }}</a></li>
 
@@ -151,13 +151,13 @@
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#staff">
                             <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.staff') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="staff" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="">{{ trans('admin/dashboard.add_member') }}</a></li>
                             <li><a  href="">{{ trans('admin/dashboard.show_members') }}</a></li>
 
