@@ -34,18 +34,22 @@
                     </div>
                 @endif
 
-                
+
 
 
                 <br><br>
 
                 <div class="table-responsive">
                     @foreach ($information as $information )
-                        
-                    
+
+
                     <h2>{{ trans('admin/information.title') }}</h2>
-                    <a class="btn btn-outline-info btn-info btn-sm" href="{{ route('admin.information.edit') }}">{{ trans('admin/information.edit_information') }}</a>
-                    <br>
+                    <a class="btn btn-outline-info btn-info btn-sm" href="{{ route('admin.information.edit' , $information->id) }}">{{ trans('admin/information.edit_information') }}</a>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                        data-target="#delete{{ $information->id }}"
+                        title="{{ trans('admin/information.delete') }}"><i
+                        class="fa fa-trash"></i>
+                    </button><br>
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="Name"
@@ -135,31 +139,63 @@
                                 <input id="Name_en" type="text" class="form-control" value="{{ $information->tweeter_link}}" disabled autocomplete="off">
                             </div>
                         </div>
-                        
+
                                     <label
                                 for="exampleFormControlTextarea1">{{ trans('admin/information.logo') }}
                                 :</label>
-                                   
-                        
+
+
                         <img src="{{asset('uploads/'.$information->image)}}" width="200px" height="100px">
-                                            
+
 
 
                         <br><br>
 
-                
+<!-- delete_modal_Information -->
+<div class="modal fade" id="delete{{ $information->id }}" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                id="exampleModalLabel">
+                {{ trans('admin/information.delete_information') }}
+            </h5>
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="{{route('admin.information.destroy',$information->id)}}" method="post">
+                {{method_field('Delete')}}
+                @csrf
+                {{ trans('admin/information.warning_category') }}
+                <input id="id" type="hidden" name="id" class="form-control"
+                        value="{{ $information->id }}">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{ trans('admin/information.close') }}</button>
+                    <button type="submit"
+                            class="btn btn-danger">{{ trans('admin/information.delete') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
                         @endforeach
                 </div>
-                
+
            </div>
         </div>
     </div>
 
 
-    
-                    
 
-            
+
+
+
 
 </div>
 
