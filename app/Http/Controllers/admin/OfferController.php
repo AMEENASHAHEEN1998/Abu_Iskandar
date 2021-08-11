@@ -99,9 +99,8 @@ class OfferController extends Controller
 
     public function update(OfferRequest $request, $id)
     {
-        // $status_value= '';
-
-        if ($request->has('status_value') == 0) {
+        // return $request;
+        if ($request->has('status') == 1) {
             $request->status_value = 1;
             $status = 'مفعل';
         } else {
@@ -109,6 +108,8 @@ class OfferController extends Controller
             $status = 'غير مفعل ';
 
         }
+
+
         // return $request;
         // return   $request;
         Offer::find($id)->update([

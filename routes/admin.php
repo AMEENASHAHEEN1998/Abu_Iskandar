@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
+use App\Http\Controllers\admin\EmployeeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -37,6 +38,7 @@ Route::group(
 
         Route::resource('article', ArticleController::class);
         Route::resource('information', InformationController::class);
+        Route::resource('employee', EmployeeController::class);
 
 
         });

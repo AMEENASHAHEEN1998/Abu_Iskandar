@@ -126,6 +126,7 @@
 
 
 
+
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
                             <div class="pull-left"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span
@@ -176,19 +177,24 @@
                         </ul>
                     </li>
 
+
+
+
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#staff">
                             <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.staff') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="">{{ trans('admin/dashboard.add_member') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.show_members') }}</a></li>
+                        <ul id="staff" class="collapse" data-parent="#sidebarnav">
+                            <li><a  href="{{route('admin.employee.index')}}">{{ trans('admin/dashboard.show_members') }}</a></li>
+                            <li><a  href="{{route('admin.employee.create')}}">{{ trans('admin/dashboard.add_member') }}</a></li>
 
                         </ul>
                     </li>
+
+
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#info">
@@ -198,15 +204,14 @@
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-<<<<<<< HEAD
+
                         <ul id="site" class="collapse" data-parent="#sidebarnav">
                             <li><a href="">{{ trans('admin/dashboard.information_company') }}</a></li>
-=======
+
                         <ul id="info" class="collapse" data-parent="#sidebarnav">
                             <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
                             <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>
 
->>>>>>> ebea6cd3ac2dcdf1cc1e889af4d26bfaf5446929
 
                         </ul>
                     </li>
