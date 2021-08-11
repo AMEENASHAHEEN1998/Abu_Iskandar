@@ -16,4 +16,11 @@ return [
     'logo' => 'شعار الشركة',
     'submit' => 'حفظ',
     'edit_information' => 'تعديل معلومات الشركة',
+    'delete_information' => 'حذف معلومات الشركة',
+    'warning_category' => '?هل أنت متأكد من عملية الحذف',
+    'success_message' => 'تم اضافة معلومات الشركة بنجاح',
+    'update_message' => 'تم تعديل معلومات الشركة بنجاح ',
+    'delete_message' => 'تم حذف معلومات الشركة بنجاح ',
+    'delete' => 'حذف',
+    'close' => 'اغلاق',
 ];

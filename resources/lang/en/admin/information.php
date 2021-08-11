@@ -16,4 +16,11 @@ return [
     'logo' => 'Logo',
     'submit' => 'Submit',
     'edit_information' => 'Edit Information Company',
-]; 
+    'delete_information' => 'Delete Company Information ',
+    'warning_category' => 'Are sure of the deleting process?',
+    'success_message' => 'Company Information added successfully',
+    'update_message' => 'The company information has been modified successfully',
+    'delete_message' => 'The company information  has been deleted successfully',
+    'delete' => 'Delete',
+    'close' => 'Close',
+];

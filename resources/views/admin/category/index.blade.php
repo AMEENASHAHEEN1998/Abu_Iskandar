@@ -63,7 +63,7 @@
 
                             <?php $i = 0; ?>
 
-                         @foreach ($Categorys as $Category)
+                         @foreach ($Categories as $Category)
                             <tr>
                                 <?php $i++; ?>
                                 <td>{{ $i }}</td>
@@ -200,7 +200,7 @@
                         @endforeach
                     </table>
                 </div>
-                {{ $Categorys->links() }}
+                {{ $Categories->links() }}
            </div>
         </div>
     </div>

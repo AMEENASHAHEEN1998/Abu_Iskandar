@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $Categorys = Category::paginate(5);
-        return view('admin.category.index', compact('Categorys'));
+        $Categories = Category::paginate(5);
+        return view('admin.category.index', compact('Categories'));
     }
 
     /**
@@ -120,7 +120,7 @@ class CategoryController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
         return redirect()->route('admin.categories.index')->with('update' , trans('admin/categories.update_message'));
-    
+
     }
 
     /**
