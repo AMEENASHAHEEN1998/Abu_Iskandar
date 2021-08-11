@@ -117,8 +117,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="site" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('admin.article.index')}}">{{ trans('admin/dashboard.add_articles') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.show_articles') }}</a></li>
+                            <li><a href="{{route('admin.article.create')}}">{{ trans('admin/dashboard.add_articles') }}</a></li>
+                            <li><a href="{{route('admin.article.index')}}">{{ trans('admin/dashboard.show_articles') }}</a></li>
 
                         </ul>
                     </li>

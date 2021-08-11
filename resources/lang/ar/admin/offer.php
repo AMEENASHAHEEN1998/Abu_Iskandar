@@ -24,5 +24,7 @@ return
     'detail_offer' =>'تفاصيل العرض',
     'update' => 'تعديل' ,
     'image' => 'صورة' ,
-
+    'success_message' => 'تم اضافة العرض بنجاح',
+    'update_message' => 'تم تعديل العرض بنجاح ',
+    'delete_message' => 'تم حذف العرض بنجاح ',
 ];

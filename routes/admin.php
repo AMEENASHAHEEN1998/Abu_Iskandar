@@ -35,12 +35,9 @@ Route::group(
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
 
-<<<<<<< HEAD
         Route::resource('article', ArticleController::class);
-=======
         Route::resource('information', InformationController::class);
 
->>>>>>> ebea6cd3ac2dcdf1cc1e889af4d26bfaf5446929
 
         });
 });

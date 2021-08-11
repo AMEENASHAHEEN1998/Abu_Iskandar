@@ -25,4 +25,7 @@ return
     'update' =>'update',
     'Back' =>'Back' ,
     'image' =>'Image' ,
+    'success_message' => 'The offer added successfully',
+    'update_message' => 'The offer has been modified successfully',
+    'delete_message' => 'The offer has been deleted successfully',
 ];

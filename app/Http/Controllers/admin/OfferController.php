@@ -67,7 +67,7 @@ class OfferController extends Controller
             'image' => $file_name,
 
         ]);
-        return redirect()->route('admin.offer.index');
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.success_message'));
     }
 
     /**
@@ -101,7 +101,7 @@ class OfferController extends Controller
     {
         // $status_value= '';
 
-        if ($request->has('status_value') == 1) {
+        if ($request->has('status_value') == 0) {
             $request->status_value = 1;
             $status = 'مفعل';
         } else {
@@ -122,7 +122,7 @@ class OfferController extends Controller
             'status_value' => $request->status_value,
 
         ]);
-        return redirect()->route('admin.offer.index');
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.update_message'));
     }
 
     /**
@@ -135,7 +135,7 @@ class OfferController extends Controller
     {
 
         Offer::find($id)->delete();
-        return redirect()->back();
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.delete_message'));
     }
 
     public function activeoffer(){

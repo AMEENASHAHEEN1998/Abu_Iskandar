@@ -157,7 +157,7 @@
                            </div>
 
 
-                            
+
                                 <!-- delete_modal_Category -->
                                 <div class="modal fade" id="delete{{ $Category->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -173,6 +173,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
+
                                         <div class="modal-body">
                                             <form action="{{route('admin.categories.destroy',$Category->id)}}" method="post">
                                                 {{method_field('Delete')}}
@@ -188,10 +189,12 @@
                                                 </div>
                                             </form>
                                         </div>
+
+                                        
                                     </div>
                                 </div>
                                 </div>
-                           
+
 
 
                         @endforeach
