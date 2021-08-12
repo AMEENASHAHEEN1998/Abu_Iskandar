@@ -23,7 +23,7 @@ class Product extends Model
     }
     public function SubCategories()
     {
-        return $this->hasMany(SubCategory::class);
+        return $this->hasMany(SubCategory::class , 'subcategory_id');
     }
 
     public function DriversRequests()
