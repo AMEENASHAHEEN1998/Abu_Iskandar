@@ -41,5 +41,6 @@ return [
     'logout' => 'تسجيل خروج',
     'Back' => 'العودة' ,
     'add_information_company' => 'اضافة معلومات الشركة',
-
+    'add_distributors'=>'اضافة موزع' ,
+    'distributortype'=>'اضافة قسم لموزعين'
 ];

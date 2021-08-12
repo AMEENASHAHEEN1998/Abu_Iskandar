@@ -51,7 +51,8 @@ class DriverRequestController extends Controller
             'price' => $request->price,
             'size' => $request->size,
             'number' => $request->number,
-            'status' => $request->status,
+            'status' => 'غير مفعل',
+            'status_value' => 1,
 
         ]);
         return redirect()->route('admin.driverrequest.index');

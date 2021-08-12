@@ -36,32 +36,35 @@
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
 
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/employee.employee_name_ar') }}</label>
-                                <input type="text" name="employee_name_ar" value="{{$employee->employee_name_ar}}" class="form-control" id="formGroupExampleInput">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">{{ trans('admin/employee.employee_name_ar') }}</label>
+                                    <input type="text" name="employee_name_ar" value="{{$employee->employee_name_ar}}" class="form-control" id="formGroupExampleInput">
+                                </div>
                             </div>
+
+                            @error('employee_name_ar')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">{{ trans('admin/employee.employee_name_en') }}</label>
+                                    <input type="text" name="employee_name_en" value="{{$employee->employee_name_en}}" class="form-control" id="formGroupExampleInput">
+                                </div>
+                            </div>
+
+                            @error('employee_name_en')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
-                        @error('employee_name_ar')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/employee.employee_name_en') }}</label>
-                                <input type="text" name="employee_name_en" value="{{$employee->employee_name_en}}" class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-
-                        @error('employee_name_en')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
 
 
 
-
-                        <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/employee.job_title_ar') }}</label>
                                 <input type="text" name="job_title_ar" value="{{$employee->job_title_ar}}" class="form-control" id="formGroupExampleInput">
@@ -73,7 +76,7 @@
                         @enderror
 
 
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/employee.job_title_en') }}</label>
                                 <input type="text" name="job_title_en" value="{{$employee->job_title_en}}" class="form-control" id="formGroupExampleInput">
@@ -83,6 +86,7 @@
                         @error('job_title_en')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
+                      </div>
 
 
 
@@ -98,7 +102,7 @@
                         </div>
 
 
-                        <div class="col-md-8">
+                        <div class="col-md-6">
 
                             <div class="form-group">
                                 <input type="checkbox" name="status" class="switchery" data-color="success"

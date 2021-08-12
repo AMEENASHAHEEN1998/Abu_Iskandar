@@ -9,12 +9,7 @@ class DriverRequest extends Model
 {
     use HasFactory;
 
-    // protected $guarded =['user_id
-    // product_id
-    // price
-    // size
-    // number
-    // status'];
+    protected $fillable=['user_id','product_id','price','size','number','status'];
     public function User()
     {
         return $this->belongsTo(User::class);

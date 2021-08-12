@@ -4,7 +4,7 @@
 
 
     <!--=================================
-                         Main content -->
+                             Main content -->
     <!-- main-content -->
     <!-- row -->
     <div class="row">
@@ -35,79 +35,99 @@
                         @csrf
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/article.article_name_ar') }}</label>
-                                <input type="text" name="article_name_ar" class="form-control" id="formGroupExampleInput">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label
+                                        for="formGroupExampleInput">{{ trans('admin/article.article_name_ar') }}</label>
+                                    <input type="text" name="article_name_ar" class="form-control"
+                                        id="formGroupExampleInput">
+                                </div>
                             </div>
+
+                            @error('article_name_ar')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label
+                                        for="formGroupExampleInput">{{ trans('admin/article.article_name_en') }}</label>
+                                    <input type="text" name="article_name_en" class="form-control"
+                                        id="formGroupExampleInput">
+                                </div>
+                            </div>
+
+                            @error('article_name_en')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+
                         </div>
 
-                        @error('article_name_ar')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
 
 
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/article.article_name_en') }}</label>
-                                <input type="text" name="article_name_en" class="form-control" id="formGroupExampleInput">
+
+
+
+
+                        <div class="row">
+
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label
+                                        for="formGroupExampleInput">{{ trans('admin/article.description_ar') }}</label>
+                                    <input type="text" name="description_ar" class="form-control"
+                                        id="formGroupExampleInput">
+                                </div>
                             </div>
+
+                            @error('description_ar')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label
+                                        for="formGroupExampleInput">{{ trans('admin/article.description_en') }}</label>
+                                    <input type="text" name="description_en" class="form-control"
+                                        id="formGroupExampleInput">
+                                </div>
+                            </div>
+
+                            @error('description_en')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
-                        @error('article_name_en')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        <div class="row">
 
 
-
-
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/article.description_en') }}</label>
-                                <input type="text" name="description_en" class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-
-                        @error('description_en')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/article.description_ar') }}</label>
-                                <input type="text" name="description_ar" class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-
-                        @error('description_ar')
-                            <span class="text-danger">{{ $message }}</span>
-
-                        @enderror
-
-
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/article.content_ar') }}</label>
-                                <textarea type="text" name="content_ar" class="form-control" id="formGroupExampleInput"></textarea>
+                                <textarea type="text" name="content_ar" class="form-control"
+                                    id="formGroupExampleInput"></textarea>
                             </div>
                         </div>
 
                         @error('content_ar')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/article.content_en') }}</label>
-                                <textarea type="text" name="content_en" class="form-control" id="formGroupExampletextarea"></textarea>
+                                <textarea type="text" name="content_en" class="form-control"
+                                    id="formGroupExampletextarea"></textarea>
                             </div>
                         </div>
 
                         @error('content_en')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
+                        </div>
 
 
 

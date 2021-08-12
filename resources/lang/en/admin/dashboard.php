@@ -40,6 +40,9 @@ return [
     'information_company' => 'Information Company  ',
     'logout' => 'Logout ',
     'add_information_company' => 'Add Information Company',
+    'add_distributors'=>'Add Distributor',
+    'distributortype'=>'Add Distributor Type'
+
     // end sidebar
 
 ];

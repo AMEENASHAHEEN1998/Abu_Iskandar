@@ -14981,7 +14981,7 @@ button.toast-close-button {
 
 /*# sourceMappingURL=bootstrap-datepicker.css.map */
 /*
-    Common 
+    Common
 */
 .wizard,
 .tabcontrol {
@@ -22871,3 +22871,9 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
     padding: 6px 19px !important; }
   .fc-right .fc-button-group .fc-button {
     padding: 6px 13px !important; } }
+
+
+    .row .col .box select .form-selected{
+        height: 48px;
+
+    }

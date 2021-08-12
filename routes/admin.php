@@ -8,10 +8,14 @@ use App\Http\Controllers\admin\OfferController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\DistributorController;
+use App\Http\Controllers\admin\DistributorTypeController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\EmployeeController;
+use App\Models\Distributor;
+use App\Models\DistributorType;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -43,6 +47,8 @@ Route::group(
         Route::resource('products', ProductController::class);
 
         Route::resource('employee', EmployeeController::class);
+        Route::resource('distributor', DistributorController::class);
+        Route::resource('distributortype', DistributorTypeController::class);
 
 
         });

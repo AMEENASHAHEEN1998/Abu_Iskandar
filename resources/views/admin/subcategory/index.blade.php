@@ -45,7 +45,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>{{ trans('admin/subcategories.subcategory_name') }}</th>                           
+                            <th>{{ trans('admin/subcategories.subcategory_name') }}</th>
                             <th>{{ trans('admin/subcategories.user_add') }}</th>
                             <th>{{ trans('admin/subcategories.add_data') }}</th>
                             <th>{{ trans('admin/subcategories.process') }}</th>
@@ -68,7 +68,7 @@
                                 @else
                                 <td>{{ $Subcategory->sub_category_name_ar }}</td>
                                 @endif
-                                
+
                                 <td>{{ $Subcategory->User->name }}</td>
                                 <td>{{ $Subcategory->created_at }}</td>
 
@@ -89,7 +89,7 @@
                                 </td>
                             </tr>
 
- 
+
                             <!-- edit_modal_Category -->
                             <div class="modal fade" id="edit{{ $Subcategory->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -124,7 +124,7 @@
                                                     <input type="text" class="form-control" name="name_en" value= " {{$Subcategory->sub_category_name_en}}" required autocomplete="off">
                                                 </div>
                                             </div>
-                                            
+
                                                <br><br>
 
                                                <div class="modal-footer">
@@ -141,7 +141,7 @@
                            </div>
 
 
-                          
+
                                 <!-- delete_modal_Category -->
                                 <div class="modal fade" id="delete{{ $Subcategory->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,7 +175,7 @@
                                     </div>
                                 </div>
                                 </div>
-                           
+
 
 
                         @endforeach
@@ -218,7 +218,7 @@
                                 <input type="text" class="form-control" name="name_en" required autocomplete="off">
                             </div>
                         </div>
-                        
+
 
                         <br><br>
 
