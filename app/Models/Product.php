@@ -10,6 +10,7 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    protected $guarded  = [];
 
     public function User()
     {
@@ -19,6 +20,10 @@ class Product extends Model
     public function Category()
     {
         return $this->belongsTo(Category::class);
+    }
+    public function SubCategories()
+    {
+        return $this->hasMany(SubCategory::class , 'subcategory_id');
     }
 
     public function DriversRequests()

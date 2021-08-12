@@ -2,6 +2,36 @@
 
 return [
 
-
-
+    'title' => 'Products',
+    'product_name_ar' => 'Product Name in Arabic',
+    'product_name_en' => 'Product Name in English',
+    'primary_category' =>'Primary Category',
+    'sub_category' =>'Sub Category',
+    'processes' => 'Processes',
+    'delete_row' => 'Delete Row',
+    'add_subcategory' => 'Add  sub category',
+    'add_size_price' => 'Add size and price',
+    'size' => 'Size',
+    'price' => 'Price',
+    'add_new_product' => 'Add New Product',
+    'product_image' => 'Product Image',
+    'submit' => 'Submit',
+    'product_name' => 'Product Name',
+    'product_category' =>'Category Name',
+    'user_add' =>'User Added',
+    'views_number' => 'Views Number',
+    'add_data' =>'Add Date',
+    'process' =>'Process',
+    'add_product' =>'Add Product',
+    'delete_product' => 'Delete Product',
+    'close' => 'Close',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'warning_category' => '?هل أنت متأكد من عملية الحذف',
+    'success_message' => 'تم اضافة المنتج بنجاح',
+    'update_message' => 'تم تعديل المنتج بنجاح ',
+    'delete_message' => 'تم حذف المنتج بنجاح ',
+    'price' => ' Price',
+    'size' => 'Size',
+    'edit_product' => 'Edit Product',
 ];

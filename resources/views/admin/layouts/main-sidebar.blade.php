@@ -49,9 +49,9 @@
                         </a>
 
                         <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="">{{ trans('admin/dashboard.add_product') }} </a> </li>
+                            <li> <a href="{{ route('admin.products.create') }}">{{ trans('admin/dashboard.add_product') }} </a> </li>
 
-                            <li> <a href=""> {{ trans('admin/dashboard.show_products') }}</a> </li>
+                            <li> <a href="{{ route('admin.products.index') }}"> {{ trans('admin/dashboard.show_products') }}</a> </li>
 
                         </ul>
 
@@ -209,15 +209,15 @@
                             <div class="clearfix"></div>
                         </a>
 
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="info" class="collapse" data-parent="#sidebarnav" >
                             <li><a href="">{{ trans('admin/dashboard.information_company') }}</a></li>
 
-                        <ul id="info" class="collapse" data-parent="#sidebarnav">
+                        
                             <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
                             <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>
 
-
                         </ul>
+                        
                     </li>
 
                     <li>
