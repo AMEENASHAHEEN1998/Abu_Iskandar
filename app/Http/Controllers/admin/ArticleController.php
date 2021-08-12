@@ -34,6 +34,11 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request)
     {
 
+
+        $FileEx=$request->file('image')->getClientOriginalExtension();
+        $file_name=time().'_'.rand().'_'.$FileEx;
+        $request->file('image')->move(public_path('upload/admin/article'),$file_name);
+
         Article::create([
             'user_id' => $request->user_id,
             'article_name_ar'  => $request->article_name_ar,
@@ -42,6 +47,7 @@ class ArticleController extends Controller
             'description_en' => $request->description_en,
             'content_ar' => $request->content_ar,
             'content_en' => $request->content_en,
+            'image' => $file_name,
             'status' => 'مفعل',
             'status_value' => 1,
             'views' => 0,
@@ -96,6 +102,14 @@ class ArticleController extends Controller
             $status = 'غير مفعل ';
 
         }
+        $article = Article::findOrFail($id);
+        $image_name = $article->image;
+
+        if ($request->has('image')) {
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $image_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/article'),$image_name);
+        }
         Article::find($id)->update([
             'user_id' => $request->user_id,
             'article_name_ar'  => $request->article_name_ar,
@@ -105,6 +119,7 @@ class ArticleController extends Controller
             'content_ar' => $request->content_ar,
             'content_en' => $request->content_en,
             'status' => $status,
+            'image' => $image_name,
             'status_value' => $request->status_value,
             'views' => 0,
             'updated_at' => now(),

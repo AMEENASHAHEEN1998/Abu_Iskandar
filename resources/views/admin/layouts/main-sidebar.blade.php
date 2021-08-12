@@ -194,7 +194,6 @@
                             <li><a  href="{{route('admin.distributor.create')}}">{{ trans('admin/dashboard.add_distributors') }}</a></li>
 
                             <li><a  href="{{route('admin.distributortype.index')}}">{{ trans('admin/dashboard.category_distributors') }}</a></li>
-                            <li><a  href="{{route('admin.distributortype.create')}}">{{ trans('admin/dashboard.distributortype') }}</a></li>
                             {{-- <li><a  href="{{route('admin.distributor.show')}}">{{ trans('admin/dashboard.show_distributors') }}</a></li> --}}
 
                         </ul>

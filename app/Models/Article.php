@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
-    protected $fillable =['article_name_ar','article_name_en','description_ar','description_en','views','content_en','content_ar','status','status_value','user_id'];
-    
+    protected $fillable =['article_name_ar','article_name_en','description_ar','description_en','views','content_en','content_ar','status','status_value','user_id','image'];
+
 
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');

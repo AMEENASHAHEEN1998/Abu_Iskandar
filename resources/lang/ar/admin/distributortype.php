@@ -33,9 +33,9 @@ return
     'delete_distributorstype' => 'حذف القسم الفرعي',
 
     'warning_distributorstype' => '?هل أنت متأكد من عملية الحذف',
-    'delete_distributorstype'  => 'حذف الموزع',
-    'success_message' => 'تم اضافة الموزع بنجاح',
-    'update_message'  => 'تم تعديل بيانات الموزع بنجاح ',
-    'delete_message'  => 'تم حذف الموزع بنجاح ',
+    'delete_distributorstype'  => 'حذف قسم',
+    'success_message' => 'تم اضافة قسم بنجاح',
+    'update_message'  => 'تم تعديل بيانات قسم بنجاح ',
+    'delete_message'  => 'تم حذف قسم بنجاح ',
     'ack' =>'العودة',
 ];

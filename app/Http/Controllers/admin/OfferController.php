@@ -62,6 +62,7 @@ class OfferController extends Controller
             'offer_title_ar' => $request->offer_title_ar,
             'description_ar' => $request->description_ar,
             'price' => $request->price,
+            'views' => 0,
             'status' => 'مفعل',
             'status_value' => 1,
             'image' => $file_name,
@@ -109,8 +110,17 @@ class OfferController extends Controller
 
         }
 
+        $offer = Offer::findOrFail($id);
+        $image_name = $offer->image;
+        // return $image_name;
 
-        // return $request;
+        if ($request->has('image')) {
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $image_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
+        }
+
+        // return $image_name;
         // return   $request;
         Offer::find($id)->update([
             'user_id' => $request->user_id,
@@ -119,6 +129,7 @@ class OfferController extends Controller
             'description_ar' => $request->description_ar,
             'description_en' => $request->description_en,
             'price' => $request->price,
+            'image' => $image_name,
             'status' => $status,
             'status_value' => $request->status_value,
 

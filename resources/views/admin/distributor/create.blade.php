@@ -27,7 +27,7 @@
                     </a>
 
                     <hr>
-                    <h2>{{ trans('admin/distributor.add_distributors') }}</h2>
+                    <h2>{{ trans('admin/distributor.add_distributor') }}</h2>
 
 
                     <form action="{{ route('admin.distributor.store') }}" method="POST" enctype="multipart/form-data">

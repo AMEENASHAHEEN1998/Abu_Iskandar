@@ -135,8 +135,19 @@
                                 <input type="checkbox" name="status" class="switchery" data-color="success"
                                     value="{{ $article->status_value }}" @if ($article->status_value == 1) checked @endif />
                                 <label for="switcheryColor4"
-                                    class="card-title ml-1">{{ trans('admin/offer.status') }}</label>
+                                    class="card-title ml-1">{{ trans('admin/article.status') }}</label>
                             </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">{{ trans('admin/article.image') }}</label>
+                            <input type="file" class="form-control" name="image" />
+                            <img src="{{asset('upload/admin/article/'.$article->image)}}" style="width: 150px" alt="">
+
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
 
 

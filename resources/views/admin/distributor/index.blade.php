@@ -36,7 +36,6 @@
                                     <th>{{ trans('admin/distributor.name') }}</th>
                                     <th>{{ trans('admin/distributor.phone_number') }}</th>
 
-                                    <th>{{ trans('admin/distributor.distributors') }}</th>
                                     <th>{{ trans('admin/distributor.distributors_type') }}</th>
 
                                     <th>{{ trans('admin/distributor.add_name') }}</th>
@@ -58,8 +57,14 @@
                                         <td>{{ $distributor->{'name_' . $lng} }}</td>
                                         <td>{{ $distributor->phone_number }}</td>
 
-                                        <td>{{ $distributor->{'distributor_name_' . $lng} }}</td>
-                                        <td>{{ $distributor->DistributorType->{'name_' . $lng} }}</td>
+                                        <td>
+                                            {{-- @if($distributor->DistributorType->{'name_' . $lng != nul}) --}}
+                                            {{ $distributor->DistributorType->{'name_' . $lng} }}
+                                            {{-- @endif() --}}
+
+
+
+                                        </td>
 
                                         <td>{{ $distributor->user->name }}</td>
                                         <td>{{ $distributor->created_at }}</td>

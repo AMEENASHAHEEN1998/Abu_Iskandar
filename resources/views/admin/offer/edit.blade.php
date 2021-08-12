@@ -28,7 +28,7 @@
                     </a>
 
 
-                    <form action="{{ route('admin.offer.update', $offer->id) }}" method="POST">
+                    <form action="{{ route('admin.offer.update', $offer->id) }}" method="POST" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -46,7 +46,7 @@
                             @error('offer_title')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                            
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title_en') }}</label>
@@ -114,6 +114,17 @@
                                 <label for="switcheryColor4"
                                     class="card-title ml-1">{{ trans('admin/offer.status') }}</label>
                             </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">{{ trans('admin/offer.image') }}</label>
+                            <input type="file" class="form-control" name="image" />
+                            <img src="{{asset('upload/admin/offer/'.$offer->image)}}" style="width: 150px" alt="">
+
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
 
 

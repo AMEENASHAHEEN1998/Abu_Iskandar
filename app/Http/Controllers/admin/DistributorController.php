@@ -19,6 +19,7 @@ class DistributorController extends Controller
     {
        $distributors= Distributor::all();
     //    dd($distributors);
+    // $distributor_types=DistributorType::all();
        return view('admin.distributor.index',compact('distributors'));
 
     }
@@ -113,7 +114,7 @@ class DistributorController extends Controller
     public function destroy($id)
     {
         $distributor=Distributor::find($id)->delete();
-        return redirect()->route('admin.distributor.index')->with('success' , trans('admin/distributor.delete_message'));
+        return redirect()->route('admin.distributor.index')->with('success' , trans('admin/distributor.update_message'));
 
 
     }

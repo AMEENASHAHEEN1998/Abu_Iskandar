@@ -39,6 +39,7 @@
 
                                     <th>{{ trans('admin/article.article_title') }}</th>
                                     <th>{{ trans('admin/article.description') }}</th>
+                                    <th>{{ trans('admin/article.image') }}</th>
                                     <th>{{ trans('admin/article.date') }}</th>
 
                                     <th>{{ trans('admin/article.status') }}</th>
@@ -57,6 +58,10 @@
                                         <td>{{ $article->user->name}}</td>
                                         <td>{{ $article->{'article_name_' . $lng} }}</td>
                                         <td>{{ $article->{'description_' . $lng} }}</td>
+                                        <td>
+                                            <img src="{{asset('upload/admin/article/'.$article->image)}}" style="width: 85px" alt="">
+                                        </td>
+
                                         <td>{{ $article->created_at }}</td>
 
                                         <td>
