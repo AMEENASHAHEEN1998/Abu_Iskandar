@@ -22,7 +22,9 @@
                      {{ trans('admin/dashboard.add_offer') }}
                     </a>
 
-
+                    <?php
+                    $lng = app()->getLocale();
+                   ?>
 
                     <br><br>
                     <h1>{{ trans('admin/offer.offer') }}</h1>
@@ -51,23 +53,21 @@
                                 @foreach ($offers as $offer)
                                     <tr>
                                         <td>{{ $offer->id }}</td>
-                                        <td>{{ $offer->user->name }}</td>
-                                        <td>{{ $offer->offer_title }}</td>
-                                        <td>{{ $offer->description }}</td>
+                                        <td>{{ $offer->user->name}}</td>
+                                        <td>{{ $offer->{'offer_title_' . $lng} }}</td>
+                                        <td>{{ $offer->{'description_' . $lng} }}</td>
                                         <td>
                                             <img src="{{asset('upload/admin/offer/'.$offer->image)}}" style="width: 85px" alt="">
 
                                         </td>
                                         <td>{{ $offer->price }}</td>
                                         <td>
-                                            @if($offer->status == 1)
+                                            @if($offer->status_value == 1)
                                                 <button  class="btn btn-success">{{trans('admin/offer.active')}} </button>
                                             @endif
-                                            @if($offer->status == 0)
+                                            @if($offer->status_value == 0)
                                                 <button  class="btn btn-danger">{{trans('admin/offer.noactive')}} </button>
                                             @endif
-
-
                                         </td>
 
                                         <td>

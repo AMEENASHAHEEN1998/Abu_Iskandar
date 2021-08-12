@@ -38,8 +38,18 @@
 
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title') }}</label>
-                                <input type="text" name="offer_title" class="form-control" id="formGroupExampleInput">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title_en') }}</label>
+                                <input type="text" name="offer_title_en" class="form-control" id="formGroupExampleInput">
+                            </div>
+                        </div>
+
+                        @error('offer_title')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title_ar') }}</label>
+                                <input type="text" name="offer_title_ar" class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
 
@@ -47,10 +57,24 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
 
+
+
+
+
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/offer.description') }}</label>
-                                <input type="text" name="description" class="form-control" id="formGroupExampleInput">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.description_en') }}</label>
+                                <input type="text" name="description_en" class="form-control" id="formGroupExampleInput">
+                            </div>
+                        </div>
+
+                        @error('description')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.description_ar') }}</label>
+                                <input type="text" name="description_ar" class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
 
@@ -69,7 +93,7 @@
                         @enderror
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">image</label>
+                            <label for="exampleInputEmail1">{{trans('admin/offer.image')}}</label>
                             <input type="file" class="form-control"  name="image" />
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>

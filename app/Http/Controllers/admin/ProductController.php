@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -60,12 +61,15 @@ class ProductController extends Controller
             }
 
             $List_subcategory = $request->List_subcategory;
-
+            $product = Product::findOrFail($product->id);
             foreach ($List_subcategory as $subcategory){
-              Product::Subcategory()->create([
-                    'subcategory_id' => $subcategory['sub_category_id'],
-                    'product_id' => $product->id,
-              ]);
+                DB::insert('insert into products_subcategories (subcategory_id, product_id) 
+                values (?, ?)', [$subcategory['sub_category_id'], $product->id]);
+            //   $product->SubCategories()->create([
+            //       dd($product_>SubCategories())
+            //         // 'subcategory_id' => $subcategory['sub_category_id'],
+            //         // 'product_id' => $product->id,
+            //   ]);
           }
 
         $request->file('image')->move(public_path('uploads') , $product_image_name);

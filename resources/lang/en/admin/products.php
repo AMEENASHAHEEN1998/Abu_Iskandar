@@ -15,4 +15,5 @@ return [
     'price' => 'Price',
     'add_new_product' => 'Add New Product',
     'product_image' => 'Product Image',
+    'submit' => 'Submit',
 ];

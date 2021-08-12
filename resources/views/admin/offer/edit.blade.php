@@ -37,8 +37,18 @@
 
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title') }}</label>
-                                <input type="text" name="offer_title" value="{{$offer->offer_title}}" class="form-control" id="formGroupExampleInput">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title_en') }}</label>
+                                <input type="text" name="offer_title_en" value="{{$offer->offer_title_en}}" class="form-control" id="formGroupExampleInput">
+                            </div>
+                        </div>
+
+                        @error('offer_title')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.offer_title_ar') }}</label>
+                                <input type="text" name="offer_title_ar" value="{{$offer->offer_title_ar}}" class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
 
@@ -46,10 +56,12 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
 
+
+
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/offer.description') }}</label>
-                                <input type="text" name="description"  value="{{$offer->description}}"class="form-control" id="formGroupExampleInput">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.description_en') }}</label>
+                                <input type="text" name="description_en"  value="{{$offer->description_en}}"class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
 
@@ -59,8 +71,22 @@
 
                         <div class="col-md-8">
                             <div class="form-group">
+                                <label for="formGroupExampleInput">{{ trans('admin/offer.description_ar') }}</label>
+                                <input type="text" name="description_ar"  value="{{$offer->description_ar}}"class="form-control" id="formGroupExampleInput">
+                            </div>
+                        </div>
+
+                        @error('description')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+
+
+
+
+                        <div class="col-md-8">
+                            <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/offer.price') }}</label>
-                                <input type="number" name="price" value="{{$offer->price}}" class="form-control" id="formGroupExampleInput">
+                                <input type="text" name="price" value="{{$offer->price}}" class="form-control" id="formGroupExampleInput">
                             </div>
                         </div>
                         @error('price')
@@ -71,7 +97,7 @@
 
                             <div class="form-group">
                                 <input type="checkbox" name="status" class="switchery" data-color="success"
-                                     value="{{$offer->status}}"  @if($offer->status == 1)checked @endif
+                                     value="{{$offer->status_value}}"  @if($offer->status_value == 1)checked @endif
                                 />
                                 <label for="switcheryColor4"
                                     class="card-title ml-1">{{ trans('admin/offer.status') }}</label>

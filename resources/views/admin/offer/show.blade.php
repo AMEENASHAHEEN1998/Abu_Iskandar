@@ -4,7 +4,7 @@
 
 
     <!--=================================
-             Main content -->
+                 Main content -->
     <!-- main-content -->
     <!-- row -->
     <div class="row">
@@ -16,40 +16,52 @@
                     @include('admin.include.alerts.success')
                     @include('admin.include.alerts.errors')
 
-                    <a href="{{ route('admin.offer.index') }}"  class="btn btn-success"
-                       >
+                    <a href="{{ route('admin.offer.index') }}" class="btn btn-success">
                         Back
                     </a>
 
                     <div>
                         <hr>
 
-                        <h1> {{ trans('admin/offer.detail_offer') }}  </h1>
+                        <h1> {{ trans('admin/offer.detail_offer') }} </h1>
 
                     </div>
 
                     <hr>
 
-
+                    <?php
+                    $lng = app()->getLocale();
+                    ?>
 
                     <div>
-                        <h3> <i class="fa fa-angellist"></i>   {{ trans('admin/offer.offer_title') }}   <strong> : {{ $offer->offer_title }}</strong></h3>
+                        <h3> <i class="fa fa-angellist"></i>
+                            {{ trans('admin/offer.offer_title') }}
+                            <strong> : {{ $offer->{'offer_title_' . $lng} }}</strong>
+                        </h3>
                     </div>
                     <hr>
 
                     <div>
-                        <h3><i class="fa fa-angellist"></i>    {{ trans('admin/offer.description') }}  <strong>  : {{ $offer->description }}</strong></h3>
+                        <h3><i class="fa fa-angellist"></i>
+                            {{ trans('admin/offer.description') }}
+                            <strong> : {{ $offer->{'description_' . $lng} }}</strong>
+                        </h3>
                     </div>
                     <hr>
 
 
                     <div>
-                        <h3><i class="fa fa-angellist"></i>    {{ trans('admin/offer.price') }}  <strong>  :  {{ $offer->price }}</strong></h3>
+                        <h3><i class="fa fa-angellist"></i>
+                            {{ trans('admin/offer.price') }} <strong> :
+                                {{ $offer->price }}</strong></h3>
                     </div>
 
                     <hr>
                     <div>
-                        <h3><i class="fa fa-angellist"></i>    {{ trans('admin/offer.status') }} <strong>  :  {{ $offer->status == 0 ?  trans('admin/offer.noactive') :  trans('admin/offer.active')}}</strong></h3>
+                        <h3><i class="fa fa-angellist"></i>
+                            {{ trans('admin/offer.status') }} <strong> :
+                                {{ $offer->status == 0 ? trans('admin/offer.noactive') : trans('admin/offer.active') }}</strong>
+                        </h3>
                     </div>
 
                     <hr>

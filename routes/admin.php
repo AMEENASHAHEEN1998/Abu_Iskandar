@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ArticleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
+use App\Http\Controllers\admin\EmployeeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -35,8 +37,13 @@ Route::group(
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
 
+        Route::resource('article', ArticleController::class);
         Route::resource('information', InformationController::class);
+
         Route::resource('products', ProductController::class);
+
+        Route::resource('employee', EmployeeController::class);
+
 
         });
 });

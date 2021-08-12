@@ -17,7 +17,7 @@ class OfferController extends Controller
     public function index()
     {
         $offers = Offer::all();
-        // dd($offers->User);
+        // dd($offers);
         return view('admin.offer.index', compact('offers'));
     }
 
@@ -57,14 +57,17 @@ class OfferController extends Controller
         // return   $file_name;
         Offer::create([
             'user_id' => $request->user_id,
-            'offer_title' => $request->offer_title,
-            'description' => $request->description,
+            'offer_title_en' => $request->offer_title_en,
+            'description_en' => $request->description_en,
+            'offer_title_ar' => $request->offer_title_ar,
+            'description_ar' => $request->description_ar,
             'price' => $request->price,
-            'status' => 1,
+            'status' => 'مفعل',
+            'status_value' => 1,
             'image' => $file_name,
 
         ]);
-        return redirect()->route('admin.offer.index');
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.success_message'));
     }
 
     /**
@@ -96,22 +99,31 @@ class OfferController extends Controller
 
     public function update(OfferRequest $request, $id)
     {
+        // return $request;
         if ($request->has('status') == 1) {
-            $request->status = 1;
+            $request->status_value = 1;
+            $status = 'مفعل';
         } else {
-            $request->status = 0;
+            $request->status_value = 0;
+            $status = 'غير مفعل ';
+
         }
 
+
+        // return $request;
         // return   $request;
         Offer::find($id)->update([
             'user_id' => $request->user_id,
-            'offer_title' => $request->offer_title,
-            'description' => $request->description,
+            'offer_title_ar' => $request->offer_title_ar,
+            'offer_title_en' => $request->offer_title_en,
+            'description_ar' => $request->description_ar,
+            'description_en' => $request->description_en,
             'price' => $request->price,
-            'status' => $request->status,
+            'status' => $status,
+            'status_value' => $request->status_value,
 
         ]);
-        return redirect()->route('admin.offer.index');
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.update_message'));
     }
 
     /**
@@ -124,7 +136,7 @@ class OfferController extends Controller
     {
 
         Offer::find($id)->delete();
-        return redirect()->back();
+        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.delete_message'));
     }
 
     public function activeoffer(){

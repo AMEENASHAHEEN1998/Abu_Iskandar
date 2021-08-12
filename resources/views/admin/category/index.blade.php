@@ -173,6 +173,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
+
                                         <div class="modal-body">
                                             <form action="{{route('admin.categories.destroy',$Category->id)}}" method="post">
                                                 {{method_field('Delete')}}
@@ -188,6 +189,8 @@
                                                 </div>
                                             </form>
                                         </div>
+
+                                        
                                     </div>
                                 </div>
                                 </div>

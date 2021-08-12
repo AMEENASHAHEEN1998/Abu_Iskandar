@@ -15,4 +15,5 @@ return [
     'price' => 'السعر',
     'add_new_product' => 'اضافة منتج جديد',
     'product_image'=> 'صورة المنتج ',
+    'submit' => 'حفظ',
 ];
