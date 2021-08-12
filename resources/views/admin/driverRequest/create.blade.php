@@ -35,7 +35,7 @@
                         <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
 
 
-                        <div class="col-md-8">
+                        {{-- <div class="col-md-8">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">{{ trans('admin/driverrequest.user_name') }}</label>
                                 <input type="text" name="user_id"  class="form-control" id="formGroupExampleInput">
@@ -44,7 +44,7 @@
 
                         @error('user_id')
                         <span class="text-danger">{{$message}}</span>
-                        @enderror
+                        @enderror --}}
 
                         <div class="col-md-8">
                             <div class="form-group">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\DistributorType;
 use Illuminate\Http\Request;
 
 class DistributorTypeController extends Controller
@@ -14,7 +15,8 @@ class DistributorTypeController extends Controller
      */
     public function index()
     {
-        //
+        $distributortypes=DistributorType::all();
+        return view('admin.distributortype.index',compact('distributortypes'));
     }
 
     /**
@@ -24,7 +26,7 @@ class DistributorTypeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +37,20 @@ class DistributorTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_ar' =>'required',
+            'name_en' =>'required',
+        ]);
+
+        DistributorType::create([
+            'name_ar' =>$request->name_ar,
+            'name_en' =>$request->name_en,
+            'user_id' =>$request->user_id,
+            'created_at' =>now()
+
+        ]);
+
+        return redirect()->route('admin.distributortype.index')->with('success' , trans('admin/distributortype.success_message'));
     }
 
     /**
@@ -69,7 +84,20 @@ class DistributorTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name_ar' =>'required',
+            'name_en' =>'required',
+        ]);
+
+        DistributorType::find($id)->update([
+            'name_ar' =>$request->name_ar,
+            'name_en' =>$request->name_en,
+            'updated_at' =>now()
+
+        ]);
+
+        return redirect()->route('admin.distributortype.index')->with('success' , trans('admin/distributortype.update_message'));
+
     }
 
     /**
@@ -80,6 +108,8 @@ class DistributorTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DistributorType::find($id)->delete();
+        return redirect()->route('admin.distributortype.index')->with('success' , trans('admin/distributortype.delete_message'));
+
     }
 }

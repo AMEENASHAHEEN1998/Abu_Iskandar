@@ -128,13 +128,13 @@
 
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobs">
                             <div class="pull-left"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.jobs') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="jobs" class="collapse" data-parent="#sidebarnav">
                             <li><a href="">{{ trans('admin/dashboard.add_job') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.show_job') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.old_job') }}</a></li>
@@ -147,13 +147,13 @@
 
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#request_job">
                             <div class="pull-left"><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.request_job') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
+                        <ul id="request_job" class="collapse" data-parent="#sidebarnav">
                             <li><a href="">{{ trans('admin/dashboard.show_request_job') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.accepted_request') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.rejected_request') }}</a></li>
@@ -162,20 +162,6 @@
                     </li>
 
 
-
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
-                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
-                                    class="right-nav-text">{{ trans('admin/dashboard.distributors') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="site" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="">{{ trans('admin/dashboard.distributors') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.category_distributors') }}</a></li>
-
-                        </ul>
-                    </li>
 
 
 
@@ -194,6 +180,25 @@
                         </ul>
                     </li>
 
+
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#distributors">
+                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.distributors') }}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="distributors" class="collapse" data-parent="#sidebarnav">
+                            <li><a  href="{{route('admin.distributor.index')}}">{{ trans('admin/dashboard.distributors') }}</a></li>
+                            <li><a  href="{{route('admin.distributor.create')}}">{{ trans('admin/dashboard.add_distributors') }}</a></li>
+
+                            <li><a  href="{{route('admin.distributortype.index')}}">{{ trans('admin/dashboard.category_distributors') }}</a></li>
+                            <li><a  href="{{route('admin.distributortype.create')}}">{{ trans('admin/dashboard.distributortype') }}</a></li>
+                            {{-- <li><a  href="{{route('admin.distributor.show')}}">{{ trans('admin/dashboard.show_distributors') }}</a></li> --}}
+
+                        </ul>
+                    </li>
 
 
                     <li>
