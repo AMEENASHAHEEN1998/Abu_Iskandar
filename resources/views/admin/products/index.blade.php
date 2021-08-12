@@ -70,10 +70,11 @@
                                 <td>{{ $i }}</td>
                                 @if (App::getLocale() == 'en')
                                 <td>{{ $Product->product_name_en }}</td>
-                                <td>{{ $Product->Category->category_name_en }}</td>
+                                
+                                <td>{{ ($Product->category) ? $Product->category->category_name_en : 'Uncategories' }}</td>
                                 @else
                                 <td>{{ $Product->product_name_ar }}</td>
-                                <td>{{ $Product->Category->category_name_ar }}</td>
+                                <td>{{ ($Product->category) ? $Product->category->category_name_ar : 'غير مصنف' }}</td>
                                 @endif
                                 <td> <img src="{{asset('uploads/'.$Product->image)}}" width="70px" height="60px"></td>
                                 <td>{{ $Product->User->name }}</td>
