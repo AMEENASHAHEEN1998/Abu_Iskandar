@@ -15,7 +15,7 @@ class DistributorTypeController extends Controller
      */
     public function index()
     {
-        $distributortypes=DistributorType::all();
+        $distributortypes=DistributorType::paginate(5);
         return view('admin.distributortype.index',compact('distributortypes'));
     }
 

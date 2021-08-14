@@ -22,9 +22,11 @@ return [
     'show_offers' => 'العروض الحالية',
     'old_offers' => 'عروض قديمة',
     'jobs' => 'الوظائف',
+    'all_job' => ' عرض الوظائف ',
     'add_job' => 'اضافة وظيفة',
     'show_job' => 'الوظائف الحالية',
     'old_job' =>'وظائف منتهية ',
+    'create_job' => 'اضافة وظيفة',
     'request_job' => 'طلبات التوظيف',
     'show_request_job' => 'عرض طلبات التوظيف',
     'accepted_request' => 'الطلبات المقبولة',
@@ -42,5 +44,6 @@ return [
     'Back' => 'العودة' ,
     'add_information_company' => 'اضافة معلومات الشركة',
     'add_distributors'=>'اضافة موزع' ,
-    'distributortype'=>'اضافة قسم لموزعين'
+    'distributortype'=>'اضافة قسم لموزعين',
+    'none_user' => 'غير معرف' ,
 ];

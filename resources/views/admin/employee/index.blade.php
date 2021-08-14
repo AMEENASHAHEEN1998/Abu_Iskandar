@@ -53,7 +53,7 @@
 
                                 @foreach ($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $employee->{'employee_name_' . $lng} }}</td>
                                         <td>{{ $employee->{'job_title_' . $lng} }}</td>
                                         <td>
@@ -75,13 +75,10 @@
                                         <td>
                                             <a href="{{route('admin.employee.show',$employee->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                                             <a href="{{route('admin.employee.edit',$employee->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <form class="d-inline" action="{{ route('admin.employee.destroy', $employee->id) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button onclick="return confirm('are you sure?')"
-                                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                            </form>
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                            data-target="#delete{{ $employee->id }}"
+                                            title="{{ trans('admin/employee.delete') }}"><i
+                                                class="fa fa-trash"></i></button>
 
 
 
@@ -92,9 +89,47 @@
 
                                         </td>
                                     </tr>
+
+                                      <!-- delete_modal_distributortype -->
+                                           <!-- delete_modal_Category -->
+                                           <div class="modal fade" id="delete{{ $employee->id }}" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                            id="exampleModalLabel">
+                                                            {{ trans('admin/employee.delete_employee') }}
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('admin.employee.destroy',$employee->id)}}" method="post">
+                                                            {{method_field('Delete')}}
+                                                            @csrf
+                                                            {{ trans('admin/employee.warning_employee') }}
+                                                            <input id="id" type="hidden" name="id" class="form-control"
+                                                                    value="{{ $employee->id }}">
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">{{ trans('admin/employee.close') }}</button>
+                                                                <button type="submit"
+                                                                        class="btn btn-danger">{{ trans('admin/employee.delete') }}</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        <!-- delete_modal_distributortype -->
                                 @endforeach
 
                         </table>
+
+                        {{$employees->links()}}
                     </div>
                 </div>
             </div>

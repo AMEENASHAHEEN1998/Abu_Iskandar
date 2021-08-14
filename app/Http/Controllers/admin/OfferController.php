@@ -16,7 +16,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
+        $offers = Offer::paginate(5);
         // dd($offers);
         return view('admin.offer.index', compact('offers'));
     }
@@ -47,12 +47,13 @@ class OfferController extends Controller
         //     $request->status = 0;
         // }
         // return $request;
+        $image_name ='' ;
 
-        $file=$request->file;
-
-        $FileEx=$request->file('image')->getClientOriginalExtension();
-        $file_name=time().'_'.rand().'_'.$FileEx;
-        $request->file('image')->move(public_path('upload/admin/offer'),$file_name);
+        if ($request->has('image')) {
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $image_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
+        }
 
         // return   $file_name;
         Offer::create([
@@ -62,9 +63,10 @@ class OfferController extends Controller
             'offer_title_ar' => $request->offer_title_ar,
             'description_ar' => $request->description_ar,
             'price' => $request->price,
+            'views' => 0,
             'status' => 'مفعل',
             'status_value' => 1,
-            'image' => $file_name,
+            'image' => $image_name,
 
         ]);
         return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.success_message'));
@@ -109,8 +111,17 @@ class OfferController extends Controller
 
         }
 
+        $offer = Offer::findOrFail($id);
+        $image_name = $offer->image;
+        // return $image_name;
 
-        // return $request;
+        if ($request->has('image')) {
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $image_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
+        }
+
+        // return $image_name;
         // return   $request;
         Offer::find($id)->update([
             'user_id' => $request->user_id,
@@ -119,6 +130,7 @@ class OfferController extends Controller
             'description_ar' => $request->description_ar,
             'description_en' => $request->description_en,
             'price' => $request->price,
+            'image' => $image_name,
             'status' => $status,
             'status_value' => $request->status_value,
 
@@ -140,11 +152,11 @@ class OfferController extends Controller
     }
 
     public function activeoffer(){
-        $offers=Offer::where('status' ,1)->get();
+        $offers=Offer::where('status_value' ,1)->paginate(5);
         return view('admin.offer.active',compact('offers'));
     }
     public function noactiveoffer(){
-        $offers=Offer::where('status' ,0)->get();
+        $offers=Offer::where('status_value' ,0)->paginate(5);
         return view('admin.offer.noactive',compact('offers'));
     }
 }

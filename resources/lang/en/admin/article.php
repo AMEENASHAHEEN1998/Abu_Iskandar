@@ -36,7 +36,7 @@ return
     'edit_category' => 'Edit Primary Category',
     'edit' => 'Edit',
     'delete' => 'Delete',
-    'delete_category' => 'Delete Primary Category',
+    'delete_article' => 'Delete  Article',
     'warning_article' => 'Are sure of the deleting process?',
     'delete_article' => 'Delete Article',
     'success_message' => 'The Aticle added successfully',

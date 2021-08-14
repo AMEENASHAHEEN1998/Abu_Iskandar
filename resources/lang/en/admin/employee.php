@@ -32,7 +32,6 @@ return
 
     'edit' => 'Edit',
     'delete' => 'Delete',
-    'delete_category' => 'Delete Primary Category',
     'warning_employee' => 'Are sure of the deleting process?',
     'delete_employee' => 'Delete Employee',
     'success_message' => 'The Employee added successfully',
