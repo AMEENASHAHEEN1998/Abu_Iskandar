@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\DriverRequest;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\DriverRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class DriverRequestController extends Controller
 {
@@ -15,9 +18,9 @@ class DriverRequestController extends Controller
      */
     public function index()
     {
-        $orders=DriverRequest::all();
+        $Orders=DriverRequest::all();
         // dd($orders);
-        return view('admin.driverRequest.index',compact('orders'));
+        return view('admin.driverRequest.index',compact('Orders'));
     }
 
     /**
@@ -27,7 +30,10 @@ class DriverRequestController extends Controller
      */
     public function create()
     {
-        return view('admin.driverRequest.create');
+        $Categories = Category::orderBy('id' , 'desc')->get();
+        $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
+
+        return view('admin.driverRequest.create')->with(['Categories' => $Categories , 'Subcategories' => $Subcategories ]);
     }
 
     /**
@@ -38,24 +44,26 @@ class DriverRequestController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('status') == 1) {
-            $request->status = 1;
-        } else {
-            $request->status = 0;
+        try{
+            //dd($request->all());
+            $driver_requests = $request->driver_requests;
+            foreach($driver_requests as $driver_request){
+                $new_driver_request = DriverRequest::create([
+                    'user_id' => auth()->user()->id,
+                    'product_id'        => $driver_request['product'],
+                    'category_id'       => $driver_request['category_id'],
+                    'subcategory_id'    => $driver_request['subcategory_id'],
+                    'number'            => $driver_request['number'],
+                    'status'            => 'غير مسلم',
+                    'status_value'      => 0,
+                ]);
+            }
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+        return redirect()->route('admin.driverrequest.index')->with('success' , trans('admin/driverrequest.success_message'));
 
-        // return   $request;
-        DriverRequest::create([
-            'user_id' => $request->user_id,
-            'product_id' => $request->product_id,
-            'price' => $request->price,
-            'size' => $request->size,
-            'number' => $request->number,
-            'status' => 'غير مفعل',
-            'status_value' => 1,
-
-        ]);
-        return redirect()->route('admin.driverrequest.index');
     }
 
     /**

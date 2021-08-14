@@ -24,6 +24,11 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function DriverRequests()
+    {
+        return $this->hasMany(DriverRequest::class);
+    }
+
     public function SubCategories()
     {
         return $this->hasMany(SubCategory::class);

@@ -135,4 +135,6 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.categories.index')->with('delete' ,  trans('admin/categories.delete_message'));
     }
+
+    
 }

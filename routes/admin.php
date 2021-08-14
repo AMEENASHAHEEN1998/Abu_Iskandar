@@ -45,7 +45,7 @@ Route::group(
         Route::resource('information', InformationController::class);
 
         Route::resource('products', ProductController::class);
-
+        Route::get('get_products/{id}' , [ ProductController::class, 'get_products'])->name('get_products');
         Route::resource('employee', EmployeeController::class);
         Route::resource('distributor', DistributorController::class);
         Route::resource('distributortype', DistributorTypeController::class);

@@ -60,8 +60,6 @@
                         </thead>
                         <tbody>
 
-
-
                             <?php $i = 0; ?>
 
                          @foreach ($Products as $Product)

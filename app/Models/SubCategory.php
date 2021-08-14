@@ -21,4 +21,8 @@ class SubCategory extends Model
     {
         return $this->hasMany(Product::class);
     }
+    public function DriverRequests()
+    {
+        return $this->hasMany(DriverRequest::class , 'subcategory_id');
+    }
 }
