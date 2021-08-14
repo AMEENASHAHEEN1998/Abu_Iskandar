@@ -109,12 +109,12 @@ class DriverRequestController extends Controller
 
     public function orderwait(){
 
-        $orders=DriverRequest::where('status' ,0)->get();
+        $orders=DriverRequest::where('status_value' ,0)->paginate(5);
         return view('admin.driverRequest.orderwait',compact('orders'));
     }
     public function orderdeliver(){
 
-        $orders=DriverRequest::where('status' ,1)->get();
+        $orders=DriverRequest::where('status_value' ,1)->paginate(5);
         return view('admin.driverRequest.orderdeliver',compact('orders'));
     }
 }

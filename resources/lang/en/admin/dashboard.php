@@ -22,6 +22,9 @@ return [
     'show_offers' => 'Show Offers ',
     'old_offers' => 'old Offers ',
     'jobs' => 'Jobs',
+    'all_job' => 'show Jobs',
+    'create_job' => 'Create Job',
+
     'add_job' => 'Add Job ',
     'show_job' => 'Show Job ',
     'old_job' =>'Old Job',
@@ -41,7 +44,8 @@ return [
     'logout' => 'Logout ',
     'add_information_company' => 'Add Information Company',
     'add_distributors'=>'Add Distributor',
-    'distributortype'=>'Add Distributor Type'
+    'distributortype'=>'Add Distributor Type' ,
+    'none_user' => 'Unkonwn' ,
 
     // end sidebar
 

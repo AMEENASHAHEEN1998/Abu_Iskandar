@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DistributorRequest extends FormRequest
+class JobRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,10 @@ class DistributorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' =>'required',
-            'name_ar' =>'required',
-      
-            'distributor_type_id' =>'required',
-            'phone_number' =>'required',
-
+            'job_name_ar' =>'required' ,
+            'job_name_en'=>'required' ,
+            'job_description_ar' =>'required',
+            'job_description_en'=>'required'
         ];
     }
 }

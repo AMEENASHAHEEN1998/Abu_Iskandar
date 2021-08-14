@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\JobRequest;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -14,7 +16,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs=Job::paginate(5);
+        return view('admin.job.index',compact('jobs'));
     }
 
     /**
@@ -24,7 +27,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.job.create');
     }
 
     /**
@@ -33,9 +36,32 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JobRequest $request)
     {
-        //
+        $file_name ='';
+        if($request->has('image')){
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $file_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/job'),$file_name);
+        }
+
+
+        Job::create([
+            'user_id' => $request->user_id,
+            'job_name_ar'  => $request->job_name_ar,
+            'job_name_en' => $request->job_name_en,
+            'job_description_ar' => $request->job_description_ar,
+            'job_description_en' => $request->job_description_en,
+            'image' => $file_name,
+            'status' => 'مفعل',
+            'status_value' => 1,
+            'views' => 0,
+            'created_at' => now(),
+
+        ]);
+
+        return redirect()->route('admin.job.index')->with('success' , trans('admin/job.success_message'));
+
     }
 
     /**
@@ -46,40 +72,64 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $job=Job::find($id);
+        return view('admin.job.show',compact('job'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+        $job=Job::find($id);
+        return view('admin.job.edit',compact('job'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(JobRequest $request, $id)
     {
-        //
+        if ($request->has('status_value') == 1) {
+            $request->status_value = 1;
+            $status = 'مفعل';
+        } else {
+            $request->status_value = 0;
+            $status = 'غير مفعل ';
+        }
+        $job = Job::findOrFail($id);
+        $image_name = $job->image;
+
+        if ($request->has('image')) {
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $image_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/job'),$image_name);
+        }
+        job::find($id)->update([
+            'user_id' => $request->user_id,
+            'job_name_ar'  => $request->job_name_ar,
+            'job_name_en' => $request->job_name_en,
+            'job_description_ar' => $request->job_description_ar,
+            'job_description_en' => $request->job_description_en,
+            'image' => $image_name,
+            'status' => $status,
+            'status_value' => $request->status_value,
+            'updated_at' => now(),
+
+        ]);
+        return redirect()->route('admin.job.index')->with('success' , trans('admin/job.update_message'));
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Job::findOrFail($id)->delete();
+        return redirect()->route('admin.job.index')->with('success' , trans('admin/job.update_message'));
+
+    }
+    public function activejob(){
+        $jobs=Job::where('status_value',1)->paginate(5);
+        return view('admin.job.active',compact('jobs'));
+    }
+    public function noactivejob(){
+        $jobs=Job::where('status_value',0)->paginate(2);
+        return view('admin.job.noactive',compact('jobs'));
     }
 }

@@ -117,14 +117,11 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="site" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('admin.article.create')}}">{{ trans('admin/dashboard.add_articles') }}</a></li>
                             <li><a href="{{route('admin.article.index')}}">{{ trans('admin/dashboard.show_articles') }}</a></li>
+                            <li><a href="{{route('admin.article.create')}}">{{ trans('admin/dashboard.add_articles') }}</a></li>
 
                         </ul>
                     </li>
-
-
-
 
 
                     <li>
@@ -135,15 +132,13 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="jobs" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="">{{ trans('admin/dashboard.add_job') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.show_job') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.old_job') }}</a></li>
+                            <li><a href="{{route('admin.job.index')}}">{{ trans('admin/dashboard.all_job') }}</a></li>
+                            <li><a href="{{route('admin.job.create')}}">{{ trans('admin/dashboard.create_job') }}</a></li>
+                            <li><a href="{{route('admin.job.activejob')}}">{{ trans('admin/dashboard.show_job') }}</a></li>
+                            <li><a href="{{route('admin.job.noactivejob')}}">{{ trans('admin/dashboard.old_job') }}</a></li>
 
                         </ul>
                     </li>
-
-
-
 
 
                     <li>
@@ -212,12 +207,12 @@
                         <ul id="info" class="collapse" data-parent="#sidebarnav" >
                             <li><a href="">{{ trans('admin/dashboard.information_company') }}</a></li>
 
-                        
+
                             <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
                             <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>
 
                         </ul>
-                        
+
                     </li>
 
                     <li>

@@ -88,6 +88,7 @@
 
                             </div>
                         </div>
+
                         <div class="repeater">
                             <div data-repeater-list="List_subcategory">
                                 <div data-repeater-item>
@@ -132,7 +133,7 @@
                         </div>
 
                         <div class="repeater">
-                        <div data-repeater-list="List_size_prise">
+                            <div data-repeater-list="List_size_prise">
                             <div data-repeater-item>
                                 <div class="row">
 
@@ -161,12 +162,12 @@
                             </div>
                         </div>
 
-                    <div class="row mt-20">
-                        <div class="col-12">
-                            <input class="button" data-repeater-create type="button" value="{{ trans('admin/products.add_size_price') }}"/>
-                        </div>
+                        <div class="row mt-20">
+                            <div class="col-12">
+                                <input class="button" data-repeater-create type="button" value="{{ trans('admin/products.add_size_price') }}"/>
+                            </div>
 
-                    </div>
+                        </div>
                 </div>
 
 

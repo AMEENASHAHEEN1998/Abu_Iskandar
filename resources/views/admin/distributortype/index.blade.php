@@ -56,11 +56,11 @@
 
                                 @foreach ($distributortypes as $distributortype)
                                     <tr>
-                                        <td>{{ $distributortype->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $distributortype->{'name_' . $lng} }}</td>
 
 
-                                        <td>{{ $distributortype->user->name }}</td>
+                                        <td>{{ ($distributortype->user) ? $distributortype->user->name : trans('admin/dashboard.none_user') }}</td>
                                         <td>{{ $distributortype->created_at }}</td>
 
 
@@ -210,6 +210,9 @@
                                 @endforeach
 
                         </table>
+
+                        {{$distributortypes->links()}}
+
                     </div>
 
 

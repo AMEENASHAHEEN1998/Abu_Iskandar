@@ -17,7 +17,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
+        $employees = Employee::paginate(5);
         return view('admin.employee.index', compact('employees'));
     }
 
@@ -40,10 +40,14 @@ class EmployeeController extends Controller
     public function store(EmployeeRequest $request)
     {
         $file=$request->file;
+        $file_name='';
+        if($request->has('image')){
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $file_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/employee'),$file_name);
+        }
 
-        $FileEx=$request->file('image')->getClientOriginalExtension();
-        $file_name=time().'_'.rand().'_'.$FileEx;
-        $request->file('image')->move(public_path('upload/admin/employee'),$file_name);
+
 
         Employee::create([
             'employee_name_ar' =>$request->employee_name_ar ,

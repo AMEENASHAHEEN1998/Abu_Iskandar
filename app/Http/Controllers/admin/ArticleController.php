@@ -16,7 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::paginate(5);
         return view('admin.article.index', compact('articles'));
     }
 
@@ -33,11 +33,13 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request)
     {
+        $file_name='';
+        if($request->has('image')){
+            $FileEx=$request->file('image')->getClientOriginalExtension();
+            $file_name=time().'_'.rand().'_'.$FileEx;
+            $request->file('image')->move(public_path('upload/admin/article'),$file_name);
+        }
 
-
-        $FileEx=$request->file('image')->getClientOriginalExtension();
-        $file_name=time().'_'.rand().'_'.$FileEx;
-        $request->file('image')->move(public_path('upload/admin/article'),$file_name);
 
         Article::create([
             'user_id' => $request->user_id,
@@ -100,7 +102,6 @@ class ArticleController extends Controller
         } else {
             $request->status_value = 0;
             $status = 'غير مفعل ';
-
         }
         $article = Article::findOrFail($id);
         $image_name = $article->image;
@@ -121,7 +122,6 @@ class ArticleController extends Controller
             'status' => $status,
             'image' => $image_name,
             'status_value' => $request->status_value,
-            'views' => 0,
             'updated_at' => now(),
 
         ]);

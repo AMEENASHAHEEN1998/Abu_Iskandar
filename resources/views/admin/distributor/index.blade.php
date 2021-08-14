@@ -53,33 +53,40 @@
 
                                 @foreach ($distributors as $distributor)
                                     <tr>
-                                        <td>{{ $distributor->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $distributor->{'name_' . $lng} }}</td>
                                         <td>{{ $distributor->phone_number }}</td>
 
                                         <td>
-                                            {{-- @if($distributor->DistributorType->{'name_' . $lng != nul}) --}}
-                                            {{ $distributor->DistributorType->{'name_' . $lng} }}
-                                            {{-- @endif() --}}
-
-
+                                            <td>{{ ($distributor->DistributorType) ? $distributor->DistributorType->{'name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
 
                                         </td>
 
-                                        <td>{{ $distributor->user->name }}</td>
+                                        <td>{{ ($distributor->user) ? $distributor->user->name : trans('admin/dashboard.none_user') }}</td>
                                         <td>{{ $distributor->created_at }}</td>
 
 
                                         <td>
                                             <a href="{{route('admin.distributor.show',$distributor->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                                             <a href="{{route('admin.distributor.edit',$distributor->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <form class="d-inline" action="{{ route('admin.distributor.destroy', $distributor->id) }}"
+                                            {{-- <form class="d-inline" action="{{ route('admin.distributor.destroy', $distributor->id) }}"
                                                 method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button onclick="return confirm('are you sure?')"
                                                     class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                            </form>
+                                            </form> --}}
+
+
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                            data-target="#delete{{ $distributor->id }}"
+                                            title="{{ trans('admin/distributor.delete') }}"><i
+                                                class="fa fa-trash"></i></button>
+
+
+
+
+
 
 
 
@@ -90,9 +97,49 @@
 
                                         </td>
                                     </tr>
+
+
+                                        <!-- delete_modal_distributortype -->
+                                           <!-- delete_modal_Category -->
+                                           <div class="modal fade" id="delete{{ $distributor->id }}" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                            id="exampleModalLabel">
+                                                            {{ trans('admin/distributor.delete_distributors') }}
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('admin.distributor.destroy',$distributor->id)}}" method="post">
+                                                            {{method_field('Delete')}}
+                                                            @csrf
+                                                            {{ trans('admin/distributor.warning_distributors') }}
+                                                            <input id="id" type="hidden" name="id" class="form-control"
+                                                                    value="{{ $distributor->id }}">
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">{{ trans('admin/distributor.close') }}</button>
+                                                                <button type="submit"
+                                                                        class="btn btn-danger">{{ trans('admin/distributor.delete') }}</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <!-- delete_modal_distributortype -->
                                 @endforeach
 
+
                         </table>
+                        {{$distributors->links()}}
+
                     </div>
                 </div>
             </div>
