@@ -21,11 +21,12 @@
                             </ul>
                         </div>
                     @endif
-                    <h2>{{ trans('admin/driverrequest.add_request') }}</h2>
 
                     <a href="{{ route('admin.driverrequest.index') }}"  class="btn btn-success">
                         {{ trans('admin/driverrequest.back') }}
                     </a>
+                    <h2>{{ trans('admin/driverrequest.add_request') }}</h2>
+
                     <hr>
 
 
@@ -34,9 +35,7 @@
                         <div class="card-body">
 
 
-                            <div class="repeater">
-                                <div data-repeater-list="driver_requests">
-                                    <div data-repeater-item>
+
                                         <div class="row">
                                             <div class="col">
                                                 <label for="Name_en"
@@ -102,32 +101,12 @@
 
                                         </div>
 
-                                        <div class="col-4">
-                                                <label for="Name_en"
-                                                    class="mr-sm-2">{{ trans('admin/driverrequest.processes') }}
-                                                    :</label>
-                                                <input class="btn btn-danger btn-block" data-repeater-delete
-                                                    type="button" value="{{ trans('admin/driverrequest.delete_row') }}" />
-                                            </div>
-                                    </div>
-                                </div>
-
-                             <div class="row">
-                                <div class="row mt-20">
-                                    <div class="col-12">
-                                        <input class="button" data-repeater-create type="button" value="{{ trans('admin/driverrequest.add_new_request') }}"/>
-                                    </div>
-
-                                </div>
-                            </div>
-                            </div>
-
-
-
-
 
                                     </div>
                                 </div>
+
+
+                            
 
 
                                 <div class="modal-footer">
@@ -171,7 +150,7 @@
                             $.each(data, function(key, value) {
                                 $('select[name="product"]').append('<option value="' +
                                     key + '">' + value + '</option>');
-                                console.log(value);
+
                             });
                         },
                     });

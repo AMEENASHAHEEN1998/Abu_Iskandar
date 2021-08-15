@@ -9,7 +9,8 @@ class DriverRequest extends Model
 {
     use HasFactory;
 
-    protected $fillable=['user_id','product_id','price','size','number','status'];
+    protected $guarded  = [];
+
     public function User()
     {
         return $this->belongsTo(User::class);
@@ -21,9 +22,9 @@ class DriverRequest extends Model
     }
     public function Category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class , 'category_id');
     }
-    public function Subcategory()
+    public function SubCategory()
     {
         return $this->belongsTo(SubCategory::class , 'subcategory_id');
     }

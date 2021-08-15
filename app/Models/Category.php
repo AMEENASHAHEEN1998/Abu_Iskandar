@@ -26,7 +26,7 @@ class Category extends Model
 
     public function DriverRequests()
     {
-        return $this->hasMany(DriverRequest::class);
+        return $this->hasMany(DriverRequest::class , 'category_id');
     }
 
     public function SubCategories()

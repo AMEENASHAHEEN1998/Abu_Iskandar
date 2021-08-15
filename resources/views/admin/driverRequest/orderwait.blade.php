@@ -8,6 +8,15 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
+        @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+      @endif
+      @if (session('update'))
+        <div class="alert alert-info">{{ session('update') }}</div>
+      @endif
+      @if (session('delete'))
+        <div class="alert alert-danger">{{ session('delete') }}</div>
+      @endif
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
@@ -22,27 +31,27 @@
                         </div>
                     @endif
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                            create
-                    </button>
+                    <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-success">
+                     Create
+                    </a>
 
 
                     <br><br>
-                    <h1>{{ trans('admin/driverrequest.Request_driver') }}</h1>
+                    <h1>{{ trans('admin/driverrequest.request_driver') }}</h1>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
                             style="text-align: center">
                             <thead>
                                 <tr>
-                                    <th>{{ trans('admin/driverrequest.ID') }}</th>
-                                    <th>{{ trans('admin/driverrequest.user_id') }}</th>
-                                    <th>{{ trans('admin/driverrequest.product_id') }}</th>
-                                    <th>{{ trans('admin/driverrequest.size') }}</th>
-                                    <th>{{ trans('admin/driverrequest.price') }}</th>
+                                    <th>#</th>
+                                    <th>{{ trans('admin/driverrequest.sender') }}</th>
+                                    <th>{{ trans('admin/driverrequest.primary_category') }}</th>
+                                    <th>{{ trans('admin/driverrequest.sub_category') }}</th>
+                                    <th>{{ trans('admin/driverrequest.product') }}</th>
                                     <th>{{ trans('admin/driverrequest.number') }}</th>
                                     <th>{{ trans('admin/driverrequest.status') }}</th>
-                                    <th>{{ trans('admin/driverrequest.action') }}</th>
+                                    <th>{{ trans('admin/driverrequest.processes') }}</th>
 
                                 </tr>
                             </thead>
@@ -50,26 +59,70 @@
 
 
 
-                                @foreach ($orders as $order)
+                                @foreach ($Orders as $Order)
                                     <tr>
-                                        <td>{{ $order->id }}</td>
-                                        <td>{{ $order->user_id }}</td>
-                                        <td>{{ $order->product_id }}</td>
-                                        <td>{{ $order->size }}</td>
-                                        <td>{{ $order->price }}</td>
-                                        <td>{{ $order->number }}</td>
-                                        <td>{{ $order->status }}</td>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $Order->User->name }}</td>
+                                        @if (App::getLocale() == 'en')
+                                        <td>{{ ($Order->Category) ? $Order->Category->category_name_en : 'Category Deleted' }}</td>
+                                        <td>{{ ($Order->SubCategory) ? $Order->SubCategory->sub_category_name_en : 'Sub Category Deleted' }}</td>
+                                        <td>{{ ($Order->Product) ? $Order->Product->product_name_en : 'Product Deleted' }}</td>
+                                        @else
+                                        <td>{{ ($Order->Category) ? $Order->Category->category_name_ar : 'غير مصنف'}}</td>
+                                        <td>{{ ($Order->SubCategory) ?  $Order->SubCategory->sub_category_name_ar : 'الفرع غير موجود' }}</td>
+                                        <td>{{ ($Order->Product) ? $Order->Product->product_name_ar : 'تم حذف المنتج'   }}</td>
+                                        @endif
+
+                                        <td>{{ $Order->number }}</td>
+                                        <td>{{ $Order->status }}</td>
                                         <td>
-                                            <a href="" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <form class="d-inline" action="" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button onclick="return confirm('are you sure?')"
-                                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                            </form>
+
+                                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#delete{{ $Order->id }}"
+                                            title="{{ trans('admin/driverrequest.change_status') }}">
+                                            {{ trans('admin/driverrequest.change_status') }}
+                                            </button>
                                         </td>
                                     </tr>
+
+
+
+                                    <!-- delete_modal_Category -->
+                                <div class="modal fade" id="delete{{ $Order->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                id="exampleModalLabel">
+                                                {{ trans('admin/driverrequest.delete_driverrequest') }}
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form action="{{route('admin.driverrequest.update_status',$Order->id)}}" method="post">
+                                                {{method_field('patch')}}
+                                                @csrf
+                                                {{ trans('admin/driverrequest.update_status') }}
+                                                <input id="id" type="hidden" name="id" class="form-control"
+                                                        value="{{ $Order->id }}">
+                                                <div class="modal-footer">
+
+                                                    <button type="submit"
+                                                            class="btn btn-success">{{ trans('admin/driverrequest.submit') }}</button>
+
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                </div>
                                 @endforeach
 
                         </table>
@@ -78,59 +131,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                       id="exampleModalLabel">
-                       {{ trans('admin/news.add_news_type') }}
-                   </h5>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                   </button>
-               </div>
-               <div class="modal-body">
-                   <!-- add_form -->
-                   <form action="" method="POST">
-                       @csrf
-                       <div class="row">
-                           <div class="col">
-                               <label for="Name"
-                                      class="mr-sm-2">{{ trans('admin/news.news_category_name_ar') }}
-                                   :</label>
-                               <input id="Name" type="text" name="Name" class="form-control">
-                           </div>
-                           <div class="col">
-                               <label for="Name_en"
-                                      class="mr-sm-2">{{ trans('admin/news.news_category_name_en') }}
-                                   :</label>
-                               <input type="text" class="form-control" name="Name_en" required>
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label
-                               for="exampleFormControlTextarea1">{{ trans('admin/news.Notes') }}
-                               :</label>
-                           <textarea class="form-control" name="Notes" id="exampleFormControlTextarea1"
-                                     rows="3"></textarea>
-                       </div>
-                       <br><br>
 
-               <div class="modal-footer">
-                   <button type="button" class="btn btn-secondary"
-                           data-dismiss="modal">{{ trans('admin/news.Close') }}</button>
-                   <button type="submit"
-                           class="btn btn-success">{{ trans('admin/news.submit') }}</button>
-               </div>
-               </form>
-
-           </div>
-       </div>
-   </div>
-
-    </div>
 
 
 

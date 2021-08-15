@@ -23,4 +23,9 @@ return [
     'success_message' => 'The order added successfully',
     'update_message' => 'The order has been modified successfully',
     'delete_message' => 'The order has been deleted successfully',
+    'change_status' =>'Order Delivery',
+    'update_status' => 'Are you sure the order has been delivered?',
+    'yes' => 'Yes ',
+    'no' => 'No',
+    'update_status' => 'Request status changed',
 ];

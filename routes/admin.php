@@ -38,6 +38,8 @@ Route::group(
         Route::get('orderwait',[DriverRequestController::class,'orderwait'])->name('orderwait');
         Route::get('orderdeliver',[DriverRequestController::class,'orderdeliver'])->name('orderdeliver');
 
+        Route::patch('driverrequest/update_status/{id}',[DriverRequestController::class,'update_status'])->name('driverrequest.update_status');
+
         Route::resource('offer', OfferController::class);
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');

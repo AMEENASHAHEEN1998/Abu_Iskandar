@@ -31,6 +31,11 @@ class Product extends Model
         return $this->hasMany(DriverRequest::class);
     }
 
+    public function Prices()
+    {
+        return $this->hasMany(price::class);
+    }
+
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }
