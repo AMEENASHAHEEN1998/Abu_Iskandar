@@ -16,6 +16,10 @@ class Job extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function RequestJob(){
+        return $this->belongsTo(RequestJob::class ,'job_id');
+    }
+
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }

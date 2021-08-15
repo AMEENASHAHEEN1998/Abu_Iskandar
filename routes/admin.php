@@ -15,8 +15,10 @@ use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\JobController;
+use App\Http\Controllers\admin\RequestJobController;
 use App\Models\Distributor;
 use App\Models\DistributorType;
+use App\Models\RequestJob;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -54,7 +56,8 @@ Route::group(
         Route::get('activejob',[JobController::class,'activejob'])->name('job.activejob');
         Route::get('noactivejob',[JobController::class,'noactivejob'])->name('job.noactivejob');
 
-
+        Route::resource('requestjob', RequestJobController::class);
+        Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
         });
 });

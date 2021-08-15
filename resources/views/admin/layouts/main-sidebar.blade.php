@@ -149,7 +149,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="request_job" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="">{{ trans('admin/dashboard.show_request_job') }}</a></li>
+                            <li><a href="{{route('admin.requestjob.index')}}">{{ trans('admin/dashboard.show_request_job') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.accepted_request') }}</a></li>
                             <li><a href="">{{ trans('admin/dashboard.rejected_request') }}</a></li>
 

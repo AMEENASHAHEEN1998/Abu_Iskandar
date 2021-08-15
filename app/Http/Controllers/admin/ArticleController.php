@@ -103,6 +103,9 @@ class ArticleController extends Controller
             $request->status_value = 0;
             $status = 'غير مفعل ';
         }
+
+
+        
         $article = Article::findOrFail($id);
         $image_name = $article->image;
 
