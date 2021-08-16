@@ -85,7 +85,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 <a href="offer.html"><img src="{{asset('front/images/download.png')}}" class="img-head" alt=""></a>
-<div class="admin-header header">
+<div class=" header">
 
     <div class="container">
 
@@ -103,7 +103,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 
-        <div class="nav-top">
+        <div class="admin-header nav-top">
             <nav class=" navbar navbar-default">
 
                 <div class="navbar-header nav_2">

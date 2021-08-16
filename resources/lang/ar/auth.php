@@ -16,5 +16,11 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'login' => 'تسجيل دخول',
+    'register' => 'مستخدم جديد',
+    'forget_password' => 'نسيت كلمة المرور',
+    'user_name' => 'اسم المستخدم',
+    'submit' => 'حفظ',
+    'account' => 'لدي حساب على هذا الموقع',
 
 ];
