@@ -56,7 +56,7 @@
                                 $lng = app()->getLocale();
                                 ?>
 
-                                @foreach ($requestjobs as $requestjobs)
+                                @foreach ($requestjob as $requestjobs)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
 
@@ -243,7 +243,7 @@
                 @endforeach
 
                 </table>
-                {{-- {{$requestjobs->links()}} --}}
+                {{$requestjob->links()}}
             </div>
 
 

@@ -1,10 +1,10 @@
         <!--=================================
- header start-->
+        header start-->
         <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper">
                 <h6 class="text-center"></h6>
-                <p class="text-center">By Eng Ameena Shaheen</p>
+                <h4 class="text-center"><strong>Abu Eskandar</strong></h4>
             </div>
             <!-- Top bar left -->
             <ul class="nav navbar-nav mr-auto">
@@ -12,16 +12,6 @@
                     <a id="button-toggle" class="button-toggle-nav inline-block ml-20 pull-left"
                         href="javascript:void(0);"><i class="zmdi zmdi-menu ti-align-right"></i></a>
                 </li>
-                {{-- <li class="nav-item">
-                    <div class="search">
-                        <a class="search-btn not_click" href="javascript:void(0);"></a>
-                        <div class="search-box not-click">
-                            <input type="text" class="not-click form-control" placeholder="Search" value=""
-                                name="search">
-                            <button class="search-button" type="submit"> <i class="fa fa-search not-click"></i></button>
-                        </div>
-                    </div>
-                </li> --}}
             </ul>
             <!-- top bar right -->
             <ul class="nav navbar-nav ml-auto">

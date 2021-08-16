@@ -18,9 +18,9 @@ class RequestJobController extends Controller
     public function index()
     {
         // $requestjobs=RequestJob::find(1);
-        $requestjobs=RequestJob::paginate(5);
+        $requestjob=RequestJob::paginate(5);
         // dd($requestjobs);
-        return view('admin.requestjob.index',compact('requestjobs'));
+        return view('admin.requestjob.index',compact('requestjob'));
 
     }
 

@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home',function(){
-    return view('front.index');
+// Route::get('/AbuEskandar',function(){
+//     return view('front.index');
+// });
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+        Route::get('/' , [HomeController::class , 'index'])->name('dashboard');
+
+        Auth::routes();
+        // Auth::routes(['register' => false]);
+
+
+        Route::get('/AbuEskandar',function(){
+            return view('front.index');
+        });
 });
+
+

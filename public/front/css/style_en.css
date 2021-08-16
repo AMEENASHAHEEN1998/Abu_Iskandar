@@ -215,15 +215,13 @@ img.img-head {
 } */
 
 .head-t ul{
-
-    position: absolute;
-    top: 31px;
-    right: 50px;
+        float: right;
+        margin: -47px 0 5px 0px;
 
 }
-.head-t {
+/* .head-t {
     margin: 1em 0;
-}
+} */
 .card li{
 	display:inline-block;
 }
@@ -414,7 +412,7 @@ ul.multi-column-dropdown h6 {
 }
 
 .dropdown-menu.multi {
-    min-width: 745px;
+    min-width: 703px;
     padding: 30px 30px;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
