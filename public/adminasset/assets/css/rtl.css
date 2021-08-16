@@ -23865,3 +23865,9 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
         height: 48px;
 
     }
+    .head-t ul{
+
+        float: left;
+        margin: -47px 0 5px 0px;
+
+        }
