@@ -22,11 +22,22 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="{{asset('front/css/style_en.css')}}" rel='stylesheet' type='text/css' />
 <!-- js -->
 
+
+<!--- Style css -->
 @if (App::getLocale() == 'en')
+    <link href="{{ URL::asset('adminasset/assets/css/ltr.css') }}" rel="stylesheet">
+@else
+    <link href="{{ URL::asset('adminasset/assets/css/rtl.css') }}" rel="stylesheet">
+@endif
+
+
+{{-- @if (App::getLocale() == 'en')
 <link href="{{asset('front/css/style_en.css')}}" rel='stylesheet' type='text/css' />
 @else
 <link href="{{asset('front/css/style_ar.css')}}" rel='stylesheet' type='text/css' />
-@endif
+@endif --}}
+
+
 
 <script src="{{asset('front/js/jquery-1.11.1.min.js')}}"></script>
 <!-- //js -->
@@ -110,7 +121,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                     <ul class="nav navbar-nav ">
                         <li class=" active"><a href="index.html" class="hyper "><span>{{ trans('front/header.Home') }}</span></a></li>
 
-                        <li class="dropdown ">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown"><span>{{ trans('front/header.Products') }}<b
                                         class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
