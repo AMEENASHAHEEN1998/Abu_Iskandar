@@ -11,5 +11,9 @@ return [
     'Contact_Us' =>'Contact Us',
     'Login'=> 'Login' ,
     'Register'=> 'Register' ,
-
+    'nuts'=> 'Nuts',
+    'coffee' => 'coffee' ,
+    'spices' =>'spices',
+    'olive_oil' => 'Olive Oil',
+    'tahini' => 'Tahini',
 ];

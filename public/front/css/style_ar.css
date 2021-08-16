@@ -4,10 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-html{
+/* html{
     direction: rtl;
 
-}
+} */
 body{
 	margin:0;
 	padding:0;
@@ -224,9 +224,9 @@ float: left;
 margin: -47px 0 5px 0px;
 
 }
-/* .head-t {
+.head-t {
     margin: 1em 0;
-} */
+}
 .card li{
 	display:inline-block;
 }

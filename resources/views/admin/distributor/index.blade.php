@@ -32,7 +32,7 @@
                             style="text-align: center">
                             <thead>
                                 <tr>
-                                    <th>{{ trans('admin/distributor.id') }}</th>
+                                    <th>#</th>
                                     <th>{{ trans('admin/distributor.name') }}</th>
                                     <th>{{ trans('admin/distributor.phone_number') }}</th>
 
