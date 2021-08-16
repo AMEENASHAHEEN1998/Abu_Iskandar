@@ -61,5 +61,14 @@ Route::group(
         Route::resource('requestjob', RequestJobController::class);
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
+
+
+
         });
+
+
+});
+
+Route::get('/logining ' , function(){
+    return view('front/login');
 });

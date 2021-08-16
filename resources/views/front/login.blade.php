@@ -31,7 +31,7 @@
 				<div class="forg">
 					<a href="#" class="forg-left">Forgot Password</a>
 					<a href="register.html" class="forg-right">Register</a>
-				<div class="clearfix"></div>
+				    <div class="clearfix"></div>
 				</div>
 			</div>
 		</div>

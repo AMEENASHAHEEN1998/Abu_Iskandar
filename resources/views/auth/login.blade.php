@@ -11,7 +11,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                             <div class="col-md-6">
@@ -63,6 +63,40 @@
                                     </a>
                                 @endif
                             </div>
+                        </div> --}}
+
+
+                        {{-- / --}}
+
+                        <div class="key">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input  type="text" value="{{ old('name') }}" name="name" class="@error('name') is-invalid @enderror" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'name';}" required="">
+							<div class="clearfix"></div>
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+						</div>
+						<div class="key">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							<input  type="password" value="Password" class="@error('password') is-invalid @enderror" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required autocomplete="current-password" required="">
+							<div class="clearfix"></div>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+						</div>
+						<input type="submit" value="Login">
+                        <div class="forg">
+                            @if (Route::has('password.request'))
+                                    <a class="forg-left" href="{{ route('password.request') }}">
+                                        Forgot Password
+                                    </a>
+                                @endif
+                            <a href="register.html" class="forg-right">Register</a>
+                            <div class="clearfix"></div>
                         </div>
                     </form>
                 </div>
