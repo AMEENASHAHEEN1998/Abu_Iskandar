@@ -18,7 +18,7 @@ class DriverRequestController extends Controller
      */
     public function index()
     {
-        $Orders=DriverRequest::all();
+        $Orders=DriverRequest::orderBy('id' , 'desc')->paginate(10);
         $Categories = Category::orderBy('id' , 'desc')->get();
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
 
@@ -137,7 +137,7 @@ class DriverRequestController extends Controller
 
     public function orderwait(){
 
-        $Orders=DriverRequest::where('status_value' ,0)->paginate(5);
+        $Orders=DriverRequest::where('status_value' ,0)->orderBy('id' , 'desc')->paginate(10);
         $Categories = Category::orderBy('id' , 'desc')->get();
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
 
@@ -145,7 +145,7 @@ class DriverRequestController extends Controller
     }
     public function orderdeliver(){
 
-        $Orders=DriverRequest::where('status_value' ,1)->paginate(5);
+        $Orders=DriverRequest::where('status_value' ,1)->orderBy('id' , 'desc')->paginate(10);
         $Categories = Category::orderBy('id' , 'desc')->get();
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
 

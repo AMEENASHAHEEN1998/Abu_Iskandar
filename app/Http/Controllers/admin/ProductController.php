@@ -160,7 +160,7 @@ class ProductController extends Controller
     }
 
     public function get_products($id){
-        $products = DB::table('products')->where('category_id' , $id)->pluck('product_name_ar' , 'id');
+        $products = DB::table('products')->where('category_id' , $id)->where('deleted_at' , NULL)->pluck('product_name_ar' , 'id');
 
         return json_encode($products);
     }

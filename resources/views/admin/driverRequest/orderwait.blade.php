@@ -31,11 +31,6 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-success">
-                     Create
-                    </a>
-
-
                     <br><br>
                     <h1>{{ trans('admin/driverrequest.request_driver') }}</h1>
 
@@ -74,7 +69,8 @@
                                         @endif
 
                                         <td>{{ $Order->number }}</td>
-                                        <td>{{ $Order->status }}</td>
+                                        <td style="color:red ; font-weight:bold">{{ $Order->status }}</td>
+                                        
                                         <td>
 
                                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
@@ -95,7 +91,7 @@
                                         <div class="modal-header">
                                             <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                 id="exampleModalLabel">
-                                                {{ trans('admin/driverrequest.delete_driverrequest') }}
+                                                {{ trans('admin/driverrequest.change_status') }}
                                             </h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
@@ -107,7 +103,7 @@
                                             <form action="{{route('admin.driverrequest.update_status',$Order->id)}}" method="post">
                                                 {{method_field('patch')}}
                                                 @csrf
-                                                {{ trans('admin/driverrequest.update_status') }}
+                                                {{ trans('admin/driverrequest.update_status_q') }}
                                                 <input id="id" type="hidden" name="id" class="form-control"
                                                         value="{{ $Order->id }}">
                                                 <div class="modal-footer">
@@ -127,6 +123,7 @@
 
                         </table>
                     </div>
+                    {{ $Orders->links() }}
                 </div>
             </div>
         </div>

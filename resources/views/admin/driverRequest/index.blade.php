@@ -32,7 +32,7 @@
                     @endif
 
                     <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-success">
-                     Create
+                     {{ trans('admin/driverrequest.add_request') }}
                     </a>
 
 
@@ -74,7 +74,13 @@
                                         @endif
 
                                         <td>{{ $Order->number }}</td>
-                                        <td>{{ $Order->status }}</td>
+                                        @if ($Order->status_value == 0)
+                                        <td style="color:red ; font-weight:bold">{{ $Order->status }}</td>
+                                        @else
+                                        <td style="color:green ; font-weight:bold">{{ $Order->status }}</td>
+
+                                        @endif
+
                                         <td>
                                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                             data-target="#edit{{ $Order->id }}"
@@ -247,7 +253,8 @@
 
                         </table>
                     </div>
-                </div>
+
+                </div>{{ $Orders->links() }}
             </div>
         </div>
 

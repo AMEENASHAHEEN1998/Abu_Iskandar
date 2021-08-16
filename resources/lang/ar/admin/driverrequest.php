@@ -24,7 +24,7 @@ return [
     'update_message' => 'تم تعديل الطلبية بنجاح ',
     'delete_message' => 'تم حذف الطلبية بنجاح ',
     'change_status' =>'تسليم الطلبية',
-    'update_status' => 'هل أنت متأكد من تسليم الطلبية ؟',
+    'update_status_q' => 'هل أنت متأكد من تسليم الطلبية ؟',
     'yes' => 'نعم ',
     'no' => 'لا',
     'update_status' => 'تم تغير حالة الطلب',

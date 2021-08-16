@@ -57,10 +57,10 @@
                                         <td>{{ $distributor->{'name_' . $lng} }}</td>
                                         <td>{{ $distributor->phone_number }}</td>
 
-                                        <td>
+                                        
                                             <td>{{ ($distributor->DistributorType) ? $distributor->DistributorType->{'name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
 
-                                        </td>
+
 
                                         <td>{{ ($distributor->user) ? $distributor->user->name : trans('admin/dashboard.none_user') }}</td>
                                         <td>{{ $distributor->created_at }}</td>
