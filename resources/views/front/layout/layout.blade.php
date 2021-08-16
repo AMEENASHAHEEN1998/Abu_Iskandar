@@ -5,23 +5,30 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 <title>Big store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
 <!-- for-mobile-apps -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
-<meta name="keywords" content="Big store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords"  />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <link href="{{asset('front/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link href="{{asset('front/css/style.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{asset('front/css/style_en.css')}}" rel='stylesheet' type='text/css' />
 <!-- js -->
-   <script src="{{asset('front/js/jquery-1.11.1.min.js')}}"></script>
+
+@if (App::getLocale() == 'en')
+<link href="{{asset('front/css/style_en.css')}}" rel='stylesheet' type='text/css' />
+@else
+<link href="{{asset('front/css/style_ar.css')}}" rel='stylesheet' type='text/css' />
+@endif
+
+<script src="{{asset('front/js/jquery-1.11.1.min.js')}}"></script>
 <!-- //js -->
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="{{asset('front/js/move-top.js')}}"></script>
@@ -72,13 +79,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
     <div class="container">
 
         <div class="logo">
-            <h1><a href="index.html"></a>Abu Eskandar</h1>
+            <h1><a href="index.html"></a>{{ trans('front/header.title') }}</h1>
         </div>
 
         <div class="head-t">
             <ul class="card">
-                <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-                <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+                <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
+                <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>{{trans('front/header.Register')}}</a></li>
 
             </ul>
         </div>
@@ -101,10 +108,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html" class="hyper "><span>Home</span></a></li>
+                        <li class=" active"><a href="index.html" class="hyper "><span>{{ trans('front/header.Home') }}</span></a></li>
 
                         <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown"><span>Products<b
+                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown"><span>{{ trans('front/header.Products') }}<b
                                         class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
                                 <div class="row">
@@ -149,20 +156,23 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 
-                        <li><a href="codes.html" class="hyper"> <span>Articles</span></a></li>
-                        <li><a href="codes.html" class="hyper"> <span>Employment applications</span></a></li>
-                        <li><a href="codes.html" class="hyper"> <span>Delivery Points</span></a></li>
-                        <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
+                        <li><a href="codes.html" class="hyper"> <span>{{ trans('front/header.Articles') }}</span></a></li>
+                        <li><a href="codes.html" class="hyper"> <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
+                        <li><a href="codes.html" class="hyper"> <span>{{ trans('front/header.Delivery_Points') }}</span></a></li>
+                        <li><a href="contact.html" class="hyper"><span>{{ trans('front/header.Contact_Us') }}</span></a></li>
                     </ul>
                 </div>
             </nav>
-            <div class="cart">
 
-                <span class="fa fa-shopping-cart my-cart-icon"><span
-                        class="badge badge-notify my-cart-badge"></span></span>
-            </div>
-            <div class="clearfix"></div>
         </div>
+        {{-- <div class="clearfix"></div> --}}
+
+        <div class="cart">
+
+            <span class="fa fa-shopping-cart my-cart-icon"><span
+                    class="badge badge-notify my-cart-badge"></span></span>
+        </div>
+        {{-- <div class="clearfix"></div> --}}
 
     </div>
 </div>
