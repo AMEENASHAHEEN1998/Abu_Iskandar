@@ -68,38 +68,6 @@
 
 
 
-                        <div class="row">
-
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label
-                                        for="formGroupExampleInput">{{ trans('admin/distributor.distributors_name_ar') }}</label>
-                                    <input type="text" name="distributor_name_ar" value="{{ $distributor->distributor_name_ar }}"  class="form-control"
-                                        id="formGroupExampleInput">
-                                </div>
-                            </div>
-
-                            @error('distributor_name_ar')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label
-                                        for="formGroupExampleInput">{{ trans('admin/distributor.distributors_name_en') }}</label>
-                                    <input type="text" name="distributor_name_en" value="{{ $distributor->distributor_name_en }}"  class="form-control"
-                                        id="formGroupExampleInput">
-                                </div>
-                            </div>
-
-                            @error('distributor_name_en')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-
-
-                        </div>
-
 
                         <div class="col-md-6">
                             <div class="form-group">

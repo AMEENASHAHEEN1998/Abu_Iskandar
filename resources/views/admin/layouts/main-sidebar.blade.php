@@ -150,8 +150,8 @@
                         </a>
                         <ul id="request_job" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('admin.requestjob.index')}}">{{ trans('admin/dashboard.show_request_job') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.accepted_request') }}</a></li>
-                            <li><a href="">{{ trans('admin/dashboard.rejected_request') }}</a></li>
+                            <li><a href="{{route('admin.requestjob.activerequestjob')}}">{{ trans('admin/dashboard.accepted_request') }}</a></li>
+                            <li><a href="{{route('admin.requestjob.noactiverequestjob')}}">{{ trans('admin/dashboard.rejected_request') }}</a></li>
 
                         </ul>
                     </li>
@@ -205,7 +205,7 @@
                         </a>
 
                         <ul id="info" class="collapse" data-parent="#info" >
-             
+
 
                             <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
                             <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>

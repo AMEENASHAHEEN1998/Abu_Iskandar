@@ -8,13 +8,14 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
+        @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors')
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
 
-                    @include('admin.include.alerts.success')
-                    @include('admin.include.alerts.errors')
+
 
 
 
@@ -32,7 +33,7 @@
                             style="text-align: center">
                             <thead>
                                 <tr>
-                                    <th>{{ trans('admin/distributor.id') }}</th>
+                                    <th>#</th>
                                     <th>{{ trans('admin/distributor.name') }}</th>
                                     <th>{{ trans('admin/distributor.phone_number') }}</th>
 
@@ -57,7 +58,7 @@
                                         <td>{{ $distributor->{'name_' . $lng} }}</td>
                                         <td>{{ $distributor->phone_number }}</td>
 
-                                        
+
                                             <td>{{ ($distributor->DistributorType) ? $distributor->DistributorType->{'name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
 
 

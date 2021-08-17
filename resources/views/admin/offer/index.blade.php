@@ -67,10 +67,10 @@
                                         <td>{{ $offer->price }}</td>
                                         <td>
                                             @if($offer->status_value == 1)
-                                                <button  class="btn btn-success">{{trans('admin/offer.active')}} </button>
+                                                <p  style="color: green">{{trans('admin/offer.active')}} </p>
                                             @endif
                                             @if($offer->status_value == 0)
-                                                <button  class="btn btn-danger">{{trans('admin/offer.noactive')}} </button>
+                                                <p  style="color: red">{{trans('admin/offer.noactive')}} </p>
                                             @endif
                                         </td>
 

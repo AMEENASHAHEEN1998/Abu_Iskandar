@@ -15,7 +15,7 @@ class DistributorTypeController extends Controller
      */
     public function index()
     {
-        $distributortypes=DistributorType::paginate(5);
+        $distributortypes=DistributorType::orderBy('id','desc')->paginate(5);
         return view('admin.distributortype.index',compact('distributortypes'));
     }
 
@@ -40,6 +40,7 @@ class DistributorTypeController extends Controller
         $request->validate([
             'name_ar' =>'required',
             'name_en' =>'required',
+            
         ]);
 
         DistributorType::create([

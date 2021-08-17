@@ -16,7 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate(5);
+        $articles = Article::orderBy('id','desc')->paginate(5);
         return view('admin.article.index', compact('articles'));
     }
 
@@ -96,7 +96,7 @@ class ArticleController extends Controller
     {
         // return $request;
 
-        if ($request->has('status_value') == 0) {
+        if ($request->has('status_value') == 1) {
             $request->status_value = 1;
             $status = 'مفعل';
         } else {
@@ -105,7 +105,7 @@ class ArticleController extends Controller
         }
 
 
-        
+
         $article = Article::findOrFail($id);
         $image_name = $article->image;
 

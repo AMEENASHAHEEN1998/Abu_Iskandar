@@ -17,7 +17,7 @@ class DistributorController extends Controller
      */
     public function index()
     {
-       $distributors= Distributor::paginate(5);
+       $distributors= Distributor::orderBy('id','desc')->paginate(5);
     //    dd($distributors);
     // $distributor_types=DistributorType::all();
        return view('admin.distributor.index',compact('distributors'));
@@ -92,8 +92,8 @@ class DistributorController extends Controller
         Distributor::find($id)->update([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
-            'distributor_name_ar' => $request->distributor_name_ar,
-            'distributor_name_en' => $request->distributor_name_en,
+            // 'distributor_name_ar' => $request->distributor_name_ar,
+            // 'distributor_name_en' => $request->distributor_name_en,
             'distributor_type_id' => $request->distributor_type_id,
             'phone_number' => $request->phone_number,
             'user_id' => $request->user_id,

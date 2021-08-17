@@ -18,7 +18,7 @@ class RequestJobController extends Controller
     public function index()
     {
         // $requestjobs=RequestJob::find(1);
-        $requestjob=RequestJob::paginate(5);
+        $requestjob=RequestJob::orderBy('id','desc')->paginate(5);
         // dd($requestjobs);
         return view('admin.requestjob.index',compact('requestjob'));
 
@@ -112,27 +112,32 @@ class RequestJobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $request;
-        $status_value ='' ;
-        if($request->status == 0){
-            $status_value ='مرفوض' ;
-        }elseif($request->status == 1){
-            $status_value ='قيد الانتظار' ;
-        }elseif($request->status == 2){
-            $status_value ='مقبول' ;
+        // return $request->comments_admin;
+        try {
+
+            $status_value ='' ;
+            if($request->status == 0){
+                $status_value ='مرفوض' ;
+                $start_date ='';
+            }elseif($request->status == 1){
+                $status_value ='قيد الانتظار' ;
+                $start_date='';
+            }elseif($request->status == 2){
+                $status_value ='مقبول' ;
+                $start_date=$request->start_date;
+            }
+
+            RequestJob::find($id)->update([
+                'status'=> $status_value,
+                'status_value' =>$request->status ,
+                'comments_admin'=> $request->comments_admin,
+                'start_date'=> $start_date,
+
+            ]);
+            return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.update_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.requestjob.index')->with('error' , trans('admin/requestjob.update_message_error'));
         }
-
-        // return $status_value;
-
-        RequestJob::find($id)->update([
-            'status'=> $status_value,
-            'status_value' =>$request->status ,
-            'notes'=> $request->comments_admin,
-            'start_date'=> $request->start_date,
-
-        ]);
-        return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.update_message'));
-
     }
 
     /**
@@ -146,5 +151,15 @@ class RequestJobController extends Controller
         RequestJob::find($id)->delete();
         return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.delete_message'));
 
+    }
+    public function activerequestjob()
+    {
+        $requestjob=RequestJob::where('status_value',2)->orderBy('id','desc')->paginate(5);
+        return view('admin.requestjob.active',compact('requestjob'));
+    }
+    public function noactiverequestjob()
+    {
+        $requestjob=RequestJob::where('status_value',0)->orderBy('id','desc')->paginate(5);
+        return view('admin.requestjob.noactive',compact('requestjob'));
     }
 }

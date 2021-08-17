@@ -25,6 +25,8 @@ return
     'status'    =>'الحالة',
     'user_id'   =>'اضيفت بواسطة',
     'requestjobs'   =>'طلبات التوظيف',
+    'activerequestjobs'   =>' طلبات التوظيف المقبولة',
+    'noactiverequestjobs'   =>'طلبات التوظيف المرفوضة',
     'add_requestjob'=>'اضافة طلب وظيفة' ,
     'user_name' => 'اضيفت بواسطة ' ,
     'action'    => 'العمليات' ,
@@ -45,7 +47,7 @@ return
     'date'   =>' تاريخ الاضافة',
     'close'  => 'اغلاق',
     'delete' => 'حذف',
-
+    'update_message_error'=>'لم يتم تعديل الطلب' ,
     'warning_job' => '?هل أنت متأكد من عملية الحذف',
     'delete_job'  => 'حذف الوظيفة',
     'success_message' => 'تم اضافة الوظيفة بنجاح',

@@ -147,7 +147,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="exampleInputEmail1">{{ trans('admin/requestjob.personal_image') }}</label>
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" name="image" />
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
