@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('title')
+    {{ trans('admin/offer.offer') }}
+@endsection
 @section('content')
 
 

@@ -4,7 +4,7 @@
 return
 [
     'id' => 'رقم' ,
-    'employee' =>' الموظفين',
+    'employee' =>' فريق العمل ',
     'add_employee' => 'اضافة موظف ' ,
 
     'employee_name' => 'اسم موظف  ' ,

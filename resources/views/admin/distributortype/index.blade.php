@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('title')
+    {{ trans('admin/distributortype.distributorstype') }}
+@endsection
 @section('content')
 
 
@@ -23,10 +26,6 @@
                         data-target="#exampleModal">
                         {{ trans('admin/distributortype.add_distributor') }}
                     </a>
-                    {{-- <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
-                        create
-                    </button> --}}
-
 
 
 

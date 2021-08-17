@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('title')
+    {{ trans('admin/distributortype.distributorstype') }}
+@endsection
 @section('content')
 
 
