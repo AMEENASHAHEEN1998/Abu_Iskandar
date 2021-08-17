@@ -8,19 +8,13 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
+        @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors')
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+
 
                     <a href="{{ route('admin.distributor.index') }}" class="btn btn-success">
                         {{ trans('admin/dashboard.Back') }}

@@ -99,13 +99,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-<<<<<<< HEAD
     <a href="offer.html"><img src="{{ asset('front/images/download.png') }}" class="img-head" alt=""></a>
     <div class=" header">
-=======
-<a href="offer.html"><img src="{{asset('front/images/download.png')}}" class="img-head" alt=""></a>
-<div class=" header">
->>>>>>> d873309d6a6091612c1c3235b796ddf7846bb8cb
 
         <div class="container">
 
@@ -125,13 +120,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-<<<<<<< HEAD
             <div class="nav-top admin-header">
                 <nav class="navbar navbar-default">
-=======
-        <div class="admin-header nav-top">
-            <nav class=" navbar navbar-default">
->>>>>>> d873309d6a6091612c1c3235b796ddf7846bb8cb
 
                     <div class="navbar-header nav_2">
                         <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
@@ -194,24 +184,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             </ul>
 
                                         </div>
-                                        <div class="col-sm-4">
 
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                            aria-hidden="true"></i>Breakfast &amp; Cereal</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                            aria-hidden="true"></i>Snacks</a></li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                            aria-hidden="true"></i>Spices</a></li>
-
-                                            </ul>
-
-                                        </div>
-                                        {{-- <div class="col-sm-3 w3l">
+                                        <div class="col-sm-3 w3l">
                                         <a href="kitchen.html"><img src="{{asset('front/images/me.png')}}" class="img-responsive"
                                                 alt=""></a>
-                                    </div> --}}
-                                        {{-- <div class="clearfix"></div> --}}
+                                    </div>
+                                        <div class="clearfix"></div>
 
                                     </div>
                                 </ul>

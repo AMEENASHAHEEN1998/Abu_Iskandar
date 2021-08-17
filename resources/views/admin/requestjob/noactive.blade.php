@@ -31,7 +31,7 @@
 
 
                     <br><br>
-                    <h1>{{ trans('admin/requestjob.requestjobs') }}</h1>
+                    <h1>{{ trans('admin/requestjob.noactiverequestjobs') }}</h1>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"

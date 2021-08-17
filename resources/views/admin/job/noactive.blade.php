@@ -8,13 +8,14 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
+        @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors')
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
 
-                    @include('admin.include.alerts.success')
-                    @include('admin.include.alerts.errors')
+
 
 
 
@@ -72,10 +73,10 @@
 
                                         <td>
                                             @if($job->status_value == 1)
-                                                <button  class="btn btn-success">{{trans('admin/job.active')}} </button>
+                                                <p  style="color: green">{{trans('admin/job.active')}} </p>
                                             @endif
                                             @if($job->status_value == 0)
-                                                <button  class="btn btn-danger">{{trans('admin/job.noactive')}} </button>
+                                                <p  style="color: red">{{trans('admin/job.noactive')}} </p>
                                             @endif
                                         </td>
                                         <td>{{ $job->views }}</td>

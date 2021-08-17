@@ -2820,7 +2820,7 @@ tbody.collapse.show {
   margin-right: 0; }
 
   .dropdown-menu.multi {
-    min-width: 387px;
+    /* min-width: 387px; */
     padding: 17px 10px;
     margin-left: -510px;
 }

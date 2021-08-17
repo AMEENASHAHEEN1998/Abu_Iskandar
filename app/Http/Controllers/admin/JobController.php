@@ -16,7 +16,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs=Job::paginate(5);
+        $jobs=Job::orderBy('id','desc')->paginate(5);
         return view('admin.job.index',compact('jobs'));
     }
 

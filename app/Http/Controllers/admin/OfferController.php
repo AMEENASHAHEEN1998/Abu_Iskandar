@@ -16,7 +16,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::paginate(5);
+        $offers = Offer::orderBy('id','desc')->paginate(5);
         // dd($offers);
         return view('admin.offer.index', compact('offers'));
     }
@@ -152,11 +152,11 @@ class OfferController extends Controller
     }
 
     public function activeoffer(){
-        $offers=Offer::where('status_value' ,1)->paginate(5);
+        $offers=Offer::where('status_value' ,1)->orderBy('id','desc')->paginate(5);
         return view('admin.offer.active',compact('offers'));
     }
     public function noactiveoffer(){
-        $offers=Offer::where('status_value' ,0)->paginate(5);
+        $offers=Offer::where('status_value' ,0)->orderBy('id','desc')->paginate(5);
         return view('admin.offer.noactive',compact('offers'));
     }
 }

@@ -59,6 +59,9 @@ Route::group(
         Route::get('noactivejob',[JobController::class,'noactivejob'])->name('job.noactivejob');
 
         Route::resource('requestjob', RequestJobController::class);
+        Route::get('activerequestjob',[RequestJobController::class,'activerequestjob'])->name('requestjob.activerequestjob');
+        Route::get('noactiverequestjob',[RequestJobController::class,'noactiverequestjob'])->name('requestjob.noactiverequestjob');
+
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
 
