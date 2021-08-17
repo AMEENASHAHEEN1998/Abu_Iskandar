@@ -21,92 +21,102 @@
                             </ul>
                         </div>
                     @endif
-                    <h2>{{ trans('admin/driverrequest.edit_order') }}</h2>
 
                     <a href="{{ route('admin.driverrequest.index') }}"  class="btn btn-success">
-                        {{ trans('admin/driverrequest.Back') }}
+                        {{ trans('admin/driverrequest.back') }}
                     </a>
+                    <h2>{{ trans('admin/driverrequest.add_request') }}</h2>
+
                     <hr>
 
 
-                    <form action="{{ route('admin.driverrequest.store') }}" method="POST">
-
+                    <form class=" row mb-30" action="{{ route('admin.driverrequest.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-
-
-                        {{-- <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/driverrequest.user_name') }}</label>
-                                <input type="text" name="user_id"  class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-
-                        @error('user_id')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror --}}
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/driverrequest.product_id') }}</label>
-                                <input type="text" name="product_id"  class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-
-                        @error('product_id')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                        <div class="card-body">
 
 
 
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/driverrequest.size') }}</label>
-                                <input type="number" name="size"  class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-                        @error('size')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="Name_en"
+                                                        class="mr-sm-2">{{ trans('admin/driverrequest.primary_category') }}
+                                                    :</label>
 
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/driverrequest.price') }}</label>
-                                <input type="number" name="price" class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-                        @error('price')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                                                <div class="box ">
+                                                    <select class="form-control form-control-lg" name="category_id" onclick="console.log($(this).val())"
+                                                    onchange="console.log('change is firing')">
+                                                        @foreach ($Categories as $Category)
+                                                        @if (App::getLocale() == 'en')
+                                                            <option value="{{ $Category->id }}">{{ $Category->category_name_en }}</option>
+                                                        @else
+                                                            <option value="{{ $Category->id }}">{{ $Category->category_name_ar }}</option>
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                </div>
 
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">{{ trans('admin/driverrequest.number') }}</label>
-                                <input type="number" name="number"  class="form-control" id="formGroupExampleInput">
-                            </div>
-                        </div>
-                        @error('number')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="Name_en"
+                                                    class="mr-sm-2">{{ trans('admin/driverrequest.sub_category') }}
+                                                    :</label>
+
+                                                <div class="box ">
+                                                    <select class="form-control form-control-lg" name="sub_category_id">
+                                                        @foreach ($Subcategories as $Category)
+                                                        @if (App::getLocale() == 'en')
+                                                            <option value="{{ $Category->id }}">{{ $Category->sub_category_name_en }}</option>
+                                                        @else
+                                                            <option value="{{ $Category->id }}">{{ $Category->sub_category_name_ar }}</option>
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="product"
+                                                        class="mr-sm-2">{{ trans('admin/driverrequest.product') }}
+                                                    :</label>
+
+
+                                                    <select class="form-control form-control-lg" id="product" name="product">
+
+                                                    </select>
 
 
 
-
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <input type="checkbox" name="status" class="switchery" data-color="success"
-                                     value="1"
-                                />
-                                <label for="switcheryColor4"
-                                    class="card-title ml-1">{{ trans('admin/driverrequest.status') }}</label>
-                            </div>
-                        </div>
+                                            </div>
 
 
-                        <button class="btn btn-success btn-lg">{{ trans('admin/driverrequest.save') }}</button>
+                                            <div class="col">
+                                                <label for="number"
+                                                        class="mr-sm-2">{{ trans('admin/driverrequest.number') }}
+                                                    :</label>
+                                                <input id="number" class="form-control form-control-lg" type="text" name="number" required />
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            
+
+
+                                <div class="modal-footer">
+
+                                    <button type="submit"
+                                            class="btn btn-success">{{ trans('admin/driverrequest.submit') }}</button>
+
+                                </div>
 
                     </form>
-
 
 
                 </div>
@@ -124,4 +134,31 @@
     </div>
     </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('select[name="category_id"]').on('change', function() {
+                var SectionId = $(this).val();
+                if (SectionId) {
+                    $.ajax({
+                        url: "{{ URL::to('admin/get_products') }}/" + SectionId,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="product"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="product"]').append('<option value="' +
+                                    key + '">' + value + '</option>');
+
+                            });
+                        },
+                    });
+                } else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        });
+    </script>
+
 @endsection

@@ -75,7 +75,7 @@
                                     :</label>
 
                                 <div class="box col-md-6">
-                                    <select class="form-control " name="category_id">
+                                    <select class="form-control form-control-lg " name="category_id">
                                         @foreach ($Categories as $Category)
                                         @if (App::getLocale() == 'en')
                                             <option value="{{ $Category->id }}">{{ $Category->category_name_en }}</option>
@@ -99,7 +99,7 @@
                                                 :</label>
 
                                             <div class="box ">
-                                                <select class="form-control " name="sub_category_id">
+                                                <select class="form-control form-control-lg" name="sub_category_id">
                                                     @foreach ($Subcategories as $Category)
                                                     @if (App::getLocale() == 'en')
                                                         <option value="{{ $Category->id }}">{{ $Category->sub_category_name_en }}</option>

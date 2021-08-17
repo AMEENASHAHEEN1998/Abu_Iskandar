@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $Categories = Category::paginate(5);
+        $Categories = Category::orderBy('id' , 'desc')->paginate(1);
         return view('admin.category.index', compact('Categories'));
     }
 
@@ -135,4 +135,6 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.categories.index')->with('delete' ,  trans('admin/categories.delete_message'));
     }
+
+
 }

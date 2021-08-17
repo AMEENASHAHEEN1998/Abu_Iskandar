@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\DriverRequest;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\DriverRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class DriverRequestController extends Controller
 {
@@ -15,9 +18,12 @@ class DriverRequestController extends Controller
      */
     public function index()
     {
-        $orders=DriverRequest::all();
+        $Orders=DriverRequest::orderBy('id' , 'desc')->paginate(10);
+        $Categories = Category::orderBy('id' , 'desc')->get();
+        $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
+
         // dd($orders);
-        return view('admin.driverRequest.index',compact('orders'));
+        return view('admin.driverRequest.index')->with(['Orders' => $Orders,'Categories' => $Categories , 'Subcategories' => $Subcategories ]);
     }
 
     /**
@@ -27,7 +33,10 @@ class DriverRequestController extends Controller
      */
     public function create()
     {
-        return view('admin.driverRequest.create');
+        $Categories = Category::orderBy('id' , 'desc')->get();
+        $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
+
+        return view('admin.driverRequest.create')->with(['Categories' => $Categories , 'Subcategories' => $Subcategories ]);
     }
 
     /**
@@ -38,24 +47,24 @@ class DriverRequestController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('status') == 1) {
-            $request->status = 1;
-        } else {
-            $request->status = 0;
+        try{
+            //dd($request->all());
+            DriverRequest::create([
+                'user_id'           => auth()->user()->id,
+                'product_id'        => $request->product,
+                'category_id'       => $request->category_id,
+                'subcategory_id'    => $request->sub_category_id,
+                'number'            => $request->number,
+                'status'            => 'غير مسلم',
+                'status_value'      => 0,
+
+            ]);
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+        return redirect()->route('admin.driverrequest.index')->with('success' , trans('admin/driverrequest.success_message'));
 
-        // return   $request;
-        DriverRequest::create([
-            'user_id' => $request->user_id,
-            'product_id' => $request->product_id,
-            'price' => $request->price,
-            'size' => $request->size,
-            'number' => $request->number,
-            'status' => 'غير مفعل',
-            'status_value' => 1,
-
-        ]);
-        return redirect()->route('admin.driverrequest.index');
     }
 
     /**
@@ -91,6 +100,23 @@ class DriverRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
+        try{
+            //dd($request->all());
+
+            DriverRequest::findOrFail($id)->update([
+                'product_id'        => $request->product,
+                'category_id'       => $request->category_id,
+                'subcategory_id'    => $request->sub_category_id,
+                'number'            => $request->number,
+                'status'            => 'غير مسلم',
+                'status_value'      => 0,
+
+            ]);
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.driverrequest.index')->with('update' , trans('admin/driverrequest.update_message'));
 
     }
 
@@ -102,19 +128,44 @@ class DriverRequestController extends Controller
      */
     public function destroy($id)
     {
-        DriverRequest::find($id)->delete();
-        return redirect()->back();
+        $driverrequest = DriverRequest::findOrFail($id);
+        $driverrequest->delete();
+        return redirect()->route('admin.driverrequest.index')->with('delete' ,  trans('admin/driverrequest.delete_message'));
+
     }
 
 
     public function orderwait(){
 
-        $orders=DriverRequest::where('status_value' ,0)->paginate(5);
-        return view('admin.driverRequest.orderwait',compact('orders'));
+        $Orders=DriverRequest::where('status_value' ,0)->orderBy('id' , 'desc')->paginate(10);
+        $Categories = Category::orderBy('id' , 'desc')->get();
+        $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
+
+        return view('admin.driverRequest.orderwait')->with(['Orders' => $Orders,'Categories' => $Categories , 'Subcategories' => $Subcategories ]);
     }
     public function orderdeliver(){
 
-        $orders=DriverRequest::where('status_value' ,1)->paginate(5);
-        return view('admin.driverRequest.orderdeliver',compact('orders'));
+        $Orders=DriverRequest::where('status_value' ,1)->orderBy('id' , 'desc')->paginate(10);
+        $Categories = Category::orderBy('id' , 'desc')->get();
+        $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
+
+        return view('admin.driverRequest.orderdeliver')->with(['Orders' => $Orders,'Categories' => $Categories , 'Subcategories' => $Subcategories ]);
+    }
+    public function update_status($id)
+    {
+        try{
+            //dd($request->all());
+
+            DriverRequest::findOrFail($id)->update([
+                'status'            => 'تم التسليم',
+                'status_value'      => 1,
+
+            ]);
+
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.orderwait')->with('update_status' , trans('admin/driverrequest.update_status'));
+
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDriverRequestsTable extends Migration
+class CreatePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateDriverRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('driver_requests', function (Blueprint $table) {
+        Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
             $table->foreignId('product_id');
-            $table->foreignId('category_id');
-            $table->foreignId('subcategory_id');
-            $table->string('number');
-            $table->string('status');
-            $table->integer('status_value');
-            $table->softDeletes();
+            $table->string('price');
+            $table->string('size');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateDriverRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('driver_requests');
+        Schema::dropIfExists('prices');
     }
 }

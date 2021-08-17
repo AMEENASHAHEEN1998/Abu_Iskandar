@@ -17,9 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('product_name_ar', 150);
             $table->string('product_name_en', 150);
-            $table->string('sizes');
             $table->integer('views');
-            $table->string('price');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
             $table->softDeletes();

@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                 @endif
-  
+
 
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.products.create') }}">{{trans('admin/products.add_product')}}</a>
 
@@ -52,15 +52,11 @@
                             <th>{{ trans('admin/products.product_image') }}</th>
                             <th>{{ trans('admin/products.user_add') }}</th>
                             <th>{{ trans('admin/products.views_number') }}</th>
-                            <th>{{ trans('admin/products.size') }}</th>
-                            <th>{{ trans('admin/products.price') }}</th>
                             <th>{{ trans('admin/products.process') }}</th>
 
                         </tr>
                         </thead>
                         <tbody>
-
-
 
                             <?php $i = 0; ?>
 
@@ -70,7 +66,7 @@
                                 <td>{{ $i }}</td>
                                 @if (App::getLocale() == 'en')
                                 <td>{{ $Product->product_name_en }}</td>
-                                
+
                                 <td>{{ ($Product->category) ? $Product->category->category_name_en : 'Uncategories' }}</td>
                                 @else
                                 <td>{{ $Product->product_name_ar }}</td>
@@ -79,9 +75,8 @@
                                 <td> <img src="{{asset('uploads/'.$Product->image)}}" width="70px" height="60px"></td>
                                 <td>{{ $Product->User->name }}</td>
                                 <td>{{ $Product->views }}</td>
-                                <td>{{ $Product->sizes }}</td>
-                                <td>{{ $Product->price }}</td>
-                                
+
+
 
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
@@ -180,7 +175,7 @@
 
                                                     </div>
                                                 </div>
-                                                
+
                                                         <div >
                                                         @foreach(Illuminate\Support\Facades\DB::table('products_subcategories')
                                                         ->where('product_id' , $Product->id)->get() as $product_subcategory)
@@ -194,16 +189,16 @@
                                                                         <select class="form-control " name="sub_category_id" disabled >
                                                                             @foreach ($Subcategories as $Category)
                                                                                 @if (App::getLocale() == 'en')
-                                                                                    <option 
+                                                                                    <option
                                                                                         @if($product_subcategory->subcategory_id == $Category->id)
                                                                                             {{"selected"}}
-                                                                                        @endif 
+                                                                                        @endif
                                                                                             value="{{ $Category->id }}">{{ $Category->sub_category_name_en }}</option>
                                                                                 @else
                                                                                     <option
                                                                                         @if($product_subcategory->subcategory_id == $Category->id)
                                                                                             {{"selected"}}
-                                                                                        @endif 
+                                                                                        @endif
                                                                                             value="{{ $Category->id }}">{{ $Category->sub_category_name_ar }}</option>
                                                                                 @endif
                                                                             @endforeach
@@ -211,22 +206,23 @@
                                                                     </div>
 
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         @endforeach
                                                         </div>
-                                                    
 
-                                                
+
+
                                                     <div >
-                                                    {{-- @foreach(App\Models\Product::where('product_name_ar' , $Product->product_name_ar)->get() as $product_price_size) --}}
+
+                                                    @foreach(App\Models\price::where('product_id' , $Product->id)->get() as $product_price_size)
                                                         <div class="row">
 
                                                             <div class="col">
                                                                 <label for="product_name_ar"
                                                                     class="mr-sm-2">{{ trans('admin/products.size') }}
                                                                     :</label>
-                                                                <input id="product_name_ar" class="form-control" type="text" value={{$Product->sizes}} name="size" required />
+                                                                <input id="product_name_ar" class="form-control" disabled type="text" value="{{$product_price_size->size}}" name="size" required />
                                                             </div>
 
 
@@ -234,14 +230,16 @@
                                                                 <label for="product_name_en"
                                                                     class="mr-sm-2">{{ trans('admin/products.price') }}
                                                                     :</label>
-                                                                <input id="product_name_en" class="form-control" type="text" value={{$Product->price}} name="price" required />
+                                                                <input id="product_name_en" class="form-control" disabled type="text" value="{{$product_price_size->price}}" name="price" required />
                                                             </div>
-                                                            
-                                                        </div>
-                                                    {{-- @endforeach --}}
-                                                    
 
-                                      
+                                                        </div>
+
+
+                                                    @endforeach
+
+
+
                                             </div>
 
 
@@ -297,7 +295,7 @@
                                             </form>
                                         </div>
 
-                                        
+
                                     </div>
                                 </div>
                                 </div>

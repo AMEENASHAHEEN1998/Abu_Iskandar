@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\price;
 use App\Models\Product;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +22,7 @@ class ProductController extends Controller
         $Categories = Category::orderBy('id' , 'desc')->get();
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
         $Products  = Product::orderBy('id' , 'desc')->DISTINCT('product_name_en')->paginate(10);
-       
+
         return view('admin.products.index')->with(['Categories' => $Categories , 'Subcategories' => $Subcategories , 'Products' => $Products  ]);
     }
 
@@ -49,32 +50,30 @@ class ProductController extends Controller
 
             $product_image_ex = $request->file('image')->getClientOriginalExtension();
             $product_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $product_image_ex;
-            
-            
+            $product = Product::create([
+                'product_name_ar' => $request->product_name_ar,
+                'product_name_en' => $request->product_name_en,
+                'image' => $product_image_name,
+                'user_id' => auth()->user()->id,
+                'category_id' => $request->category_id ,
+                'views' => 0,
+            ]);
+
             $List_size_prise = $request->List_size_prise;
             foreach($List_size_prise as $size_price){
-                $product = Product::create([
-                    'product_name_ar' => $request->product_name_ar,
-                    'product_name_en' => $request->product_name_en,
-                    'image' => $product_image_name,
-                    'sizes' => $size_price['size'],
+                price::create([
+                    'product_id' => $product->id,
                     'price' => $size_price['price'],
-                    'user_id' => auth()->user()->id,
-                    'category_id' => $request->category_id ,
-                    'views' => 0,
+                    'size' => $size_price['size'],
                 ]);
             }
 
             $List_subcategory = $request->List_subcategory;
             $product = Product::findOrFail($product->id);
             foreach ($List_subcategory as $subcategory){
-                DB::insert('insert into products_subcategories (subcategory_id, product_id) 
+                DB::insert('insert into products_subcategories (subcategory_id, product_id)
                 values (?, ?)', [$subcategory['sub_category_id'], $product->id]);
-            //   $product->SubCategories()->create([
-            //       dd($product_>SubCategories())
-            //         // 'subcategory_id' => $subcategory['sub_category_id'],
-            //         // 'product_id' => $product->id,
-            //   ]);
+
           }
 
         $request->file('image')->move(public_path('uploads') , $product_image_name);
@@ -117,6 +116,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         try{
+            //dd($request->all());
             $product = Product::findOrFail($id);
             $product_image_name = $product->image;
             if ($request->file('image')) {
@@ -124,32 +124,25 @@ class ProductController extends Controller
                 $product_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $product_image_ex;
                 $request->file('image')->move(public_path('uploads') , $product_image_name);
             }
-            
+
             $product->update([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
                 'image' => $product_image_name,
-                'sizes' => $request->size,
-                'price' => $request->price,
                 'category_id' => $request->category_id ,
             ]);
-            
 
-            // $List_subcategory = $request->List_subcategory;
-            
-            // foreach ($List_subcategory as $subcategory){
-            //     DB::table('products_subcategories')->where('product_id' ,$product->id )->update([
-            //         'subcategory_id' => $subcategory['sub_category_id'],
-            //     ]);
-                 
-          
 
-        
+
+
+
+
+
         }catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
         return redirect()->route('admin.products.index')->with('update' , trans('admin/products.update_message'));
-    
+
     }
 
     /**
@@ -163,6 +156,12 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('admin.products.index')->with('delete' ,  trans('admin/products.delete_message'));
-    
+
+    }
+
+    public function get_products($id){
+        $products = DB::table('products')->where('category_id' , $id)->where('deleted_at' , NULL)->pluck('product_name_ar' , 'id');
+
+        return json_encode($products);
     }
 }

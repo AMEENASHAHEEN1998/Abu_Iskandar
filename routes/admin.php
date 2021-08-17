@@ -40,6 +40,8 @@ Route::group(
         Route::get('orderwait',[DriverRequestController::class,'orderwait'])->name('orderwait');
         Route::get('orderdeliver',[DriverRequestController::class,'orderdeliver'])->name('orderdeliver');
 
+        Route::patch('driverrequest/update_status/{id}',[DriverRequestController::class,'update_status'])->name('driverrequest.update_status');
+
         Route::resource('offer', OfferController::class);
         Route::get('activeoffer',[OfferController::class,'activeoffer'])->name('activeoffer');
         Route::get('noactiveoffer',[OfferController::class,'noactiveoffer'])->name('noactiveoffer');
@@ -48,7 +50,7 @@ Route::group(
         Route::resource('information', InformationController::class);
 
         Route::resource('products', ProductController::class);
-
+        Route::get('get_products/{id}' , [ ProductController::class, 'get_products'])->name('get_products');
         Route::resource('employee', EmployeeController::class);
         Route::resource('distributor', DistributorController::class);
         Route::resource('distributortype', DistributorTypeController::class);
@@ -59,5 +61,14 @@ Route::group(
         Route::resource('requestjob', RequestJobController::class);
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
+
+
+
         });
+
+
+});
+
+Route::get('/logining ' , function(){
+    return view('front/register');
 });

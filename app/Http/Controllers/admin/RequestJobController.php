@@ -72,7 +72,9 @@ class RequestJobController extends Controller
             'status_value' =>1,
             'personal_image' =>$personal_image,
             'job_id' =>  $request->job_id,
-            'user_id' => $request->user_id
+            'user_id' => $request->user_id,
+            'comments_admin' =>'',
+            'start_date' => '',
         ]);
         return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.success_message'));
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -39,7 +39,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -75,5 +75,54 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+<div class="login">
+    <div class="main-agileits">
+            <div class="form-w3agile form1">
+                <h3>{{ trans('auth.register') }}</h3>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <input type="hidden" name="roles_name" value="admin">
+                        <input type="hidden" name="status" value="مفعل">
+
+                    <div class="key">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input  type="text"  class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" required="">
+                        <div class="clearfix"></div>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input  type="password" value="Password"  class="@error('password') is-invalid @enderror" name="password"  autocomplete="new-password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                        <div class="clearfix"></div>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input  type="password" value="Confirm Password" name="password_confirmation"  autocomplete="new-password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="">
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="forg">
+                        <input type="submit" class="forg-right" value="{{ trans('auth.submit') }}">
+
+                        <a href="{{ route('login') }}" class="forg-left">{{ trans('auth.account') }}</a>
+                        <div class="clearfix"></div>
+                    </div>
+            </form>
+
+            </div>
+
+        </div>
+    </div>
+
 @endsection

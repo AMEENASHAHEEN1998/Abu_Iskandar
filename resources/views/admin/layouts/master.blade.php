@@ -52,6 +52,7 @@
     <!--=================================
  footer -->
 
+        @yield('js')
     @include('admin.layouts.footer-scripts')
 
 </body>

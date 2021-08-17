@@ -26,9 +26,14 @@ class Product extends Model
         return $this->hasMany(SubCategory::class , 'subcategory_id');
     }
 
-    public function DriversRequests()
+    public function DriverRequests()
     {
-        return $this->belongsToMany(DriverRequest::class , 'driver_request_id');
+        return $this->hasMany(DriverRequest::class);
+    }
+
+    public function Prices()
+    {
+        return $this->hasMany(price::class);
     }
 
     public function Image() {

@@ -204,9 +204,8 @@
                             <div class="clearfix"></div>
                         </a>
 
-                        <ul id="info" class="collapse" data-parent="#sidebarnav" >
-                            <li><a href="">{{ trans('admin/dashboard.information_company') }}</a></li>
-
+                        <ul id="info" class="collapse" data-parent="#info" >
+             
 
                             <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
                             <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>
