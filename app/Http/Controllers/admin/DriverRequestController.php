@@ -87,8 +87,7 @@ class DriverRequestController extends Controller
      */
     public function edit($id)
     {
-        $order =DriverRequest::find($id);
-        return view('admin.driverRequest.edit',compact('order'));
+
     }
 
     /**

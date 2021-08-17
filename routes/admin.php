@@ -69,6 +69,4 @@ Route::group(
 
 });
 
-Route::get('/logining ' , function(){
-    return view('front/register');
-});
+

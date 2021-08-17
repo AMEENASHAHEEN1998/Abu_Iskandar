@@ -1,8 +1,8 @@
 @extends('admin.layouts.master')
+@section('title')
+{{ trans('admin/driverrequest.add_request') }}
+@endsection
 @section('content')
-
-
-
     <!--=================================
                      Main content -->
     <!-- main-content -->
@@ -106,7 +106,7 @@
                                 </div>
 
 
-                            
+
 
 
                                 <div class="modal-footer">

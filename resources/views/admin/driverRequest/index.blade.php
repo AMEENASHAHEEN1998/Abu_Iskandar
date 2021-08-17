@@ -1,8 +1,8 @@
 @extends('admin.layouts.master')
+@section('title')
+{{ trans('admin/driverrequest.request_driver') }}
+@endsection
 @section('content')
-
-
-
     <!--=================================
      Main content -->
     <!-- main-content -->
@@ -37,7 +37,7 @@
 
 
                     <br><br>
-                    <h1>{{ trans('admin/driverrequest.request_driver') }}</h1>
+                    <h2>{{ trans('admin/driverrequest.request_driver') }}</h2>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"

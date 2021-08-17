@@ -1,8 +1,8 @@
 @extends('admin.layouts.master')
+@section('title')
+{{ trans('admin/dashboard.pending_orders') }}
+@endsection
 @section('content')
-
-
-
     <!--=================================
      Main content -->
     <!-- main-content -->
@@ -32,7 +32,7 @@
                     @endif
 
                     <br><br>
-                    <h1>{{ trans('admin/driverrequest.request_driver') }}</h1>
+                    <h2>{{ trans('admin/dashboard.pending_orders') }}</h2>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -70,7 +70,7 @@
 
                                         <td>{{ $Order->number }}</td>
                                         <td style="color:red ; font-weight:bold">{{ $Order->status }}</td>
-                                        
+
                                         <td>
 
                                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal"

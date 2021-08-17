@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+{{ trans('auth.login') }}
+@endsection
 @section('content')
 <div class="login">
 
