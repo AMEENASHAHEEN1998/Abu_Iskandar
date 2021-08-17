@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('title')
+    {{ trans('admin/offer.offer') }}
+@endsection
 @section('content')
 
 
@@ -70,7 +73,7 @@
                                                 <p  style="color: red">{{trans('admin/offer.noactive')}} </p>
                                             @endif
                                         </td>
-                                        
+
                                         <td>
                                             <a href="{{route('admin.offer.show',$offer->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                                             <a href="{{route('admin.offer.edit',$offer->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

@@ -4,7 +4,7 @@
 return
 [
     'id' => 'ID' ,
-    'employee' =>'Employees',
+    'employee' =>'Team Work',
     'add_employee' =>'Add Employee',
     'employee_name' => 'Name of Employee ',
     'employee_name_ar' => 'Arabic Name of employee ',
