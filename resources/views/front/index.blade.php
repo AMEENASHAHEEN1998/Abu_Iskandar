@@ -23,7 +23,7 @@
 <div class="content-top ">
     <div class="container ">
         <div class="spec ">
-            <h3>Special Offers</h3>
+            <h3>{{ trans('front/header.Offer') }}</h3>
             <div class="ser-t">
                 <b></b>
                 <span><i></i></span>
@@ -507,11 +507,12 @@
         <div class="col-md-4 m-w3ls">
             <div class="col-md1 ">
                 <a href="kitchen.html">
-                    <img src="{{asset('front/images/co1.jpg')}}" class="img-responsive img" alt="">
+                    <img src="{{asset('front/images/index/col1.png')}}" class="img-responsive img" alt="">
                     <div class="big-sa">
-                        <h6>New Collections</h6>
-                        <h3>Season<span>ing </span></h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority </p>
+                        {{-- <h6>New Collections</h6> --}}
+                        <h3><span>{{trans('front/header.seasoning')}} </span></h3>
+                        <p>{{trans('front/header.featured_Season')}}
+                        </p>
                     </div>
                 </a>
             </div>
@@ -553,37 +554,12 @@
     </div>
 </div>
 <!--content-->
-<!-- Carousel
-================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <a href="kitchen.html"> <img class="first-slide" src="{{asset('front/images/ba.jpg')}}" alt="First slide"></a>
-
-        </div>
-        <div class="item">
-            <a href="care.html"> <img class="second-slide " src="{{asset('front/images/ba1.jpg')}}" alt="Second slide"></a>
-
-        </div>
-        <div class="item">
-            <a href="hold.html"><img class="third-slide " src="{{asset('front/images/ba2.jpg')}}" alt="Third slide"></a>
-
-        </div>
-    </div>
-
-</div><!-- /.carousel -->
-
+@include('front.layout.myCarousel')
 <!--content-->
 <div class="product">
     <div class="container">
         <div class="spec ">
-            <h3>Special Offers</h3>
+            <h3>{{ trans('front/header.offers') }}</h3>
             <div class="ser-t">
                 <b></b>
                 <span><i></i></span>

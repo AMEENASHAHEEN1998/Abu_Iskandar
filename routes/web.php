@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\front\AbuEskandarController;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
@@ -29,10 +31,13 @@ Route::group(
         Auth::routes();
         // Auth::routes(['register' => false]);
 
-
-        Route::get('/AbuEskandar',function(){
-            return view('front.index');
+        Route::prefix('AbuEskandar')->name('AbuEskandar.')->group(function(){
+            Route::get('/',[AbuEskandarController::class ,'index']);
+            Route::get('about',[AbuEskandarController::class ,'about'])->name('about');
+            Route::get('offer',[AbuEskandarController::class ,'offer'])->name('offer');
+            Route::get('contact',[AbuEskandarController::class ,'contact'])->name('contact');
         });
+
 });
 
 

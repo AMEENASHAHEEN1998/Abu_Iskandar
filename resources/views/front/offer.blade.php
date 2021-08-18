@@ -2,34 +2,12 @@
 @section('content')
       <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <a href="kitchen.html"><img class="first-slide" src="images/ba.jpg" alt="First slide"></a>
-
-            </div>
-            <div class="item">
-                <a href="care.html"><img class="second-slide " src="images/ba1.jpg" alt="Second slide"></a>
-
-            </div>
-            <div class="item">
-                <a href="hold.html"><img class="third-slide " src="images/ba2.jpg" alt="Third slide"></a>
-
-            </div>
-        </div>
-
-    </div>
+@include('front.layout.myCarousel')
     <!--content-->
     <div class="content-top offer-w3agile">
         <div class="container ">
             <div class="spec ">
-                <h3>Special Offers</h3>
+                <h3>{{ trans('front/header.offers') }}</h3>
                 <div class="ser-t">
                     <b></b>
                     <span><i></i></span>

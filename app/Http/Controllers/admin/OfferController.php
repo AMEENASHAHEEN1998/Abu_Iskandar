@@ -137,13 +137,6 @@ class OfferController extends Controller
         ]);
         return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.update_message'));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
 

@@ -17,7 +17,7 @@ return
     'distributors_name_ar' => 'Arabic Name of distributor ',
     'distributors_name_en' => 'English Name of distributor ',
 
-
+    'place' =>'place',
     'distributors_type' => 'Distributors Type',
     'distributors_type_en' => 'Enghlish Distributors Type' ,
     'distributors_type_ar' =>'Arabic Distributors Type',

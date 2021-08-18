@@ -15,7 +15,7 @@ return
     'name' => 'اسم موزع  ' ,
     'name_ar' => 'اسم موزع بالعربي ' ,
     'name_en' => ' اسم الموزع بالانجليزي ' ,
-
+    'place' =>'المحافظة',
     'distributors_name' => 'اسم توزيع  ' ,
     'distributors_name_ar' => 'اسم توزيع بالعربي ' ,
     'distributors_name_en' => ' اسم التوزيع بالانجليزي ' ,

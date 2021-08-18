@@ -17,6 +17,18 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+ #langselector{
+    width: 89px;
+    height: 22px;
+    padding: 0 11px;
+    background-color: #fab005;
+    position: absolute;
+    top: 1px;
+    right: 116px;
+    text-align: center;
+    color: #fff;
+}
+
 h1,h2,h3,h4,h5,h6{
 	margin:0;
 	font-family: 'Montserrat', sans-serif;
@@ -102,9 +114,15 @@ button.close.close-w3 {
     right: 0;
 }
 /*----*/
+/* .dropdown-toggle:focus{
+    background-color: #FAB005;
+    color: #fff;
+} */
 img.img-head {
     position: absolute;
 	top:0;
+    width: 75px;
+    left: 130px;
 }
 .hyper {
   margin: auto;
@@ -174,6 +192,8 @@ img.img-head {
 .header {
     text-align: center;
 	margin-top: 2em;
+    margin-bottom: 7px;
+
 }
 
 .row{
@@ -1186,7 +1206,7 @@ ul.product-qty {
 .banner-top h3{
 	font-size:2.5em;
 	color:#fff;
-	float:left;
+	/* float:left; */
     font-weight: 700;
 }
 .banner-top h4{
@@ -2078,15 +2098,16 @@ p.in-pa{
     color: #000;
 	margin-bottom: 1em;
 }
+
 .work h3 {
     font-size: 3em;
     text-align: center;
     color: #fff;
 	margin-bottom: 1em;
 }
-.about-left p {
-    font-size: 1em;
-    color: #999;
+.about p {
+    font-size: 14px;
+    color: #2d2727;
     line-height: 2em;
 	padding:2em 0;
 }

@@ -76,6 +76,13 @@
                         </h3>
                     </div>
                     <hr>
+                    <div>
+                        <h3> <i class="fa fa-angellist"></i>
+                            {{ trans('admin/distributor.place') }}
+                            <strong> : {{ $distributor->place }}</strong>
+                        </h3>
+                    </div>
+                    <hr>
 
 
 

@@ -41,6 +41,7 @@
                                     <th>{{ trans('admin/distributor.phone_number') }}</th>
 
                                     <th>{{ trans('admin/distributor.distributors_type') }}</th>
+                                    <th>{{ trans('admin/distributor.place') }}</th>
 
                                     <th>{{ trans('admin/distributor.add_name') }}</th>
                                     <th>{{ trans('admin/distributor.date') }}</th>
@@ -62,11 +63,14 @@
                                         <td>{{ $distributor->phone_number }}</td>
 
 
-                                            <td>{{ ($distributor->DistributorType) ? $distributor->DistributorType->{'name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
+                                        <td>{{ ($distributor->DistributorType) ? $distributor->DistributorType->{'name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
 
+                                        <td>{{ $distributor->place}}</td>
 
 
                                         <td>{{ ($distributor->user) ? $distributor->user->name : trans('admin/dashboard.none_user') }}</td>
+
+
                                         <td>{{ $distributor->created_at }}</td>
 
 
