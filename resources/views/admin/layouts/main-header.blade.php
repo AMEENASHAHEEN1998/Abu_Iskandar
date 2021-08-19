@@ -2,9 +2,10 @@
         header start-->
         <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <!-- logo -->
-            <div class="text-left navbar-brand-wrapper">
+            <div class="text-left navbar-brand-wrapper text-center" >
                 <h6 class="text-center"></h6>
-                <h4 class="text-center"><strong>Abu Eskandar</strong></h4>
+                <p style="font-size: 20px">@include('front.layout.title')</p>
+                {{-- <h4 class="text-center"><strong>Abu Eskandar</strong></h4> --}}
             </div>
             <!-- Top bar left -->
             <ul class="nav navbar-nav mr-auto">
@@ -31,57 +32,7 @@
                     <a id="btnFullscreen" href="#" class="nav-link"><i class="ti-fullscreen"></i></a>
                 </li>
 
-                {{-- <li class="nav-item dropdown ">
-                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                        aria-expanded="false">
-                        <i class="ti-bell"></i>
-                        <span class="badge badge-danger notification-status"> </span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
-                        <div class="dropdown-header notifications">
-                            <strong>Notifications</strong>
-                            <span class="badge badge-pill badge-warning">05</span>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">New registered user <small
-                                class="float-right text-muted time">Just now</small> </a>
-                        <a href="#" class="dropdown-item">New invoice received <small
-                                class="float-right text-muted time">22 mins</small> </a>
-                        <a href="#" class="dropdown-item">Server error report<small
-                                class="float-right text-muted time">7 hrs</small> </a>
-                        <a href="#" class="dropdown-item">Database report<small class="float-right text-muted time">1
-                                days</small> </a>
-                        <a href="#" class="dropdown-item">Order confirmation<small class="float-right text-muted time">2
-                                days</small> </a>
-                    </div>
-                </li> --}}
-                <li class="nav-item dropdown ">
-                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                        aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-big">
-                        <div class="dropdown-header">
-                            <strong>Quick Links</strong>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <div class="nav-grid">
-                            <a href="" class="nav-grid-item"><i class="ti-pencil-alt text-warning"></i>
-                                <h5></h5>
-                            </a>
-                            <a href="" class="nav-grid-item"><i class="ti-check-box text-success"></i>
-                                <h5></h5>
-                            </a>
-                        </div>
-                        <div class="nav-grid">
-                            <a href="" class="nav-grid-item"><i class="fa fa-globe" aria-hidden="true"></i>
 
-                                <h5></h5>
-                            </a>
-                            <a href="" class="nav-grid-item"><i class="fa fa-user-plus" aria-hidden="true"></i>
-                                <h5> </h5>
-                            </a>
-                        </div>
-                    </div>
-                </li>
                 <li class="nav-item dropdown mr-30">
                     <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">

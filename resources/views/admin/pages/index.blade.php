@@ -52,18 +52,28 @@ preloader -->
                         <div class="clearfix">
                             <div class="float-left">
                                     <span class="text-danger">
-                                        <i class="fa fa-bar-chart-o highlight-icon" aria-hidden="true"></i>
+
+                                        <i class="fa fa-cart-arrow-down highlight-icon" aria-hidden="true"></i>
+
                                     </span>
+
                             </div>
-                            <div class="float-right text-right">
+
+                            <div class="float-rights text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4></h4>
+                                <h4> <span>
+                                    {{$product}}
+                                </span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top ">
                          <h5 class='d-inline'></h5>
                         </p>
                     </div>
+
+
+
+
                 </div>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
@@ -71,13 +81,14 @@ preloader -->
                     <div class="card-body">
                         <div class="clearfix">
                             <div class="float-left">
+
                                     <span class="text-warning">
-                                        <i class="fa fa-shopping-cart highlight-icon" aria-hidden="true"></i>
+                                        <i class="fa fa-tag highlight-icon" aria-hidden="true"></i>
                                     </span>
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4></h4>
+                                <h4>{{$offer}}</h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -91,12 +102,12 @@ preloader -->
                         <div class="clearfix">
                             <div class="float-left">
                                     <span class="text-success">
-                                        <i class="fa fa-dollar highlight-icon" aria-hidden="true"></i>
+                                        <i class="fa fa-address-card highlight-icon" aria-hidden="true"></i>
                                     </span>
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4></h4>
+                                <h4>{{$driverrequest}}</h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -110,12 +121,14 @@ preloader -->
                         <div class="clearfix">
                             <div class="float-left">
                                     <span class="text-primary">
-                                        <i class="fa fa-twitter highlight-icon" aria-hidden="true"></i>
+
+                                        {{-- <i class="fa fa-bus"></i> --}}
+                                        <i class="fa fa-bus highlight-icon" aria-hidden="true"></i>
                                     </span>
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4></h4>
+                                <h4>{{$requestjob}}</h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">

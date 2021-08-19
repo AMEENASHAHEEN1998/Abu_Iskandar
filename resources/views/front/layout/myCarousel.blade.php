@@ -13,11 +13,11 @@
 
         </div>
         <div class="item">
-            <a href="care.html"> <img class="second-slide " src="{{asset('front/images/ba1.jpg')}}" alt="Second slide"></a>
+            <a href="care.html"> <img class="second-slide " src="{{asset('front/images/index/cake.png')}}" alt="Second slide"></a>
 
         </div>
         <div class="item">
-            <a href="hold.html"><img class="third-slide " src="{{asset('front/images/ba2.jpg')}}" alt="Third slide"></a>
+            <a href="hold.html"><img class="third-slide " src="{{asset('front/images/index/coffe.png')}}" alt="Third slide"></a>
 
         </div>
     </div>

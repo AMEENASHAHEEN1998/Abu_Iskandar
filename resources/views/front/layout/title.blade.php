@@ -5,12 +5,12 @@
 
 
 <style>
-h1 a  b ,p{
+h1   b ,p{
         font-family: 'Amiri', serif;
         color:#083789
     }
     </style>
 
-<h1 ><a href="index.html"><b>{{ trans('front/header.title') }}<br></b></a></h1>
+<h1 ><b>{{ trans('front/header.title') }}<br></b></h1>
 <p><span> {{ trans('front/header.content') }}</span></p>
 
