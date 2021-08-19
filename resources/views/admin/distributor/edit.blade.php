@@ -109,6 +109,23 @@
                         </div>
 
 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label
+                                        for="formGroupExampleInput">{{ trans('admin/distributor.place') }}</label>
+                                    <input type="text" name="place" value="{{$distributor->place}}" class="form-control"
+                                        id="formGroupExampleInput">
+                                </div>
+                            </div>
+
+                            @error('place')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+
+                        </div>
+
+
 
 
 

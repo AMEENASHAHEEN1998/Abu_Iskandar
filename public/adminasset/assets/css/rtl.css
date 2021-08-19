@@ -2816,6 +2816,7 @@ tbody.collapse.show {
   border-bottom: 0;
   border-right: .3em solid transparent; }
 
+
 .dropdown-toggle:empty::after {
   margin-right: 0; }
 
@@ -23895,4 +23896,23 @@ nav.navbar.navbar-default {
 .dropdown-menu.multi {
     min-width: 703px;
     padding: 23px 20px;
+}
+img.img-head {
+    position: absolute;
+	top:0;
+    width: 75px;
+    right: 130px;
+}
+.about .about-right{
+    float: right;
+}
+#langselector{
+    width: 89px;
+    height: 24px;
+    padding: 0 11px;
+    background-color: #fab005;
+    position: absolute;
+    top: 1px;
+    right: 1136px;
+
 }

@@ -8,8 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <title>Big store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Contact ::
-        w3layouts</title>
+    <title>{{trans('front/header.title')}}</title>
     <!-- for-mobile-apps -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -17,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta property="og:title" content="Vide" />
     <meta name="keywords" />
+
     <script type="application/x-javascript">
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
@@ -38,6 +38,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     @else
         <link href="{{ URL::asset('adminasset/assets/css/rtl.css') }}" rel="stylesheet">
     @endif
+
+    <link rel = "icon" href ="{{asset('front/images/logo.jpg')}}" type = "image/x-icon">
 
 
     {{-- @if (App::getLocale() == 'en')
@@ -63,11 +65,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         });
     </script>
+
     <!-- start-smoth-scrolling -->
     <link href="{{ asset('front/css/font-awesome.css') }}" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--- start-rate---->
+
+
     <script src="{{ asset('front/js/jstarbox.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('front/css/jstarbox.css') }}" type="text/css" media="screen"
         charset="utf-8" />
@@ -99,180 +104,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-    <a href="offer.html"><img src="{{ asset('front/images/download.png') }}" class="img-head" alt=""></a>
-    <div class=" header">
-
-        <div class="container">
-
-            <div class="logo">
-                <h1><a href="index.html"></a>{{ trans('front/header.title') }}</h1>
-            </div>
-
-            <div class="head-t">
-                <ul class="card">
-                    <li><a href="login.html"><i class="fa fa-user"
-                                aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
-                    <li><a href="register.html"><i class="fa fa-arrow-right"
-                                aria-hidden="true"></i>{{ trans('front/header.Register') }}</a></li>
-
-                </ul>
-            </div>
 
 
+    <ul class="" >
 
-            <div class="nav-top admin-header">
-                <nav class="navbar navbar-default">
+        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            @if ($localeCode != App::getLocale())
+            <li class="nav-items"  >
+                <a rel="alternate" id="langselector" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    {{ $properties['native'] }}
+                </a>
+            </li>
+            @endif
 
-                    <div class="navbar-header nav_2">
-                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
-                            data-target="#bs-megadropdown-tabs">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+        @endforeach
+    </ul>
 
-
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                        <ul class="nav navbar-nav ">
-                            <li class=" active"><a href="index.html"
-                                    class="hyper"><span>{{ trans('front/header.Home') }}</span></a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="hyper dropdown-toggle"
-                                    data-toggle="dropdown"><span>{{ trans('front/header.Products') }}<b
-                                            class="caret"></b></span></a>
-                                <ul class="dropdown-menu multi">
-                                    <div class="row">
-
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-
-                                                <li><a href="kitchen.html">
-                                                    <i class="fa fa-angle-left"></i>
-                                                        {{ trans('front/header.coffee') }}
-                                                    </a>
-                                                </li>
-                                                <li><a href="kitchen.html">
-                                                    <i class="fa fa-angle-left"></i>
-                                                        {{ trans('front/header.nuts') }}
-                                                    </a>
-                                                </li>
-                                                <li><a href="kitchen.html">
-                                                    <i class="fa fa-angle-left"></i>
-
-                                                        {{ trans('front/header.spices') }}
-                                                    </a>
-                                                </li>
+    <a href="offer.html"><img src="{{asset('front/images/logo.jpg')}}"  class="img-head" alt=""></a>
 
 
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-4">
-
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                            aria-hidden="true"></i>{{ trans('front/header.olive_oil') }}</a>
-                                                </li>
-                                                <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                            aria-hidden="true"></i>{{ trans('front/header.tahini') }}</a>
-                                                </li>
-
-
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="col-sm-3 w3l">
-                                        <a href="kitchen.html"><img src="{{asset('front/images/me.png')}}" class="img-responsive"
-                                                alt=""></a>
-                                    </div>
-                                        <div class="clearfix"></div>
-
-                                    </div>
-                                </ul>
-                            </li>
-
-
-
-                            <li><a href="codes.html" class="hyper">
-                                    <span>{{ trans('front/header.Articles') }}</span></a></li>
-                            <li><a href="codes.html" class="hyper">
-                                    <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
-                            <li><a href="codes.html" class="hyper">
-                                    <span>{{ trans('front/header.Delivery_Points') }}</span></a></li>
-                            <li><a href="contact.html"
-                                    class="hyper"><span>{{ trans('front/header.Contact_Us') }}</span></a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-            </div>
-            {{-- <div class="clearfix"></div> --}}
-
-            <div class="cart">
-
-                <span class="fa fa-shopping-cart my-cart-icon"></span>
-                <span class="badge badge-notify my-cart-badge"></span>
-                {{-- </span> --}}
-            </div>
-            {{-- <div class="clearfix"></div> --}}
-
-        </div>
-    </div>
-
-
+    @include('front.layout.header')
     @yield('content')
     <!--footer-->
-    <div class="footer">
-        <div class="container">
-            <div class="col-md-3 footer-grid">
-                <h3>About Us</h3>
-                <p>Nam libero tempore, cum soluta nobis est eligendi
-                    optio cumque nihil impedit quo minus id quod maxime
-                    placeat facere possimus.</p>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="kitchen.html">Kitchen</a></li>
-                    <li><a href="care.html">Personal Care</a></li>
-                    <li><a href="hold.html">Household</a></li>
-                    <li><a href="codes.html">Short Codes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Customer Services</h3>
-                <ul>
-                    <li><a href="shipping.html">Shipping</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="faqs.html">Faqs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="offer.html">Online Shopping</a></li>
-
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid">
-                <h3>My Account</h3>
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-
-
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-
-            <div class="copy-right">
-                <p> &copy; 2016 Big store. All Rights Reserved | Design by <a href="http://w3layouts.com/">
-                        W3layouts</a></p>
-            </div>
-        </div>
-    </div>
+    @include('front.layout.footer')
     <!-- //footer-->
     <!-- tabs -->
     <script src="{{ asset('front/js/easyResponsiveTabs.js') }}" type="text/javascript"></script>

@@ -47,6 +47,7 @@ class DistributorController extends Controller
         Distributor::create([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
+            'place' =>$request->place,
             // 'distributor_name_ar' => $request->name_ar,
             // 'distributor_name_en' => $request->name_en,
             'distributor_type_id' => $request->distributor_type_id,
@@ -92,6 +93,7 @@ class DistributorController extends Controller
         Distributor::find($id)->update([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
+            'place' => $request->place,
             // 'distributor_name_ar' => $request->distributor_name_ar,
             // 'distributor_name_en' => $request->distributor_name_en,
             'distributor_type_id' => $request->distributor_type_id,
