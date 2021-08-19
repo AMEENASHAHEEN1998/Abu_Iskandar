@@ -8,6 +8,11 @@
         </div>
     </div>
 
+    {{-- <video width="320" height="240" controls>
+        <source src="{{ asset('front/images/ab.jpg')}}" type="video/mp4">
+        <source src="{{ asset('front/images/ab.jpg')}}" type="video/ogg">
+      Your browser does not support the video tag.
+      </video> --}}
     <!-- faqs -->
     <div class="about-w3 ">
 

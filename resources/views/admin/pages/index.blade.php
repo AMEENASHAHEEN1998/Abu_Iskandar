@@ -8,7 +8,10 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Dashboard</title>
     @include('admin.layouts.head')
+
+
 </head>
 
 <body>
@@ -66,9 +69,11 @@ preloader -->
                                 </span></h4>
                             </div>
                         </div>
-                        <p class="text-muted pt-3 mb-0 mt-2 border-top ">
-                         <h5 class='d-inline'></h5>
+
+                        <p class="text-muted pt-3 mb-0 mt-2 border-top  ">
+                         <h5 class='d-inline '></h5>
                         </p>
+
                     </div>
 
 
