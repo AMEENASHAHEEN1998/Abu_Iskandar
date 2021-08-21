@@ -26,16 +26,17 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-        Route::get('/' , [HomeController::class , 'index'])->name('dashboard');
+        // Route::get('/' , [AbuEskandarController::class , 'index'])->name('dashboard');
 
-        Auth::routes();
-        // Auth::routes(['register' => false]);
+        // Auth::routes();
+        // // Auth::routes(['register' => false]);
 
         Route::prefix('AbuEskandar')->name('AbuEskandar.')->group(function(){
             Route::get('/',[AbuEskandarController::class ,'index']);
             Route::get('about',[AbuEskandarController::class ,'about'])->name('about');
             Route::get('offer',[AbuEskandarController::class ,'offer'])->name('offer');
             Route::get('contact',[AbuEskandarController::class ,'contact'])->name('contact');
+            Route::get('category/{id}' , [AbuEskandarController::class , 'show_category'])->name('show_category');
         });
 
 });

@@ -47,42 +47,49 @@
 
                                     <div class="col-sm-4">
                                         <ul class="multi-column-dropdown">
-
-                                            <li><a href="kitchen.html">
+                                            @foreach ($Categories as $Category  )
+                                            @if ($loop->iteration <= 4)
+                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->id) }}">
                                                 <i class="fab fa-battle-net"></i>
-                                                    {{ trans('front/header.coffee') }}
-                                                </a>
-                                            </li>
-                                            <li><a href="kitchen.html">
+                                                @if (App::getLocale() == 'en')
 
-                                                    {{ trans('front/header.nuts') }}
-                                                </a>
+                                                    {{ $Category->category_name_en }}
+                                                    @else
+                                                    {{ $Category->category_name_ar }}
+                                                    @endif</a>
                                             </li>
-                                            <li><a href="kitchen.html">
-                                                <i class="fa fa-angle-left"></i>
-
-                                                    {{ trans('front/header.seasoning') }}
-                                                </a>
-                                            </li>
-
+                                            @endif
+                                            @endforeach
 
                                         </ul>
 
                                     </div>
+
                                     <div class="col-sm-4">
-
                                         <ul class="multi-column-dropdown">
-                                            <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                        aria-hidden="true"></i>{{ trans('front/header.olive_oil') }}</a>
-                                            </li>
-                                            <li><a href="kitchen.html"><i class="fa fa-angle-right"
-                                                        aria-hidden="true"></i>{{ trans('front/header.tahini') }}</a>
-                                            </li>
+                                            @foreach ($Categories as $Category  )
+                                            @if ($loop->iteration > 4)
+                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->id) }}">
+                                                <i class="fab fa-battle-net"></i>
+                                                    @if (App::getLocale() == 'en')
 
+                                                    {{ $Category->category_name_en }}
+                                                    @else
+                                                    {{ $Category->category_name_ar }}
+                                                    @endif
+                                                </a>
+                                            </li>
+                                            @endif
+                                            @endforeach
 
                                         </ul>
 
                                     </div>
+
+
+
+
+
 
                                     <div class="col-sm-3 w3l">
                                     <a href="kitchen.html"><img src="{{asset('front/images/me.png')}}" class="img-responsive"
