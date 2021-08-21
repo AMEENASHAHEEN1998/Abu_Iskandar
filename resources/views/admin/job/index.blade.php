@@ -45,6 +45,7 @@
                                     <th>{{ trans('admin/job.user_name') }}</th>
                                     <th>{{ trans('admin/job.status') }}</th>
                                     <th>{{ trans('admin/job.views') }}</th>
+                                    <th>{{ trans('admin/job.job_declaration') }}</th>
 
                                     <th>{{ trans('admin/job.date') }}</th>
                                     <th>{{ trans('admin/job.action') }}</th>
@@ -80,6 +81,16 @@
                                             @endif
                                         </td>
                                         <td>{{ $job->views }}</td>
+
+                                        <td>
+                                            @if($job->job_declaration == 'yes')
+                                                <p style="color: green">{{trans('admin/job.declaration')}} </p>
+                                            @endif
+                                            @if($job->job_declaration == 'no')
+                                                <p  style="color: red">{{trans('admin/job.nodeclaration')}} </p>
+                                            @endif
+                                        </td>
+
 
 
                                         <td>{{ $job->created_at }}</td>

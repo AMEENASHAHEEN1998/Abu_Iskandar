@@ -29,6 +29,7 @@ class RequestJobRequest extends FormRequest
             'university' =>'required',
             'comments_user' =>'required',
             'phone_number' =>'required|max:10',
+            'image' =>'required',
             'address' =>'required',
             'Date_of_Birth' =>'required',
         ];

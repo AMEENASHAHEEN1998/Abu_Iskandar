@@ -56,7 +56,7 @@ class RequestJobController extends Controller
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $personal_image=time().'_'.rand().'_'.$FileEx;
+            $personal_image=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/requestjob'),$personal_image);
         }
 
@@ -76,7 +76,8 @@ class RequestJobController extends Controller
             'comments_admin' =>'',
             'start_date' => '',
         ]);
-        return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.success_message'));
+        return redirect()->route('AbuEskandar.Employment_applications')->with('success' , trans('admin/requestjob.success_message'));
+        // return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.success_message'));
 
     }
 

@@ -50,6 +50,7 @@ class ProductController extends Controller
 
             $product_image_ex = $request->file('image')->getClientOriginalExtension();
             $product_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $product_image_ex;
+            
             $product = Product::create([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,

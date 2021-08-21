@@ -4005,6 +4005,7 @@ tbody.collapse.show {
   border-radius: calc(.25rem - 1px); }
 
 .card-img-top {
+height: 100%;
   width: 100%;
   border-top-right-radius: calc(.25rem - 1px);
   border-top-left-radius: calc(.25rem - 1px); }

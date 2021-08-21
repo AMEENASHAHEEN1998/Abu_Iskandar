@@ -128,6 +128,46 @@
 
 
 
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+
+                                <label for="switcheryColor4" class="card-title ml-1">{{ trans('admin/job.job_declaration') }}</label>
+
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                            name="job_declaration"
+                                            value="yes"
+                                            @if ($job->job_declaration == 'yes') checked @endif
+                                            type="radio"
+                                            id="flexCheckDefault"
+                                    >
+
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      {{trans('admin/job.declaration')}}
+                                    </label>
+                                  </div>
+
+                                  <div class="form-check">
+                                    <input class="form-check-input"
+                                            name="job_declaration"
+                                            @if ($job->job_declaration == 'no') checked @endif
+                                            value="no"
+                                            type="radio"
+
+                                    >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        {{trans('admin/job.nodeclaration')}}
+                                    </label>
+                                  </div>
+
+
+                            </div>
+                        </div>
+
+
+
                         <button class="btn btn-success btn-lg">{{ trans('admin/job.save') }}</button>
 
                     </form>

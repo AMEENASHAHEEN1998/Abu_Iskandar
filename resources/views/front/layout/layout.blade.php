@@ -42,12 +42,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel = "icon" href ="{{asset('front/images/logo.jpg')}}" type = "image/x-icon">
 
 
-    {{-- @if (App::getLocale() == 'en')
-<link href="{{asset('front/css/style_en.css')}}" rel='stylesheet' type='text/css' />
-@else
-<link href="{{asset('front/css/style_ar.css')}}" rel='stylesheet' type='text/css' />
-@endif --}}
-
 
 
     <script src="{{ asset('front/js/jquery-1.11.1.min.js') }}"></script>
@@ -106,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 
 
-    <ul class="" >
+    <ul>
 
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
             @if ($localeCode != App::getLocale())

@@ -3,8 +3,8 @@
      <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h3 >Contact</h3>
-		<h4><a href="index.html">Home</a><label>/</label>Contact</h4>
+		<h3 >{{trans('front/header.Contact')}}</h3>
+		<h4><a href="index.html">{{trans('front/header.Home')}}</a><label>/</label>{{trans('front/header.Contact')}}</h4>
 		<div class="clearfix"> </div>
 	</div>
 </div>
@@ -13,7 +13,7 @@
 <div class="contact">
 	<div class="container">
 		<div class="spec ">
-			<h3>Contact</h3>
+			<h3>{{trans('front/header.Contact')}}</h3>
 				<div class="ser-t">
 					<b></b>
 					<span><i></i></span>

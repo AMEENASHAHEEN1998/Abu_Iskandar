@@ -112,7 +112,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>{{$driverrequest}}</h4>
+                                <h4>{{$requestjob}}</h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -127,13 +127,12 @@ preloader -->
                             <div class="float-left">
                                     <span class="text-primary">
 
-                                        {{-- <i class="fa fa-bus"></i> --}}
                                         <i class="fa fa-bus highlight-icon" aria-hidden="true"></i>
                                     </span>
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>{{$requestjob}}</h4>
+                                <h4>{{$driverrequest}}</h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">

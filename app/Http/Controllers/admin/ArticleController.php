@@ -36,7 +36,7 @@ class ArticleController extends Controller
         $file_name='';
         if($request->has('image')){
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $file_name=time().'_'.rand().'_'.$FileEx;
+            $file_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/article'),$file_name);
         }
 
@@ -111,7 +111,7 @@ class ArticleController extends Controller
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'_'.$FileEx;
+            $image_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/article'),$image_name);
         }
         Article::find($id)->update([

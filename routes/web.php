@@ -32,11 +32,14 @@ Route::group(
         // // Auth::routes(['register' => false]);
 
         Route::prefix('AbuEskandar')->name('AbuEskandar.')->group(function(){
-            Route::get('/',[AbuEskandarController::class ,'index']);
+            Route::get('/',[AbuEskandarController::class ,'index'])->name('home');
             Route::get('about',[AbuEskandarController::class ,'about'])->name('about');
             Route::get('offer',[AbuEskandarController::class ,'offer'])->name('offer');
             Route::get('contact',[AbuEskandarController::class ,'contact'])->name('contact');
             Route::get('category/{id}' , [AbuEskandarController::class , 'show_category'])->name('show_category');
+            Route::get('Employment_applications',[AbuEskandarController::class ,'Employment_applications'])->name('Employment_applications');
+            Route::get('requestjob/{id}',[AbuEskandarController::class ,'requestjob'])->name('requestjob');
+
         });
 
 });

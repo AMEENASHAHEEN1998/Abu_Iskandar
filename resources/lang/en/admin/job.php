@@ -16,6 +16,9 @@ return
     'description_job'  =>'Description of Job',
     'description_en'  =>'Description English',
     'description_ar'  =>'Description Arabic',
+    'job_declaration' =>'Job Declaration',
+    'nodeclaration' => 'no declaration',
+    'declaration' => 'declaration',
     'views' => 'Views' ,
     'status' =>'Status',
     'user_id' =>' User Name',
@@ -33,7 +36,7 @@ return
     'submit' => 'Submit',
     'edit' => 'Edit',
     'delete' => 'Delete',
-    
+
     'delete_category' => 'Delete Primary Category',
     'warning_job' => 'Are sure of the deleting process?',
     'delete_job' => 'Delete job',
