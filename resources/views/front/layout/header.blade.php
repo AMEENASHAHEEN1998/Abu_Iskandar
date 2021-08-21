@@ -35,7 +35,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html"
+                        <li class=" active"><a href="{{route('AbuEskandar.home')}}"
                                 class="hyper"><span>{{ trans('front/header.Home') }}</span></a></li>
 
                         <li class="dropdown">
@@ -101,7 +101,7 @@
                         <li><a href="codes.html" class="hyper">
                                 <span>{{ trans('front/header.Articles') }}</span></a></li>
 
-                        <li><a href="codes.html" class="hyper">
+                        <li><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
                                 <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
                         <li><a href="codes.html" class="hyper">
                                 <span>{{ trans('front/header.Delivery_Points') }}</span></a></li>

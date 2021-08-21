@@ -38,12 +38,14 @@ class JobController extends Controller
      */
     public function store(JobRequest $request)
     {
-        $file_name ='';
+
+        $file_name ='job.jpg';
         if($request->has('image')){
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $file_name=time().'_'.rand().'_'.$FileEx;
+            $file_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/job'),$file_name);
         }
+        // return $file_name;
 
 
         Job::create([
@@ -53,6 +55,7 @@ class JobController extends Controller
             'job_description_ar' => $request->job_description_ar,
             'job_description_en' => $request->job_description_en,
             'image' => $file_name,
+            'job_declaration' => 'no',
             'status' => 'مفعل',
             'status_value' => 1,
             'views' => 0,
@@ -87,6 +90,7 @@ class JobController extends Controller
 
     public function update(JobRequest $request, $id)
     {
+        // return $request;
         if ($request->has('status_value') == 1) {
             $request->status_value = 1;
             $status = 'مفعل';
@@ -94,20 +98,26 @@ class JobController extends Controller
             $request->status_value = 0;
             $status = 'غير مفعل ';
         }
+
+
         $job = Job::findOrFail($id);
         $image_name = $job->image;
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'_'.$FileEx;
+            $image_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/job'),$image_name);
         }
+        // else{
+        //     $image_name ='upload/admin/job/job.jpg';
+        // }
         job::find($id)->update([
             'user_id' => $request->user_id,
             'job_name_ar'  => $request->job_name_ar,
             'job_name_en' => $request->job_name_en,
             'job_description_ar' => $request->job_description_ar,
             'job_description_en' => $request->job_description_en,
+            'job_declaration' => $request->job_declaration,
             'image' => $image_name,
             'status' => $status,
             'status_value' => $request->status_value,

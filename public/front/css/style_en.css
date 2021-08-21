@@ -198,7 +198,7 @@ img.img-head {
 
 .row{
     display: inline-flex;
-    text-align: center;
+    /* text-align: center; */
 }
 
 /*
@@ -682,7 +682,7 @@ ul.nav.tabs {
 	margin-right:6px;
 }
 .mid-2 {
-    padding: 1em 0;
+    padding: 0em 0;
 }
 .mid-1 {
     padding: 3em 0 0;
@@ -704,6 +704,7 @@ ul.nav.tabs {
 .offer-img img{
 	margin:0 auto;
 	width: 55%;
+    height: 167px;
 }
 .offer{
 	    position: absolute;

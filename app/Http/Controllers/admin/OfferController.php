@@ -51,7 +51,7 @@ class OfferController extends Controller
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'_'.$FileEx;
+            $image_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
         }
 
@@ -117,7 +117,7 @@ class OfferController extends Controller
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'_'.$FileEx;
+            $image_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
         }
 

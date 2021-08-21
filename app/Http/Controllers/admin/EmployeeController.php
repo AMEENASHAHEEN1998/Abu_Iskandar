@@ -43,7 +43,7 @@ class EmployeeController extends Controller
         $file_name='';
         if($request->has('image')){
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $file_name=time().'_'.rand().'_'.$FileEx;
+            $file_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/employee'),$file_name);
         }
 
@@ -112,7 +112,7 @@ class EmployeeController extends Controller
 
         if ($request->has('image')) {
             $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'_'.$FileEx;
+            $image_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/employee'),$image_name);
         }
 
