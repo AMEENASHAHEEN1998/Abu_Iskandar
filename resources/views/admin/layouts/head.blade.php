@@ -2,7 +2,8 @@
 <title>@yield("title")</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ URL::asset('adminasset/assets/images/favicon.ico') }}" type="image/x-icon" />
+{{-- <link rel="shortcut icon" href="{{ URL::asset('adminasset/assets/images/favicon.ico') }}" type="image/x-icon" /> --}}
+<link rel = "icon" href ="{{asset('front/images/logo.jpg')}}" type = "image/x-icon">
 
 <!-- Font -->
 <link rel="stylesheet"
