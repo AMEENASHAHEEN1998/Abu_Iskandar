@@ -103,4 +103,19 @@ class User extends Authenticatable
     public function Image() {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    public function Notes()
+    {
+        return $this->hasMany(Note::class , 'user_id' );
+    }
+
+    public function CustomerCar()
+    {
+        return $this->hasMany(CustomerCar::class , 'user_id' );
+    }
+
+    public function Customer()
+    {
+        return $this->hasMany(Customer::class , 'user_id' );
+    }
 }

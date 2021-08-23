@@ -44,6 +44,7 @@
                                     <th>{{ trans('admin/driverrequest.primary_category') }}</th>
                                     <th>{{ trans('admin/driverrequest.sub_category') }}</th>
                                     <th>{{ trans('admin/driverrequest.product') }}</th>
+                                    <th>{{ trans('admin/driverrequest.product_number') }}</th>
                                     <th>{{ trans('admin/driverrequest.number') }}</th>
                                     <th>{{ trans('admin/driverrequest.status') }}</th>
                                     <th>{{ trans('admin/driverrequest.processes') }}</th>
@@ -67,7 +68,7 @@
                                         <td>{{ ($Order->SubCategory) ?  $Order->SubCategory->sub_category_name_ar : 'الفرع غير موجود' }}</td>
                                         <td>{{ ($Order->Product) ? $Order->Product->product_name_ar : 'تم حذف المنتج'   }}</td>
                                         @endif
-
+                                        <td>{{ $Order->Product->product_number }}</td>
                                         <td>{{ $Order->number }}</td>
                                         <td style="color:red ; font-weight:bold">{{ $Order->status }}</td>
 

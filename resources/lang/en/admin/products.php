@@ -34,4 +34,5 @@ return [
     'price' => ' Price',
     'size' => 'Size',
     'edit_product' => 'Edit Product',
+    'product_number' => 'Product Number',
 ];

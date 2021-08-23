@@ -50,10 +50,11 @@ class ProductController extends Controller
 
             $product_image_ex = $request->file('image')->getClientOriginalExtension();
             $product_image_name = 'Abu_Iskandar_' .time() . '_'. rand() . '.'. $product_image_ex;
-            
+
             $product = Product::create([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
+                'product_number'  => $request->product_number,
                 'image' => $product_image_name,
                 'user_id' => auth()->user()->id,
                 'category_id' => $request->category_id ,
@@ -129,15 +130,10 @@ class ProductController extends Controller
             $product->update([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
+                'product_number'  => $request->product_number,
                 'image' => $product_image_name,
                 'category_id' => $request->category_id ,
             ]);
-
-
-
-
-
-
 
         }catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);

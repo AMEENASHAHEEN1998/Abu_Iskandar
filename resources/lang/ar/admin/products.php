@@ -34,5 +34,5 @@ return [
     'price' => ' السعر',
     'size' => 'الحجم',
     'edit_product' => 'تعديل منتج',
-
+    'product_number' => 'رقم المنتج',
 ];

@@ -28,4 +28,5 @@ return [
     'yes' => 'نعم ',
     'no' => 'لا',
     'update_status' => 'تم تغير حالة الطلب',
+    'product_number' => 'رقم المنتج',
 ];

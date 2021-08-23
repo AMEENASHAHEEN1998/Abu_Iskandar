@@ -28,4 +28,5 @@ return [
     'yes' => 'Yes ',
     'no' => 'No',
     'update_status' => 'Request status changed',
+    'product_number' => 'Product Number',
 ];
