@@ -6,6 +6,8 @@ use App\Models\price;
 use App\Models\Product;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Models\Article;
+use App\Models\Distributor;
 use App\Models\Job;
 use App\Models\Offer;
 use Illuminate\Http\Request;
@@ -54,5 +56,24 @@ class AbuEskandarController extends Controller
         $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->get();
        //dd(price::where('product_id' , 1)->get());
         return view('front.show_category')->with(['Products' => $Products , 'CategoryImage' => $CategoryImage]);
+    }
+
+
+    public function articles(){
+
+        $articles=Article::all();
+        return view('front.articles',compact('articles'));
+    }
+    public function article($id){
+        $article=Article::find($id);
+
+        return view('front.article',compact('article'));
+
+    }
+    public function distributor()
+    {
+        $distributes=Distributor::all()->groupBy('place');
+        // dd($distributes);
+        return view('front.distributor',compact('distributes'));
     }
 }
