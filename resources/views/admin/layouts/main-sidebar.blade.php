@@ -206,6 +206,7 @@
                             <li><a  href="{{route('admin.city.index')}}">{{ trans('admin/dashboard.addcity') }}</a></li>
                             <li><a  href="{{route('admin.neighborhood.index')}}">{{ trans('admin/dashboard.addneighborhoods') }}</a></li>
                             <li><a  href="{{route('admin.street.index')}}">{{ trans('admin/dashboard.addstreet') }}</a></li>
+                            <li><a  href="{{route('admin.classes.index')}}">{{ trans('admin/dashboard.addclasses') }}</a></li>
 
                         </ul>
                     </li>

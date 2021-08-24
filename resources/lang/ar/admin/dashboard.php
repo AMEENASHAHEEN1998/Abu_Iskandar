@@ -51,4 +51,5 @@ return [
     'addcity' => 'اضافة مدينة',
     'addneighborhoods' => 'اضافة حي',
     'addstreet' => 'اضافة شارع',
+    'addclasses' => 'اضافة صنف'
 ];

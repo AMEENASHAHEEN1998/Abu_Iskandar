@@ -9,6 +9,10 @@ class ClassModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'classes';
+    protected $fillable=['name'];
+
+
     public function Customer()
     {
         return $this->belongsTo(Customer::class , 'class_id');

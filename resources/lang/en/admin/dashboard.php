@@ -51,7 +51,7 @@ return [
     'addcity' => 'Add City',
     'addneighborhoods' => 'Add Neighborhoods',
     'addstreet' => 'Add Street',
-
+    'addclasses' => 'Add Classes' ,
     // end sidebar
 
 ];

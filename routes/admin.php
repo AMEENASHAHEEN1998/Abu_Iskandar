@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\CarsController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CityController;
+use App\Http\Controllers\admin\ClassesController;
 use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RequestJobController;
@@ -74,6 +75,7 @@ Route::group(
         Route::resource('city', CityController::class);
         Route::resource('neighborhood', NeighborhoodsController::class);
         Route::resource('street', StreetController::class);
+        Route::resource('classes', ClassesController::class);
 
         });
 
