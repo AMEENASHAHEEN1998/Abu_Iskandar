@@ -5,7 +5,7 @@ return
 [
     'id' => 'رقم' ,
     'name' => ' اسم حي' ,
-    'cities' =>'المدن',
+    'neighborhood' =>'الاحياء',
     'addneighborhood' =>'اضافة حي ',
     'date'   =>' تاريخ الاضافة',
     'close'  => 'اغلاق',

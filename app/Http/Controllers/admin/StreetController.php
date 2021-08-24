@@ -41,7 +41,12 @@ class StreetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Street::create([
+            'name'=>$request->name,
+            'id_neighborhood' =>  $request->neighborhood
+        ]);
+        return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
+
     }
 
     /**
@@ -63,7 +68,7 @@ class StreetController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -75,7 +80,13 @@ class StreetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Street::find($id)->update([
+            'name'=>$request->name,
+            'id_neighborhood' =>  $request->neighborhood
+        ]);
+        return redirect()->route('admin.street.index')->with('success',trans('admin/street.update_message'));
+
+
     }
 
     /**
@@ -86,6 +97,8 @@ class StreetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Street::find($id)->delete();
+        return redirect()->route('admin.street.index')->with('success',trans('admin/street.delete_message'));
+
     }
 }
