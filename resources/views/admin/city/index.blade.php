@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    {{ trans('admin/car.cars') }}
+    {{ trans('admin/city.cities') }}
 @endsection
 @section('content')
 

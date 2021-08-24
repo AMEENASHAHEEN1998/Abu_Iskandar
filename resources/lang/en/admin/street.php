@@ -5,6 +5,10 @@ return
 [
     'id' => 'ID' ,
     'name' => 'Name street',
+    'street' =>'Street',
+    'addstreet' =>'Add Street',
+    'action' =>'action',
+    'close' =>'close',
     'edit' => 'Edit',
     'delete' => 'Delete',
     'delete_street' => 'Delete  street',

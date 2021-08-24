@@ -5,6 +5,9 @@ return
 [
     'id' => 'ID' ,
     'name' => 'Name neighborhood',
+    'neighborhood' =>'Neighborhoods',
+    'addneighborhood' =>'Add Neighborhoods',
+
     'edit' => 'Edit',
     'delete' => 'Delete',
     'delete_neighborhood' => 'Delete  neighborhood',
@@ -14,5 +17,6 @@ return
     'update_message' => 'The neighborhood has been modified successfully',
     'delete_message' => 'The neighborhood has been deleted successfully',
     'submit' => 'Submit',
+    'close' =>'close',
 
 ];

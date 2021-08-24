@@ -5,6 +5,7 @@ return
 [
     'id' => 'ID' ,
     'name' => 'Name City',
+    'cities' => 'Cities' ,
     'edit' => 'Edit',
     'delete' => 'Delete',
     'delete_city' => 'Delete  City',
@@ -14,5 +15,7 @@ return
     'update_message' => 'The City has been modified successfully',
     'delete_message' => 'The City has been deleted successfully',
     'submit' => 'Submit',
+    'close' =>'close' ,
+    'addcity' =>'Add City' ,
 
 ];

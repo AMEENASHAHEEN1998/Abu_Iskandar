@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    {{ trans('admin/car.cars') }}
+    {{ trans('admin/neighborhood.neighborhood') }}
 @endsection
 @section('content')
 
@@ -33,7 +33,7 @@
 
 
                     <br><br>
-                    <h1>{{ trans('admin/neighborhood.cities') }}</h1>
+                    <h1>{{ trans('admin/neighborhood.neighborhood') }}</h1>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"

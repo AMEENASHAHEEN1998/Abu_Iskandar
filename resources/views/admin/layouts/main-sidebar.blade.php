@@ -199,7 +199,7 @@
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#distributors">
-                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
+                            <div class="pull-left"><i class="fa fa-users"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.distributors') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -216,7 +216,7 @@
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings">
-                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
+                            <div class="pull-left"><i class="fa fa-cogs"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.Settings') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
