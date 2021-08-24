@@ -1,24 +1,25 @@
 <?php
 
-use App\Http\Controllers\admin\ArticleController;
+use App\Models\RequestJob;
+use App\Models\Distributor;
+use App\Models\DistributorType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\OfferController;
+use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\RequestJobController;
 use App\Http\Controllers\admin\DistributorController;
-use App\Http\Controllers\admin\DistributorTypeController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
-use App\Http\Controllers\admin\EmployeeController;
-use App\Http\Controllers\admin\JobController;
-use App\Http\Controllers\admin\RequestJobController;
-use App\Models\Distributor;
-use App\Models\DistributorType;
-use App\Models\RequestJob;
+use App\Http\Controllers\admin\DistributorTypeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -65,8 +66,8 @@ Route::group(
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
 
-
-
+        Route::resource('customers', CustomerController::class);
+        Route::get('get_neighborhood/{id}', );
         });
 
 
