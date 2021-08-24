@@ -160,7 +160,7 @@
                                     :</label>
 
                                 <div class="box ">
-                                    <select class="form-control form-control-lg " name="id_neighborhood">
+                                    <select class="form-control form-control-lg " name="street_id">
                                         {{-- @foreach ($Streets as $Street)
 
                                             <option value="{{ $Street->id }}">{{ $Street->name }}</option>
@@ -305,7 +305,7 @@ footer -->
                         type: "GET",
                         dataType: "json",
                         success: function(data) {
-                            $('select[name="product"]').empty();
+                            $('select[name="id_neighborhood"]').empty();
                             $.each(data, function(key, value) {
                                 $('select[name="id_neighborhood"]').append('<option value="' +
                                     key + '">' + value + '</option>');
@@ -320,6 +320,30 @@ footer -->
         });
     </script>
 
+<script>
+    $(document).ready(function() {
+        $('select[name="id_neighborhood"]').on('change', function() {
+            var id_neighborhood = $(this).val();
+            if (id_neighborhood) {
+                $.ajax({
+                    url: "{{ URL::to('admin/get_street') }}/" + id_neighborhood,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="street_id"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="street_id"]').append('<option value="' +
+                                key + '">' + value + '</option>');
+
+                        });
+                    },
+                });
+            } else {
+                console.log('AJAX load did not work');
+            }
+        });
+    });
+</script>
 @endsection
 
 

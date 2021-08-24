@@ -79,6 +79,8 @@ Route::group(
         Route::resource('city', CityController::class);
         Route::resource('neighborhood', NeighborhoodsController::class);
         Route::resource('street', StreetController::class);
+        Route::get('get_street/{id}', [StreetController::class , 'get_street']);
+
 
 });
 

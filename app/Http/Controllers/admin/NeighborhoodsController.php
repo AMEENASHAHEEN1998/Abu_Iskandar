@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\City;
 use App\Models\Neighborhood;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class NeighborhoodsController extends Controller
@@ -87,5 +88,12 @@ class NeighborhoodsController extends Controller
         Neighborhood::find($id)->delete();
         return redirect()->route('admin.neighborhood.index')->with('success',trans('admin/neighborhood.delete_message'));
 
+    }
+
+    public function get_neighborhood($id)
+    {
+        $neighborhoods = DB::table('neighborhoods')->where('city_id' , $id)->pluck('name' , 'id');
+
+        return json_encode($neighborhoods);
     }
 }

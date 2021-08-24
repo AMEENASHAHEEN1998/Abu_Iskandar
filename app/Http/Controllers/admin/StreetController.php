@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Street;
 use App\Models\Neighborhood;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class StreetController extends Controller
@@ -87,5 +88,12 @@ class StreetController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function get_street($id)
+    {
+        $streets = DB::table('streets')->where('id_neighborhood' , $id)->pluck('name' , 'id');
+
+        return json_encode($streets);
     }
 }
