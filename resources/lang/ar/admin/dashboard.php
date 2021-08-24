@@ -46,4 +46,9 @@ return [
     'add_distributors'=>'اضافة موزع' ,
     'distributortype'=>'اضافة قسم لموزعين',
     'none_user' => 'غير معرف' ,
+    'Settings' => 'الاعدادات' ,
+    'addcar' => 'اضافة سيارة',
+    'addcity' => 'اضافة مدينة',
+    'addneighborhoods' => 'اضافة حي',
+    'addstreet' => 'اضافة شارع',
 ];

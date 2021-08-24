@@ -30,4 +30,5 @@ return [
     'about_company' => '"Abu Iskandar Company for Trade and Industry,,, Abu Iskandar Company for General Trade and Industry was established in 1990 AD in the heart of Gaza City. To work in the field of packing and distributing nuts, and then its fields of work developed to reach bread and pastries and then a mill to produce olive oil, spices, spices and coffee The company offers, through its various fields, the finest types of products through luxurious ingredients that were specially prepared for the benefit of the company, and it reaches international privileges in its production lines, and it is one of the first national and Arab companies that work with the concept of sustainability and environmental preservation. From (nuts, cakes, olive oil, spices, spices and coffee) to the consumer with high quality and competitive price in the local market through a group of production lines and a confident management.”',
     'Contact' => 'Contact',
     'Job' =>'Job',
+    'Article'=>'Article',
 ];

@@ -105,12 +105,12 @@
                         <li><a href="{{route('AbuEskandar.offer')}}" class="hyper">
                             <span>{{ trans('front/header.Offer') }}</span></a></li>
 
-                        <li><a href="codes.html" class="hyper">
+                        <li><a href="{{route('AbuEskandar.articles')}}" class="hyper">
                                 <span>{{ trans('front/header.Articles') }}</span></a></li>
 
                         <li><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
                                 <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
-                        <li><a href="codes.html" class="hyper">
+                        <li><a href="{{route('AbuEskandar.distributor')}}" class="hyper">
                                 <span>{{ trans('front/header.Delivery_Points') }}</span></a></li>
 
 

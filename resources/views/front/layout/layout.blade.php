@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <title>{{trans('front/header.title')}}</title>
+    <title>@yield('title')</title>
     <!-- for-mobile-apps -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

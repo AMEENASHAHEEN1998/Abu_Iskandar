@@ -214,6 +214,24 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings">
+                            <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.Settings') }}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Settings" class="collapse" data-parent="#sidebarnav">
+                            <li><a  href="{{route('admin.car.index')}}">{{ trans('admin/dashboard.addcar') }}</a></li>
+                            <li><a  href="{{route('admin.city.index')}}">{{ trans('admin/dashboard.addcity') }}</a></li>
+                            <li><a  href="{{route('admin.neighborhood.index')}}">{{ trans('admin/dashboard.addneighborhoods') }}</a></li>
+                            <li><a  href="{{route('admin.street.index')}}">{{ trans('admin/dashboard.addstreet') }}</a></li>
+
+                        </ul>
+                    </li>
+
+
+
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#info">

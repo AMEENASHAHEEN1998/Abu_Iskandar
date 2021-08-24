@@ -1,4 +1,8 @@
 @extends('front.layout.layout')
+
+@section('title')
+    {{ trans('front/header.title') }}
+@endsection
 @section('content')
 
 <div class="video" data-vide-bg="{{asset('video/abuskander.mp4')}}" style="height: 400px" >
@@ -33,7 +37,7 @@
         <div class="tab-head ">
             <nav class="nav-sidebar">
                 <ul class="nav tabs ">
-          
+
                 </ul>
             </nav>
             <div class=" tab-content tab-content-t ">

@@ -42,4 +42,5 @@ return
     'success_message' => 'The Aticle added successfully',
     'update_message' => 'The Aticle has been modified successfully',
     'delete_message' => 'The Aticle has been deleted successfully',
+    'more' =>'Read more',
 ];

@@ -12,6 +12,8 @@ use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\CarsController;
+use App\Http\Controllers\admin\CityController;
 use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RequestJobController;
@@ -20,6 +22,8 @@ use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\DistributorTypeController;
+use App\Http\Controllers\admin\NeighborhoodsController;
+use App\Http\Controllers\admin\StreetController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -56,6 +60,7 @@ Route::group(
         Route::resource('distributor', DistributorController::class);
         Route::resource('distributortype', DistributorTypeController::class);
         Route::resource('job', JobController::class);
+
         Route::get('activejob',[JobController::class,'activejob'])->name('job.activejob');
         Route::get('noactivejob',[JobController::class,'noactivejob'])->name('job.noactivejob');
 
@@ -66,9 +71,16 @@ Route::group(
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 
 
+
         Route::resource('customers', CustomerController::class);
-        Route::get('get_neighborhood/{id}', );
-        });
+        Route::get('get_neighborhood/{id}', [NeighborhoodsController::class , 'get_neighborhood']);
+
+        Route::resource('car', CarsController::class);
+        Route::resource('city', CityController::class);
+        Route::resource('neighborhood', NeighborhoodsController::class);
+        Route::resource('street', StreetController::class);
+
+});
 
 
 });

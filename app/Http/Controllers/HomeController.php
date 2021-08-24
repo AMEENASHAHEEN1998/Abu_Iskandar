@@ -28,7 +28,6 @@ class HomeController extends Controller
     public function index()
     {
         $product=Product::all()->count();
-        // return $product;
         $requestjob=RequestJob::where('status_value',1)->count();
         $offer=Offer::where('status_value',1)->count();
         $driverrequest=DriverRequest::where('status_value',0)->count();

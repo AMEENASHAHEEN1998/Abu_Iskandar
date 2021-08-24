@@ -1,4 +1,7 @@
 @extends('front.layout.layout')
+@section('title')
+    {{ trans('front/header.Job') }}
+@endsection
 @section('content')
     <!--banner-->
     <div class="banner-top">
