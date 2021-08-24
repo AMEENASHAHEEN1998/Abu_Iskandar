@@ -41,6 +41,7 @@ Route::group(
             Route::get('requestjob/{id}',[AbuEskandarController::class ,'requestjob'])->name('requestjob');
             Route::get('articles',[AbuEskandarController::class ,'articles'])->name('articles');
             Route::get('article/{id}',[AbuEskandarController::class ,'article'])->name('article');
+            // Route::get('articleupdate/{id}',[AbuEskandarController::class ,'articleupdate'])->name('articleupdate');
             Route::get('distributor',[AbuEskandarController::class ,'distributor'])->name('distributor');
 
         });

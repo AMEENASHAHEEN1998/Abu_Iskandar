@@ -66,6 +66,14 @@ class AbuEskandarController extends Controller
     }
     public function article($id){
         $article=Article::find($id);
+        $view =$article->views +1 ;
+
+
+        Article::find($id)->update([
+            'views' => $view,
+        ]);
+        // return $article->views;
+        // $articleDB::update('views', );
 
         return view('front.article',compact('article'));
 

@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('views');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
+            $table->integer('product_number')->unique();
             $table->softDeletes();
             $table->timestamps();
         });

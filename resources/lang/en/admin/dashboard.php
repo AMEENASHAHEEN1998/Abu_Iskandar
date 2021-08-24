@@ -46,6 +46,11 @@ return [
     'add_distributors'=>'Add Distributor',
     'distributortype'=>'Add Distributor Type' ,
     'none_user' => 'Unkonwn' ,
+    'Settings' =>'Settings',
+    'addcar' => 'Add Car',
+    'addcity' => 'Add City',
+    'addneighborhoods' => 'Add Neighborhoods',
+    'addstreet' => 'Add Street',
 
     // end sidebar
 
