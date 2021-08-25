@@ -81,6 +81,9 @@
 
                         </ul>
                     </li>
+
+
+
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsuser">
                             <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
@@ -88,7 +91,6 @@
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-
 
                         <ul id="elementsuser" class="collapse" data-parent="#sidebarnav">
 
@@ -102,6 +104,28 @@
                                     {{ trans('admin/dashboard.show_offers') }}</a></li>
                             <li><a href="{{ route('admin.noactiveoffer') }}">
                                     {{ trans('admin/dashboard.old_offers') }}</a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
+                            <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.users') }}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+
+                        <ul id="elementsusers" class="collapse" data-parent="#sidebarnav">
+
+                            <li><a
+                                    href="{{ route('admin.users.index') }}">{{ trans('admin/dashboard.all_users') }}</a>
+                            </li>
+                            {{-- <li><a
+                                    href="{{ route('admin.users.create') }}">{{ trans('admin/dashboard.add_users') }}</a>
+                            </li> --}}
+
 
 
                         </ul>

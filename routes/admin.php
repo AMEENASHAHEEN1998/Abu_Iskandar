@@ -24,6 +24,7 @@ use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\DistributorTypeController;
 use App\Http\Controllers\admin\NeighborhoodsController;
 use App\Http\Controllers\admin\StreetController;
+use App\Http\Controllers\admin\UserCoontroller;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -76,6 +77,13 @@ Route::group(
         Route::resource('neighborhood', NeighborhoodsController::class);
         Route::resource('street', StreetController::class);
         Route::resource('classes', ClassesController::class);
+
+
+        Route::resource('users', UserCoontroller::class);
+
+
+
+
 
         });
 

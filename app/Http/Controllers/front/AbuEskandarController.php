@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Distributor;
+use App\Models\Employee;
 use App\Models\Job;
 use App\Models\Offer;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class AbuEskandarController extends Controller
 
 
         $offers=Offer::where('status_value',1)->skip(0)->take(4)->get();
-        return view('front.index',compact('offers'));
+        $employes=Employee::where('status_value',1)->latest()->take(4)->get();
+        return view('front.index',compact('offers','employes'));
     }
     public function about()
     {

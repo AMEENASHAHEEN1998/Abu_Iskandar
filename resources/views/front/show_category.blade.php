@@ -4,7 +4,7 @@
     ================================================== -->
     @foreach ( $CategoryImage as $CategoryImage )
 
-    <img class="first-slide" src="{{asset('uploads/'.$CategoryImage->image)}}" alt="First slide"></a>
+    <img id="first-slide" class="first-slide" src="{{asset('uploads/'.$CategoryImage->image)}}" alt="First slide"></a>
     @endforeach
     {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -28,13 +28,13 @@
           <div class="item">
              <a href="hold.html"><img class="third-slide " src="{{asset('front/images/ba2.jpg')}}" alt="Third slide"></a>
 
-          </div> 
+          </div>
         </div>
 
       </div><!-- /.carousel --> --}}
 
   <!--content-->
-  <div class="kic-top ">
+  {{-- <div class="kic-top ">
       <div class="container ">
       <div class="kic ">
               <h3>Popular Categories</h3>
@@ -62,13 +62,13 @@
               <p>Nam libero tempore</p>
           </div>
       </div>
-  </div>
+  </div> --}}
 
   <!--content-->
           <div class="product">
           <div class="container">
               <div class="spec ">
-                  <h3>Products</h3>
+                  <h3>{{trans('admin/dashboard.product')}}</h3>
                   <div class="ser-t">
                       <b></b>
                       <span><i></i></span>
