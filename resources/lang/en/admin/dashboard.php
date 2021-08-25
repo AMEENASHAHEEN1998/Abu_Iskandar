@@ -52,6 +52,11 @@ return [
     'addneighborhoods' => 'Add Neighborhoods',
     'addstreet' => 'Add Street',
     'addclasses' => 'Add Classes' ,
+
+    'user' => 'User' ,
+    'users' => 'Users' ,
+    'all_users' => 'All Users ',
+    'add_users' => 'Add Users',
     // end sidebar
 
 ];

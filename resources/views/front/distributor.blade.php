@@ -29,6 +29,9 @@
         ?>
 
         <div class="distribute">
+            <img src="{{asset('front/images/index/bus.jpg')}}" alt="">
+
+            <h1>{{ trans('front/header.Delivery_Points') }}</h1>
             @foreach ($distributes as  $place =>$distribute)
 
                     <h2>{{$place}}</h2>

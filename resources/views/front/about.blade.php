@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col-md-5 about-right">
-                    <img class="img-responsive" src="{{ asset('front/images/ab.jpg') }}" alt="">
+                    <img class="img-responsive" src="{{ asset('front/images/index/company.png') }}" alt="">
                 </div>
                 <div class="col-md-7 about-left">
                     <p>{{trans('front/header.about_company')}} </p>

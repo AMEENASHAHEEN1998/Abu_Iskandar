@@ -237,9 +237,23 @@ img.img-head {
     font-size: 17px;
     padding: 4px;
 }
+.distribute{
+    margin-bottom: 50px;
+}
+.distribute h1{
+    font-weight: bold;
+    color: #695e5e;
+    padding: 25px 0;
+
+}
 .distribute i{
     /* color: #006aab; */
     padding-left: 5px;
+}
+.distribute img{
+    position: absolute;
+    top: 354px;
+    left: 170px;
 }
 /*
 .logo h1{
@@ -3246,4 +3260,9 @@ h1.t-button {
 .grid_3 p, .page-header p {
     font-size: 13px;
 }
+}
+
+
+#first-slide{
+    width: 100%;
 }
