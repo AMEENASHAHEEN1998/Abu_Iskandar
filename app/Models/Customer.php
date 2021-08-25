@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+    protected $guarded =[];
 
     public function Note()
     {
@@ -40,6 +41,6 @@ class Customer extends Model
     }
     public function CustomerCar()
     {
-        return $this->belongsTo(CustomerCar::class , 'customer_id');
+        return $this->hasMany(CustomerCar::class , 'customer_id');
     }
 }

@@ -53,7 +53,7 @@
 
                             <div class="col">
                                 <label for="middle_name"
-                                        class="mr-sm-2"> اسم الأب
+                                        class="mr-sm-2"> اسم الوسط
                                     :</label>
                                 <input id="middle_name" class="form-control" type="text" name="middle_name" required />
                             </div>
@@ -89,9 +89,14 @@
 
                                 <div class="box ">
                                     <select class="form-control form-control-lg " name="class_id">
+                                        <option value="1">ميني ماركت</option>
+                                            <option value="2"> ماركت</option>
+                                            <option value="3">سوبر ماركت</option>
                                         @foreach ($Classes as $Class)
 
-                                            <option value="{{ $Class->id }}">{{ $Class->name }}</option>
+                                            {{-- <option value="{{ $Class->id }}">{{ $Class->name }}</option>--}}
+
+
 
                                         @endforeach
                                     </select>
@@ -143,11 +148,7 @@
 
                                 <div class="box ">
                                     <select class="form-control form-control-lg " name="id_neighborhood">
-                                        {{-- @foreach ($Neighborhoods as $Neighborhood)
 
-                                            <option value="{{ $Neighborhood->id }}">{{ $Neighborhood->name }}</option>
-
-                                        @endforeach --}}
                                     </select>
                                 </div>
 
@@ -190,7 +191,7 @@
                                                 :</label>
 
                                             <div class="box ">
-                                                <select class="form-control form-control-lg " name="name">
+                                                <select class="form-control form-control-lg " name="car_id">
                                                     @foreach ($Cars as $Car)
 
                                                         <option value="{{ $Car->id }}">{{ $Car->name }}</option>

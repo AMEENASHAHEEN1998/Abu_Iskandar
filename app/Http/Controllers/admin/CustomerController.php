@@ -10,6 +10,8 @@ use App\Models\ClassModel;
 use App\Models\CustomerCar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Neighborhood;
+use App\Models\Street;
 
 class CustomerController extends Controller
 {
@@ -20,7 +22,17 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $Cars = Car::orderBy('id' , 'desc')->get();
+        $Classes = ClassModel::orderBy('id' , 'desc')->get();
+        $Cities = City::orderBy('id' , 'desc')->get();
+        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
+        $Neighborhood = Neighborhood::orderBy('id' , 'desc')->get();
+        $Streets = Street::orderBy('id' , 'desc')->get();
+        $CustomerCars = CustomerCar::get();
+        return view('admin.customer.index')->with(['CustomerCars' => $CustomerCars ,
+        'Cars' => $Cars , 'Classes' => $Classes ,
+        'Cities' => $Cities , 'Users' => $Users ,
+        'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
     }
 
     /**
@@ -30,10 +42,11 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        $Cars = Car::get();
-        $Classes = ClassModel::get();
-        $Cities = City::get();
-        $Users = User::where('roles_name' , 'supervisor')->get();
+        $Cars = Car::orderBy('id' , 'desc')->get();
+        $Classes = ClassModel::orderBy('id' , 'desc')->get();
+        $Cities = City::orderBy('id' , 'desc')->get();
+        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
+        // dd($Users);
         return view('admin.customer.create')->with(['Cars' => $Cars , 'Classes' => $Classes , 'Cities' => $Cities , 'Users' => $Users]);
     }
 
@@ -47,20 +60,20 @@ class CustomerController extends Controller
     {
         try{
 
-
+            // dd($request->all());
             $customer = Customer::create([
-                'first_name' => $request->product_name_ar,
-                'middle_name' => $request->product_name_en,
-                'last_name'  => $request->product_number,
-                'phone_number' => $request->product_name_ar,
-                'job_name' => $request->product_name_en,
-                'city_id'  => $request->product_number,
-                'street_id' => $request->product_name_ar,
-                'id_neighborhood' => $request->product_name_en,
-                'area'  => $request->product_number,
-                'user_id' => $request->product_name_ar,
-                'class_id' => $request->product_name_en,
-                'financial_dealing'  => $request->product_number,
+                'first_name' => $request->first_name,
+                'middle_name' => $request->middle_name,
+                'last_name'  => $request->last_name,
+                'phone_number' => $request->phone_number,
+                'job_name' => $request->job_name,
+                'city_id'  => $request->city_id,
+                'street_id' => $request->street_id,
+                'id_neighborhood' => $request->id_neighborhood,
+                'area'  => $request->area,
+                'user_id' => auth()->user()->id,
+                'class_id' => $request->class_id,
+                'financial_dealing'  => $request->financial_dealing,
 
             ]);
 
@@ -68,7 +81,7 @@ class CustomerController extends Controller
             foreach($list_cars as $list_car){
                 CustomerCar::create([
                     'customer_id' => $customer->id,
-                    'user_id' => $list_car['user_id'],
+                    'user_id' => $list_car['name'],
                     'car_id' => $list_car['car_id'],
                     'original_number' => $list_car['original_number'],
                     'note_supervisor' => $list_car['note_supervisor'],
