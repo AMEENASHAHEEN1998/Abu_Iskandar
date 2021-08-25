@@ -11,10 +11,7 @@ class ClassModel extends Model
     protected $table = 'classes';
     protected $guarded =[];
 
-    protected $table = 'classes';
-    protected $fillable=['name'];
-
-
+    
     public function Customer()
     {
         return $this->belongsTo(Customer::class , 'class_id');

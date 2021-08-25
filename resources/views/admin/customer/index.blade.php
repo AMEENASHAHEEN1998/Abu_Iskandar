@@ -78,11 +78,9 @@
                                 <td>{{ $CustomerCar->original_number}}</td>
                                 <td>{{ $CustomerCar->User->name }}</td>
 
-
-
-
-
                                 <td>
+                                    <a href="{{ route('admin.customers.show', $CustomerCar->id) }}"
+                                        class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                     data-target="#edit{{ $CustomerCar->id }}"
                                     title="{{ trans('admin/products.edit') }}"><i
@@ -255,9 +253,8 @@
                     </div>
                     <br> <br>
                     <h3>معلومات السيارة</h3>
-                    <div class="repeater">
-                        <div data-repeater-list="list_cars">
-                            <div data-repeater-item>
+
+
                                 <div class="row">
 
                                     <div class="col">
@@ -313,18 +310,16 @@
                                         <textarea name="note_supervisor" class="form-control" id="note_supervisor" cols="30" rows="10">{{ $CustomerCar->note_supervisor}}</textarea>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                     <div class="row">
-                        <div class="row mt-20">
-                            <div class="col-12">
-                                <input class="button" data-repeater-create type="button" value="اضافة حرف السيارة المشترك"/>
-                            </div>
 
-                        </div>
-                    </div>
-                    </div>
+                                <div class="modal-footer">
+
+                                    <button type="submit"
+                                            class="btn btn-success">{{ trans('admin/products.submit') }}</button>
+
+                                </div>
+                       </form>
+
 
 
             </div>
@@ -335,13 +330,7 @@
                         </div>
 
 
-                        <div class="modal-footer">
 
-                            <button type="submit"
-                                    class="btn btn-success">{{ trans('admin/products.submit') }}</button>
-
-                        </div>
-               </form>
 
            </div>
        </div>
@@ -358,7 +347,7 @@
             <div class="modal-header">
                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                     id="exampleModalLabel">
-                    {{ trans('admin/products.delete_product') }}
+                    حذف حرف السيارة لهذا الزبون
                 </h5>
                 <button type="button" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -370,7 +359,7 @@
                 <form action="{{route('admin.customers.destroy',$CustomerCar->id)}}" method="post">
                     {{method_field('Delete')}}
                     @csrf
-                    {{ trans('admin/products.warning_category') }}
+                    هل أنت متأكد من عملية حذف حرف السيارة المتعلقة بالزبون ؟
                     <input id="id" type="hidden" name="id" class="form-control"
                             value="{{ $CustomerCar->id }}">
                     <div class="modal-footer">
