@@ -96,7 +96,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">{{ trans('admin/employee.image') }}</label>
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file"  name="image" />
                             <img src="{{asset('upload/admin/employee/'.$employee->image)}}" style="width: 150px" alt="">
 
                             @error('image')
@@ -115,9 +115,6 @@
                                     class="card-title ml-1">{{ trans('admin/employee.status') }}</label>
                             </div>
                         </div>
-
-
-
 
 
 

@@ -5,7 +5,10 @@ namespace App\Http\Controllers\admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
+use Exception;
 use Illuminate\Support\Facades\Hash;
+use PhpParser\Node\Stmt\TryCatch;
 
 class UserCoontroller extends Controller
 {
@@ -37,16 +40,21 @@ class UserCoontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        User::create([
-            'name' => $request->name,
-            'password' => Hash::make($request->password),
-            'roles_name' => 'مستخدم عادي',
-            'status' => 0
-        ]);
 
-        return redirect()->route('admin.users.index')->with('success',trans('admin/user.success_message'));
+        try{
+            User::create([
+                'name' => $request->name,
+                'password' => Hash::make($request->password),
+                'roles_name' => $request->roles_name ,
+                'status' => 1
+            ]);
+
+            return redirect()->route('admin.users.index')->with('success',trans('admin/user.success_message'));
+        }catch (\Throwable $e){
+            return redirect()->back()->withErrors(['errors' => 'اسم المستخدم موجود مسبقا']);
+        }
 
 
     }
@@ -82,7 +90,7 @@ class UserCoontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        // return $request->status;
         $password ='';
         if($request->password == NULL){
             $user=User::find($id);
@@ -97,11 +105,19 @@ class UserCoontroller extends Controller
         }else{
             $name= $request->name;
         }
+        $status='';
+        if($request->has('status') == 1){
+            $status =1;
+        }else{
+            $status =0;
+        }
 
         User::find($id)->update([
             'name' => $name,
             'password' =>$password ,
-            'roles_name' => $request->roles_name
+            'roles_name' => $request->roles_name,
+            'status' => $status
+
         ]);
 
         return redirect()->route('admin.users.index')->with('success',trans('admin/user.update_message'));

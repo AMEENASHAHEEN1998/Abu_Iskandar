@@ -65,7 +65,6 @@
 
                                         </td>
 
-                                        <td>{{ $employee->created_at }}</td>
 
                                         <td>
                                             @if($employee->status_value == 1)
@@ -75,10 +74,11 @@
                                                 <p  style="color: red">{{trans('admin/offer.noactive')}} </p>
                                             @endif
                                         </td>
+                                        <td>{{ $employee->created_at->format('d-m-Y') }}</td>
 
                                         <td>
-                                            <a href="{{route('admin.employee.show',$employee->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                            <a href="{{route('admin.employee.edit',$employee->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            {{-- <a href="{{route('admin.employee.show',$employee->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
+                                            {{-- <a href="{{route('admin.employee.edit',$employee->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a> --}}
                                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                             data-target="#delete{{ $employee->id }}"
                                             title="{{ trans('admin/employee.delete') }}"><i

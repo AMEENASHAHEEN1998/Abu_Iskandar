@@ -25,6 +25,7 @@ return
     'status'    =>'الحالة',
     'user_id'   =>'اضيفت بواسطة',
     'requestjobs'   =>'طلبات التوظيف',
+    'waitrequestjobs' =>'طلبات التوظيف قيد الانتظار',
     'activerequestjobs'   =>' طلبات التوظيف المقبولة',
     'noactiverequestjobs'   =>'طلبات التوظيف المرفوضة',
     'add_requestjob'=>'اضافة طلب وظيفة' ,

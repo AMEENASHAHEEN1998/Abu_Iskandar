@@ -30,7 +30,7 @@
                     </a>
 
                     <hr>
-                    <h2>{{ trans('admin/article.add_article') }}</h2>
+                    <h2>{{ trans('admin/article.updatearticle') }}</h2>
 
                     <form action="{{ route('admin.article.update', $article->id) }}" method="POST"
                         enctype="multipart/form-data">
@@ -145,7 +145,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">{{ trans('admin/article.image') }}</label>
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file"  name="image" />
                             <img src="{{asset('upload/admin/article/'.$article->image)}}" style="width: 150px" alt="">
 
                             @error('image')

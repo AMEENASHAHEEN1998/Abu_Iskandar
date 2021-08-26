@@ -7,6 +7,7 @@ return
     'article' =>' المقالات',
     'article_title' => 'عنوان المقال ' ,
     'add_article' => 'اضافة مقال ' ,
+    'updatearticle' => 'تعديل مقال ' ,
     'content' => ' محتوى  مقال ' ,
     'content_ar' => ' محتوى  مقال بالعربي' ,
     'content_en' => 'محتوى مقال يالانجليزي ' ,

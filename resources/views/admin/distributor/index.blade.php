@@ -71,11 +71,11 @@
                                         <td>{{ ($distributor->user) ? $distributor->user->name : trans('admin/dashboard.none_user') }}</td>
 
 
-                                        <td>{{ $distributor->created_at }}</td>
+                                        <td>{{ $distributor->created_at->format('d-m-Y')  }}</td>
 
 
                                         <td>
-                                            <a href="{{route('admin.distributor.show',$distributor->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                            {{-- <a href="{{route('admin.distributor.show',$distributor->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
                                             <a href="{{route('admin.distributor.edit',$distributor->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                             {{-- <form class="d-inline" action="{{ route('admin.distributor.destroy', $distributor->id) }}"
                                                 method="POST">

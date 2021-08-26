@@ -163,4 +163,9 @@ class RequestJobController extends Controller
         $requestjob=RequestJob::where('status_value',0)->orderBy('id','desc')->paginate(5);
         return view('admin.requestjob.noactive',compact('requestjob'));
     }
+    public function waitrequestjobs()
+    {
+        $requestjob=RequestJob::where('status_value',1)->orderBy('id','desc')->paginate(5);
+        return view('admin.requestjob.wait',compact('requestjob'));
+    }
 }

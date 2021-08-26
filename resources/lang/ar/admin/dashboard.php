@@ -51,7 +51,7 @@ return [
     'addcity' => 'اضافة مدينة',
     'addneighborhoods' => 'اضافة حي',
     'addstreet' => 'اضافة شارع',
-    'addclasses' => 'اضافة صنف' ,
+    'addclasses' => 'اضافة تصنيف مالي' ,
     'user' => 'المستخدم' ,
     'users' => 'المستخدمين' ,
     'all_users' => 'كل المستخدمين',

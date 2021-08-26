@@ -11,7 +11,7 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
-        
+
         @include('admin.include.alerts.success')
         @include('admin.include.alerts.errors')
 
@@ -42,6 +42,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{ trans('admin/car.char') }}</th>
+                                    <th>{{ trans('admin/job.action') }}</th>
 
                                 </tr>
                             </thead>

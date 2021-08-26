@@ -7,7 +7,7 @@
 
 
     <!--=================================
-                 Main content -->
+                     Main content -->
     <!-- main-content -->
     <!-- row -->
     <div class="row">
@@ -20,7 +20,7 @@
                     @include('admin.include.alerts.errors')
 
                     <a href="{{ route('admin.job.index') }}" class="btn btn-success">
-                        {{ trans('admin/job.Back') }}
+                        {{ trans('admin/job.back') }}
 
                     </a>
 
@@ -37,57 +37,68 @@
                     $lng = app()->getLocale();
                     ?>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.job_name') }}
-                            <strong> : {{ $job->{'job_name_' . $lng} }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.description') }}
-                            <strong> : {{ $job->{'job_description_' . $lng} }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                        <tbody>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.job_name') }} </th>
+                                <td>{{ $job->{'job_name_' . $lng} }}</td>
+
+                            </tr>
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.status') }}
-                            <strong> : {{ $job->status }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.views') }}
-                            <strong> : {{ $job->views }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.description') }}</th>
+                                <td> {{ $job->{'job_description_' . $lng} }}</td>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.user_name') }}
-                            <strong> : {{ $job->user->name }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            </tr>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/job.image') }}
-                            <strong> :
-                                <img src="{{asset('upload/admin/job/'.$job->image)}}" style="width: 150px" alt="">
-                            </strong>
-                        </h3>
-                    </div>
-                    <hr>
+
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.status') }}</th>
+                                <td> {{ $job->status }}</td>
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.views') }}</th>
+                                <td> {{ $job->views }}</td>
+
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.user_name') }}</th>
+                                <td> {{ $job->user->name }}</td>
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/job.image') }}</th>
+                                <td>
+                                    <img src="{{ asset('upload/admin/job/' . $job->image) }}" style="width: 85px" alt="">
+                                </td>
+
+                            </tr>
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+
 
 
 

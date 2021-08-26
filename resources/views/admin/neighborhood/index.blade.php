@@ -43,6 +43,7 @@
                                     <th>#</th>
                                     <th>{{ trans('admin/neighborhood.name') }}</th>
                                     <th>{{ trans('admin/city.name') }}</th>
+                                    <th>{{ trans('admin/job.action') }}</th>
 
                                 </tr>
                             </thead>

@@ -61,7 +61,7 @@
 
 
                                         <td>{{ ($distributortype->user) ? $distributortype->user->name : trans('admin/dashboard.none_user') }}</td>
-                                        <td>{{ $distributortype->created_at }}</td>
+                                        <td>{{ $distributortype->created_at->format('d-m-Y')  }}</td>
 
 
                                         <td>
