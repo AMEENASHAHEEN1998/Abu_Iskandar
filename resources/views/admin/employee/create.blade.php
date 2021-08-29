@@ -97,7 +97,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">{{ trans('admin/employee.image') }}</label>
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file"  name="image" />
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

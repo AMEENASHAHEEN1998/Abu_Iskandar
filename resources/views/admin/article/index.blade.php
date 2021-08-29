@@ -68,7 +68,7 @@
                                                 style="width: 85px" alt="">
                                         </td>
 
-                                        <td>{{ $article->created_at }}</td>
+                                        <td>{{ $article->created_at->format('d-m-Y') }}</td>
 
                                         <td>
                                             @if ($article->status_value == 1)
@@ -82,8 +82,19 @@
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('admin.article.show', $article->id) }}"
-                                                class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+
+
+                                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                                data-target="#exampleModalshow{{ $article->id }}"
+                                                title="{{ trans('admin/users.edit') }}">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+
+
+                                            {{-- <a href="{{ route('admin.article.show', $article->id) }}"
+                                                class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
+
+
                                             <a href="{{ route('admin.article.edit', $article->id) }}"
                                                 class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
 
@@ -102,6 +113,66 @@
 
                                         </td>
                                     </tr>
+
+                                       <!-- edit_modal_users -->
+
+                                       <div class="modal fade" id="exampleModalshow{{ $article->id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                        id="exampleModalLabel">
+                                                        {{ trans('admin/article.detail_article') }}
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <!-- add_form -->
+                                                    <form
+                                                        method="POST">
+                                                        @method('put')
+                                                        @csrf
+
+                                                        <div class="row">
+                                                            <img src="{{ asset('upload/admin/article/' . $article->image) }}" style="width: 100%;height:150px" alt="">
+
+                                                        </div>
+                                                        <div class="content">
+
+                                                            <h5 class="card-title">{{ $article->{'article_name_' . $lng} }}</h5>
+                                                            <p class="card-text">{{ $article->{'content_' . $lng} }}</p>
+
+
+
+                                                        </div>
+
+                                                        <span>
+                                                            <strong>{{$article->created_at->format('d-m-Y')}}</strong>
+                                                        </span>
+
+
+                                                        <div class="modal-footer">
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">{{ trans('admin/user.close') }}</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- edit_modal_car -->
 
                                     <!-- delete_modal_distributortype -->
                                     <!-- delete_modal_Category -->

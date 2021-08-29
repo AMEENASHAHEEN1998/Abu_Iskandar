@@ -32,7 +32,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function(){
         Route::get('/' , [HomeController::class , 'index'])->name('dashboard');
 
@@ -70,6 +70,7 @@ Route::group(
         Route::resource('requestjob', RequestJobController::class);
         Route::get('activerequestjob',[RequestJobController::class,'activerequestjob'])->name('requestjob.activerequestjob');
         Route::get('noactiverequestjob',[RequestJobController::class,'noactiverequestjob'])->name('requestjob.noactiverequestjob');
+        Route::get('waitrequestjobs',[RequestJobController::class,'waitrequestjobs'])->name('requestjob.waitrequestjobs');
 
         Route::get('createrequestjob/{id}', [RequestJobController::class,'createjob'])->name('requestjob.created');
 

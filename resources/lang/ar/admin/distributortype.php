@@ -4,10 +4,10 @@
 return
 [
     'id' => 'رقم' ,
-    'distributorstype' =>' اقسام التوزيع ',
+    'distributorstype' =>' أقسام التوزيع ',
     'add_distributor' => 'اضافة قسم  ' ,
 
-    'distributorstype' => ' اقسام التوزيع ' ,
+    'distributorstype' => ' أقسام التوزيع ' ,
     'distributorstype_ar' => '  فسم توزيع بالعربي ' ,
     'distributorstype_en' => '  فسم التوزيع بالانجليزي ' ,
     'add_name' =>'اضيف بواسطة',

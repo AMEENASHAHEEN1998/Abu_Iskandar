@@ -24,17 +24,8 @@
 
 
 
-
-                    <a href="{{ route('admin.requestjob.created', 2) }}" class="btn btn-success">
-                        {{ trans('admin/requestjob.add_requestjob') }}
-                    </a>
-
-
-
-
-
                     <br><br>
-                    <h1>{{ trans('admin/requestjob.requestjobs') }}</h1>
+                    <h1>{{ trans('admin/requestjob.waitrequestjobs') }}</h1>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -142,10 +133,8 @@
 
                                                                 <label
                                                                     for="formGroupExampleInput">{{ trans('admin/requestjob.notes') }}</label>
-                                                                {{-- <input > --}}
-
-                                                                    <textarea type="text" name="comments_admin" required
-                                                                    class="form-control" id="formGroupExampleInput"></textarea>
+                                                                <input type="text" name="comments_admin" required
+                                                                    class="form-control" id="formGroupExampleInput">
                                                             </div>
 
 

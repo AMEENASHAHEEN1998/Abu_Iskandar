@@ -217,6 +217,7 @@
                             <li><a href="{{route('admin.requestjob.index')}}">{{ trans('admin/dashboard.show_request_job') }}</a></li>
                             <li><a href="{{route('admin.requestjob.activerequestjob')}}">{{ trans('admin/dashboard.accepted_request') }}</a></li>
                             <li><a href="{{route('admin.requestjob.noactiverequestjob')}}">{{ trans('admin/dashboard.rejected_request') }}</a></li>
+                            <li><a href="{{route('admin.requestjob.waitrequestjobs')}}">{{ trans('admin/requestjob.waitrequestjobs') }}</a></li>
 
                         </ul>
                     </li>

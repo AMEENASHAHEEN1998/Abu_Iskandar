@@ -33,121 +33,105 @@
 
                     <hr>
 
+
+
                     <?php
                     $lng = app()->getLocale();
                     ?>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.name') }}
-                            <strong> : {{ $requestjob->name }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.phone_number') }}
-                            <strong> : {{ $requestjob->phone_number }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                        <tbody>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.name') }} </th>
+                                <td>{{ $requestjob->name }}</td>
 
-
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.job_id') }}
-                            <strong> : {{ ($requestjob->job) ? $requestjob->job->{'job_name_'.$lng} : trans('admin/dashboard.none_user') }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
-
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.specialization') }}
-                            <strong> : {{ $requestjob->specialization }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
-
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.address') }}
-                            <strong> : {{ $requestjob->address }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
-
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.Date_of_Birth') }}
-                            <strong> : {{ $requestjob->Date_of_Birth }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            </tr>
 
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.university') }}
-                            <strong> : {{ $requestjob->university }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.phone_number') }}</th>
+                                <td>  {{ $requestjob->phone_number }}</td>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.start_date') }}
-                            <strong> : {{ $requestjob->start_date }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            </tr>
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.comment') }}
-                            <strong> : {{ $requestjob->comments_user }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+
+                            <tr>
+                                <th scope="row">{{ trans('admin/requestjob.job_id') }}</th>
+                                <td> {{ ($requestjob->job) ? $requestjob->job->{'job_name_'.$lng} : trans('admin/dashboard.none_user') }}</td>
+
+                            </tr>
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.notes') }}
-                            <strong> : {{ $requestjob->comments_admin }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.specialization') }} </th>
+                                <td>  {{ $requestjob->specialization }}</td>
+                            </tr>
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.status') }}
-                            <strong> : {{ $requestjob->status }}</strong>
-                        </h3>
-                    </div>
-                    <hr>
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.address') }}</th>
+                                <td> {{ $requestjob->address }}</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.Date_of_Birth') }}</th>
+                                <td>  {{ $requestjob->Date_of_Birth }}</td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.university') }}</th>
+                                <td>  {{ $requestjob->university }} </td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">{{ trans('admin/requestjob.start_date') }} </th>
+                                <td>  {{ $requestjob->start_date }}</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.comment') }} </th>
+                                <td> {{ $requestjob->comments_user }} </td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">  {{ trans('admin/requestjob.notes') }}</th>
+                                <td> {{ $requestjob->comments_admin }} </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.status') }}</th>
+                                <td> {{ $requestjob->status }} </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">    {{ trans('admin/requestjob.image') }}</th>
+                                <td>   <img src="{{asset('upload/admin/requestjob/'.$requestjob->personal_image)}}" style="width: 85px" alt=""> </td>
+                            </tr>
 
 
 
 
 
 
-                    <div>
-                        <h3> <i class="fa fa-angellist"></i>
-                            {{ trans('admin/requestjob.image') }}
-                            <strong> :
-                                <img src="{{asset('upload/admin/requestjob/'.$requestjob->personal_image)}}" style="width: 150px" alt="">
-                            </strong>
-                        </h3>
 
 
+                        </tbody>
+                    </table>
 
 
-                    <hr>
 
 
                 </div>

@@ -7,7 +7,7 @@
 
 
     <!--=================================
-                         Main content -->
+                                     Main content -->
     <!-- main-content -->
     <!-- row -->
     <div class="row">
@@ -20,7 +20,15 @@
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
 
 
@@ -95,8 +103,7 @@
 
                                                 <div class="modal-body">
                                                     <!-- add_form -->
-                                                    <form
-                                                        action="{{ route('admin.users.update', $user->id) }}"
+                                                    <form action="{{ route('admin.users.update', $user->id) }}"
                                                         method="POST">
                                                         @method('put')
                                                         @csrf
@@ -104,49 +111,68 @@
                                                         <input type="hidden" name="user_id"
                                                             value="{{ auth()->user()->id }}">
 
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <label for="Name"
-                                                                        class="mr-sm-2">{{ trans('admin/user.username') }}
-                                                                        :</label>
-                                                                    <input id="Name" type="text" name="name" value="{{$user->username}}" class="form-control" >
-                                                                    @error('name')
-                                                                        <span class="text-danger">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="Name"
+                                                                    class="mr-sm-2">{{ trans('admin/user.username') }}
+                                                                    :</label>
+                                                                <input id="Name" type="text" name="name"
+                                                                    value="{{ $user->name }}" class="form-control">
+                                                                @error('name')
+                                                                    <span class="text-danger">{{ $message }}</span>
+                                                                @enderror
                                                             </div>
+                                                        </div>
 
 
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <label for="Name"
-                                                                        class="mr-sm-2">{{ trans('admin/user.password') }}
-                                                                        :</label>
-                                                                    <input id="Name" type="password" name="password"  class="form-control" >
-                                                                    @error('name')
-                                                                        <span class="text-danger">{{ $message }}</span>
-                                                                    @enderror
-                                                                </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="Name"
+                                                                    class="mr-sm-2">{{ trans('admin/user.password') }}
+                                                                    :</label>
+                                                                <input id="Name" type="password" name="password"
+                                                                    class="form-control">
+                                                                @error('name')
+                                                                    <span class="text-danger">{{ $message }}</span>
+                                                                @enderror
                                                             </div>
+                                                        </div>
 
 
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <label for="Name"
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="Name"
                                                                     class="mr-sm-2">{{ trans('admin/user.roles_name') }}
                                                                     :</label>
 
-                                                                    <select name="roles_name" id=""  class="form-control">
-                                                                        <option value=""></option>
-                                                                        <option value="مدير" @if($user->roles_name =='مدير') selected @endif > مدير </option>
-                                                                        <option value="مشرف" @if($user->roles_name =='مشرف') selected @endif >مشرف</option>
-                                                                        <option value="مندوب" @if($user->roles_name =='مندوب') selected @endif>مندوب</option>
-                                                                        <option value="مستخدم عادي" @if($user->roles_name =='مستخدم عادي') selected @endif>مستخدم عادي</option>
+                                                                <select name="roles_name" id="" class="form-control">
+                                                                    <option value=""></option>
+                                                                    <option value="مدير" @if ($user->roles_name == 'مدير') selected @endif> مدير
+                                                                    </option>
+                                                                    <option value="مشرف" @if ($user->roles_name == 'مشرف') selected @endif>مشرف
+                                                                    </option>
+                                                                    <option value="مندوب" @if ($user->roles_name == 'مندوب') selected @endif>مندوب
+                                                                    </option>
+                                                                    <option value="مستخدم عادي" @if ($user->roles_name == 'مستخدم عادي') selected @endif>
+                                                                        مستخدم عادي</option>
 
-                                                                    </select>
-                                                                </div>
-
+                                                                </select>
                                                             </div>
+
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                <div class="form-group">
+                                                                    <input type="checkbox" name="status" class="switchery" data-color="success"
+                                                                        value="{{ $user->status }}" @if ($user->status == 1) checked @endif />
+                                                                    <label for="switcheryColor4"
+                                                                        class="card-title ml-1">{{ trans('admin/offer.status') }}</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
 
 
@@ -178,10 +204,10 @@
                                     </div>
 
 
-                                        <!-- edit_modal_car -->
+                                    <!-- edit_modal_car -->
 
-                                        <!-- delete_modal_car -->
-                                           <!-- delete_modal_Category -->
+                                    <!-- delete_modal_car -->
+                                    <!-- delete_modal_Category -->
                                     <div class="modal fade" id="delete{{ $user->id }}" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -192,29 +218,30 @@
                                                         {{ trans('admin/user.delete_user') }}
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
+                                                        aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{route('admin.users.destroy',$user->id)}}" method="post">
-                                                        {{method_field('Delete')}}
+                                                    <form action="{{ route('admin.users.destroy', $user->id) }}"
+                                                        method="post">
+                                                        {{ method_field('Delete') }}
                                                         @csrf
                                                         {{ trans('admin/user.warning_user') }}
                                                         <input id="id" type="hidden" name="id" class="form-control"
-                                                                value="{{ $user->id }}">
+                                                            value="{{ $user->id }}">
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">{{ trans('admin/user.close') }}</button>
+                                                                data-dismiss="modal">{{ trans('admin/user.close') }}</button>
                                                             <button type="submit"
-                                                                    class="btn btn-danger">{{ trans('admin/user.delete') }}</button>
+                                                                class="btn btn-danger">{{ trans('admin/user.delete') }}</button>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                        <!-- delete_modal_user-->
+                                    <!-- delete_modal_user-->
 
 
 
@@ -222,13 +249,13 @@
 
                         </table>
 
-                        {{$users->links()}}
+                        {{ $users->links() }}
 
                     </div>
 
 
 
-{{-- add --}}
+                    {{-- add --}}
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -254,8 +281,7 @@
 
 
                                             <div class="col">
-                                                <label for="Name"
-                                                    class="mr-sm-2">{{ trans('admin/user.username') }}
+                                                <label for="Name" class="mr-sm-2">{{ trans('admin/user.username') }}
                                                     :</label>
                                                 <input id="Name" type="text" name="name" class="form-control" required>
                                                 @error('name')
@@ -271,10 +297,10 @@
 
 
                                             <div class="col">
-                                                <label for="Name"
-                                                    class="mr-sm-2">{{ trans('admin/user.password') }}
+                                                <label for="Name" class="mr-sm-2">{{ trans('admin/user.password') }}
                                                     :</label>
-                                                <input id="Name" type="password" name="password" class="form-control" required>
+                                                <input id="Name" type="password" name="password" class="form-control"
+                                                    required>
                                                 @error('name')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
@@ -282,6 +308,36 @@
 
 
                                         </div>
+
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="Name" class="mr-sm-2">{{ trans('admin/user.roles_name') }}
+                                                    :</label>
+
+                                                <select name="roles_name" id="" class="form-control">
+                                                    <option value=""></option>
+
+                                                    <option value="مدير">
+                                                        مدير
+                                                    </option>
+                                                    <option value="مشرف">
+                                                        مشرف
+                                                    </option>
+                                                    <option value="مندوب">
+                                                        مندوب
+                                                    </option>
+                                                    <option value="مستخدم عادي">
+                                                        مستخدم عادي
+                                                    </option>
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+
+
 
 
                                         <div class="modal-footer">
@@ -306,7 +362,7 @@
 
                     </div>
 
-{{-- add --}}
+                    {{-- add --}}
 
 
                 </div>

@@ -24,15 +24,6 @@
 
 
 
-
-                    <a href="{{ route('admin.requestjob.created', 2) }}" class="btn btn-success">
-                        {{ trans('admin/requestjob.add_requestjob') }}
-                    </a>
-
-
-
-
-
                     <br><br>
                     <h1>{{ trans('admin/requestjob.noactiverequestjobs') }}</h1>
 

@@ -41,11 +41,19 @@ class AbuEskandarController extends Controller
     }
     public function Employment_applications()
     {
-        $jobs=Job::where('job_declaration','yes')->get();
+        $jobs=Job::where('status_value','1')->get();
         return view('front.Employmentapplications',compact('jobs'));
     }
     public function requestjob($id)
     {
+        $job=Job::find($id);
+        $view =$job->views +1 ;
+
+
+        Job::find($id)->update([
+            'views' => $view,
+        ]);
+
         $job=Job::find($id);
         // return $job;
        return view('front.requestjob',compact('job'));
