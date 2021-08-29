@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\front;
 
-use App\Models\price;
-use App\Models\Product;
-use App\Models\Category;
-use App\Http\Controllers\Controller;
-use App\Models\Article;
-use App\Models\Distributor;
-use App\Models\Employee;
 use App\Models\Job;
 use App\Models\Offer;
+use App\Models\price;
+use App\Models\Article;
+use App\Models\Product;
+use App\Mail\MyTestMail;
+use App\Models\Category;
+use App\Models\Employee;
+use App\Models\Distributor;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 
 class AbuEskandarController extends Controller
@@ -103,5 +105,17 @@ class AbuEskandarController extends Controller
             'views' => $request->views ,
         ]);
         return redirect()->route('AbuEskandar.show_category' , [$request->category_id]);
+    }
+    public function mail(Request $request){
+        // return $request;
+        $details = [
+            'Name' => $request->Name,
+            'Email' => $request->Email,
+            'Message' => $request->Message,
+        ];
+       
+        Mail::to('up120161676@gmail.com')->send(new \App\Mail\MyTestMail($details));
+        return redirect()->back();
+       
     }
 }

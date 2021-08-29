@@ -31,4 +31,7 @@ return [
     'Contact' => 'تواصل',
     'Job'=>'الوظائف',
     'Article'=>'المقال' ,
+    'branches' => 'الفروع' ,
+    'Contact_Information' =>'معلومات التواصل' ,
+    'Contact_Me_Through' => 'التواصل من خلال '
 ];

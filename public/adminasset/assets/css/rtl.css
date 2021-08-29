@@ -23877,7 +23877,8 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
     .head-t ul{
 
         float: left;
-        margin: -47px 0 5px 0px;
+        
+        /* margin: -47px 0 5px 0px; */
 
         }
 /* {
@@ -23902,7 +23903,7 @@ img.img-head {
     position: absolute;
 	top:0;
     width: 75px;
-    right: 130px;
+    /* right: 130px; */
 }
 .about .about-right{
     float: right;

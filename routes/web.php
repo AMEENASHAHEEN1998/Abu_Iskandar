@@ -46,6 +46,9 @@ Route::group(
 
 
             Route::put('update_product_view/{id}', [AbuEskandarController::class , 'update_product_view'])->name('update_product_view');
+
+            Route::post('mail',[AbuEskandarController::class ,'mail'])->name('mail');
+
         });
 
 });

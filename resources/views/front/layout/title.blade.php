@@ -9,6 +9,9 @@ h1   b ,p{
         font-family: 'Amiri', serif;
         color:#083789
     }
+    h1{
+        margin-top: 10px;
+    }
     </style>
 
 <h1 ><b>{{ trans('front/header.title') }}<br></b></h1>
