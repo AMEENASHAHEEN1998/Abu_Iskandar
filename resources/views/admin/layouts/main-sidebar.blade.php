@@ -133,7 +133,7 @@
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#note">
-                            <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
+                            <div class="pull-left"><i class="fa fa-sticky-note-o" aria-hidden="true"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.notes') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -146,13 +146,13 @@
                             <li><a
                                     href="{{ route('admin.notes.index') }}">{{ trans('admin/dashboard.pending_note') }}</a>
                             </li>
-                            <li><a href="{{ route('admin.notes.index') }}">
+                            <li><a href="{{ route('admin.show_notes') }}">
                                     {{ trans('admin/dashboard.show_notes') }}</a></li>
                         </ul>
                     </li>
                     <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
-                        <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
+                        <div class="pull-left"><i class="fa fa-user-o" aria-hidden="true"></i><span
                                 class="right-nav-text">{{ trans('admin/dashboard.users') }}</span></div>
 
                         <div class="pull-right"><i class="ti-plus"></i></div>

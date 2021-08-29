@@ -34,10 +34,8 @@
                     </div>
                 @endif
 
-
                 <h2>الملاحظات</h2>
-                <p>أسماء الزبائن تحت الانتظار </p>
-                
+                <p>  ملاحظات الزبائن  </p>
 
                 <br><br>
 
@@ -53,7 +51,6 @@
                             <th>حرف السيارة</th>
                             <th>اسم المشرف</th>
                             <th>الملاحظة</th>
-                            <th>العمليات</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -91,62 +88,8 @@
                                 @endforeach
                                 </td>
                                 <td>{{  (($Customer->Note)?$Customer->Note->note_employee : "") }}</td>
-                                <td>
-                                   <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                    data-target="#edit{{ $Customer->id }}"
-                                    title="اضافة ملاحظة"><i
-                                    class="fa fa-edit"></i>اضافة ملاحظة</button>
-                                </td>
+
                             </tr>
-
-
-
- <!-- edit_modal_Category -->
- <div class="modal fade" id="edit{{ $Customer->id }}" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-       <div class="modal-content">
-           <div class="modal-header">
-               <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                   id="exampleModalLabel">
-                    اضافة ملاحظة
-                </h5>
-               <button type="button" class="close" data-dismiss="modal"
-                       aria-label="Close">
-                   <span aria-hidden="true">&times;</span>
-               </button>
-           </div>
-           <div class="modal-body">
-               <!-- add_form -->
-               <form action="{{route('admin.updatenote' , $Customer->id ) }}" method="post" enctype="multipart/form-data">
-                   {{method_field('patch')}}
-                   @csrf
-                   <div class="row">
-                    <div class="col">
-                        <label for="note_employee"
-                               class="mr-sm-2">ملاحظة الزبون
-                            :</label>
-
-                            <textarea name="note_employee" class="form-control" id="note_employee" cols="30" rows="10"></textarea>
-                    </div>
-
-                </div>
-
-                   <br><br>
-
-                   <div class="modal-footer">
-                       <button type="button" class="btn btn-secondary"
-                               data-dismiss="modal">{{ trans('admin/categories.close') }}</button>
-                       <button type="submit"
-                               class="btn btn-success">{{ trans('admin/categories.submit') }}</button>
-                   </div>
-               </form>
-
-           </div>
-       </div>
-   </div>
-</div>
-
                  @endforeach
                     </table>
                 </div>
