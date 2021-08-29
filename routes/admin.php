@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\JobController;
+use App\Http\Controllers\admin\CarsController;
+use App\Http\Controllers\admin\CityController;
+use App\Http\Controllers\admin\NoteController;
 use App\Http\Controllers\admin\OfferController;
+use App\Http\Controllers\admin\UserCoontroller;
+use App\Http\Controllers\admin\StreetController;
 use App\Http\Controllers\admin\ArticleController;
+use App\Http\Controllers\admin\ClassesController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CustomerController;
-use App\Http\Controllers\admin\CarsController;
-use App\Http\Controllers\admin\CityController;
-use App\Http\Controllers\admin\ClassesController;
 use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RequestJobController;
@@ -22,10 +25,8 @@ use App\Http\Controllers\admin\DistributorController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
-use App\Http\Controllers\admin\DistributorTypeController;
 use App\Http\Controllers\admin\NeighborhoodsController;
-use App\Http\Controllers\admin\StreetController;
-use App\Http\Controllers\admin\UserCoontroller;
+use App\Http\Controllers\admin\DistributorTypeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -89,7 +90,11 @@ Route::group(
         Route::resource('users', UserCoontroller::class);
 
 
-});
+        Route::resource('notes', NoteController::class);
+        Route::get('sendtoaddnote/{id}', [NoteController::class , 'sendtoaddnote'])->name('sendtoaddnote');
+        Route::get('addnoteview' , [NoteController::class , 'addnoteview'])->name('addnoteview');
+        Route::patch('updatenote/{id}', [NoteController::class , 'updatenote'])->name('updatenote');
+    });
 
         });
 

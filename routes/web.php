@@ -44,6 +44,8 @@ Route::group(
             // Route::get('articleupdate/{id}',[AbuEskandarController::class ,'articleupdate'])->name('articleupdate');
             Route::get('distributor',[AbuEskandarController::class ,'distributor'])->name('distributor');
 
+
+            Route::put('update_product_view/{id}', [AbuEskandarController::class , 'update_product_view'])->name('update_product_view');
         });
 
 });

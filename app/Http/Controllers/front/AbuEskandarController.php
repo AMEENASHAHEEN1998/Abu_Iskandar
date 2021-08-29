@@ -86,4 +86,14 @@ class AbuEskandarController extends Controller
         // dd($distributes);
         return view('front.distributor',compact('distributes'));
     }
+
+    public function update_product_view(Request $request, $id)
+    {
+        //dd($request->all());
+        $Product = Product::findOrFail($id);
+        $Product->update([
+            'views' => $request->views ,
+        ]);
+        return redirect()->route('AbuEskandar.show_category' , [$request->category_id]);
+    }
 }

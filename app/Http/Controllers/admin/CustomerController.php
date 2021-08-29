@@ -73,6 +73,8 @@ class CustomerController extends Controller
                 'user_id' => auth()->user()->id,
                 'class_id' => $request->class_id,
                 'financial_dealing'  => $request->financial_dealing,
+                'status' => 'تحت الانتظار',
+                'status_value' => 0,
 
             ]);
 

@@ -130,6 +130,26 @@
 
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#note">
+                            <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.notes') }}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+
+                        <ul id="note" class="collapse" data-parent="#sidebarnav">
+                            <li><a
+                                    href="{{ route('admin.addnoteview') }}">{{ trans('admin/dashboard.add_note') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.notes.index') }}">{{ trans('admin/dashboard.pending_note') }}</a>
+                            </li>
+                            <li><a href="{{ route('admin.notes.index') }}">
+                                    {{ trans('admin/dashboard.show_notes') }}</a></li>
+                        </ul>
+                    </li>
                     <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
                         <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span

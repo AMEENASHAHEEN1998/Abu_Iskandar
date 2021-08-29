@@ -57,6 +57,11 @@ return [
     'users' => 'Users' ,
     'all_users' => 'All Users ',
     'add_users' => 'Add Users',
+
+    'notes' => 'Notes',
+    'add_note' => 'Add Note ',
+    'pending_note' => 'Pending Note',
+    'show_notes' => 'Show Notes',
     // end sidebar
 
 ];
