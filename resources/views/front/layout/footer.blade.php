@@ -1,10 +1,10 @@
 <div class="footer">
     <div class="container">
-        <div class="col-md-3 footer-grid">
+        <div class="col-md-4 footer-grid">
             <h3>{{ trans('front/header.About_Us') }}</h3>
-            <p>{{trans('front/header.about_us')}}</p>
+            <p>{{ trans('front/header.about_us') }}</p>
         </div>
-        <div class="col-md-3 footer-grid ">
+        <div class="col-md-4 footer-grid ">
             <h3>{{ trans('front/header.Menu') }}</h3>
             <ul>
                 <li><a href="index.html">{{ trans('front/header.Home') }}</a></li>
@@ -21,18 +21,46 @@
 
 
         </div>
-        <div class="col-md-3 footer-grid ">
-            <h3>{{ trans('front/header.Customer_Services') }}</h3>
+        <div class="col-md-4 footer-grid ">
+            <h3>{{ trans('front/header.branches') }}</h3>
             <ul>
-                <li><a href="shipping.html">Shipping</a></li>
-                <li><a href="terms.html">Clients Employment </a></li>
-                <li><a href="contact.html">Contact</a></li>
-                
-                <li><a href="offer.html">Online Shopping</a></li>
+                <li>
+                    <span><i class="fa fa-location-arrow"></i> الفرع الرئيسي : شارع الصفطاوى  </span>
+                    <br>
+                    <span> 📱جوال / 0594222074</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-location-arrow"></i>  الفرع التاني: غزة - النصر - مفترق الأمن العام   
+                    <br>
+                    📱جوال / 0594222078
+                </li>
+
+                <li>
+                    <i class="fa fa-location-arrow"></i>  الفرع الثالث: الشارع الثالث - مفترق الغزالي
+                    <br>
+                    📱جوال / 0594222075
+
+                </li>
+
+                <li>
+                    <i class="fa fa-location-arrow"></i>  الفرع الرابع: معسكر جباليا - الترنس
+                    <br>
+                    📱جوال / 0594222076
+
+                </li>
+
+                <li>
+
+                    <i class="fa fa-location-arrow"></i>الفرع الخامس: مفترق ابو طلال - بجوار مخبز العائلات
+                    <br>
+                    📱جوال / 0594222079
+
+                </li>
 
             </ul>
         </div>
-        <div class="col-md-3 footer-grid">
+        {{-- <div class="col-md-3 footer-grid">
             <h3>{{ trans('front/header.account') }}</h3>
             <ul>
                 <li><a href="login.html">{{ trans('front/header.Login') }}</a></li>
@@ -40,7 +68,7 @@
 
 
             </ul>
-        </div>
+        </div> --}}
         <div class="clearfix"></div>
 
         <div class="copy-right">

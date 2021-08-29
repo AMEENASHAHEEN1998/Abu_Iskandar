@@ -11,10 +11,62 @@
 
         <div class="head-t">
             <ul class="card">
-                <li><a href="{{ route('login') }}"><i class="fa fa-user"
+
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                @if ($localeCode != App::getLocale())
+                <li class="nav-items"  id="langselectors">
+                    <a rel="alternate"  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        {{ $properties['native'] }}
+                    </a>
+                </li>
+                @endif
+    
+                @endforeach
+                   <!-- Right Side Of Navbar -->
+                   {{-- <ul class="navbar-nav ml-auto"> --}}
+                    <!-- Authentication Links -->
+                    @guest
+             
+                        <li class="{{(request()->routeIs('login')) ? 'auth' : '' }}"><a href="{{ route('login') }}"><i class="fa fa-user"
+                            aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
+
+                        @if (Route::has('register'))
+
+                            <li class="{{ (request()->routeIs('register')) ? 'auth' : '' }}">
+                                <a href="{{ route('register') }}">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                {{ trans('front/header.Register') }}
+                                </a>
+                            </li>
+
+
+                        @endif
+                    @else
+                        <li class="nav-item dropdown" >
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              <strong><span><i class="fa fa-user"></i> {{ Auth::user()->name }}</span></strong>  
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                {{-- </ul> --}}
+
+
+                {{-- <li><a href="{{ route('login') }}"><i class="fa fa-user"
                             aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
                 <li><a href="{{ route('register') }}"><i class="fa fa-arrow-right"
-                            aria-hidden="true"></i>{{ trans('front/header.Register') }}</a></li>
+                            aria-hidden="true"></i>{{ trans('front/header.Register') }}</a></li> --}}
 
             </ul>
         </div>
@@ -129,7 +181,7 @@
         <div class="cart">
 
             <span class="fa fa-shopping-cart my-cart-icon"></span>
-            <span class="badge badge-notify my-cart-badge"></span>
+            {{-- <span class="badge badge-notify my-cart-badge"></span> --}}
             {{-- </span> --}}
         </div>
         {{-- <div class="clearfix"></div> --}}
