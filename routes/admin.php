@@ -97,6 +97,9 @@ Route::group(
         Route::patch('updatenote/{id}', [NoteController::class , 'updatenote'])->name('updatenote');
         Route::get('show_notes' , [NoteController::class , 'show_notes'])->name('show_notes');
 
+        Route::get('driver_request/export/', [DriverRequestController::class,'export'])->name('export_request');
+        Route::get('driver_request/export_wait_request/', [DriverRequestController::class,'export_wait_request'])->name('export_wait_request');
+
     });
 
         });

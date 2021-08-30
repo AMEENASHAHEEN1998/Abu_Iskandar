@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Models\DriverRequest;
+use App\Exports\DriverRequestExport;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DriverWaitRequestExport;
 
 class DriverRequestController extends Controller
 {
@@ -165,6 +168,18 @@ class DriverRequestController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
         return redirect()->route('admin.orderwait')->with('update_status' , trans('admin/driverrequest.update_status'));
+
+    }
+
+    public function export()
+    {
+        return Excel::download(new DriverRequestExport, 'driver_request.xlsx' );
+
+    }
+
+    public function export_wait_request()
+    {
+        return Excel::download(new DriverWaitRequestExport, 'driver_wait_request.xlsx' );
 
     }
 }
