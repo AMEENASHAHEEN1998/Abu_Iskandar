@@ -100,19 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 
 
-    <ul>
 
-        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-            @if ($localeCode != App::getLocale())
-            <li class="nav-items"  >
-                <a rel="alternate" id="langselector" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                    {{ $properties['native'] }}
-                </a>
-            </li>
-            @endif
-
-        @endforeach
-    </ul>
 
     <a href="offer.html"><img src="{{asset('front/images/logo.jpg')}}"  class="img-head" alt=""></a>
 
