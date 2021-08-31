@@ -64,7 +64,7 @@ preloader -->
 
                             <div class="float-rights text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4> عدد المنتجات <span>
+                                <h4>{{ trans('admin/dashboard.product_number') }}   <span>
                                     {{$product}}
                                 </span></h4>
                             </div>
@@ -93,7 +93,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>عدد العروض<span>
+                                <h4>{{ trans('admin/dashboard.offer_number') }} <span>
                                     {{ $offer}}
                                 </span></h4>
                             </div>
@@ -114,7 +114,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4> طلبات التوظيف<span> {{$requestjob}}</span></h4>
+                                <h4>{{ trans('admin/dashboard.job_request') }}  <span> {{$requestjob}}</span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -134,7 +134,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4> طلبيات جديدة<span> {{$driverrequest}}</span></h4>
+                                <h4> {{ trans('admin/dashboard.new_order') }}  <span> {{$driverrequest}}</span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -150,7 +150,7 @@ preloader -->
                 <div class="card">
                     <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title mb-0">احصائيات الموقع</h4>
+                            <h4 class="card-title mb-0">{{ trans('admin/dashboard.site_stats') }}</h4>
                             <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
 
@@ -167,7 +167,7 @@ preloader -->
                 <div class="card">
                     <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title mb-0"> نسبة احصائية الطلبيات</h4>
+                            <h4 class="card-title mb-0">{{ trans('admin/dashboard.stats_order') }} </h4>
                             <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
                     </div>

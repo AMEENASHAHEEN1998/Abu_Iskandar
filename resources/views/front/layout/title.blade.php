@@ -5,15 +5,15 @@
 
 
 <style>
-h1   b ,p{
+h3   b ,p{
         font-family: 'Amiri', serif;
         color:#083789
     }
-    h1{
-        margin-top: 10px;
+    h3{
+        margin-top: 2px;
     }
     </style>
 
-<h1 ><b>{{ trans('front/header.title') }}<br></b></h1>
+<h3 ><b>{{ trans('front/header.title') }}<br></b></h3>
 <p><span> {{ trans('front/header.content') }}</span></p>
 

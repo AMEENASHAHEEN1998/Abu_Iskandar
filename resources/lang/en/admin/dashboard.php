@@ -62,6 +62,15 @@ return [
     'add_note' => 'Add Note ',
     'pending_note' => 'Pending Note',
     'show_notes' => 'Show Notes',
+
+    'site_link' => 'Website Link',
+
     // end sidebar
 
+    'new_order' => 'New Orders',
+    'job_request' => 'Job Request',
+    'offer_number' => 'Offers Number',
+    'product_number' => 'Products Number',
+    'site_stats' => 'Site Stats',
+    'stats_order' => 'Statistical percentage of orders',
 ];

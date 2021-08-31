@@ -6,12 +6,14 @@
               <p class="mb-0"> &copy; Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span>. <a href="#"> Webmin </a> All Rights Reserved. </p>
           </div>
         </div>
-        <div class="col-md-6">
-          <ul class="text-center text-md-right">
+        <div class="col-md-3"  ></div>
+        <div class="col-md-3 ">
+            <p style="font-size: 5px">@include('front.layout.title')</p>
+          {{-- <ul class="text-center text-md-right">
             <li class="list-inline-item"><a href="#">Terms & Conditions </a> </li>
             <li class="list-inline-item"><a href="#">API Use Policy </a> </li>
             <li class="list-inline-item"><a href="#">Privacy Policy </a> </li>
-          </ul>
+          </ul> --}}
         </div>
       </div>
     </footer>

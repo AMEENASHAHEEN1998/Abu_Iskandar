@@ -300,6 +300,24 @@
                     </li>
 
                     <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#info">
+                            <div class="pull-left"><i class="fa fa-link" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.site_link') }}</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+
+                        <ul id="info" class="collapse" data-parent="#info" >
+
+
+                            <li><a  href="{{ route('AbuEskandar.home') }}">{{ trans('admin/dashboard.site_link') }}</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#logout">
                             <div class="pull-left"><i class=" ti-unlock"></i><span
                                     class="right-nav-text">{{ trans('admin/dashboard.logout') }}</span></div>
