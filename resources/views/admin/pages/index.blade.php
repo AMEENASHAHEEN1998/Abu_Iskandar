@@ -64,7 +64,7 @@ preloader -->
 
                             <div class="float-rights text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4> <span>
+                                <h4> عدد المنتجات <span>
                                     {{$product}}
                                 </span></h4>
                             </div>
@@ -93,7 +93,9 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>{{$offer}}</h4>
+                                <h4>عدد العروض<span>
+                                    {{ $offer}}
+                                </span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -112,7 +114,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>{{$requestjob}}</h4>
+                                <h4> طلبات التوظيف<span> {{$requestjob}}</span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -132,7 +134,7 @@ preloader -->
                             </div>
                             <div class="float-right text-right">
                                 <p class="card-text text-dark"></p>
-                                <h4>{{$driverrequest}}</h4>
+                                <h4> طلبيات جديدة<span> {{$driverrequest}}</span></h4>
                             </div>
                         </div>
                         <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -143,74 +145,44 @@ preloader -->
                 </div>
             </div>
         </div>
-        <!-- Orders Status widgets-->
-        <div class="row">
-            <div class="col-xl-4 mb-30">
-                <div class="card card-statistics h-100">
-                    <!-- action group -->
-                    <div class="btn-group info-drop">
-                        <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><i class="ti-more"></i></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="text-primary ti-reload"></i>Refresh</a>
-                            <a class="dropdown-item" href="#"><i class="text-secondary ti-eye"></i>View
-                                all</a>
+        <div class="row row-sm">
+            <div class="col-md-12 col-lg-12 col-xl-7">
+                <div class="card">
+                    <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title mb-0">احصائيات الموقع</h4>
+                            <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
+
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <h4> </h4>
-                        <div class="row mt-20">
-                            <div class="col-4">
-                                <h6></h6>
-                                <b class="text-info"> </b>
-                            </div>
-                            <div class="col-4">
-                                <h6></h6>
-                                <b class="text-warning"> </b>
-                            </div>
-                            <div class="col-4">
-                                <h6></h6>
-                                <b class="text-danger"> </b>
-                            </div>
-                        </div>
+                    <div class="card-body" style="width: 100%">
+                        {!! $chartjs_2->render() !!}
+
                     </div>
-                    <div id="sparkline2" class="scrollbar-x text-center"></div>
                 </div>
             </div>
-            <div class="col-xl-8 mb-30">
-                <div class="card h-100">
-                    <div class="btn-group info-drop">
-                        <button type="button" class="dropdown-toggle-split text-muted" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><i class="ti-more"></i></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="text-primary ti-reload"></i>Refresh</a>
-                            <a class="dropdown-item" href="#"><i class="text-secondary ti-eye"></i>View
-                                all</a>
+
+
+            <div class="col-lg-12 col-xl-5">
+                <div class="card">
+                    <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title mb-0"> نسبة احصائية الطلبيات</h4>
+                            <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="d-block d-md-flexx justify-content-between">
-                            <div class="d-block">
-                                <h5 class="card-title"> </h5>
-                            </div>
-                            <div class="d-flex">
-                                <div class="clearfix mr-30">
-                                    <h6 class="text-success"></h6>
-                                    <p></p>
-                                </div>
-                                <div class="clearfix  mr-50">
-                                    <h6 class="text-danger"> </h6>
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="morris-area" style="height: 320px;"></div>
+                    <div class="card-body" style="width: 100%">
+                        <br><br><br>
+
+                        {!! $chartjs->render() !!}
+<br><br><br>
                     </div>
                 </div>
+
             </div>
         </div>
-        <div class="row">
+
+        {{--<div class="row">
 
             <div class="col-xl-12 mb-120">
                 <div class="card card-statistics h-100">
@@ -240,7 +212,7 @@ preloader -->
             </div>
 
 
-        </div>
+        </div> --}}
 
 
         <!--=================================

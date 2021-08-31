@@ -179,6 +179,10 @@ return [
 
         // export excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
+
+        // chart
+        Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
+
     ],
 
     /*
@@ -235,7 +239,7 @@ return [
 
         //export excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        
+
 
     ],
 
