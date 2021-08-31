@@ -31,6 +31,9 @@
                         </div>
                     @endif
 
+                    <a class="modal-effect btn btn-sm btn-primary" href="{{ route('admin.export_wait_request') }}"
+                    style="color:white"><i class="fas fa-file-download"></i>&nbsp;تصدير اكسيل</a>
+
                     <br><br>
                     <h2>{{ trans('admin/dashboard.pending_orders') }}</h2>
 

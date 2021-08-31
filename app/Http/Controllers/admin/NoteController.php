@@ -138,4 +138,14 @@ class NoteController extends Controller
         return redirect()->route('admin.addnoteview');
 
     }
+
+    public function show_notes(){
+
+        $Customers = Customer::where('status_value' , 2)->get();
+        $Note = Note::where('status_value' , 1)->get();
+        $Users = User::get();
+        $Cars = Car::get();
+        return view('admin.note.show_notes')->with(['Customers' => $Customers ,'Note' => $Note, 'Users' => $Users , 'Cars' => $Cars]);
+
+    }
 }

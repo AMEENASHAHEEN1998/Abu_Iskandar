@@ -31,9 +31,11 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-success">
+                    <a href="{{ route('admin.driverrequest.create') }}"  class="btn btn-sm btn-success">
                      {{ trans('admin/driverrequest.add_request') }}
                     </a>
+                    <a class="modal-effect btn btn-sm btn-primary" href="{{ route('admin.export_request') }}"
+                    style="color:white"><i class="fas fa-file-download"></i>&nbsp;تصدير اكسيل</a>
 
 
                     <br><br>

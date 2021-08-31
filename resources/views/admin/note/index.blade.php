@@ -35,9 +35,8 @@
                 @endif
 
 
-                <a class="btn btn-primary btn-sm" href="{{ route('admin.customers.create') }}">اضافة زبون</a>
-
-
+                <h2>الملاحظات</h2>
+                <p>أسماء الزبائن تحت الانتظار </p>
                 <br><br>
 
                 <div class="table-responsive">
@@ -89,7 +88,7 @@
                                     @endforeach
                                 @endforeach
                                 </td>
-                                <td> <a href="{{ route('admin.sendtoaddnote',$Customer->id) }}">ارسال لاضافة ملاحظة</a> </td>
+                                <td> <a href="{{ route('admin.sendtoaddnote',$Customer->id) }}" style="color:#00cc">ارسال لاضافة ملاحظة</a> </td>
                                 {{-- <td>{{ $CustomerCar->original_number}}</td>
                                 <td>{{ $CustomerCar->User->name }}</td>
 
