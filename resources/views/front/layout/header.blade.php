@@ -180,9 +180,7 @@
 
         <div class="cart">
 
-            <span class="fa fa-shopping-cart my-cart-icon"></span>
-            {{-- <span class="badge badge-notify my-cart-badge"></span> --}}
-            {{-- </span> --}}
+         
         </div>
         {{-- <div class="clearfix"></div> --}}
 
