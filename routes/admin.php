@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\EmployeeController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\PermissionController;
 use App\Http\Controllers\admin\RequestJobController;
 use App\Http\Controllers\admin\DistributorController;
 use App\Http\Controllers\admin\InformationController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\NeighborhoodsController;
 use App\Http\Controllers\admin\DistributorTypeController;
+use App\Http\Controllers\admin\RoleController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(
@@ -99,6 +101,12 @@ Route::group(
 
         Route::get('driver_request/export/', [DriverRequestController::class,'export'])->name('export_request');
         Route::get('driver_request/export_wait_request/', [DriverRequestController::class,'export_wait_request'])->name('export_wait_request');
+
+
+        Route::resource('role',RoleController::class );
+        Route::resource('permission',PermissionController::class );
+
+        Route::get('addrole',[HomeController::class ,'role']);
 
     });
 

@@ -273,6 +273,8 @@
                             <li><a  href="{{route('admin.neighborhood.index')}}">{{ trans('admin/dashboard.addneighborhoods') }}</a></li>
                             <li><a  href="{{route('admin.street.index')}}">{{ trans('admin/dashboard.addstreet') }}</a></li>
                             <li><a  href="{{route('admin.classes.index')}}">{{ trans('admin/dashboard.addclasses') }}</a></li>
+                            <li><a  href="{{route('admin.role.index')}}">{{ trans('admin/dashboard.role') }}</a></li>
+                            <li><a  href="{{route('admin.permission.index')}}">{{ trans('admin/dashboard.permission') }}</a></li>
 
                         </ul>
                     </li>

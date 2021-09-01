@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\User;
 use App\Models\Offer;
 use App\Models\Product;
+use App\Models\Customer;
 use App\Models\RequestJob;
 use Illuminate\Http\Request;
 use App\Models\DriverRequest;
-use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
@@ -106,4 +107,95 @@ class HomeController extends Controller
         return view('admin.pages.index',compact('product','requestjob','offer','driverrequest','chartjs' , 'chartjs_2'));
         // return view('admin.pages.index');
     }
+
+
+    public function role(){
+      $roles=Role::all();
+      // $role = Role::create(['name' => 'writer']);
+      
+
+      // $Permissions =Permission::all();
+      // $permission = Permission::create(['name' => 'add user']);  
+      // $permission = Permission::create(['name' => 'add order']);  
+      // $permission = Permission::create(['name' => 'add product']);  
+      
+      
+
+      // $role = Role::with('permissions');
+      // $user = User::find(1);
+      // $user->assignRole('new');
+
+      // Role::findByName('admin')->givePermissionTo('add product');
+
+      // $role = Role::find(1);
+      // $role->givePermissionTo('edit articles');
+      // $roles->givePermissionTo('add order');
+
+      // $role = Role::create(['name' => 'posts']);
+      // $permission = Permission::create(['name' => 'creates post']);
+
+      // $role->givePermissionTo($permission);
+      // $permission->assignRole($role);
+
+
+      // $role = Role::create(['name' => 'admin']);
+
+      // $permission = Permission::create(['name' => 'أضافة قسم رئيسي']);
+      // $permission = Permission::create(['name' => 'أضافة قسم فرعي']);
+      // $permission = Permission::create(['name' => 'أضافة  منتج']);
+      // $permission = Permission::create(['name' => 'تعديل منتج']);
+      // $permission = Permission::create(['name' => 'حذف منتج']);
+      // $permission = Permission::create(['name' => 'أضافة  طلبيات']);
+      // $permission = Permission::create(['name' => 'تعديل طلبيات']);
+      // $permission = Permission::create(['name' => 'حذف طلبيات']);
+
+      // $permission = Permission::create(['name' => 'أضافة عروض']);
+      // $permission = Permission::create(['name' => 'تعديل عروض']);
+      // $permission = Permission::create(['name' => 'حذف عروض']);
+
+      // $permission = Permission::create(['name' => 'أضافة  زبائن']);
+      // $permission = Permission::create(['name' => 'تعديل زبائن']);
+      // $permission = Permission::create(['name' => 'حذف زبائن']);
+
+      // $permission = Permission::create(['name' => 'أضافة  مستخدمين']);
+      // $permission = Permission::create(['name' => 'تعديل مستخدمين']);
+      // $permission = Permission::create(['name' => 'حذف مستخدمين']);
+
+      // $permission = Permission::create(['name' => 'أضافة مقالات']);
+      // $permission = Permission::create(['name' => 'تعديل مقالات']);
+      // $permission = Permission::create(['name' => 'حذف مقالات']);
+
+      // $permission = Permission::create(['name' => 'أضافة وظائف']);
+      // $permission = Permission::create(['name' => 'تعديل وظائف']);
+      // $permission = Permission::create(['name' => 'حذف وظائف']);
+
+      // $permission = Permission::create(['name' => 'أضافة  طلبات توظيف']);
+      // $permission = Permission::create(['name' => 'تعديل طلبات توظيف']);
+      // $permission = Permission::create(['name' => 'حذف طلبات توظيف']);
+ 
+      // $permission = Permission::create(['name' => 'أضافة موزعين']);
+      // $permission = Permission::create(['name' => 'تعديل موزعين']);
+      // $permission = Permission::create(['name' => 'حذف موزعين']);
+
+
+      // $permission = Permission::create(['name' => 'أضافة الاعدادات']);
+      // $permission = Permission::create(['name' => 'اضافة معلومات الشركة']);
+      // $permission = Permission::create(['name' => 'أضافة فريق العمل' ]);
+      // $role->givePermissionTo(Permission::all());
+
+      
+      // $role = Role::create(['name' => 'supervisor']);
+
+      // $role->givePermissionTo(Permission::find(25)->id);
+      // $role->givePermissionTo(Permission::find(26)->id);
+      // $role->givePermissionTo(Permission::find(15)->id);
+      // $role->givePermissionTo(Permission::find(10)->id);
+
+      // $role = Role::create(['name' => 'user']);
+
+
+      $roles = Role::with('permissions')->get();
+      return $roles;
+      
+  }
 }
