@@ -41,7 +41,7 @@ Route::group(
         Auth::routes();
         Auth::routes(['register' => false]);
 
-
+        
         Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard' , [DashboardController::class , 'index'])->name('dashboard');
         Route::resource('categories', CategoryController::class);

@@ -153,6 +153,7 @@ class DriverRequestController extends Controller
 
         return view('admin.driverRequest.orderdeliver')->with(['Orders' => $Orders,'Categories' => $Categories , 'Subcategories' => $Subcategories ]);
     }
+    
     public function update_status($id)
     {
         try{

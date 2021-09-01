@@ -11,6 +11,9 @@ class RoleController extends Controller
 {
     public function index()
     {
+        // $roles = Role::find(3);
+        // return $roles->permissions;
+
         $roles = Role::all();
         $permissions = Permission::all();
         $roles = Role::with('permissions')->get();
@@ -56,16 +59,9 @@ class RoleController extends Controller
         return redirect()->route('admin.role.index')->with('success', trans('admin/role.success_message'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        // $role=Role::find($id)->get();
-        // return $role;
+
     }
 
     /**
@@ -88,9 +84,12 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        
-        return Role::findOrFail($id);
+    {   
+        $roles = Role::find($id);
+       
+        foreach($roles->permissions as $permission){
+            $roles->revokePermissionTo($permission->name);
+        }
 
         $role = Role::findOrFail($id)->update([
             'name' => $request->name,
@@ -99,28 +98,15 @@ class RoleController extends Controller
         $role = Role::find($id)->get();
         $permissions = $request->name_permission;
 
-
-        // return Role::where('id', '=', $request->id)->get();
-
-        return Role::find($id)->with('permissions')->get();
-
-        // $role->revokePermissionTo();
-
-
         if ($request->has('name_permission')) {
-            // $role->givePermissionTo($request->permission);
             foreach ($permissions as $permission) {
                 $p = Permission::where('id', '=', $permission)->firstOrFail();
-                // return $p;
                 $role = Role::where('name', '=', $request->name)->first();
                
                 $role->givePermissionTo($p);
                 
             }
         }
-
-
-
         return redirect()->route('admin.role.index')->with('success', trans('admin/role.update_message'));
     }
 

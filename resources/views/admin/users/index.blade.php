@@ -65,7 +65,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ $user->roles_name }}</td>
+                                        <td>{{ ($user->roles->pluck('name')) ? $user->roles->pluck('name') : 'null' }}</td>
 
 
 
@@ -145,17 +145,15 @@
                                                                     class="mr-sm-2">{{ trans('admin/user.roles_name') }}
                                                                     :</label>
 
-                                                                <select name="roles_name" id="" class="form-control">
-                                                                    <option value=""></option>
-                                                                    <option value="مدير" @if ($user->roles_name == 'مدير') selected @endif> مدير
-                                                                    </option>
-                                                                    <option value="مشرف" @if ($user->roles_name == 'مشرف') selected @endif>مشرف
-                                                                    </option>
-                                                                    <option value="مندوب" @if ($user->roles_name == 'مندوب') selected @endif>مندوب
-                                                                    </option>
-                                                                    <option value="مستخدم عادي" @if ($user->roles_name == 'مستخدم عادي') selected @endif>
-                                                                        مستخدم عادي</option>
+                                                             
 
+                                                                <select name="roles_name" id="" class="form-control">
+                                                                    @foreach ($roles as $role)
+                                                                        <option value="{{$role->id}}" @if ($user->roles_name == $role->name) selected @endif>
+                                                                            {{$role->name}}
+                                                                        </option>
+                                                                    @endforeach
+                
                                                                 </select>
                                                             </div>
 
@@ -316,20 +314,11 @@
                                                     :</label>
 
                                                 <select name="roles_name" id="" class="form-control">
-                                                    <option value=""></option>
-
-                                                    <option value="مدير">
-                                                        مدير
-                                                    </option>
-                                                    <option value="مشرف">
-                                                        مشرف
-                                                    </option>
-                                                    <option value="مندوب">
-                                                        مندوب
-                                                    </option>
-                                                    <option value="مستخدم عادي">
-                                                        مستخدم عادي
-                                                    </option>
+                                                    @foreach ($roles as $role)
+                                                        <option value="{{$role->id}}">
+                                                            {{$role->name}}
+                                                        </option>
+                                                    @endforeach
 
                                                 </select>
                                             </div>

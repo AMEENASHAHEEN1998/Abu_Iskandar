@@ -19,6 +19,7 @@
                         {{ trans('admin/dashboard.site_name') }}</li>
                     <!-- menu item Elements-->
 
+                   
                     <li>
 
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
@@ -28,35 +29,51 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="elements" class="collapse" data-parent="#sidebarnav">
-
+                            @can('أضافة قسم رئيسي')
                             <li><a
                                     href="{{ route('admin.categories.index') }}">{{ trans('admin/dashboard.primary_category') }}</a>
                             </li>
+                            @endcan
 
+                            @can('أضافة قسم فرعي')
 
                             <li><a
                                     href="{{ route('admin.subcategories.index') }}">{{ trans('admin/dashboard.sub_category') }}</a>
                             </li>
 
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
-                            <div class="pull-left"><i class="fa fa-cubes" aria-hidden="true"></i><span
-                                    class="right-nav-text">{{ trans('admin/dashboard.product') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('admin.products.create') }}">{{ trans('admin/dashboard.add_product') }} </a> </li>
-
-                            <li> <a href="{{ route('admin.products.index') }}"> {{ trans('admin/dashboard.show_products') }}</a> </li>
+                            @endcan
 
                         </ul>
-
-
                     </li>
+
+                    
+            
+                    @can('منتجات')
+
+                        <li>
+                            <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
+                                <div class="pull-left"><i class="fa fa-cubes" aria-hidden="true"></i><span
+                                        class="right-nav-text">{{ trans('admin/dashboard.product') }}</span></div>
+                                <div class="pull-right"><i class="ti-plus"></i></div>
+                                <div class="clearfix"></div>
+                            </a>
+
+
+                            <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+
+                                <li> <a href="{{ route('admin.products.create') }}">{{ trans('admin/dashboard.add_product') }}
+                                    </a> </li>
+
+                                <li> <a href="{{ route('admin.products.index') }}">
+                                        {{ trans('admin/dashboard.show_products') }}</a> </li>
+
+                            </ul>
+                        </li>
+                    @endcan
+
+
+
+                    @can('أضافة طلبيات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#join_reporters">
                             <div class="pull-left"><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span
@@ -81,9 +98,9 @@
 
                         </ul>
                     </li>
+                    @endcan
 
-
-
+                    @can('أضافة عروض')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsuser">
                             <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
@@ -97,6 +114,7 @@
                             <li><a
                                     href="{{ route('admin.offer.index') }}">{{ trans('admin/dashboard.all_offer') }}</a>
                             </li>
+
                             <li><a
                                     href="{{ route('admin.offer.create') }}">{{ trans('admin/dashboard.add_offer') }}</a>
                             </li>
@@ -108,28 +126,31 @@
 
                         </ul>
                     </li>
+                   @endcan
 
-<li>
+
+                    
+                    @can('زبائن')
+                    <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#customers">
                             <div class="pull-left"><i class="fa fa-gift" aria-hidden="true"></i><span
                                     class="right-nav-text">الزبائن</span></div>
-                                    <div class="pull-right"><i class="ti-plus"></i></div>
-                                    <div class="clearfix"></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
                         </a>
-
-
 
                         <ul id="customers" class="collapse" data-parent="#sidebarnav">
 
-                            <li><a
-                                    href="{{ route('admin.customers.create') }}">اضافة زبون</a>
+                            <li><a href="{{ route('admin.customers.create') }}">اضافة زبون</a>
                             </li>
-                            <li><a
-                                    href="{{ route('admin.customers.index') }}">عرض الزبائن</a>
+                            <li><a href="{{ route('admin.customers.index') }}">عرض الزبائن</a>
                             </li>
 
                         </ul>
                     </li>
+                    @endcan
+
+
 
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#note">
@@ -150,30 +171,28 @@
                                     {{ trans('admin/dashboard.show_notes') }}</a></li>
                         </ul>
                     </li>
-                    <li>
-                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
-                        <div class="pull-left"><i class="fa fa-user-o" aria-hidden="true"></i><span
-                                class="right-nav-text">{{ trans('admin/dashboard.users') }}</span></div>
 
-                        <div class="pull-right"><i class="ti-plus"></i></div>
-                        <div class="clearfix"></div>
-                    </a>
+
+                    @can('مستخدمين')
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
+                            <div class="pull-left"><i class="fa fa-user-o" aria-hidden="true"></i><span
+                                    class="right-nav-text">{{ trans('admin/dashboard.users') }}</span></div>
+
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
                         <ul id="elementsusers" class="collapse" data-parent="#sidebarnav">
 
                             <li><a
                                     href="{{ route('admin.users.index') }}">{{ trans('admin/dashboard.all_users') }}</a>
                             </li>
-                            {{-- <li><a
-                                    href="{{ route('admin.users.create') }}">{{ trans('admin/dashboard.add_users') }}</a>
-                            </li> --}}
-
-
 
                         </ul>
                     </li>
+                    @endcan
 
-
-
+                    @can('مقالات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#site">
                             <div class="pull-left"><i class="fa fa-file-text-o" aria-hidden="true"></i><span
@@ -182,13 +201,20 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="site" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('admin.article.index')}}">{{ trans('admin/dashboard.show_articles') }}</a></li>
-                            <li><a href="{{route('admin.article.create')}}">{{ trans('admin/dashboard.add_articles') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.article.index') }}">{{ trans('admin/dashboard.show_articles') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.article.create') }}">{{ trans('admin/dashboard.add_articles') }}</a>
+                            </li>
 
                         </ul>
                     </li>
+                    @endcan
 
 
+
+                    @can('أضافة وظائف')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobs">
                             <div class="pull-left"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span
@@ -197,15 +223,24 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="jobs" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('admin.job.index')}}">{{ trans('admin/dashboard.all_job') }}</a></li>
-                            <li><a href="{{route('admin.job.create')}}">{{ trans('admin/dashboard.create_job') }}</a></li>
-                            <li><a href="{{route('admin.job.activejob')}}">{{ trans('admin/dashboard.show_job') }}</a></li>
-                            <li><a href="{{route('admin.job.noactivejob')}}">{{ trans('admin/dashboard.old_job') }}</a></li>
+                            <li><a href="{{ route('admin.job.index') }}">{{ trans('admin/dashboard.all_job') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.job.create') }}">{{ trans('admin/dashboard.create_job') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.job.activejob') }}">{{ trans('admin/dashboard.show_job') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.job.noactivejob') }}">{{ trans('admin/dashboard.old_job') }}</a>
+                            </li>
 
                         </ul>
                     </li>
+                    @endcan
 
-
+                    
+                    @can('طلبات التوظيف')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#request_job">
                             <div class="pull-left"><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span
@@ -214,19 +249,26 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="request_job" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('admin.requestjob.index')}}">{{ trans('admin/dashboard.show_request_job') }}</a></li>
-                            <li><a href="{{route('admin.requestjob.activerequestjob')}}">{{ trans('admin/dashboard.accepted_request') }}</a></li>
-                            <li><a href="{{route('admin.requestjob.noactiverequestjob')}}">{{ trans('admin/dashboard.rejected_request') }}</a></li>
-                            <li><a href="{{route('admin.requestjob.waitrequestjobs')}}">{{ trans('admin/requestjob.waitrequestjobs') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.requestjob.index') }}">{{ trans('admin/dashboard.show_request_job') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.requestjob.activerequestjob') }}">{{ trans('admin/dashboard.accepted_request') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.requestjob.noactiverequestjob') }}">{{ trans('admin/dashboard.rejected_request') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.requestjob.waitrequestjobs') }}">{{ trans('admin/requestjob.waitrequestjobs') }}</a>
+                            </li>
 
                         </ul>
                     </li>
 
+                    @endcan
 
-
-
-
-
+                    
+                    @can('أضافة فريق العمل')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#staff">
                             <div class="pull-left"><i class="fa fa-users" aria-hidden="true"></i><span
@@ -235,14 +277,19 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="staff" class="collapse" data-parent="#sidebarnav">
-                            <li><a  href="{{route('admin.employee.index')}}">{{ trans('admin/dashboard.show_members') }}</a></li>
-                            <li><a  href="{{route('admin.employee.create')}}">{{ trans('admin/dashboard.add_member') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.employee.index') }}">{{ trans('admin/dashboard.show_members') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.employee.create') }}">{{ trans('admin/dashboard.add_member') }}</a>
+                            </li>
 
                         </ul>
                     </li>
+                    @endcan
 
-
-
+                    
+                    @can('أضافة موزعين')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#distributors">
                             <div class="pull-left"><i class="fa fa-users"></i><span
@@ -251,15 +298,24 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="distributors" class="collapse" data-parent="#sidebarnav">
-                            <li><a  href="{{route('admin.distributor.index')}}">{{ trans('admin/dashboard.distributors') }}</a></li>
-                            <li><a  href="{{route('admin.distributor.create')}}">{{ trans('admin/dashboard.add_distributors') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.distributor.index') }}">{{ trans('admin/dashboard.distributors') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.distributor.create') }}">{{ trans('admin/dashboard.add_distributors') }}</a>
+                            </li>
 
-                            <li><a  href="{{route('admin.distributortype.index')}}">{{ trans('admin/dashboard.category_distributors') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.distributortype.index') }}">{{ trans('admin/dashboard.category_distributors') }}</a>
+                            </li>
                             {{-- <li><a  href="{{route('admin.distributor.show')}}">{{ trans('admin/dashboard.show_distributors') }}</a></li> --}}
 
                         </ul>
                     </li>
+                    @endcan
 
+                    
+                    @can('أضافة الاعدادات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings">
                             <div class="pull-left"><i class="fa fa-cogs"></i><span
@@ -268,20 +324,32 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Settings" class="collapse" data-parent="#sidebarnav">
-                            <li><a  href="{{route('admin.car.index')}}">{{ trans('admin/dashboard.addcar') }}</a></li>
-                            <li><a  href="{{route('admin.city.index')}}">{{ trans('admin/dashboard.addcity') }}</a></li>
-                            <li><a  href="{{route('admin.neighborhood.index')}}">{{ trans('admin/dashboard.addneighborhoods') }}</a></li>
-                            <li><a  href="{{route('admin.street.index')}}">{{ trans('admin/dashboard.addstreet') }}</a></li>
-                            <li><a  href="{{route('admin.classes.index')}}">{{ trans('admin/dashboard.addclasses') }}</a></li>
-                            <li><a  href="{{route('admin.role.index')}}">{{ trans('admin/dashboard.role') }}</a></li>
-                            <li><a  href="{{route('admin.permission.index')}}">{{ trans('admin/dashboard.permission') }}</a></li>
+                            <li><a href="{{ route('admin.car.index') }}">{{ trans('admin/dashboard.addcar') }}</a>
+                            </li>
+                            <li><a href="{{ route('admin.city.index') }}">{{ trans('admin/dashboard.addcity') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.neighborhood.index') }}">{{ trans('admin/dashboard.addneighborhoods') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.street.index') }}">{{ trans('admin/dashboard.addstreet') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.classes.index') }}">{{ trans('admin/dashboard.addclasses') }}</a>
+                            </li>
+                            <li><a href="{{ route('admin.role.index') }}">{{ trans('admin/dashboard.role') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.permission.index') }}">{{ trans('admin/dashboard.permission') }}</a>
+                            </li>
 
                         </ul>
                     </li>
 
+                    @endcan
 
-
-
+                    
+                    @can('اضافة معلومات الشركة')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#info">
                             <div class="pull-left"><i class="fa fa-info" aria-hidden="true"></i><span
@@ -291,16 +359,23 @@
                             <div class="clearfix"></div>
                         </a>
 
-                        <ul id="info" class="collapse" data-parent="#info" >
+                        <ul id="info" class="collapse" data-parent="#info">
 
 
-                            <li><a  href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a></li>
-                            <li><a  href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a></li>
+                            <li><a
+                                    href="{{ route('admin.information.index') }}">{{ trans('admin/dashboard.information_company') }}</a>
+                            </li>
+                            <li><a
+                                    href="{{ route('admin.information.create') }}">{{ trans('admin/dashboard.add_information_company') }}</a>
+                            </li>
 
                         </ul>
 
                     </li>
 
+                    @endcan
+
+                    @can('ملاحظات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#logout">
                             <div class="pull-left"><i class=" ti-unlock"></i><span
@@ -321,8 +396,9 @@
 
                         </ul>
                     </li>
+                    @endcan
 
-
+                    {{-- @endcan --}}
 
                 </ul>
             </div>
