@@ -95,7 +95,7 @@
 
 
 
-                                        <td>{{ $job->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $job->created_at->format('Y-m-d') }}</td>
 
 
                                         <td>

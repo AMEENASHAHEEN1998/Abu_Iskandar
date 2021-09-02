@@ -20,6 +20,7 @@ class StreetController extends Controller
     {
         $streets=Street::orderBy('id' , 'desc')->paginate(5);
         $neighborhoods=Neighborhood::all();
+        
         return view('admin.street.index',compact('streets','neighborhoods'));
 
     }

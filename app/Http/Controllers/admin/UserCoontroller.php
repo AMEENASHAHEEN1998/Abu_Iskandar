@@ -21,8 +21,8 @@ class UserCoontroller extends Controller
     public function index()
     {
         // $role=Role::findById(1);
-        // $user= User::find(7);
-        // // return $user->assignRole($role);
+        // $user= User::find(1);
+        // return $user->assignRole($role);
 
         // return  $user->roles->pluck('name');
 

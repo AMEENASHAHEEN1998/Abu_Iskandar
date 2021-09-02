@@ -165,7 +165,7 @@
 
                                         <div class="row">
                                             <div class="col">
-                                                <label for="name" class="mr-sm-2">{{ trans('admin/city.name') }}
+                                                <label for="name" class="mr-sm-2">{{ trans('admin/neighborhood.name') }}
                                                     :</label>
 
                                                 <div class="box ">

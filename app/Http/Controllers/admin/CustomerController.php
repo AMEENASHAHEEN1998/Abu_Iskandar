@@ -35,6 +35,62 @@ class CustomerController extends Controller
         'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
     }
 
+    function find(Request $request)
+    {
+  
+        $search_text = $request->input('query');
+
+        $user = '';
+        $first_name = '';
+        $middle_name = '';
+        $last_name = '';
+        $phone_number = '';
+        $job_name = '';
+
+
+
+        try {
+        //     try {
+            $user = User::where('name', 'LIKE', '%' . $search_text . '%')->first()->id;
+        //     } catch (\Throwable $th) {
+        //         $Categories = Category::where('category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+            
+
+        } catch (\Throwable $th) {
+        //     try {
+        //         $Subcategories = SubCategory::where('sub_category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+        //     } catch (\Throwable $th) {
+        //         $product_name = Product::where('product_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+        //     }
+
+        }
+
+        // $Customer = Customer::with('User', 'CustomerCar')
+        //     ->where('first_name', $first_name)
+        //     ->orWhere('middle_name', $middle_name)
+        //     ->orWhere('last_name', $last_name)
+        //     ->orWhere('phone_number', $phone_number)
+        //     ->orWhere('job_name', $job_name)
+        //     ->orWhere('user_id', $user)
+      
+        //     ->get();
+        $Customers = Customer::all();
+        $Cars = Car::orderBy('id' , 'desc')->get();
+        $Classes = ClassModel::orderBy('id' , 'desc')->get();
+        $Cities = City::orderBy('id' , 'desc')->get();
+        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
+        $Neighborhood = Neighborhood::orderBy('id' , 'desc')->get();
+        $Streets = Street::orderBy('id' , 'desc')->get();
+        $CustomerCars = CustomerCar::get();
+
+        return view('admin.customer.index')->with(['Customers' => $Customers ,
+        'CustomerCars' => $CustomerCars ,
+        'Cars' => $Cars , 'Classes' => $Classes ,
+        'Cities' => $Cities , 'Users' => $Users ,
+        'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +101,7 @@ class CustomerController extends Controller
         $Cars = Car::orderBy('id' , 'desc')->get();
         $Classes = ClassModel::orderBy('id' , 'desc')->get();
         $Cities = City::orderBy('id' , 'desc')->get();
-        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
+        $Users = User::where('roles_name' , 'مشرف')->orderBy('id' , 'desc')->get();
         // dd($Users);
         return view('admin.customer.create')->with(['Cars' => $Cars , 'Classes' => $Classes , 'Cities' => $Cities , 'Users' => $Users]);
     }

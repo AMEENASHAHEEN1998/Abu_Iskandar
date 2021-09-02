@@ -19,7 +19,7 @@
                         {{ trans('admin/dashboard.site_name') }}</li>
                     <!-- menu item Elements-->
 
-                   
+                   @can('أضافة قسم رئيسي')
                     <li>
 
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
@@ -45,6 +45,8 @@
 
                         </ul>
                     </li>
+                    @endcan
+
 
                     
             
@@ -151,7 +153,7 @@
                     @endcan
 
 
-
+                    @can('ملاحظات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#note">
                             <div class="pull-left"><i class="fa fa-sticky-note-o" aria-hidden="true"></i><span
@@ -171,6 +173,7 @@
                                     {{ trans('admin/dashboard.show_notes') }}</a></li>
                         </ul>
                     </li>
+                    @endcan
 
 
                     @can('مستخدمين')
@@ -375,7 +378,6 @@
 
                     @endcan
 
-                    @can('ملاحظات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#logout">
                             <div class="pull-left"><i class=" ti-unlock"></i><span
@@ -396,7 +398,6 @@
 
                         </ul>
                     </li>
-                    @endcan
 
                     {{-- @endcan --}}
 

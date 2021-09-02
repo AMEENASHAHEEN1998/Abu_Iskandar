@@ -65,7 +65,9 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ ($user->roles->pluck('name')) ? $user->roles->pluck('name') : 'null' }}</td>
+                                        {{-- <td>{{ $user->roles->pluck('name') }}</td> --}}
+
+                                        <td>{{ ($user->roles->pluck('name')) ? $user->roles->pluck('name')[0] : 'null' }}</td>
 
 
 

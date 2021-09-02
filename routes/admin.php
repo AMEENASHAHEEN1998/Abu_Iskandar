@@ -79,6 +79,8 @@ Route::group(
 
 
         Route::resource('customers', CustomerController::class);
+        Route::get('customers/find', [CustomerController::class,'find'])->name('customers.find');
+
         Route::get('get_neighborhood/{id}', [NeighborhoodsController::class , 'get_neighborhood']);
 
         Route::resource('car', CarsController::class);
@@ -99,6 +101,7 @@ Route::group(
         Route::patch('updatenote/{id}', [NoteController::class , 'updatenote'])->name('updatenote');
         Route::get('show_notes' , [NoteController::class , 'show_notes'])->name('show_notes');
 
+        Route::get('driver_request/find', [DriverRequestController::class,'find'])->name('driverrequest.find');
         Route::get('driver_request/export/', [DriverRequestController::class,'export'])->name('export_request');
         Route::get('driver_request/export_wait_request/', [DriverRequestController::class,'export_wait_request'])->name('export_wait_request');
 
