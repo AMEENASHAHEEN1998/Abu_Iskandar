@@ -77,7 +77,6 @@
                                         <th>{{ trans('admin/driverrequest.product_number') }}</th>
                                         <th>{{ trans('admin/driverrequest.number') }}</th>
                                         <th>{{ trans('admin/driverrequest.status') }}</th>
-                                        <th>{{ trans('admin/driverrequest.create_at') }}</th>
                                         <th>{{ trans('admin/driverrequest.processes') }}</th>
 
                                     </tr>
@@ -114,9 +113,6 @@
                                                 <td style="color:green ; font-weight:bold">{{ $Order->status }}</td>
 
                                             @endif
-
-                                            
-                                            <td>{{ $Order->created_at->format('Y-m-d') }}</td>
 
                                             <td>
                                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
@@ -309,7 +305,8 @@
                         </table>
                     </div>
 
-                </div>{{ $Orders->links() }}
+                </div>
+                {{-- {{ $Orders->links() }} --}}
             </div>
         </div>
 

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\admin;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequest;
-use Exception;
-use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Stmt\TryCatch;
+use App\Http\Requests\UserRequest;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UserCoontroller extends Controller
 {
@@ -19,9 +20,16 @@ class UserCoontroller extends Controller
      */
     public function index()
     {
-       $users= User::orderBy('id','desc')->paginate(5);
-    //    return $users;
-        return view('admin.users.index',compact('users'));
+        // $role=Role::findById(1);
+        // $user= User::find(1);
+        // return $user->assignRole($role);
+
+        // return  $user->roles->pluck('name');
+
+        $users = User::orderBy('id', 'desc')->paginate(5);
+        $roles = Role::all();
+        // return $roles;
+        return view('admin.users.index', compact('users', 'roles'));
     }
 
     /**
@@ -42,21 +50,24 @@ class UserCoontroller extends Controller
      */
     public function store(UserRequest $request)
     {
+        // return $request->roles_name;
+        try {
+            $role = Role::findById($request->roles_name);
+            // return $role->name;
 
-        try{
-            User::create([
+            $user=User::create([
                 'name' => $request->name,
                 'password' => Hash::make($request->password),
-                'roles_name' => $request->roles_name ,
+                'roles_name' => $role->name,
                 'status' => 1
             ]);
 
-            return redirect()->route('admin.users.index')->with('success',trans('admin/user.success_message'));
-        }catch (\Throwable $e){
+            $user->assignRole($role);
+
+            return redirect()->route('admin.users.index')->with('success', trans('admin/user.success_message'));
+        } catch (\Throwable $e) {
             return redirect()->back()->withErrors(['errors' => 'اسم المستخدم موجود مسبقا']);
         }
-
-
     }
 
     /**
@@ -90,38 +101,52 @@ class UserCoontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $request->status;
-        $password ='';
-        if($request->password == NULL){
-            $user=User::find($id);
-            $password=$user->password;
-        }else{
-            $password= Hash::make($request->password);
+        // return $request;
+        $password = '';
+        if ($request->password == NULL) {
+            $user = User::find($id);
+            $password = $user->password;
+        } else {
+            $password = Hash::make($request->password);
         }
 
-        if($request->name == NULL){
-            $user=User::find($id);
-            $name=$user->name;
-        }else{
-            $name= $request->name;
+        if ($request->name == NULL) {
+            $user = User::find($id);
+            $name = $user->name;
+        } else {
+            $name = $request->name;
         }
-        $status='';
-        if($request->has('status') == 1){
-            $status =1;
-        }else{
-            $status =0;
+        $status = '';
+        if ($request->has('status') == 1) {
+            $status = 1;
+        } else {
+            $status = 0;
         }
+     
+ 
+        $role_user=User::find($id)->roles->pluck('name');
 
-        User::find($id)->update([
+        User::find($id)->removeRole($role_user->first());
+
+        $role = Role::findById($request->roles_name);
+      
+        $role = Role::findById($request->roles_name);
+        // $role_name= $role->name;
+
+        $user = User::find($id)->update([
             'name' => $name,
-            'password' =>$password ,
-            'roles_name' => $request->roles_name,
+            'password' => $password,
+            'roles_name' => $role->name,
             'status' => $status
 
         ]);
 
-        return redirect()->route('admin.users.index')->with('success',trans('admin/user.update_message'));
+        $user = User::find($id);
+        $user->update([]);
+        $user->assignRole($role->name);
 
+
+        return redirect()->route('admin.users.index')->with('success', trans('admin/user.update_message'));
     }
 
     /**
@@ -133,6 +158,6 @@ class UserCoontroller extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('admin.users.index')->with('succes' ,trans('admin/user.delete_message'));
+        return redirect()->route('admin.users.index')->with('succes', trans('admin/user.delete_message'));
     }
 }

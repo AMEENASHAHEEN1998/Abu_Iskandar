@@ -62,8 +62,10 @@ return [
     'add_note' => 'Add Note ',
     'pending_note' => 'Pending Note',
     'show_notes' => 'Show Notes',
-
     'site_link' => 'Website Link',
+
+    'role' =>'role',
+    'permission' =>'permission',
 
     // end sidebar
 

@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\City;
-use App\Models\Street;
-use App\Models\Neighborhood;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Permission;
 
-class StreetController extends Controller
+class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $streets=Street::orderBy('id' , 'desc')->paginate(5);
-        $neighborhoods=Neighborhood::all();
-        
-        return view('admin.street.index',compact('streets','neighborhoods'));
-
+        $permissions=Permission::all();
+        // return $permissions;
+        return view('admin.permission.index',compact('permissions'));
     }
 
     /**
@@ -43,11 +33,11 @@ class StreetController extends Controller
      */
     public function store(Request $request)
     {
-        Street::create([
-            'name'=>$request->name,
-            'id_neighborhood' =>  $request->neighborhood
+        Permission::create([
+            'name' =>$request->name,
+            'guard_name' =>'web',
         ]);
-        return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
+        return redirect()->route('admin.permission.index')->with('success',trans('admin/permission.succes_message'));
 
     }
 
@@ -70,7 +60,7 @@ class StreetController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -82,13 +72,7 @@ class StreetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Street::find($id)->update([
-            'name'=>$request->name,
-            'id_neighborhood' =>  $request->neighborhood
-        ]);
-        return redirect()->route('admin.street.index')->with('success',trans('admin/street.update_message'));
-
-
+        //
     }
 
     /**
@@ -99,15 +83,8 @@ class StreetController extends Controller
      */
     public function destroy($id)
     {
-        Street::find($id)->delete();
-        return redirect()->route('admin.street.index')->with('success',trans('admin/street.delete_message'));
-
-    }
-
-    public function get_street($id)
-    {
-        $streets = DB::table('streets')->where('id_neighborhood' , $id)->pluck('name' , 'id');
-
-        return json_encode($streets);
+        
+        Permission::find($id)->delete();
+        return redirect()->route('admin.permission.index')->with('success',trans('admin/permission.delete_message'));
     }
 }

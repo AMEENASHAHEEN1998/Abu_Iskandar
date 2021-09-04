@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\User;
 use App\Models\Offer;
 use App\Models\Product;
+use App\Models\Customer;
 use App\Models\RequestJob;
 use Illuminate\Http\Request;
 use App\Models\DriverRequest;
-use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
@@ -106,4 +107,14 @@ class HomeController extends Controller
         return view('admin.pages.index',compact('product','requestjob','offer','driverrequest','chartjs' , 'chartjs_2'));
         // return view('admin.pages.index');
     }
+
+
+    public function role(){
+      $roles=Role::all();
+     
+
+
+      return 'ok';
+      
+  }
 }

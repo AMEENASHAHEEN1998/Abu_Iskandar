@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    {{ trans('admin/street.street') }}
+    {{ trans('admin/permission.permissions') }}
 @endsection
 @section('content')
 
@@ -21,19 +21,15 @@
                 <div class="card-body">
 
 
-
-
-
-
-                    <a href="{{ route('admin.street.create') }}" class="btn btn-success" data-toggle="modal"
+                    <a href="" class="btn btn-success" data-toggle="modal"
                         data-target="#exampleModal">
-                        {{ trans('admin/street.addstreet') }}
+                        {{ trans('admin/permission.addpermission') }}
                     </a>
 
 
 
                     <br><br>
-                    <h1>{{ trans('admin/street.street') }}</h1>
+                    <h1>{{ trans('admin/permission.permissions') }}</h1>
 
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -41,9 +37,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>{{ trans('admin/street.name') }}</th>
-                                    <th>{{ trans('admin/neighborhood.name') }}</th>
-                                    <th>{{ trans('admin/street.action') }}</th>
+                                    <th>{{ trans('admin/permission.name') }}</th>
+                                    <th>{{ trans('admin/permission.action') }}</th>
 
                                 </tr>
                             </thead>
@@ -53,11 +48,10 @@
                                 $lng = app()->getLocale();
                                 ?>
 
-                                @foreach ($streets as $street)
+                                @foreach ($permissions as $permission)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $street->name }}</td>
-                                        <td>{{ $street->Neighborhood->name }}</td>
+                                        <td>{{ $permission->name }}</td>
 
 
 
@@ -66,8 +60,8 @@
 
 
                                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                                data-target="#delete{{ $street->id }}"
-                                                title="{{ trans('admin/street.delete') }}"><i
+                                                data-target="#delete{{ $permission->id }}"
+                                                title="{{ trans('admin/permission.delete') }}"><i
                                                     class="fa fa-trash"></i></button>
 
                                         </td>
@@ -76,14 +70,14 @@
 
                                     <!-- delete_modal_car -->
                                     <!-- delete_modal_Category -->
-                                    <div class="modal fade" id="delete{{ $street->id }}" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="delete{{ $permission->id }}" tabindex="-1" permission="dialog"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog" permission="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                         id="exampleModalLabel">
-                                                        {{ trans('admin/street.delete_street') }}
+                                                        {{ trans('admin/permission.delete') }}
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
@@ -91,25 +85,25 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('admin.street.destroy', $street->id) }}"
+                                                    <form action="{{ route('admin.permission.destroy', $permission->id) }}"
                                                         method="post">
                                                         {{ method_field('Delete') }}
                                                         @csrf
-                                                        {{ trans('admin/street.warning_street') }}
+                                                        {{ trans('admin/permission.warning_message') }}
                                                         <input id="id" type="hidden" name="id" class="form-control"
-                                                            value="{{ $street->id }}">
+                                                            value="{{ $permission->id }}">
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">{{ trans('admin/street.close') }}</button>
+                                                                data-dismiss="modal">{{ trans('admin/permission.close') }}</button>
                                                             <button type="submit"
-                                                                class="btn btn-danger">{{ trans('admin/street.delete') }}</button>
+                                                                class="btn btn-danger">{{ trans('admin/permission.delete') }}</button>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- delete_modal_street-->
+                                    <!-- delete_modal_permission-->
 
 
 
@@ -117,21 +111,21 @@
 
                         </table>
 
-                        {{ $streets->links() }}
+                        {{-- {{ $permission->links() }} --}}
 
                     </div>
 
 
 
                     {{-- add --}}
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="exampleModal" tabindex="-1" permission="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog" permission="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                         id="exampleModalLabel">
-                                        {{ trans('admin/street.addstreet') }}
+                                        {{ trans('admin/permission.addpermission') }}
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -140,7 +134,7 @@
 
                                 <div class="modal-body">
                                     <!-- add_form -->
-                                    <form action="{{ route('admin.street.store') }}" method="POST">
+                                    <form action="{{ route('admin.permission.store') }}" method="POST">
                                         @csrf
 
                                         {{-- <input type="hidden" name="user_id" value="{{ auth()->user()->id }}"> --}}
@@ -149,7 +143,7 @@
 
 
                                             <div class="col">
-                                                <label for="Name" class="mr-sm-2">{{ trans('admin/street.name') }}
+                                                <label for="Name" class="mr-sm-2">{{ trans('admin/permission.name') }}
                                                     :</label>
                                                 <input id="Name" type="text" name="name" class="form-control" required>
                                                 @error('name')
@@ -163,25 +157,7 @@
 
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <label for="name" class="mr-sm-2">{{ trans('admin/neighborhood.name') }}
-                                                    :</label>
-
-                                                <div class="box ">
-                                                    <select class="form-control form-selected" style="height: 50px"
-                                                        name="neighborhood" required>
-                                                        <option value=""></option>
-
-                                                        @foreach ($neighborhoods as $neighborhood)
-                                                            <option value="{{ $neighborhood->id }}">
-                                                                {{ $neighborhood->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
+                                      
 
 
                                         <div class="modal-footer">
@@ -192,9 +168,9 @@
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">{{ trans('admin/street.close') }}</button>
+                                                    data-dismiss="modal">{{ trans('admin/permission.close') }}</button>
                                                 <button type="submit"
-                                                    class="btn btn-success">{{ trans('admin/street.submit') }}</button>
+                                                    class="btn btn-success">{{ trans('admin/permission.submit') }}</button>
                                             </div>
 
                                         </div>
