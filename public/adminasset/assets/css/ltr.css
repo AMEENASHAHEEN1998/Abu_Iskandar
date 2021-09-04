@@ -20058,10 +20058,13 @@ ul.list-unstyled li {
 
 /*header*/
 .admin-header {
+
   background: #ffffff;
-  -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+
+  /* -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1); */
   -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1); }
+  /* box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);  */
+}
 
 .admin-header.navbar ul.navbar-nav #btnFullscreen.nav-link {
   margin-top: 6px; }
@@ -20139,6 +20142,7 @@ ul.list-unstyled li {
     border-radius: 50%; }
 
 .admin-header .top-nav {
+  box-shadow: none;
   margin-top: 8px; }
 
 /*drop down*/

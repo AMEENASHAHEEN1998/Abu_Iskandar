@@ -35,4 +35,5 @@ return [
     'size' => 'الحجم',
     'edit_product' => 'تعديل منتج',
     'product_number' => 'رقم المنتج',
+    'decription' =>'وصف المنتج' ,
 ];

@@ -43,7 +43,7 @@
                 <div class="table-responsive">
                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                            data-page-length="50"
-                           style="text-align: center">
+                           >
                         <thead>
                         <tr>
                             <th>#</th>
@@ -51,6 +51,7 @@
                             <th>{{ trans('admin/products.product_number') }}</th>
                             <th>{{ trans('admin/products.product_category') }}</th>
                             <th>{{ trans('admin/products.product_image') }}</th>
+                            <th>{{ trans('admin/products.decription') }}</th>
                             <th>{{ trans('admin/products.user_add') }}</th>
                             <th>{{ trans('admin/products.views_number') }}</th>
                             <th>{{ trans('admin/products.process') }}</th>
@@ -75,6 +76,7 @@
                                 <td>{{ ($Product->category) ? $Product->category->category_name_ar : 'غير مصنف' }}</td>
                                 @endif
                                 <td> <img src="{{asset('uploads/'.$Product->image)}}" width="70px" height="60px"></td>
+                                <td>{{ $Product->decription}}</td>
                                 <td>{{ $Product->User->name }}</td>
                                 <td>{{ $Product->views }}</td>
 

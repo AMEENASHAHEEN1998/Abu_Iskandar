@@ -35,56 +35,48 @@ class CustomerController extends Controller
         'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
     }
 
-    function find(Request $request)
+    function findCustomer(Request $request)
     {
-  
         $search_text = $request->input('query');
 
-        $user = '';
-        $first_name = '';
-        $middle_name = '';
-        $last_name = '';
-        $phone_number = '';
-        $job_name = '';
-
-
+        $id='';
+        $name='';
+        $userid='';
+        $cuctomer=[];
 
         try {
-        //     try {
-            $user = User::where('name', 'LIKE', '%' . $search_text . '%')->first()->id;
-        //     } catch (\Throwable $th) {
-        //         $Categories = Category::where('category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
             
+            $userid = User::where('name', 'LIKE', '%' . $search_text . '%')->first()->id;
+            // return $userid;
 
         } catch (\Throwable $th) {
-        //     try {
-        //         $Subcategories = SubCategory::where('sub_category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
-        //     } catch (\Throwable $th) {
-        //         $product_name = Product::where('product_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
-        //     }
-
+            $cuctomer=Customer::where('first_name', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('middle_name', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('last_name', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('phone_number', 'LIKE',  $search_text )
+            // ->first()->id;            
+            ->pluck('id')->toarray(); 
         }
 
-        // $Customer = Customer::with('User', 'CustomerCar')
-        //     ->where('first_name', $first_name)
-        //     ->orWhere('middle_name', $middle_name)
-        //     ->orWhere('last_name', $last_name)
-        //     ->orWhere('phone_number', $phone_number)
-        //     ->orWhere('job_name', $job_name)
-        //     ->orWhere('user_id', $user)
-      
-        //     ->get();
-        $Customers = Customer::all();
+
+        $CustomersCar = CustomerCar::with('User', 'Customer')
+            ->where('id',$id)
+            ->orwhereIn('customer_id', $cuctomer)
+            ->orwhere('user_id', $userid)
+            ->orwhere('original_number', $search_text)
+            ->get();
+        
         $Cars = Car::orderBy('id' , 'desc')->get();
         $Classes = ClassModel::orderBy('id' , 'desc')->get();
         $Cities = City::orderBy('id' , 'desc')->get();
         $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
         $Neighborhood = Neighborhood::orderBy('id' , 'desc')->get();
         $Streets = Street::orderBy('id' , 'desc')->get();
-        $CustomerCars = CustomerCar::get();
+        // $CustomersCar = CustomerCar::with('User', 'Customer')->find(2);
+        // return $CustomersCar;
 
-        return view('admin.customer.index')->with(['Customers' => $Customers ,
-        'CustomerCars' => $CustomerCars ,
+        return view('admin.customer.index')->with([
+        'CustomerCars' => $CustomersCar ,
         'Cars' => $Cars , 'Classes' => $Classes ,
         'Cities' => $Cities , 'Users' => $Users ,
         'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);

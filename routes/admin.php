@@ -79,7 +79,8 @@ Route::group(
 
 
         Route::resource('customers', CustomerController::class);
-        Route::get('customers/find', [CustomerController::class,'find'])->name('customers.find');
+        // Route::get('customers/find', [CustomerController::class,'find'])->name('customers.find');
+        Route::get('findCustomer', [CustomerController::class,'findCustomer'])->name('findCustomer');
 
         Route::get('get_neighborhood/{id}', [NeighborhoodsController::class , 'get_neighborhood']);
 
