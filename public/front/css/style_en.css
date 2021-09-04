@@ -2656,7 +2656,7 @@ a.at-in {
 nav.navbar.navbar-default {
     float: left;
     height: auto;
-    width: 82%;
+    /* width: 82%; */
 }
 .navbar-collapse {
     max-height: none;

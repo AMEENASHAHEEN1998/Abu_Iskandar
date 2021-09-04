@@ -40,6 +40,7 @@
 
                     <br><br>
                     <h2>{{ trans('admin/driverrequest.request_driver') }}</h2>
+                    {{-- <br> --}}
 
                     <form action="{{route('admin.driverrequest.find')}}" method="GET">
         
@@ -47,15 +48,15 @@
                             <div class="col-4">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="query" 
-                                            placeholder="Search here" 
-                                            value="{{ request()->input('query') }}">
+                                    placeholder=" البحث" 
+                                    value="{{ request()->input('query') }}">
                                     <span class="text-danger">@error('query'){{ $message }} @enderror</span>
                                  </div>
                                  
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <button type="submit" class="btn btn-primary">البحث</button>
                                    </div>
                             </div>
                         </div>

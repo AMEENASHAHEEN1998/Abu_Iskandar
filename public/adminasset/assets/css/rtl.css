@@ -23709,6 +23709,9 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
       margin-left: 0 !important; } }
 
 @media (max-width: 600px) {
+  .navbar-nav{
+    width: 16%;
+  }
   .admin-header .navbar-nav .dropdown-big {
     min-width: 250px;
     left: -100%; }

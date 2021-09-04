@@ -55,6 +55,7 @@ class ProductController extends Controller
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
                 'product_number'  => $request->product_number,
+                'decription'  => $request->decription,
                 'image' => $product_image_name,
                 'user_id' => auth()->user()->id,
                 'category_id' => $request->category_id ,

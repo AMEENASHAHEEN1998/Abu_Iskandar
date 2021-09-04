@@ -36,9 +36,31 @@
 
 
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.customers.create') }}">اضافة زبون</a>
-
-
+                
+                
                 <br><br>
+                <h2>{{ trans('admin/dashboard.customer') }}</h2>
+                <form action="{{route('admin.findCustomer')}}" method="GET">
+        
+                    <div class="row" >
+                        <div class="col-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="query" 
+                                        placeholder=" البحث" 
+                                        value="{{ request()->input('query') }}">
+                                <span class="text-danger">@error('query'){{ $message }} @enderror</span>
+                             </div>
+                             
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">البحث</button>
+                               </div>
+                        </div>
+                    </div>
+                 </form>
+
+
 
                 <div class="table-responsive">
                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
@@ -55,6 +77,7 @@
                             <th>حرف السيارة</th>
                             <th>رقم الأصيل</th>
                             <th>اسم المشرف</th>
+                            <th> تاريخ فتح الحساب</th>
                             <th>العمليات</th>
 
                         </tr>
@@ -77,6 +100,7 @@
                                 <td>{{ $CustomerCar->Car->name }}</td>
                                 <td>{{ $CustomerCar->original_number}}</td>
                                 <td>{{ $CustomerCar->User->name }}</td>
+                                <td>{{ $CustomerCar->created_at->format('Y-m-d') }}</td>
 
                                 <td>
                                     <a href="{{ route('admin.customers.show', $CustomerCar->id) }}"
