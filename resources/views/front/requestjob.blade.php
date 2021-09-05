@@ -19,8 +19,8 @@
 
 
 
-                    <hr>
                     <h2>{{ trans('admin/requestjob.add_requestjob') }}</h2>
+                    <hr>
 
 
                     <form action="{{ route('admin.requestjob.store') }}" method="POST" enctype="multipart/form-data">

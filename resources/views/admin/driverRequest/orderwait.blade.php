@@ -61,7 +61,8 @@
                                 @foreach ($Orders as $Order)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $Order->User->name }}</td>
+                                        <td>{{ (($Order->User)?$Order->User->name :"غير معرف")}}</td>
+
                                         @if (App::getLocale() == 'en')
                                         <td>{{ ($Order->Category) ? $Order->Category->category_name_en : 'Category Deleted' }}</td>
                                         <td>{{ ($Order->SubCategory) ? $Order->SubCategory->sub_category_name_en : 'Sub Category Deleted' }}</td>

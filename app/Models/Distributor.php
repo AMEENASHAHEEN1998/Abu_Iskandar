@@ -19,4 +19,8 @@ class Distributor extends Model
     public function DistributorType(){
         return $this->belongsTo(DistributorType::class,'distributor_type_id');
     }
+
+    public function City(){
+        return $this->belongsTo(City::class,'city_id');
+    }
 }

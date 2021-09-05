@@ -43,16 +43,16 @@
                     {{-- <br> --}}
 
                     <form action="{{route('admin.driverrequest.find')}}" method="GET">
-        
+
                         <div class="row" >
                             <div class="col-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="query" 
-                                    placeholder=" البحث" 
+                                    <input type="text" class="form-control" name="query"
+                                    placeholder=" البحث"
                                     value="{{ request()->input('query') }}">
                                     <span class="text-danger">@error('query'){{ $message }} @enderror</span>
                                  </div>
-                                 
+
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
@@ -90,7 +90,7 @@
                                     @foreach ($Orders as $Order)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $Order->User->name }}</td>
+                                            <td>{{ (($Order->User)?$Order->User->name :"غير معرف")}}</td>
                                             @if (App::getLocale() == 'en')
                                                 <td>{{ $Order->Category ? $Order->Category->category_name_en : 'Category Deleted' }}
                                                 </td>
@@ -116,7 +116,7 @@
 
                                             @endif
 
-                                            
+
                                             <td>{{ $Order->created_at->format('Y-m-d') }}</td>
 
                                             <td>

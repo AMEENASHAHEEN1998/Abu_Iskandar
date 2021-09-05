@@ -81,8 +81,8 @@
                                 <td>
                                     @foreach (App\Models\CustomerCar::where('customer_id' , $Customer->id)->get() as $CustomerCar )
                                     @foreach ($Users as $User )
-                                        @if ($User->id == $CustomerCar->User->id )
-                                        {{ $CustomerCar->User->name }} -
+                                        @if ($User->id == (($CustomerCar->User? $CustomerCar->User->id :"غير معرف"))  )
+                                        {{ (($CustomerCar->User)?$CustomerCar->User->name:"غير معرف") }} -
 
                                         @endif
                                     @endforeach

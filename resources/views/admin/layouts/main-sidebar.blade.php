@@ -48,8 +48,8 @@
                     @endcan
 
 
-                    
-            
+
+
                     @can('منتجات')
 
                         <li>
@@ -131,7 +131,7 @@
                    @endcan
 
 
-                    
+
                     @can('زبائن')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#customers">
@@ -176,7 +176,7 @@
                     @endcan
 
 
-                    @can('مستخدمين')
+                    {{-- @can('مستخدمين') --}}
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elementsusers">
                             <div class="pull-left"><i class="fa fa-user-o" aria-hidden="true"></i><span
@@ -193,7 +193,7 @@
 
                         </ul>
                     </li>
-                    @endcan
+                    {{-- @endcan --}}
 
                     @can('مقالات')
                     <li>
@@ -242,7 +242,7 @@
                     </li>
                     @endcan
 
-                    
+
                     @can('طلبات التوظيف')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#request_job">
@@ -270,7 +270,7 @@
 
                     @endcan
 
-                    
+
                     @can('أضافة فريق العمل')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#staff">
@@ -291,7 +291,7 @@
                     </li>
                     @endcan
 
-                    
+
                     @can('أضافة موزعين')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#distributors">
@@ -317,7 +317,7 @@
                     </li>
                     @endcan
 
-                    
+
                     @can('أضافة الاعدادات')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings">
@@ -351,7 +351,7 @@
 
                     @endcan
 
-                    
+
                     @can('اضافة معلومات الشركة')
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#info">

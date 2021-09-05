@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DistributorRequest;
+use App\Models\City;
 use App\Models\Distributor;
 use App\Models\DistributorType;
 use Illuminate\Http\Request;
@@ -19,9 +20,11 @@ class DistributorController extends Controller
     {
        $distributors= Distributor::orderBy('id','desc')->paginate(5);
        $distributor_types=DistributorType::all();
+       $cites = City::all();
+
     //    dd($distributors);
     // $distributor_types=DistributorType::all();
-       return view('admin.distributor.index',compact('distributors','distributor_types'));
+       return view('admin.distributor.index',compact('distributors','distributor_types' , 'cites'));
 
     }
 
@@ -33,7 +36,8 @@ class DistributorController extends Controller
     public function create()
     {
         $distributor_types=DistributorType::all();
-        return view('admin.distributor.create',compact('distributor_types'));
+        $cites = City::all();
+        return view('admin.distributor.create',compact('distributor_types' , 'cites'));
     }
 
     /**
@@ -44,11 +48,11 @@ class DistributorController extends Controller
      */
     public function store(DistributorRequest $request)
     {
-        // return $request;
+         //return $request;
         Distributor::create([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
-            'place' =>$request->place,
+            'city_id' => $request->city_id,
             // 'distributor_name_ar' => $request->name_ar,
             // 'distributor_name_en' => $request->name_en,
             'distributor_type_id' => $request->distributor_type_id,

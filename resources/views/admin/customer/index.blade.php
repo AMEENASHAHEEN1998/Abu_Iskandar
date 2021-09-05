@@ -36,21 +36,21 @@
 
 
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.customers.create') }}">اضافة زبون</a>
-                
-                
+
+
                 <br><br>
                 <h2>{{ trans('admin/dashboard.customer') }}</h2>
                 <form action="{{route('admin.findCustomer')}}" method="GET">
-        
+
                     <div class="row" >
                         <div class="col-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="query" 
-                                        placeholder=" البحث" 
+                                <input type="text" class="form-control" name="query"
+                                        placeholder=" البحث"
                                         value="{{ request()->input('query') }}">
                                 <span class="text-danger">@error('query'){{ $message }} @enderror</span>
                              </div>
-                             
+
                         </div>
                         <div class="col-3">
                             <div class="form-group">
@@ -99,7 +99,7 @@
                                 <td>{{ $CustomerCar->Customer->phone_number }}</td>
                                 <td>{{ $CustomerCar->Car->name }}</td>
                                 <td>{{ $CustomerCar->original_number}}</td>
-                                <td>{{ $CustomerCar->User->name }}</td>
+                                <td>{{ (( $CustomerCar->User)? $CustomerCar->User->name:"غير معرف") }}</td>
                                 <td>{{ $CustomerCar->created_at->format('Y-m-d') }}</td>
 
                                 <td>

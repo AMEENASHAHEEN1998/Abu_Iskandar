@@ -69,7 +69,7 @@
                                 <td>{{ $Subcategory->sub_category_name_ar }}</td>
                                 @endif
 
-                                <td>{{ $Subcategory->User->name }}</td>
+                                <td>{{ (($Subcategory->User)?$Subcategory->User->name:"غير معرف") }}</td>
                                 <td>{{ $Subcategory->created_at }}</td>
 
                                 <td>

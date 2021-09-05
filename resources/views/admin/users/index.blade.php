@@ -147,7 +147,7 @@
                                                                     class="mr-sm-2">{{ trans('admin/user.roles_name') }}
                                                                     :</label>
 
-                                                             
+
 
                                                                 <select name="roles_name" id="" class="form-control">
                                                                     @foreach ($roles as $role)
@@ -155,7 +155,7 @@
                                                                             {{$role->name}}
                                                                         </option>
                                                                     @endforeach
-                
+
                                                                 </select>
                                                             </div>
 

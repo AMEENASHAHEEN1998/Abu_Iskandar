@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\CreatUserAdminSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,8 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            PermissionTableSeeder::class,
-          
+           // PermissionTableSeeder::class,
+            CreatUserAdminSeeder::class,
+
         ]);
         // \App\Models\User::factory(10)->create();
     }

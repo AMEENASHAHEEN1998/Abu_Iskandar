@@ -142,12 +142,21 @@
                                 <div class="form-group">
                                     <label
                                         for="formGroupExampleInput">{{ trans('admin/distributor.place') }}</label>
-                                    <input type="text" name="place" class="form-control"
-                                        id="formGroupExampleInput">
+                                    {{-- <input type="text" name="place" class="form-control"
+                                        id="formGroupExampleInput"> --}}
+                                        <select class="form-control form-selected" style="height: 50px" name="city_id">
+                                            <option value=""></option>
+
+                                            @foreach ($cites as $city)
+                                                <option value="{{ $city->id }}">{{ $city->name}}</option>
+
+                                            @endforeach
+                                        </select>
+
                                 </div>
                             </div>
 
-                            @error('place')
+                            @error('city_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
 

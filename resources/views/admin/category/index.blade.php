@@ -74,7 +74,7 @@
                                 <td>{{ $Category->category_name_ar }}</td>
                                 @endif
                                 <td> <img src="{{asset('uploads/'.$Category->image)}}" width="70px" height="60px"></td>
-                                <td>{{ $Category->User->name }}</td>
+                                <td>{{ (($Category->User)?$Category->User->name:"غير معرف") }}</td>
                                 <td>{{ $Category->views }}</td>
                                 <td>{{ $Category->created_at }}</td>
 

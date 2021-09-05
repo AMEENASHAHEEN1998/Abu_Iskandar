@@ -77,7 +77,7 @@
                                 @endif
                                 <td> <img src="{{asset('uploads/'.$Product->image)}}" width="70px" height="60px"></td>
                                 <td>{{ $Product->decription}}</td>
-                                <td>{{ $Product->User->name }}</td>
+                                <td>{{ (($Product->User)?$Product->User->name:"غير معرف") }}</td>
                                 <td>{{ $Product->views }}</td>
 
 

@@ -21,14 +21,14 @@ class UserCoontroller extends Controller
     public function index()
     {
         // $role=Role::findById(1);
-        // $user= User::find(1);
+        // $user= User::find(6);
         // return $user->assignRole($role);
 
         // return  $user->roles->pluck('name');
 
         $users = User::orderBy('id', 'desc')->paginate(5);
         $roles = Role::all();
-        // return $roles;
+        //  return $roles;
         return view('admin.users.index', compact('users', 'roles'));
     }
 
@@ -122,14 +122,14 @@ class UserCoontroller extends Controller
         } else {
             $status = 0;
         }
-     
- 
+
+
         $role_user=User::find($id)->roles->pluck('name');
 
         User::find($id)->removeRole($role_user->first());
 
         $role = Role::findById($request->roles_name);
-      
+
         $role = Role::findById($request->roles_name);
         // $role_name= $role->name;
 

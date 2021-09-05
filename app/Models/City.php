@@ -18,4 +18,9 @@ class City extends Model
     {
         return $this->belongsTo(Customer::class , 'city_id');
     }
+
+    public function Distributor()
+    {
+        return $this->hasMany(Distributor::class , 'city_id');
+    }
 }
