@@ -24,12 +24,12 @@
 
 
 
-
+{{-- 
                     <a href="{{ route('admin.requestjob.created', 2) }}" class="btn btn-success">
                         {{ trans('admin/requestjob.add_requestjob') }}
                     </a>
 
-
+ --}}
 
 
 
@@ -46,7 +46,7 @@
                                     <th>{{ trans('admin/requestjob.phone_number') }}</th>
                                     <th>{{ trans('admin/requestjob.specialization') }}</th>
                                     <th>{{ trans('admin/requestjob.address') }}</th>
-                                    <th>{{ trans('admin/requestjob.university') }}</th>
+                                    <th>{{ trans('admin/requestjob.created_at') }}</th>
                                     <th>{{ trans('admin/requestjob.job_id') }}</th>
                                     <th>{{ trans('admin/requestjob.status') }}</th>
                                     <th>{{ trans('admin/requestjob.start_date') }}</th>
@@ -70,7 +70,7 @@
                                         <td>{{ $requestjobs->phone_number}}</td>
                                         <td>{{ $requestjobs->specialization}}</td>
                                         <td>{{ $requestjobs->address}}</td>
-                                        <td>{{ $requestjobs->university}}</td>
+                                        <td>{{ $requestjobs->created_at->format('Y-m-d')}}</td>
                                         <td>{{ $requestjobs->job ? $requestjobs->job->{'job_name_' . $lng} : trans('admin/dashboard.none_user') }}</td>
 
                                         <td>

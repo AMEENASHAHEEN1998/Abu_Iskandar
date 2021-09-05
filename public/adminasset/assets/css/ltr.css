@@ -20061,9 +20061,9 @@ ul.list-unstyled li {
 
   background: #ffffff;
 
-  /* -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1); */
+  /* -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-  /* box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);  */
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);  */
 }
 
 .admin-header.navbar ul.navbar-nav #btnFullscreen.nav-link {
@@ -22881,3 +22881,10 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
         height: 48px;
 
     }
+    .nav-top admin-header{
+        /* float: right;
+        margin-top: -65px; */
+        /* margin: -47px 0 5px 0px; */
+        box-shadow: none;
+
+}

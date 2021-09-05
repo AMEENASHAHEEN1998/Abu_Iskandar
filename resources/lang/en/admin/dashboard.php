@@ -65,5 +65,7 @@ return [
     'role' =>'role',
     'permission' =>'permission',
     // end sidebar
+    'site_link' => 'Website Link',
+
 
 ];

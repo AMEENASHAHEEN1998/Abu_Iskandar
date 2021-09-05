@@ -56,15 +56,11 @@
 
                             </tr>
 
-
-
                             <tr>
                                 <th scope="row"> {{ trans('admin/requestjob.phone_number') }}</th>
                                 <td>  {{ $requestjob->phone_number }}</td>
 
                             </tr>
-
-
 
                             <tr>
                                 <th scope="row">{{ trans('admin/requestjob.job_id') }}</th>
@@ -87,14 +83,10 @@
                                 <th scope="row"> {{ trans('admin/requestjob.Date_of_Birth') }}</th>
                                 <td>  {{ $requestjob->Date_of_Birth }}</td>
                             </tr>
-
-
                             <tr>
                                 <th scope="row"> {{ trans('admin/requestjob.university') }}</th>
                                 <td>  {{ $requestjob->university }} </td>
                             </tr>
-
-
                             <tr>
                                 <th scope="row">{{ trans('admin/requestjob.start_date') }} </th>
                                 <td>  {{ $requestjob->start_date }}</td>
@@ -105,10 +97,14 @@
                                 <td> {{ $requestjob->comments_user }} </td>
                             </tr>
 
-
                             <tr>
                                 <th scope="row">  {{ trans('admin/requestjob.notes') }}</th>
                                 <td> {{ $requestjob->comments_admin }} </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"> {{ trans('admin/requestjob.created_at') }}</th>
+                                <td> {{ $requestjob->created_at->format('Y-m-d') }} </td>
                             </tr>
 
                             <tr>

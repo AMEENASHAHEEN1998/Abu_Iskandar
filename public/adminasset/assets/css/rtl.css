@@ -4751,7 +4751,9 @@ button.close {
   position: relative;
   width: auto;
   margin: .5rem;
-  pointer-events: none; }
+  pointer-events: none; 
+  margin-top: 160px;
+}
 
 .modal.fade .modal-dialog {
   transition: -webkit-transform .3s ease-out;
@@ -4782,13 +4784,14 @@ button.close {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
+  width: 84%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: .3rem;
-  outline: 0; }
+  outline: 0;
+margin-top: 150px; }
 
 .modal-backdrop {
   position: fixed;
@@ -23888,6 +23891,8 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
     list-style: none;
     display: inline-block;
 } */
+
+
 .cart{
 	float: left;
 	cursor: pointer;
@@ -23898,6 +23903,7 @@ nav.navbar.navbar-default {
     float: right;
     /* height: 44px; */
 }
+/*
 .dropdown-menu.multi {
     min-width: 703px;
     padding: 23px 20px;
@@ -23907,7 +23913,7 @@ img.img-head {
 	top:0;
     width: 75px;
     /* right: 130px; */
-}
+/* } */
 .about .about-right{
     float: right;
 }
@@ -24008,3 +24014,81 @@ img.img-head {
 
   /* Styles for wrapping the search box */
 
+
+ 
+  @media (max-width: 767px){
+  @media (max-width: 400px){
+    /* img.img-head {
+      position: absolute;
+      top: 0;
+      width: 63px;
+      right: 18px;
+      left: 21px;
+  } */
+  img.img-head {
+    position: absolute;
+    top: 0;
+    width: 63px;
+    right: 18px;
+
+
+}}
+}
+
+
+@media(max-width:1440px){
+  img.img-head {
+      position: absolute;
+      top:0;
+      width: 75px;
+      right: 140px;
+    }
+  }
+  @media(max-width:1280px){
+      img.img-head {
+          position: absolute;
+          top:0;
+          width: 75px;
+          /* left: 130px; */
+          right: 120px;
+
+      }
+  }
+  @media(max-width:1080px){
+      img.img-head {
+          position: absolute;
+          top:0;
+          width: 75px;
+          right: 68px;
+          /* left: 130px; */
+      }
+  }
+  @media(max-width:900px){
+      img.img-head {
+          position: absolute;
+          top:0;
+          width: 75px;
+          right: 68px;
+
+      }
+  }
+  @media(max-width:700px){
+      img.img-head {
+          position: absolute;
+          top:0;
+          width: 75px;
+          /* right:7px; */
+      }
+  }
+  @media(max-width:900px){
+      img.img-head {
+        position: absolute;
+        top: 0;
+        width: 65px;
+        right: 20px;
+    }
+      }
+  }
+  
+ 
+  

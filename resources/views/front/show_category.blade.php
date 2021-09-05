@@ -24,7 +24,9 @@
                         <a href="#" data-toggle="modal" data-toggle="modal"
                         data-target="#show{{ $Product->id }}" class="offer-img">
                                 <img src="{{asset('uploads/'.$Product->image)}}" class="img-responsive" alt="">
+                             
                             </a>
+
                             <div class="mid-1">
                                 <div class="women">
 
@@ -60,7 +62,7 @@
                     </div>
 
                     <!-- edit_modal_Category -->
-                    <div class="modal fade" id="show{{ $Product->id }}" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="show{{ $Product->id }}"  tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                        <div class="modal-dialog" role="document">
                            <div class="modal-content">
@@ -76,7 +78,8 @@
                                </div>
                                <div class="modal-body">
                                 <br>
-                                <h3> عرض المنتج</h3>
+                                {{-- <h3> عرض المنتج</h3> --}}
+                                
                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                        id="exampleModalLabel">
                                        {{ $Product->product_name_ar }}

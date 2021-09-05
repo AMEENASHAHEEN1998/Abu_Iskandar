@@ -40,6 +40,7 @@ class DriverRequestController extends Controller
         $product_name = '';
         $Categories = '';
         $Subcategories = '';
+        $status_id = [];
 
 
         try {
@@ -50,11 +51,32 @@ class DriverRequestController extends Controller
             }
 
         } catch (\Throwable $th) {
+
             try {
-                $Subcategories = SubCategory::where('sub_category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+
+                try {
+                    $Subcategories = SubCategory::where('sub_category_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+                } catch (\Throwable $th) {
+                    $product_name = Product::
+                    where('product_name_ar', 'LIKE', '%' . $search_text . '%')
+                    ->orwhere('product_name_ar', 'LIKE', '')
+                    ->first()->id;                
+                }
+            
+               
             } catch (\Throwable $th) {
-                $product_name = Product::where('product_name_ar', 'LIKE', '%' . $search_text . '%')->first()->id;
+
+                try {
+                    $status_id = DriverRequest::where('status', 'LIKE', $search_text)->pluck('id')->toarray(); 
+                    // return $status_id;
+                } catch (\Throwable $th) {
+                    return redirect()->route('admin.driverrequest.index')->with('success', 'غير موجود');
+                }
+               
             }
+            // $Orders = DriverRequest::with('User', 'Category', 'Product')->all();
+           
+           
 
         }
 
@@ -63,7 +85,7 @@ class DriverRequestController extends Controller
             ->orWhere('product_id', $product_name)
             ->orWhere('category_id', $Categories)
             ->orWhere('subcategory_id', $Subcategories)
-      
+            ->orwhereIn('id', $status_id)
             ->get();
 
         $Categories = Category::orderBy('id', 'desc')->get();
