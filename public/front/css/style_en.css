@@ -347,7 +347,7 @@ button.close.close-w3 {
 
 .head-t ul{
         float: right;
-        margin-top: -65px;
+        margin-top: -50px;
         /* margin: -47px 0 5px 0px; */
         box-shadow: none;
 
@@ -3362,4 +3362,8 @@ img.img-head {
     left: 21px;
 
 }}
+}
+
+    .admin-header {
+        margin-top: 22px;
 }

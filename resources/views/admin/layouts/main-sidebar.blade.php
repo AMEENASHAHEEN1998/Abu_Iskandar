@@ -382,24 +382,7 @@
                     @endcan
 
 
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#site_link">
-                            <div class="pull-left"><i class="fa fa-link" aria-hidden="true"></i><span
-                                    class="right-nav-text">{{ trans('admin/dashboard.site_link') }}</span>
-                            </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-
-                        <ul id="site_link" class="collapse" data-parent="#site_link" >
-
-
-                            <li><a  href="{{ route('AbuEskandar.home') }}">{{ trans('admin/dashboard.site_link') }}</a></li>
-
-                        </ul>
-
-                    </li>
-
+           
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#site_link">
                             <div class="pull-left"><i class="fa fa-link" aria-hidden="true"></i><span
