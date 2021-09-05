@@ -31,7 +31,7 @@ return [
     'Contact' => 'Contact',
     'Job' =>'Job',
     'Article'=>'Article',
-    'branches' => 'branches',
+    'branches' => 'Branches',
     'Contact_Information' =>'Contact Information' ,
     'Contact_Me_Through' =>'Contact Me Through',
 

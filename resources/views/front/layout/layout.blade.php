@@ -102,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-    <a href="offer.html"><img src="{{asset('front/images/logo.jpg')}}"  class="img-head" alt=""></a>
+    <a href="{{route('AbuEskandar.home')}}"><img src="{{asset('front/images/logo.jpg')}}"  class="img-head" alt=""></a>
 
 
     @include('front.layout.header')

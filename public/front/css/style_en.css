@@ -130,7 +130,7 @@ button.close.close-w3 {
         position: absolute;
         top:0;
         width: 75px;
-        /* left: 130px; */
+        left: 120px;
     }
     }
     @media(max-width:1280px){
@@ -139,6 +139,8 @@ button.close.close-w3 {
             top:0;
             width: 75px;
             /* left: 130px; */
+            left: 120px;
+
         }
     }
     @media(max-width:1080px){
@@ -162,7 +164,7 @@ button.close.close-w3 {
             position: absolute;
             top:0;
             width: 75px;
-            right:7px;
+            /* right:7px; */
         }
     }
     @media(max-width:900px){
@@ -170,7 +172,7 @@ button.close.close-w3 {
             position: absolute;
             top:0;
             width: 75px;
-            /* left: 130px; */
+            left: 100px;
         }
     }
 /* img.img-head {
@@ -2513,7 +2515,9 @@ p.fo-para {
     padding: 4em 0;
 }
 .nav > li > a {
-    padding: 12px 17px !important;
+    /* width: 455%; */
+
+    /* padding: 8px 130px  !important; */
 }
 .dropdown-menu.multi {
     min-width: 703px;
@@ -2655,8 +2659,16 @@ a.at-in {
 }
 nav.navbar.navbar-default {
     float: left;
-    height: auto;
-    /* width: 82%; */
+    /* height: auto;
+    width: 82%; */
+}
+@media (max-width: 767px)
+{
+    nav.navbar.navbar-default {
+        float: left;
+        /* height: auto;
+        width: 82%; */
+    }
 }
 .navbar-collapse {
     max-height: none;
@@ -2853,7 +2865,7 @@ ul.nav.tabs {
     width: 15%;
 }
 nav.navbar {
-    width: 85%;
+    /* width: 85%; */
 }
 .spec h3 {
     font-size: 2.2em;
@@ -2979,8 +2991,17 @@ a.at-in {
     width: 27%;
 }
 nav.navbar.navbar-default {
-    width: 73%;
+    /* width: 73%; */
 }
+@media (max-width: 767px){
+    img.img-head {
+        position: absolute;
+        top: 0;
+        width: 60px;
+        right: 4px;
+    }
+}
+
 .m-wthree {
     width: 50%;
     float: left;
@@ -3332,11 +3353,13 @@ h1.t-button {
 @media(max-width:767px){
 @media(max-width:400px){
 
+
 img.img-head {
     position: absolute;
     top: 0;
-    width: 75px;
-    right: 7px;
+    width: 63px;
+    /* right: 18px; */
+    left: 21px;
 
 }}
 }

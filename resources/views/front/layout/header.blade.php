@@ -163,11 +163,17 @@
                         <li><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
                                 <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
                         <li><a href="{{route('AbuEskandar.distributor')}}" class="hyper">
-                                <span>{{ trans('front/header.Delivery_Points') }}</span></a></li>
+                                
+                            <span>{{ trans('front/header.Delivery_Points') }}
+                            </span>
+                        </a></li>
 
 
                         <li><a href="{{route('AbuEskandar.about')}}" class="hyper">
-                            <span>{{ trans('front/header.about') }}</span></a></li>
+                            <span>
+                                  {{ trans('front/header.about') }}
+                            </span>
+                        </a></li>
 
                         <li><a href="{{route('AbuEskandar.contact')}}"
                         class="hyper"><span>{{ trans('front/header.Contact_Us') }}</span></a></li>

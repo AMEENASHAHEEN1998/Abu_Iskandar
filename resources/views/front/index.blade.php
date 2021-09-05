@@ -52,13 +52,13 @@
                             @foreach ($offers as $offer)
                                 <div class="col-md-3 m-wthree">
                                     <div class="col-m">
-                                        <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
+                                        <a href="#" data-toggle="modal" data-target="#show{{$offer->id}}" class="offer-img">
                                             <img src="{{ asset('upload/admin/offer/' . $offer->image) }}"
                                                 class="img-responsive" alt="">
                                         </a>
                                         <div class="mid-1">
                                             <div class="women">
-                                                <h6><a href="single.html">{{ $offer->{'offer_title_' . $lng} }}</a></h6>
+                                                <h6><a >{{ $offer->{'offer_title_' . $lng} }}</a></h6>
                                             </div>
                                             <div class="mid-2">
                                                 <p><label></label><em class="item_price">{{ $offer->price }}</em></p>
@@ -68,6 +68,59 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+
+                                <div class="modal fade" id="show{{ $offer->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                   <div class="modal-dialog" role="document">
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                            id="exampleModalLabel">
+                                            عرض المنتج
+                                        </h5>
+                                               <button type="button" class="close" data-dismiss="modal"
+                                                       aria-label="Close">
+                                                   <span aria-hidden="true">&times;</span>
+                                               </button>
+                                           </div>
+                                           <div class="modal-body">
+                                            {{-- <h3> عرض المنتج</h3> --}}
+                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                   id="exampleModalLabel">
+                                                   {{ $offer->{'offer_title_' . $lng} }}
+                                            </h5>
+                                            <br>
+            
+                                            <img src="{{ asset('upload/admin/offer/' . $offer->image) }}" class="img-responsive" alt="">
+
+                                            <br>
+                                            <p>السعر : {{ $offer->price }}</p>
+
+                                            <p>
+
+
+                                                {{-- @foreach (App\Models\price::where('product_id' , $offer->id)->get() as $Price )
+            
+                                                <b>السعر : {{ $Price->price}}         </b>
+                                        
+                                                <b>الحجم : {{ $Price->size}}</b>
+                                                <br>
+                                                @endforeach </p> --}}
+            
+                                                {{-- <form method="POST" action="{{ route('AbuEskandar.update_product_view',[$Product->id]) }}">
+                                                    @csrf
+                                                    {{method_field('put')}}
+                                                    <input type="hidden" value="{{ $CategoryImage->id }}" name="category_id">
+                                                    <input type="hidden" value="{{ $Product->views + 1  }}" name="views">
+                                                    <button type="submit"
+                                                                       class="btn btn-success">تم</button> --}}
+                                                </form>
+                                           </div> 
+                                       </div>
+                                   </div>
+                               </div>
                             @endforeach
 
 
@@ -211,9 +264,11 @@
                     <div class=" con-w3l">
                         <div class="col-md-3 pro-1">
                             <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal17" class="offer-img">
+                                <a href="#" data-toggle="modal" data-target="#myModal" class="offer-img">
                                     <img src="{{ asset('front/images/of16.png') }}" class="img-responsive" alt="">
                                 </a>
+
+
                                 <div class="mid-1">
                                     <div class="women">
                                         <h6><a href="single.html">Moisturiser</a>(500 g)</h6>
@@ -234,81 +289,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal18" class="offer-img">
-                                    <img src="{{ asset('front/images/of17.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html"> Lady Finger</a>(250 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$5.00</label><em class="item_price">$4.50</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="4.50"
-                                            data-quantity="1" data-image="images/of17.png">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal19" class="offer-img">
-                                    <img src="{{ asset('front/images/of18.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html"> Ribbon</a>(1 pc)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$4.00</label><em class="item_price">$3.50</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="3.50"
-                                            data-quantity="1" data-image="{{ asset('front/images/of18.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal20" class="offer-img">
-                                    <img src="{{ asset('front/images/of19.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Grapes</a>(500 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$1.00</label><em class="item_price">$0.80</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="0.80"
-                                            data-quantity="1" data-image="{{ asset('front/images/of19.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                   
                         <div class="col-md-3 pro-1">
                             <div class="col-m">
                                 <a href="#" data-toggle="modal" data-target="#myModal21" class="offer-img">

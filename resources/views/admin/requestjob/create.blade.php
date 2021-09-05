@@ -30,7 +30,7 @@
                         @csrf
 
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                        <input type="hidden" name="job_id" value="{{ $jobid->id }}">
+                        {{-- <input type="hidden" name="job_id" value="{{ $jobid->id }}"> --}}
 
 
 

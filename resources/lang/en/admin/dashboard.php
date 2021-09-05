@@ -68,6 +68,8 @@ return [
     'permission' =>'permission',
 
     // end sidebar
+    'site_link' => 'Website Link',
+
 
     'new_order' => 'New Orders',
     'job_request' => 'Job Request',
