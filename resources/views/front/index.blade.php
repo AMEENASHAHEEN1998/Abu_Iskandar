@@ -156,7 +156,7 @@
 
             <div class="col-md-4 col-sm-6 m-w3ls">
                 <div class="col-md1 ">
-                    <a href="kitchen.html">
+                    <a href="#">
                         <img src="{{ asset('front/images/index/col1.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
@@ -171,7 +171,7 @@
 
             <div class="col-md-4 col-sm-6 m-w3ls">
                 <div class="col-md1 ">
-                    <a href="kitchen.html">
+                    <a href="#">
                         <img src="{{ asset('front/images/index/amenalam.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
@@ -186,7 +186,7 @@
 
 
                 <div class="col-md1 ">
-                    <a href="kitchen.html">
+                    <a href="#">
                         <img src="{{ asset('front/images/index/olive.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
@@ -198,7 +198,7 @@
                 </div>
 
                 <div class="col-md3 ">
-                    <a href="kitchen.html">
+                    <a href="#">
                         <img src="{{ asset('front/images/index/nuts.png') }}" style="padding-top: 21px"
                             class="img-responsive img" alt="">
                         <div class="big-sa">
