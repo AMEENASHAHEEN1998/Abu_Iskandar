@@ -77,4 +77,6 @@ return [
     'product_number' => 'Products Number',
     'site_stats' => 'Site Stats',
     'stats_order' => 'Statistical percentage of orders',
+    'copyright'=>' 2021  Abu Eskandar Comapy General Trade and Industries. All Rights Reserved | Design by  Gadeer Dawwas & Ameena Shaheen',
+
 ];

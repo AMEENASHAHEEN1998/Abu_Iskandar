@@ -24,7 +24,7 @@
         <div class="articles">
             {{-- @foreach ($articles as $article) --}}
             <div class="row">
-                <img src="{{ asset('upload/admin/article/' . $article->image) }}" style="width: 100%;height:350px" alt="">
+                <img src="{{ asset('upload/admin/article/' . $article->image) }}" style="width: 95%;height:300px" alt="">
 
             </div>
             <div class="content">

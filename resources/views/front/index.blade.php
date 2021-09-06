@@ -26,15 +26,17 @@
     <script src="{{ asset('front/js/jquery.vide.min.js') }}"></script>
 
     <!--content-->
+    @if ($offers->count() >= 5)
+
     <div class="content-top ">
         <div class="container ">
             <div class="spec ">
-                <h3>{{ trans('front/header.Offer') }}</h3>
-                <div class="ser-t">
-                    <b></b>
-                    <span><i></i></span>
-                    <b class="line"></b>
-                </div>
+                    <h3>{{ trans('front/header.Offer') }}</h3>
+                    <div class="ser-t">
+                        <b></b>
+                        <span><i></i></span>
+                        <b class="line"></b>
+                    </div>
             </div>
             <div class="tab-head ">
                 <nav class="nav-sidebar">
@@ -49,16 +51,19 @@
 
                     <div class="tab-pane active text-style" id="tab1">
                         <div class=" con-w3l">
+
+
                             @foreach ($offers as $offer)
                                 <div class="col-md-3 m-wthree">
                                     <div class="col-m">
-                                        <a href="#" data-toggle="modal" data-target="#show{{$offer->id}}" class="offer-img">
+                                        <a href="#" data-toggle="modal" data-target="#show{{ $offer->id }}"
+                                            class="offer-img">
                                             <img src="{{ asset('upload/admin/offer/' . $offer->image) }}"
                                                 class="img-responsive" alt="">
                                         </a>
                                         <div class="mid-1">
                                             <div class="women">
-                                                <h6><a >{{ $offer->{'offer_title_' . $lng} }}</a></h6>
+                                                <h6><a>{{ $offer->{'offer_title_' . $lng} }}</a></h6>
                                             </div>
                                             <div class="mid-2">
                                                 <p><label></label><em class="item_price">{{ $offer->price }}</em></p>
@@ -73,55 +78,60 @@
 
                                 <div class="modal fade" id="show{{ $offer->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                   <div class="modal-dialog" role="document">
-                                       <div class="modal-content">
-                                           <div class="modal-header">
-                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                                            id="exampleModalLabel">
-                                            عرض المنتج
-                                        </h5>
-                                               <button type="button" class="close" data-dismiss="modal"
-                                                       aria-label="Close">
-                                                   <span aria-hidden="true">&times;</span>
-                                               </button>
-                                           </div>
-                                           <div class="modal-body">
-                                            {{-- <h3> عرض المنتج</h3> --}}
-                                            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                                                   id="exampleModalLabel">
-                                                   {{ $offer->{'offer_title_' . $lng} }}
-                                            </h5>
-                                            <br>
-            
-                                            <img src="{{ asset('upload/admin/offer/' . $offer->image) }}" class="img-responsive" alt="">
-
-                                            <br>
-                                            <p>السعر : {{ $offer->price }}</p>
-
-                                            <p>
-
-
-                                                {{-- @foreach (App\Models\price::where('product_id' , $offer->id)->get() as $Price )
-            
-                                                <b>السعر : {{ $Price->price}}         </b>
-                                        
-                                                <b>الحجم : {{ $Price->size}}</b>
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                    id="exampleModalLabel">
+                                                    عرض المنتج
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {{-- <h3> عرض المنتج</h3> --}}
+                                                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                    id="exampleModalLabel">
+                                                    {{ $offer->{'offer_title_' . $lng} }}
+                                                </h5>
                                                 <br>
-                                                @endforeach </p> --}}
-            
-                                                {{-- <form method="POST" action="{{ route('AbuEskandar.update_product_view',[$Product->id]) }}">
-                                                    @csrf
-                                                    {{method_field('put')}}
-                                                    <input type="hidden" value="{{ $CategoryImage->id }}" name="category_id">
-                                                    <input type="hidden" value="{{ $Product->views + 1  }}" name="views">
-                                                    <button type="submit"
-                                                                       class="btn btn-success">تم</button> --}}
-                                                </form>
-                                           </div> 
-                                       </div>
-                                   </div>
-                               </div>
+
+                                                <img src="{{ asset('upload/admin/offer/' . $offer->image) }}"
+                                                    class="img-responsive" alt="">
+
+                                                <br>
+                                                <p>السعر : {{ $offer->price }}</p>
+
+                                                <p>
+
+
+                                                    {{-- @foreach (App\Models\price::where('product_id', $offer->id)->get() as $Price)
+        
+                                            <b>السعر : {{ $Price->price}}         </b>
+                                    
+                                            <b>الحجم : {{ $Price->size}}</b>
+                                            <br>
+                                            @endforeach </p> --}}
+
+                                                    {{-- <form method="POST" action="{{ route('AbuEskandar.update_product_view',[$Product->id]) }}">
+                                                @csrf
+                                                {{method_field('put')}}
+                                                <input type="hidden" value="{{ $CategoryImage->id }}" name="category_id">
+                                                <input type="hidden" value="{{ $Product->views + 1  }}" name="views">
+                                                <button type="submit"
+                                                                   class="btn btn-success">تم</button> --}}
+                                                    </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
+                        @else
+
+                            @endif
+
 
 
 
@@ -214,7 +224,7 @@
     <!--content-->
 
     <!-- Marketing messaging and featurettes
-          ================================================== -->
+              ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
@@ -289,7 +299,7 @@
                                 </div>
                             </div>
                         </div>
-                   
+
                         <div class="col-md-3 pro-1">
                             <div class="col-m">
                                 <a href="#" data-toggle="modal" data-target="#myModal21" class="offer-img">

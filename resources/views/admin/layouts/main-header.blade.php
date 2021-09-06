@@ -1,6 +1,6 @@
         <!--=================================
         header start-->
-        <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="margin-top: 0px">
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper text-center" >
                 <h6 class="text-center"></h6>
