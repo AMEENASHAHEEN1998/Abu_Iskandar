@@ -44,9 +44,10 @@
                                         @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
                                     
-                                        <b>السعر : {{ $Price->price}}         </b>
+                                        {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
                                         <b>       الحجم : {{ $Price->size}}    </b>
+                                    <br>
                                         {{-- <br> --}}
                                         @endforeach </p>
                                       {{-- <div class="block">
@@ -91,9 +92,9 @@
                                 <p>
                                     @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
-                                    <b>السعر : {{ $Price->price}}         </b>
+                                    {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
-                                    <b>الحجم : {{ $Price->size}}</b>
+                                    <b>الحجم : {{ $Price->size}}    </b>
                                     {{-- <b>||</b> --}}
                                     <br>
                                     @endforeach </p>
