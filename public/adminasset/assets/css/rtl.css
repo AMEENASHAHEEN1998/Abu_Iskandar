@@ -20950,6 +20950,7 @@ ul.list-unstyled li {
 
 /*header*/
 .admin-header {
+  margin-top: 22px;
   background: #ffffff;
   -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);

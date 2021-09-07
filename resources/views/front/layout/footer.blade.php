@@ -1,3 +1,4 @@
+
 <div class="footer">
     <div class="container">
         <div class="col-md-4 footer-grid">
@@ -60,20 +61,19 @@
 
             </ul>
         </div>
-        {{-- <div class="col-md-3 footer-grid">
-            <h3>{{ trans('front/header.account') }}</h3>
-            <ul>
-                <li><a href="login.html">{{ trans('front/header.Login') }}</a></li>
-                <li><a href="register.html">{{ trans('front/header.Register') }}</a></li>
-
-
-            </ul>
-        </div> --}}
+  
         <div class="clearfix"></div>
 
-        <div class="copy-right">
-            <p> &copy; 2016 Big store. All Rights Reserved | Design by <a href="http://w3layouts.com/">
-                    W3layouts</a></p>
+        <div class="header-ri ">
+            <ul class="social-top text-center">
+                <li><a href="https://m.facebook.com/abueskandar2/?locale2=ar_AR" class="icon facebook"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><span></span></a></li>
+                <li><a href="#" class="icon twitter"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i><span></span></a></li>
+                <li><a href="https://www.instagram.com/abueskandar2/" class="icon instagram"><i class="fa fa-instagram fa-lg"></i><span></span></a></li>
+            </ul>	
+        </div>
+
+        <div class="copy-right" >
+            <p style="font-family: 'Amiri', serif">&copy; {{ trans('admin/dashboard.copyright') }}</p>
         </div>
     </div>
 </div>

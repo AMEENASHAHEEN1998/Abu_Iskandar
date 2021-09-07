@@ -48,7 +48,7 @@ class DistributorController extends Controller
      */
     public function store(DistributorRequest $request)
     {
-         //return $request;
+        //  return $request;
         Distributor::create([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
