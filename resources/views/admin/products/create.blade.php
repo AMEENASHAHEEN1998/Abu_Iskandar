@@ -63,13 +63,7 @@
 
                             </div>
                             <div class="row">
-                                <div class="col">
-                                    <label for="product_number"
-                                        class="mr-sm-2">{{ trans('admin/products.product_number') }}
-                                        :</label>
-                                    <input id="product_number" class="form-control" type="text" name="product_number"
-                                        required />
-                                </div>
+                                
                                 <div class="col">
                                     <div class="form-group">
                                         <label
@@ -164,10 +158,10 @@
 
 
                                             <div class="col">
-                                                <label for="product_name_en"
-                                                    class="mr-sm-2">{{ trans('admin/products.price') }}
+                                                <label for="product_number"
+                                                    class="mr-sm-2">{{ trans('admin/products.product_number') }}
                                                     :</label>
-                                                <input id="product_name_en" class="form-control" type="text" name="price"
+                                                <input id="product_number" class="form-control" type="number" name="product_number"
                                                     required />
                                             </div>
                                             <div class="col">

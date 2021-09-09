@@ -6,7 +6,7 @@
 
     <img id="first-slide" class="first-slide" src="{{asset('uploads/'.$CategoryImage->image)}}" alt="First slide"></a>
     @endforeach
-  
+
           <div class="product">
           <div class="container">
               <div class="spec ">
@@ -24,7 +24,7 @@
                         <a href="#" data-toggle="modal" data-toggle="modal"
                         data-target="#show{{ $Product->id }}" class="offer-img">
                                 <img src="{{asset('uploads/'.$Product->image)}}" class="img-responsive" alt="">
-                             
+
                             </a>
 
                             <div class="mid-1">
@@ -43,11 +43,17 @@
                                     <p>
                                         @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
+<<<<<<< HEAD
+
+
+                                        {{-- <b>       الحجم : {{ $Price->size}}    </b> || --}}
+=======
                                     
                                         {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
                                         <b>       الحجم : {{ $Price->size}}    </b>
                                     <br>
+>>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
                                         {{-- <br> --}}
                                         @endforeach </p>
                                       {{-- <div class="block">
@@ -80,7 +86,7 @@
                                <div class="modal-body">
                                 <br>
                                 {{-- <h3> عرض المنتج</h3> --}}
-                                
+
                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                        id="exampleModalLabel">
                                        {{ $Product->product_name_ar }}
@@ -92,9 +98,14 @@
                                 <p>
                                     @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
+<<<<<<< HEAD
+
+                                    <b>الحجم : {{ $Price->size}}</b>
+=======
                                     {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
                                     <b>الحجم : {{ $Price->size}}    </b>
+>>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
                                     {{-- <b>||</b> --}}
                                     <br>
                                     @endforeach </p>
