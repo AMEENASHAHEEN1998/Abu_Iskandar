@@ -71,6 +71,7 @@
                                 <td>{{ $Product->product_number }}</td>
                                 <td>{{ ($Product->category) ? $Product->category->category_name_en : 'Uncategories' }}</td>
                                 @else
+
                                 <td>{{ $Product->product_name_ar }}</td>
                                 <td>{{ $Product->product_number }}</td>
                                 <td>{{ ($Product->category) ? $Product->category->category_name_ar : 'غير مصنف' }}</td>
@@ -129,7 +130,7 @@
                                                         <label for="product_name_ar"
                                                                 class="mr-sm-2">{{ trans('admin/products.product_name_ar') }}
                                                             :</label>
-                                                        <input id="product_name_ar" class="form-control" type="text" value={{$Product->product_name_ar}} name="product_name_ar" required />
+                                                        <input id="product_name_ar" class="form-control" type="text" value="{{$Product->product_name_ar}}" name="product_name_ar" required />
                                                     </div>
 
 

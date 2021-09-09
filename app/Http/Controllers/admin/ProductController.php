@@ -23,6 +23,8 @@ class ProductController extends Controller
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
         $Products  = Product::orderBy('id' , 'desc')->DISTINCT('product_name_en')->paginate(10);
 
+        // dd($Products);
+
         return view('admin.products.index')->with(['Categories' => $Categories , 'Subcategories' => $Subcategories , 'Products' => $Products  ]);
     }
 
