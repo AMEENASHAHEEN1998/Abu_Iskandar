@@ -43,9 +43,17 @@
                                     <p>
                                         @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
+<<<<<<< HEAD
 
 
                                         {{-- <b>       الحجم : {{ $Price->size}}    </b> || --}}
+=======
+                                    
+                                        {{-- <b>السعر : {{ $Price->price}}         </b> --}}
+                            
+                                        <b>       الحجم : {{ $Price->size}}    </b>
+                                    <br>
+>>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
                                         {{-- <br> --}}
                                         @endforeach </p>
                                       {{-- <div class="block">
@@ -90,8 +98,14 @@
                                 <p>
                                     @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
+<<<<<<< HEAD
 
                                     <b>الحجم : {{ $Price->size}}</b>
+=======
+                                    {{-- <b>السعر : {{ $Price->price}}         </b> --}}
+                            
+                                    <b>الحجم : {{ $Price->size}}    </b>
+>>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
                                     {{-- <b>||</b> --}}
                                     <br>
                                     @endforeach </p>
