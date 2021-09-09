@@ -48,7 +48,7 @@
                         <tr>
                             <th>#</th>
                             <th>{{ trans('admin/products.product_name') }}</th>
-                            <th>{{ trans('admin/products.product_number') }}</th>
+
                             <th>{{ trans('admin/products.product_category') }}</th>
                             <th>{{ trans('admin/products.product_image') }}</th>
                             <th>{{ trans('admin/products.decription') }}</th>
@@ -68,11 +68,11 @@
                                 <td>{{ $i }}</td>
                                 @if (App::getLocale() == 'en')
                                 <td>{{ $Product->product_name_en }}</td>
-                                <td>{{ $Product->product_number }}</td>
+
                                 <td>{{ ($Product->category) ? $Product->category->category_name_en : 'Uncategories' }}</td>
                                 @else
                                 <td>{{ $Product->product_name_ar }}</td>
-                                <td>{{ $Product->product_number }}</td>
+
                                 <td>{{ ($Product->category) ? $Product->category->category_name_ar : 'غير مصنف' }}</td>
                                 @endif
                                 <td> <img src="{{asset('uploads/'.$Product->image)}}" width="70px" height="60px"></td>
@@ -129,7 +129,7 @@
                                                         <label for="product_name_ar"
                                                                 class="mr-sm-2">{{ trans('admin/products.product_name_ar') }}
                                                             :</label>
-                                                        <input id="product_name_ar" class="form-control" type="text" value={{$Product->product_name_ar}} name="product_name_ar" required />
+                                                        <input id="product_name_ar" class="form-control" type="text" value="{{$Product->product_name_ar}}" name="product_name_ar" required />
                                                     </div>
 
 
@@ -137,17 +137,12 @@
                                                         <label for="product_name_en"
                                                                 class="mr-sm-2">{{ trans('admin/products.product_name_en') }}
                                                             :</label>
-                                                        <input id="product_name_en" class="form-control" type="text"value={{$Product->product_name_en}}  name="product_name_en" required />
+                                                        <input id="product_name_en" class="form-control" type="text" value="{{$Product->product_name_en}}"  name="product_name_en" required />
                                                     </div>
 
                                                 </div>
                                             <div class="row">
-                                                <div class="col">
-                                                    <label for="product_number"
-                                                            class="mr-sm-2">{{ trans('admin/products.product_number') }}
-                                                        :</label>
-                                                    <input id="product_number" class="form-control" type="text"value={{$Product->product_number}}  name="product_name_en" required />
-                                                </div>
+
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label
@@ -237,10 +232,10 @@
 
 
                                                             <div class="col">
-                                                                <label for="product_name_en"
-                                                                    class="mr-sm-2">{{ trans('admin/products.price') }}
+                                                                <label for="product_number"
+                                                                    class="mr-sm-2">{{ trans('admin/products.product_number') }}
                                                                     :</label>
-                                                                <input id="product_name_en" class="form-control" disabled type="text" value="{{$product_price_size->price}}" name="price" required />
+                                                                <input id="product_number" class="form-control" disabled type="text" value="{{$product_price_size->product_number}}" name="product_number" required />
                                                             </div>
 
                                                         </div>

@@ -17,11 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('product_name_ar', 150);
             $table->string('product_name_en', 150);
-            $table->integer('product_number')->unique();
             $table->integer('views');
             $table->foreignId('user_id');
             $table->foreignId('category_id');
-            // $table->integer('product_number')->unique();
             $table->softDeletes();
             $table->timestamps();
         });

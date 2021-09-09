@@ -54,7 +54,6 @@ class ProductController extends Controller
             $product = Product::create([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
-                'product_number'  => $request->product_number,
                 'decription'  => $request->decription,
                 'image' => $product_image_name,
                 'user_id' => auth()->user()->id,
@@ -66,7 +65,7 @@ class ProductController extends Controller
             foreach($List_size_prise as $size_price){
                 price::create([
                     'product_id' => $product->id,
-                    'price' => $size_price['price'],
+                    'product_number' => $size_price['product_number'],
                     'size' => $size_price['size'],
                 ]);
             }
@@ -131,7 +130,6 @@ class ProductController extends Controller
             $product->update([
                 'product_name_ar' => $request->product_name_ar,
                 'product_name_en' => $request->product_name_en,
-                'product_number'  => $request->product_number,
                 'image' => $product_image_name,
                 'category_id' => $request->category_id ,
             ]);

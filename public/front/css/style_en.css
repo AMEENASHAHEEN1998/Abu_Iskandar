@@ -815,10 +815,11 @@ ul.nav.tabs {
 .offer-img{
 	position:relative;
 	display:block;
+
 }
 .offer-img img{
 	margin:0 auto;
-	width: 55%;
+	width: 80%;
     height: 167px;
 }
 .offer{
