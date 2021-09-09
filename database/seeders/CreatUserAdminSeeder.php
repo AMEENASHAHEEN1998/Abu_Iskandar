@@ -21,7 +21,7 @@ class CreatUserAdminSeeder extends Seeder
 
             'password' => bcrypt('123123123'),
             'roles_name' => 'مدير',
-            'status' => 'مفعل',
+            'status' => '1',
         ]);
 
         $role = Role::create(['name' => 'مدير']);
@@ -30,6 +30,6 @@ class CreatUserAdminSeeder extends Seeder
 
         $role->syncPermissions($permissions);
 
-       // $user->assignRole([$role->id]);
+        $user->assignRole([$role->id]);
     }
 }
