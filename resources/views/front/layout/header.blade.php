@@ -72,7 +72,7 @@
         </div>
 
 
-        <div class="nav-top admin-header">
+        <div class="nav-top admin-header"  style="font-family: 'Amiri', serif">
             <nav class="navbar navbar-default">
 
                 <div class="navbar-header nav_2">

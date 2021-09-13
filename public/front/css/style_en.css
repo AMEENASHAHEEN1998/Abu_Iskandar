@@ -481,7 +481,7 @@ ul.multi-column-dropdown {
     line-height: 1.428571429;
     color: #737373 !important;
     white-space: normal;
-    font-size: 13px;
+    font-size: 15px;
 }
 .multi-column-dropdown li a i{
     margin-right:7px;
@@ -732,6 +732,7 @@ span.fa.fa-shopping-cart.my-cart-icon {
     -o-transform: rotate(45deg) translate3d(0, 0, 0);
     transform: rotate(45deg) translate3d(0, 0, 0);
     margin-left: 0.7em;
+    margin-right: 9px;
 }
 /*--content--*/
 .content-top{
