@@ -61,6 +61,7 @@ Route::group(
 
         Route::resource('products', ProductController::class);
         Route::get('get_products/{id}' , [ ProductController::class, 'get_products'])->name('get_products');
+        Route::get('findProduct' , [ ProductController::class, 'findProduct'])->name('findProduct');
         Route::resource('employee', EmployeeController::class);
         Route::resource('distributor', DistributorController::class);
         Route::resource('distributortype', DistributorTypeController::class);

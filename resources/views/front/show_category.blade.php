@@ -1,22 +1,27 @@
 @extends('front.layout.layout')
+@section('title')
+{{trans('admin/dashboard.product')}}
+@endsection
 @section('content')
         <!-- Carousel
     ================================================== -->
     @foreach ( $CategoryImage as $CategoryImage )
 
     <img id="first-slide" class="first-slide" src="{{asset('uploads/'.$CategoryImage->image)}}" alt="First slide"></a>
-    @endforeach
+
 
           <div class="product">
           <div class="container">
               <div class="spec ">
-                  <h3>{{trans('admin/dashboard.product')}}</h3>
+                  <h3 class="text-center"  style="font-family: 'Amiri', serif">{{$CategoryImage->category_name_ar}}</h3>
                   <div class="ser-t">
                       <b></b>
-                      <span><i></i></span>
+                      <span><i>  </i></span>
                       <b class="line"></b>
                   </div>
               </div>
+              @endforeach
+
                   <div class=" con-w3l agileinf">
                       @foreach ($Products as $Product)
                       <div class="col-md-3 pro-1">

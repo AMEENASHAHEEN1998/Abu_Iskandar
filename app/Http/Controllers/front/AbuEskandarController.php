@@ -69,7 +69,7 @@ class AbuEskandarController extends Controller
         // dd($CategoryImage);
         // $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->get();
         $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->paginate(20);
-       //dd(price::where('product_id' , 1)->get());
+    //    dd($Products);
         return view('front.show_category')->with(['Products' => $Products , 'CategoryImage' => $CategoryImage]);
     }
 
