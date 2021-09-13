@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Employee;
 use App\Models\Distributor;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
@@ -21,7 +22,8 @@ class AbuEskandarController extends Controller
     public function index()
     {
 
-
+ 
+        
         $offers=Offer::where('status_value',1)->skip(0)->take(4)->get();
         $employes=Employee::where('status_value',1)->latest()->take(4)->get();
         return view('front.index',compact('offers','employes'));
@@ -65,7 +67,8 @@ class AbuEskandarController extends Controller
     {
         $CategoryImage = Category::where('id' , $id)->get();
         // dd($CategoryImage);
-        $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->get();
+        // $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->get();
+        $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->paginate(20);
        //dd(price::where('product_id' , 1)->get());
         return view('front.show_category')->with(['Products' => $Products , 'CategoryImage' => $CategoryImage]);
     }

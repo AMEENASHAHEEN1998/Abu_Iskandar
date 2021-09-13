@@ -21,7 +21,8 @@ class ProductController extends Controller
     {
         $Categories = Category::orderBy('id' , 'desc')->get();
         $Subcategories = SubCategory::orderBy('id' , 'desc')->get();
-        $Products  = Product::orderBy('id' , 'desc')->DISTINCT('product_name_en')->paginate(10);
+        // $Products  = Product::orderBy('id' , 'desc')->DISTINCT('product_name_en')->paginate(20);
+        $Products  = Product::orderBy('id' , 'desc')->paginate(20);
 
         // dd($Products);
 

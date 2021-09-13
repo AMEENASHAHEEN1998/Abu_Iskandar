@@ -321,7 +321,7 @@
                     @endcan
 
 
-                    @can('أضافة الاعدادات')
+                    {{-- @can('أضافة الاعدادات') --}}
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings">
                             <div class="pull-left"><i class="fa fa-cogs"></i><span
@@ -352,7 +352,7 @@
                         </ul>
                     </li>
 
-                    @endcan
+                    {{-- @endcan --}}
 
 
                     @can('اضافة معلومات الشركة')

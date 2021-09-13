@@ -265,7 +265,7 @@
                                        </div>
                                    </div>
                                </div>
-                           </div>
+                            </div>
 
 
 
@@ -311,8 +311,10 @@
                         @endforeach
                     </table>
                 </div>
-                {{ $Products->links() }}
-
+                {{-- {{ $Products->links() }} --}}
+                <div class="d-flex justify-content-center">
+                    {!! $Products->links() !!}
+                </div>
 
 
 

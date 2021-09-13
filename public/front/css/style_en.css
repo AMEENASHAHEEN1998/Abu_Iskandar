@@ -800,7 +800,7 @@ ul.nav.tabs {
     padding: 0em 0;
 }
 .mid-1 {
-    padding: 3em 0 0;
+    padding: 1em 0 0;
 }
 .block {
     float: right;
@@ -1147,7 +1147,7 @@ ul.product-qty {
 }
 /*--content-mid--*/
 .product {
-	padding:8em 0 6em;
+	padding:8em 0 0;
 }
 .pro-1 {
     margin-bottom: 2em;

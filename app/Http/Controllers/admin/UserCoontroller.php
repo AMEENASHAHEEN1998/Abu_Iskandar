@@ -116,6 +116,8 @@ class UserCoontroller extends Controller
         } else {
             $name = $request->name;
         }
+
+
         $status = '';
         if ($request->has('status') == 1) {
             $status = 1;
@@ -123,14 +125,18 @@ class UserCoontroller extends Controller
             $status = 0;
         }
 
-
-        $role_user=User::find($id)->roles->pluck('name');
-
-        User::find($id)->removeRole($role_user->first());
+        try {
+            $role_user=User::find($id)->roles->pluck('name');
+            User::find($id)->removeRole($role_user->first());
+        } catch (\Throwable $th) {
+            $role_user ='مستخدم';
+        }
+      
+        
 
         $role = Role::findById($request->roles_name);
 
-        $role = Role::findById($request->roles_name);
+        // $role = Role::findById($request->roles_name);
         // $role_name= $role->name;
 
         $user = User::find($id)->update([

@@ -31,9 +31,11 @@
                                 <div class="women">
 
                                     <h6>
-
+                                        <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ $Product->product_name_ar }}</h4 >
                                         <a class="btn btn-info btn-sm" data-toggle="modal"
-                                        data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a>
+                                        data-target="#show{{ $Product->id }}">التفاصيل</a>
+                                        {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
+                                        data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a> --}}
 
                                         </h6>
 
@@ -43,17 +45,10 @@
                                     <p>
                                         @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
-<<<<<<< HEAD
 
 
-                                        {{-- <b>       الحجم : {{ $Price->size}}    </b> || --}}
-=======
-                                    
-                                        {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
-                                        <b>       الحجم : {{ $Price->size}}    </b>
-                                    <br>
->>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
+                                        {{-- <b>       الحجم : {{ $Price->size}}    </b> --}}
                                         {{-- <br> --}}
                                         @endforeach </p>
                                       {{-- <div class="block">
@@ -98,15 +93,10 @@
                                 <p>
                                     @foreach (App\Models\price::where('product_id' , $Product->id)->get() as $Price )
 
-<<<<<<< HEAD
 
-                                    <b>الحجم : {{ $Price->size}}</b>
-=======
                                     {{-- <b>السعر : {{ $Price->price}}         </b> --}}
                             
-                                    <b>الحجم : {{ $Price->size}}    </b>
->>>>>>> b14f0dbcaf1a7e6235c6c68ebe1565686be60c4e
-                                    {{-- <b>||</b> --}}
+                                    <b>الأصناف : {{ $Price->size}}    </b>
                                     <br>
                                     @endforeach </p>
 
@@ -124,9 +114,20 @@
                    </div>
                       @endforeach
 
-
-                              <div class="clearfix"></div>
-                           </div>
+                      {{-- <div class="clearfix"></div>
+                    </div> --}}
+ 
           </div>
       </div>
+
+   {{-- {{ $Products->links() }} --}}
+   <div class="d-flex justify-content-center">
+    {!! $Products->links() !!}
+
+    <br>
+
+    
+</div>
+
+      
 @endsection
