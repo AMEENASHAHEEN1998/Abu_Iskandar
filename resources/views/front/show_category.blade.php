@@ -17,7 +17,7 @@
                       <b class="line"></b>
                   </div>
               </div>
-                  <div class=" con-w3l agileinf">
+                <div class=" con-w3l agileinf">
                       @foreach ($Products as $Product)
                       <div class="col-md-3 pro-1">
                         <div class="col-m">
@@ -47,7 +47,7 @@
 
 
 
-                            
+
                                         {{-- <b>       الحجم : {{ $Price->size}}    </b> --}}
                                         {{-- <br> --}}
                                         @endforeach </p>
@@ -95,7 +95,7 @@
 
 
                                     {{-- <b>السعر : {{ $Price->price}}         </b> --}}
-                            
+
                                     <b>الأصناف : {{ $Price->size}}    </b>
                                     <br>
                                     @endforeach </p>
@@ -114,9 +114,9 @@
                    </div>
                       @endforeach
 
-                      {{-- <div class="clearfix"></div>
-                    </div> --}}
- 
+                      {{-- <div class="clearfix"></div>--}}
+                </div>
+
           </div>
       </div>
 
@@ -126,8 +126,8 @@
 
     <br>
 
-    
+
 </div>
 
-      
+
 @endsection

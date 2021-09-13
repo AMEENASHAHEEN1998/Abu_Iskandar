@@ -34,5 +34,6 @@ return [
     'branches' => 'Branches',
     'Contact_Information' =>'Contact Information' ,
     'Contact_Me_Through' =>'Contact Me Through',
+    'our_products' => 'Our Products',
 
 ];
