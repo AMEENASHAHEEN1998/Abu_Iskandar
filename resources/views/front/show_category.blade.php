@@ -20,10 +20,20 @@
                       <b class="line"></b>
                   </div>
               </div>
+
+
+                <div class=" con-w3l agileinf">
+
+              @endforeach
+
+                  <div class=" con-w3l agileinf">
+
+
                 <div class=" con-w3l agileinf">
               @endforeach
 
                   <div class=" con-w3l agileinf">
+
                       @foreach ($Products as $Product)
                       <div class="col-md-3 pro-1">
                         <div class="col-m">

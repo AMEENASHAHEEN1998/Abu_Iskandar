@@ -35,4 +35,6 @@ return [
     'Contact_Information' =>'معلومات التواصل' ,
     'Contact_Me_Through' => 'التواصل من خلال ',
     'our_products' => 'منتجاتنا',
+    'company_exhibitions' => 'معارض الشركة',
+
 ];

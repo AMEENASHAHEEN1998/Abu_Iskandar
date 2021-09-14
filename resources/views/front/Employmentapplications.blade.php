@@ -6,8 +6,10 @@
     <!--banner-->
     <div class="banner-top" >
         <div class="container">
+
             <h3 style="font-family: 'Amiri', serif ">{{ trans('front/header.Job') }}</h3>
-            <h4><a href="index.html">{{ trans('front/header.Home') }}</a><label>/</label>{{ trans('front/header.Job') }}
+            <h4 style="font-family: 'Amiri', serif ;"><a href="index.html">{{ trans('front/header.Home') }}</a><label>/</label>{{ trans('front/header.Job') }}
+
             </h4>
         </div>
     </div>
@@ -36,8 +38,8 @@
                                     src="{{ $job->image ? asset('upload/admin/job/' . $job->image) : asset('upload/admin/job/job.jpg') }}"
                                     {{-- alt="{{asset('/public/upload/admin/job/job.jpg') }}" --}}>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $job->{'job_name_' . $lng} }}</h5>
-                                    <p class="card-text">{{ $job->{'job_description_' . $lng} }}</p>
+                                    <h5 class="card-title" style="font-family: 'Amiri', serif ;">{{ $job->{'job_name_' . $lng} }}</h5>
+                                    <p class="card-text" style="font-family: 'Amiri', serif ;">{{ $job->{'job_description_' . $lng} }}</p>
                                     <strong>{{ $job->updated_at->format('d-m-Y') }}</strong>
                                 </div>
                                 {{-- </a> --}}

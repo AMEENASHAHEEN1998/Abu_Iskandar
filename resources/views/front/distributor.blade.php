@@ -9,8 +9,10 @@
     <!--banner-->
     <div class="banner-top" >
         <div class="container">
-            <h3 style="font-family: 'Amiri', serif ">{{ trans('front/header.Delivery_Points') }}</h3>
-            <h4 ><a href="{{route('AbuEskandar.home')}}">{{ trans('front/header.Home') }}</a><label>/</label>
+
+            <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.Delivery_Points') }}</h3>
+            <h4 style="font-family: 'Amiri', serif ;"><a href="{{route('AbuEskandar.home')}}">{{ trans('front/header.Home') }}</a><label>/</label>
+
                 <a href="{{route('AbuEskandar.distributor')}}">{{ trans('front/header.Delivery_Points') }}</a>
             </h4>
         </div>
@@ -28,7 +30,7 @@
         $lng = app()->getLocale();
         ?>
 
-        <div class="distribute">
+        <div class="distribute" style="font-family: 'Amiri', serif ;">
             <img src="{{asset('front/images/index/bus.jpg')}}" alt="">
 
             <h1 style="font-family: 'Amiri', serif ">{{ trans('front/header.Delivery_Points') }}</h1>

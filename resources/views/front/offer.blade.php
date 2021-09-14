@@ -10,7 +10,7 @@
     <div class="content-top offer-w3agile">
         <div class="container ">
             <div class="spec ">
-                <h3>{{ trans('front/header.offers') }}</h3>
+                <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.offers') }}</h3>
                 <div class="ser-t">
                     <b></b>
                     <span><i></i></span>
