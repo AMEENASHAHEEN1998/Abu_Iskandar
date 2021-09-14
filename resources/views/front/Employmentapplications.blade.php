@@ -4,22 +4,24 @@
 @endsection
 @section('content')
     <!--banner-->
-    <div class="banner-top">
+    <div class="banner-top" >
         <div class="container">
-            <h3>{{ trans('front/header.Job') }}</h3>
+            <h3 style="font-family: 'Amiri', serif ">{{ trans('front/header.Job') }}</h3>
             <h4><a href="index.html">{{ trans('front/header.Home') }}</a><label>/</label>{{ trans('front/header.Job') }}
             </h4>
         </div>
     </div>
     <div class="clearfix"> </div>
 
-
+<br>
+<br>
     <!-- contact -->
     <div class="jobs">
         <div class="container">
             <?php
             $lng = app()->getLocale();
             ?>
+    <h1  style="font-family: 'Amiri', serif ">{{ trans('front/header.Job') }}</h1>
 
             <div class="row">
                 @if ($jobs->count() >= 1)
@@ -45,10 +47,10 @@
 
                     @endforeach
                 @else
-                <div class="card" style="width: 24rem;margin:10px">
+                <div class="card" style="width: 24rem;margin:20px">
 
-                    <h2 class="text-center"><span>
-                            لا يوجد طلبات لعرضها </span></h2>
+                    <p style="font-size: 22px">لا يوجد وظائف حاليا لعرضها </p>
+
                 </div>
                 @endif
 

@@ -1,6 +1,6 @@
 <div class="about">
     <div class="spec ">
-        <h3>{{ trans('front/header.about') }}</h3>
+        <h3 style="font-family: 'Amiri', serif ">{{ trans('front/header.about') }}</h3>
         <div class="ser-t">
             <b></b>
             <span><i></i></span>

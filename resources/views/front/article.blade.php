@@ -24,14 +24,14 @@
         <div class="articles">
             {{-- @foreach ($articles as $article) --}}
             <div class="row">
-                <img src="{{ asset('upload/admin/article/' . $article->image) }}" style="width: 95%;height:300px" alt="">
+                <img src="{{ asset('upload/admin/article/' . $article->image) }}" style="width: 100%;height:450px" alt="">
 
             </div>
             <div class="content">
 
                 <h5 class="card-title">{{ $article->{'article_name_' . $lng} }}</h5>
-                <p class="card-text">{{ $article->{'content_' . $lng} }}</p>
-
+                <p class="card-text"> {{ $article->{'content_' . $lng}   }}</p>
+                
 
 
             </div>

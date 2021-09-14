@@ -12,8 +12,13 @@
             <div class="banner-info">
 
                 <div class="search-form">
-                    <form action="#" method="post">
-
+                    <form action="#" method="post" >
+                        <div style="color: #fff">
+                            <h2 ><b>شركة ابو اسكندر  <br></b></h2>
+                            <p><span>للتجارة العامة والصناعات</span></p>
+                            <p>أجود أنواع المنتجات من خلال المكونات الفاخرة      </p>
+                        </div>
+                    
                     </form>
                 </div>
             </div>
@@ -154,7 +159,7 @@
             </div>
                 <div class="tab-head "  style="font-family: 'Amiri', serif ; font-weight : bold">
                     <nav class="nav-sidebar">
-                        <ul class="nav tabs ">
+                        <ul class="nav tabs justify-content-center">
                             @foreach ($Categories as $Category )
                             <li class="@if ($Category->id == $loop->first)
                                 {{ 'active' }}

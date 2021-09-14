@@ -135,7 +135,7 @@
                         <div class="col-md-6">
 
                             <div class="form-group">
-                                <input type="checkbox" name="status" class="switchery" data-color="success"
+                                <input type="checkbox" name="status_value" class="switchery" data-color="success"
                                     value="{{ $article->status_value }}" @if ($article->status_value == 1) checked @endif />
                                 <label for="switcheryColor4"
                                     class="card-title ml-1">{{ trans('admin/article.status') }}</label>
