@@ -33,8 +33,11 @@ class ProductController extends Controller
     {
         $search_text = $request->input('query');
         $Products=[];
-        $Subcategories_id=[];
-
+        $Category_id=[];
+        
+        $Products =Product::where('product_name_ar', 'LIKE', '%' . $search_text . '%')
+        ->pluck('id')
+        ->toarray();
         $Category_id = Category::where('category_name_ar', 'LIKE', '%' . $search_text . '%')
         ->pluck('id')
         ->toarray();
@@ -42,6 +45,7 @@ class ProductController extends Controller
 
         $Categories = Category::orderBy('id', 'desc')->get();
         $Subcategories = SubCategory::orderBy('id', 'desc')->get();
+        // $Products  = Product::orderBy('id' , 'desc')->DISTINCT('product_name_en')->paginate(20);
         $Products  = Product::whereIn('id',$Products)
         ->orwhereIn('category_id',$Category_id)->orderBy('id', 'desc')->paginate(20);
 
@@ -154,6 +158,7 @@ class ProductController extends Controller
                 'product_name_en' => $request->product_name_en,
                 'image' => $product_image_name,
                 'category_id' => $request->category_id,
+                'decription' => $request->decription,
             ]);
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);

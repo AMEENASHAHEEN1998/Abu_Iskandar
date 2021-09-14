@@ -36,6 +36,8 @@
 
 
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.products.create') }}">{{trans('admin/products.add_product')}}</a>
+                <br>
+                <br>
 
                 <form action="{{route('admin.findProduct')}}" method="GET">
 
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                  </form>
-                <br><br>
+                <br>
 
                 <div class="table-responsive">
                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
@@ -135,6 +137,7 @@
                                            </button>
                                        </div>
                                        <div >
+
                                            <!-- add_form -->
                                            <form action="{{route('admin.products.update' , $Product->id ) }}" method="post" enctype="multipart/form-data">
                                                {{method_field('patch')}}
@@ -266,11 +269,23 @@
 
                                             </div>
 
+                                            <div class="row">
+                                                <div class="col-12">
+                                                        <label for="decription"
+                                                                class="mr-sm-2">{{ trans('admin/products.decription') }}
+                                                            :</label>
+                                                        <textarea class="form-control" type="text" name="decription" cols="20" rows="5">
+                                                        {{$Product->decription}}
+                                                        </textarea>
+                                                </div>
+                                            </div>
+
 
 
                                                 </div>
                                             </div>
 
+                                           
 
                                             <div class="modal-footer">
 

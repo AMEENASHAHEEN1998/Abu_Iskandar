@@ -66,6 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--- start-rate---->
 
+    
 
     <script src="{{ asset('front/js/jstarbox.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('front/css/jstarbox.css') }}" type="text/css" media="screen"
@@ -95,6 +96,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
     <!---//End-rate---->
 
+
+    
 </head>
 
 <body>
@@ -187,8 +190,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         });
     </script>
-
-
 </body>
 
 </html>
