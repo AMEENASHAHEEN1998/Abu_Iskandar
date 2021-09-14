@@ -36,10 +36,19 @@
             <h1 style="font-family: 'Amiri', serif ">{{ trans('front/header.Delivery_Points') }}</h1>
             @foreach ($distributes as  $place =>$distribute)
 
-                    <h2>{{$place}}</h2>
+                   
                     <ul>
-                    @foreach ($distribute as $d)
 
+                   
+                    @foreach ($distribute as $d)
+                    
+                    @foreach ($cites as $city)
+                    {{-- $place=$place-1 --}}
+                        @if ($city->id == $place)
+                            <h2>{{$city->name}}</h2>
+                        @endif
+
+                    @endforeach
                         <li><strong>الاسم :{{ $d->{'name_' . $lng} }} </strong>
                             <strong>
                                  <i class="fa fa-phone"></i>  {{$d->phone_number}}
@@ -47,6 +56,8 @@
                         </li>
 
                     @endforeach
+
+                    <br>
                 </ul>
 
 

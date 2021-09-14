@@ -14,6 +14,7 @@ use App\Models\Distributor;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -95,9 +96,10 @@ class AbuEskandarController extends Controller
     }
     public function distributor()
     {
-        $distributes=Distributor::all()->groupBy('place');
-        // dd($distributes);
-        return view('front.distributor',compact('distributes'));
+        $distributes=Distributor::all()->groupBy('city_id');
+        $cites=City::all();
+        // return $distributes;
+        return view('front.distributor',compact('distributes','cites'));
     }
 
     public function update_product_view(Request $request, $id)
