@@ -90,7 +90,7 @@
                         <li class="  @if(Route::currentRouteName() =='AbuEskandar.home') active @endif" ><a href="{{route('AbuEskandar.home')}}"
                                 class="hyper"><span>{{ trans('front/header.Home') }}</span></a></li>
 
-                        <li class="dropdown  @if(Route::currentRouteName() =='AbuEskandar.Products') active @endif" >
+                        <li class="dropdown  @if(Route::currentRouteName() =='AbuEskandar.show_category') active @endif" >
                             <a href="#" class="hyper "
                                 data-toggle="dropdown"><span>{{ trans('front/header.Products') }}<b
                                         class="caret"></b></span></a>
