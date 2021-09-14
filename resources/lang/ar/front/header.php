@@ -33,5 +33,6 @@ return [
     'Article'=>'المقال' ,
     'branches' => 'الفروع' ,
     'Contact_Information' =>'معلومات التواصل' ,
-    'Contact_Me_Through' => 'التواصل من خلال '
+    'Contact_Me_Through' => 'التواصل من خلال ',
+    'our_products' => 'منتجاتنا',
 ];

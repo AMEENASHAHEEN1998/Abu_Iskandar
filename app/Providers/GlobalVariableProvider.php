@@ -25,6 +25,6 @@ class GlobalVariableProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['front.layout.layout'],GlobalVariable::class);
+        View::composer(['front.layout.layout' , 'front.index'],GlobalVariable::class);
     }
 }

@@ -22,7 +22,7 @@ class AbuEskandarController extends Controller
     public function index()
     {
 
- 
+
         
         $offers=Offer::where('status_value',1)->skip(0)->take(4)->get();
         $employes=Employee::where('status_value',1)->latest()->take(4)->get();
@@ -116,9 +116,9 @@ class AbuEskandarController extends Controller
             'Email' => $request->Email,
             'Message' => $request->Message,
         ];
-       
+
         Mail::to('up120161676@gmail.com')->send(new \App\Mail\MyTestMail($details));
         return redirect()->back();
-       
+
     }
 }

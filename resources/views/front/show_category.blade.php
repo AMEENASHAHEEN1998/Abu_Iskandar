@@ -20,9 +20,13 @@
                       <b class="line"></b>
                   </div>
               </div>
+<<<<<<< HEAD
+                <div class=" con-w3l agileinf">
+=======
               @endforeach
 
                   <div class=" con-w3l agileinf">
+>>>>>>> b8a9dd1c466b8e09bec2c518c00e921b9e3851bc
                       @foreach ($Products as $Product)
                       <div class="col-md-3 pro-1">
                         <div class="col-m">
@@ -52,7 +56,7 @@
 
 
 
-                            
+
                                         {{-- <b>       الحجم : {{ $Price->size}}    </b> --}}
                                         {{-- <br> --}}
                                         @endforeach </p>
@@ -100,7 +104,7 @@
 
 
                                     {{-- <b>السعر : {{ $Price->price}}         </b> --}}
-                            
+
                                     <b>الأصناف : {{ $Price->size}}    </b>
                                     <br>
                                     @endforeach </p>
@@ -119,9 +123,9 @@
                    </div>
                       @endforeach
 
-                      {{-- <div class="clearfix"></div>
-                    </div> --}}
- 
+                      {{-- <div class="clearfix"></div>--}}
+                </div>
+
           </div>
       </div>
 
@@ -131,8 +135,8 @@
 
     <br>
 
-    
+
 </div>
 
-      
+
 @endsection
