@@ -35,5 +35,5 @@ return [
     'Contact_Information' =>'Contact Information' ,
     'Contact_Me_Through' =>'Contact Me Through',
     'our_products' => 'Our Products',
-
+    'company_exhibitions' => 'Company Exhibitions',
 ];

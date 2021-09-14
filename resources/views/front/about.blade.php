@@ -2,8 +2,8 @@
 @section('content')
     <div class="banner-top">
         <div class="container">
-            <h3>{{ trans('front/header.about') }}</h3>
-            <h4><a href="index.html">Home</a><label>/</label>About</h4>
+            <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.about') }}</h3>
+            <h4 style="font-family: 'Amiri', serif ;"><a href="index.html">Home</a><label>/</label>About</h4>
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <!--//about-->
 
         <!--work-experience-->
-        <div class="work">
+        <div class="work" style="font-family: 'Amiri', serif ;">
             <div class="container">
                 <div class="spec spec-w3ls">
                     <h3>Our Journey</h3>

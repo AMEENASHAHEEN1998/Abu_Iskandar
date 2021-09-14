@@ -1111,11 +1111,11 @@ ul.product-qty {
 	font-size:3em;
 	margin-bottom: 0.3em;
 }
-.big-sa h3{
+.big-sa h4{
 	margin-bottom: 0.2em;
 }
-.big-sale h3 span,.big-sa h3 span,.big-sale2 h3 span,.big-sale3 h3 span{
-	color:#FAB005;
+.big-sale h3 span,.big-sa h4 span,.big-sale2 h3 span,.big-sale3 h3 span{
+	color:#f2f7f8;
 }
 .big-sale p,.big-sa p,.big-sale2 p,.big-sale3 p{
 	color:#fff;

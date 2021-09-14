@@ -145,7 +145,7 @@
     <div class="content-top ">
         <div class="container ">
             <div class="spec ">
-                <h3>{{ trans('front/header.our_products') }}</h3>
+                <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.our_products') }}</h3>
                 <div class="ser-t">
                     <b></b>
                     <span><i></i></span>
@@ -288,7 +288,15 @@
     <div class="container">
         @include('front.layout.aboutcontent')
      </div>
-    {{-- about --}}
+    {{-- معارض --}}
+    <div class="spec ">
+        <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.company_exhibitions') }}</h3>
+        <div class="ser-t">
+            <b></b>
+            <span><i></i></span>
+            <b class="line"></b>
+        </div>
+    </div>
     <div class="content-mid">
         <div class="container">
 
@@ -298,9 +306,8 @@
                         <img src="{{ asset('front/images/index/amenalam.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h3><span>{{ trans('front/header.seasoning') }} </span></h3>
-                            <p>{{ trans('front/header.featured_Season') }}
-                            </p>
+                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض الأمن العام</b> </span></h4>
+
                         </div>
                     </a>
                 </div>
@@ -313,9 +320,8 @@
                         <img src="{{ asset('front/images/index/nasser.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h3><span>{{ trans('front/header.seasoning') }} </span></h3>
-                            <p>{{ trans('front/header.featured_Season') }}
-                            </p>
+                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض النصر</b> </span></h4>
+
                         </div>
                     </a>
                 </div>
@@ -327,9 +333,8 @@
                         <img src="{{ asset('front/images/index/saftawe.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h3><span>{{ trans('front/header.seasoning') }} </span></h3>
-                            <p>{{ trans('front/header.featured_Season') }}
-                            </p>
+                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض الصفطاوي</b> </span></h4>
+
                         </div>
                     </a>
                 </div>
@@ -340,9 +345,8 @@
                         <img src="{{ asset('front/images/index/jaalia.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h3><span>{{ trans('front/header.seasoning') }} </span></h3>
-                            <p>{{ trans('front/header.featured_Season') }}
-                            </p>
+                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض جباليا</b> </span></h4>
+
                         </div>
                     </a>
                 </div>
@@ -396,7 +400,7 @@
         <br>
         <br>
         <div class="spec ">
-            <h3>{{ trans('admin/dashboard.staff') }}</h3>
+            <h3 style="font-family: 'Amiri', serif ;">{{ trans('admin/dashboard.staff') }}</h3>
             <div class="ser-t">
                 <b> </b>
                 <span><i> </i></span>
@@ -416,162 +420,108 @@
                         alt="Generic placeholder image" width="120" height="120">
                     <br>
                     <br>
-                    <h3>{{ $employe->{'employee_name_' . $lng} }}</h3>
-                    <p>{{ $employe->job_title_ar }}</p>
+                    <h3 style="font-family: 'Amiri', serif ;">{{ $employe->{'employee_name_' . $lng} }}</h3>
+                    <p style="font-family: 'Amiri', serif ;">{{ $employe->job_title_ar }}</p>
                 </div><!-- /.col-lg-4 -->
             @endforeach
 
-
-
-
-            <!-- START THE FEATURETTES -->
-
-
+        </div>
             <div class="product">
                 <div class="container">
                     <div class="spec ">
-                        <h3>{{ trans('front/header.offers') }}</h3>
+                        <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.offers') }}</h3>
                         <div class="ser-t">
                             <b></b>
                             <span><i></i></span>
                             <b class="line"></b>
                         </div>
                     </div>
-                    <div class=" con-w3l">
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal" class="offer-img">
-                                    <img src="{{ asset('front/images/of16.png') }}" class="img-responsive" alt="">
-                                </a>
+                    <div class=" con-w3l ">
+                        @foreach ($offers as $Offer)
+
+                        <div class="col-md-3 m-wthree">
+                          <div class="col-m">
+                          <a href="#" data-toggle="modal" data-toggle="modal"
+                          data-target="#show{{ $Offer->id }}" class="offer-img">
+                                  <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
+                                  <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>Offer</span></p></div>
+
+                              </a>
+
+                              <div class="mid-1">
+                                  <div class="women">
+
+                                      <h6>
+                                          <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
+                                          <a class="btn btn-info btn-sm" data-toggle="modal"
+                                          data-target="#show{{ $Offer->id }}" style="font-family: 'Amiri', serif ;">التفاصيل</a>
+                                          {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
+                                          data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a> --}}
+
+                                          </h6>
+
+                                      </div>
+                                  <div class="mid-2">
+
+                                      <div class="clearfix"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- edit_modal_Category -->
+            <div class="modal fade" id="show{{ $Offer->id }}"  tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                               id="exampleModalLabel">
+                                العرض
+                           </h5>
+                           <button type="button" class="close" data-dismiss="modal"
+                                   aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                       <div class="modal-body">
+                        <br>
+                        {{-- <h3> عرض المنتج</h3> --}}
+
+                        <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                               id="exampleModalLabel">
+                               {{ $Offer->offer_title_ar }}
+                        </h5>
+                        <p>{{$Offer->decription}}</p>
+                        <br>
+
+                        <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
+                        <p>
 
 
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Moisturiser</a>(500 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$7.00</label><em class="item_price">$6.00</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add add-2">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="6.00"
-                                            data-quantity="1" data-image="{{ asset('front/images/of16.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            {{-- <b>السعر : {{ $Price->price}}         </b> --}}
 
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal21" class="offer-img">
-                                    <img src="{{ asset('front/images/of20.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Clips</a>(1 pack)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$7.00</label><em class="item_price">$6.00</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="6.00"
-                                            data-quantity="1" data-image="{{ asset('front/images/of20.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal22" class="offer-img">
-                                    <img src="{{ asset('front/images/of21.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Conditioner</a>(250 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$5.00</label><em class="item_price">$4.50</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="4.50"
-                                            data-quantity="1" data-image="{{ asset('front/images/of21.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal23" class="offer-img">
-                                    <img src="{{ asset('front/images/of22.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Cleaner</a>(250 kg)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$4.00</label><em class="item_price">$3.50</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="3.50"
-                                            data-quantity="1" data-image="{{ asset('front/images/of22.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal24" class="offer-img">
-                                    <img src="{{ asset('front/images/of23.png') }}" class="img-responsive" alt="">
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Gel</a>(150 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$1.00</label><em class="item_price">$0.80</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1"
-                                            data-name="product 1" data-summary="summary 1" data-price="0.80"
-                                            data-quantity="1" data-image="{{ asset('front/images/of23.png') }}">Add to
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                            <b>الأصناف : {{ $Offer->price}}    </b>
+                            <br>
+                             </p>
+
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+                        @endforeach
+
+
+                        {{-- <div class="clearfix"></div>--}}
+                  </div>
+
                 </div>
-            </div>
 
         </div>
+        <br>
+        <br>
     </div>
 
 @endsection
