@@ -11,14 +11,14 @@
         <div class="container">
             <div class="banner-info">
 
-                <div class="search-form">
+                <div class="search-form" >
                     <form action="#" method="post" >
                         <div style="color: #fff">
-                            <h2 ><b>شركة ابو اسكندر  <br></b></h2>
-                            <p><span>للتجارة العامة والصناعات</span></p>
-                            <p>أجود أنواع المنتجات من خلال المكونات الفاخرة      </p>
+                            <h2 style="color: #fff" ><b style="color: #fff">شركة ابو اسكندر  <br></b></h2>
+                            <p style="color: #fff"><span>للتجارة العامة والصناعات</span></p>
+                            <p style="color: #fff">أجود أنواع المنتجات من خلال المكونات الفاخرة      </p>
                         </div>
-                    
+
                     </form>
                 </div>
             </div>
@@ -446,8 +446,8 @@
 
                         <div class="col-md-3 m-wthree">
                           <div class="col-m">
-                          <a href="#" data-toggle="modal" data-toggle="modal"
-                          data-target="#show{{ $Offer->id }}" class="offer-img">
+                          <a  data-toggle="modal"
+                          data-target="#offer{{ $Offer->id }}" class="offer-img">
                                   <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
                                   <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>{{ trans('front/header.offers') }}</span></p></div>
 
@@ -456,16 +456,16 @@
                               <div class="mid-1">
                                   <div class="women">
 
-                                      <h6>
+                                    <h6>
                                           <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
                                           <a class="btn btn-info btn-sm" data-toggle="modal"
-                                          data-target="#show{{ $Offer->id }}" style="font-family: 'Amiri', serif ;">التفاصيل</a>
+                                          data-target="#offer{{ $Offer->id }}" style="font-family: 'Amiri', serif ;">التفاصيل</a>
                                           {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
                                           data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a> --}}
 
-                                          </h6>
+                                    </h6>
 
-                                      </div>
+                                  </div>
                                   <div class="mid-2">
 
                                       <div class="clearfix"></div>
@@ -476,7 +476,7 @@
                       </div>
 
                       <!-- edit_modal_Category -->
-            <div class="modal fade" id="show{{ $Offer->id }}"  tabindex="-1" role="dialog"
+            <div class="modal fade" id="offer{{ $Offer->id }}"  tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                <div class="modal-dialog" role="document">
                    <div class="modal-content">
@@ -498,7 +498,7 @@
                                id="exampleModalLabel">
                                {{ $Offer->offer_title_ar }}
                         </h5>
-                        <p>{{$Offer->decription}}</p>
+                        <p>{{$Offer->description_ar}}</p>
                         <br>
 
                         <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
@@ -507,7 +507,7 @@
 
                             {{-- <b>السعر : {{ $Price->price}}         </b> --}}
 
-                            <b>الأصناف : {{ $Offer->price}}    </b>
+                            <b>العرض : {{ $Offer->price}}    </b>
                             <br>
                              </p>
 

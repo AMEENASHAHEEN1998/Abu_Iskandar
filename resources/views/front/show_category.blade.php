@@ -21,15 +21,6 @@
                   </div>
               </div>
 
-
-                <div class=" con-w3l agileinf">
-
-              @endforeach
-
-                  <div class=" con-w3l agileinf">
-
-
-                <div class=" con-w3l agileinf">
               @endforeach
 
                   <div class=" con-w3l agileinf">
