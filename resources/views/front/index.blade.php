@@ -444,7 +444,7 @@
                           <a href="#" data-toggle="modal" data-toggle="modal"
                           data-target="#show{{ $Offer->id }}" class="offer-img">
                                   <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
-                                  <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>Offer</span></p></div>
+                                  <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>{{ trans('front/header.offers') }}</span></p></div>
 
                               </a>
 
