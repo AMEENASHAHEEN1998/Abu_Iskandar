@@ -5,6 +5,8 @@
 @endsection
 @section('content')
 
+
+
     <div class="video" data-vide-bg="{{ asset('video/abuskander.mp4') }}" style="height: 400px">
         <div class="container">
             <div class="banner-info">
