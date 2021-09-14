@@ -76,7 +76,7 @@ class AbuEskandarController extends Controller
 
     public function articles(){
 
-        $articles=Article::all();
+        $articles=Article::where('status','مفعل')->get();
         return view('front.articles',compact('articles'));
     }
     public function article($id){

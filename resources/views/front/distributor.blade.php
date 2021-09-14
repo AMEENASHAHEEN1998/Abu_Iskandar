@@ -7,10 +7,12 @@
 
 @section('content')
     <!--banner-->
-    <div class="banner-top">
+    <div class="banner-top" >
         <div class="container">
+
             <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.Delivery_Points') }}</h3>
             <h4 style="font-family: 'Amiri', serif ;"><a href="{{route('AbuEskandar.home')}}">{{ trans('front/header.Home') }}</a><label>/</label>
+
                 <a href="{{route('AbuEskandar.distributor')}}">{{ trans('front/header.Delivery_Points') }}</a>
             </h4>
         </div>
@@ -21,7 +23,7 @@
 
 
     <!-- article -->
-    <div class="container">
+    <div class="container" >
         <br>
         <br>
         <?php
@@ -31,7 +33,7 @@
         <div class="distribute" style="font-family: 'Amiri', serif ;">
             <img src="{{asset('front/images/index/bus.jpg')}}" alt="">
 
-            <h1>{{ trans('front/header.Delivery_Points') }}</h1>
+            <h1 style="font-family: 'Amiri', serif ">{{ trans('front/header.Delivery_Points') }}</h1>
             @foreach ($distributes as  $place =>$distribute)
 
                     <h2>{{$place}}</h2>

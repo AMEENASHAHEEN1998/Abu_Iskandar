@@ -1,9 +1,11 @@
 @extends('front.layout.layout')
 @section('content')
-    <div class="banner-top">
+    <div class="banner-top" >
         <div class="container">
+
             <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.about') }}</h3>
             <h4 style="font-family: 'Amiri', serif ;"><a href="index.html">Home</a><label>/</label>About</h4>
+
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -18,7 +20,7 @@
 
 
         <!--about-->
-        <div class="container">
+        <div class="container" >
            @include('front.layout.aboutcontent')
         </div>
         <!--//about-->

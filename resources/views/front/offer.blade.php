@@ -23,7 +23,7 @@
                 <?php
                 $lng = app()->getLocale();
                ?>
-
+            @if ($offers ->count() >=1)
                 @foreach ($offers as $offer)
                 <div class="col-md-3 pro-1">
                     <div class="col-m">
@@ -46,6 +46,11 @@
                     </div>
                 </div>
                 @endforeach
+            @else
+                <p style="font-size: 22px">لا يوجد عروض لعرضها </p>
+            
+                @endif
+               
 
 
 

@@ -73,8 +73,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">{{ trans('admin/offer.description_ar') }}</label>
-                                    <input type="text" name="description_ar" class="form-control"
-                                        id="formGroupExampleInput">
+                                        <textarea name="description_ar" class="form-control"
+                                        id="formGroupExampleInput"></textarea>
                                 </div>
                             </div>
 
@@ -85,8 +85,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">{{ trans('admin/offer.description_en') }}</label>
-                                    <input type="text" name="description_en" class="form-control"
-                                        id="formGroupExampleInput">
+                                  
+                                        <textarea name="description_en" class="form-control"
+                                        id="formGroupExampleInput"></textarea>
                                 </div>
                             </div>
 

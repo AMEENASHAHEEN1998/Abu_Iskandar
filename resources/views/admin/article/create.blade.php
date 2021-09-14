@@ -82,8 +82,8 @@
                                 <div class="form-group">
                                     <label
                                         for="formGroupExampleInput">{{ trans('admin/article.description_ar') }}</label>
-                                    <input type="text" name="description_ar" class="form-control"
-                                        id="formGroupExampleInput">
+                                    <textarea type="text" name="description_ar" class="form-control"
+                                    id="formGroupExampleInput" ></textarea>
                                 </div>
                             </div>
 
@@ -95,8 +95,9 @@
                                 <div class="form-group">
                                     <label
                                         for="formGroupExampleInput">{{ trans('admin/article.description_en') }}</label>
-                                    <input type="text" name="description_en" class="form-control"
-                                        id="formGroupExampleInput">
+                                    <textarea  name="description_en" class="form-control"
+                                    id="formGroupExampleInput"
+                                     ></textarea>
                                 </div>
                             </div>
 
