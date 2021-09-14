@@ -87,10 +87,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="{{route('AbuEskandar.home')}}"
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.home') active @endif" ><a href="{{route('AbuEskandar.home')}}"
                                 class="hyper"><span>{{ trans('front/header.Home') }}</span></a></li>
 
-                        <li class="dropdown">
+                        <li class="dropdown  @if(Route::currentRouteName() =='AbuEskandar.Products') active @endif" >
                             <a href="#" class="hyper "
                                 data-toggle="dropdown"><span>{{ trans('front/header.Products') }}<b
                                         class="caret"></b></span></a>
@@ -154,28 +154,28 @@
 
                         </li>
 
-                        <li><a href="{{route('AbuEskandar.offer')}}" class="hyper">
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.offer') active @endif" ><a href="{{route('AbuEskandar.offer')}}" class="hyper">
                             <span>{{ trans('front/header.Offer') }}</span></a></li>
 
-                        <li><a href="{{route('AbuEskandar.articles')}}" class="hyper">
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.articles') active @endif" ><a href="{{route('AbuEskandar.articles')}}" class="hyper">
                                 <span>{{ trans('front/header.Articles') }}</span></a></li>
 
-                        <li><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.Employment_applications') active @endif" ><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
                                 <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
-                        <li><a href="{{route('AbuEskandar.distributor')}}" class="hyper">
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.distributor') active @endif" ><a href="{{route('AbuEskandar.distributor')}}" class="hyper">
                                 
                             <span>{{ trans('front/header.Delivery_Points') }}
                             </span>
                         </a></li>
 
 
-                        <li><a href="{{route('AbuEskandar.about')}}" class="hyper">
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.about') active @endif" ><a href="{{route('AbuEskandar.about')}}" class="hyper">
                             <span>
                                   {{ trans('front/header.about') }}
                             </span>
                         </a></li>
 
-                        <li><a href="{{route('AbuEskandar.contact')}}"
+                        <li class="  @if(Route::currentRouteName() =='AbuEskandar.contact') active @endif" ><a href="{{route('AbuEskandar.contact')}}"
                         class="hyper"><span>{{ trans('front/header.Contact_Us') }}</span></a></li>
                     </ul>
                 </div>
