@@ -29,6 +29,8 @@ class RoleController extends Controller
      */
     public function create()
     {
+        return view('errors.404');
+
     }
 
     /**
@@ -66,6 +68,7 @@ class RoleController extends Controller
 
     public function show($id)
     {
+        return view('errors.404');
 
     }
 
@@ -89,9 +92,9 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
+    {
         $roles = Role::find($id);
-       
+
         foreach($roles->permissions as $permission){
             $roles->revokePermissionTo($permission->name);
         }
@@ -107,9 +110,9 @@ class RoleController extends Controller
             foreach ($permissions as $permission) {
                 $p = Permission::where('id', '=', $permission)->firstOrFail();
                 $role = Role::where('name', '=', $request->name)->first();
-               
+
                 $role->givePermissionTo($p);
-                
+
             }
         }
         return redirect()->route('admin.role.index')->with('success', trans('admin/role.update_message'));

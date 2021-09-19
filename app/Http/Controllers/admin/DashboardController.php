@@ -13,6 +13,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        return view('errors.404');
+
         // $product=Product::orderBy('id' , 'desc');
         // return $product;
         // $orderrequest=RequestJob::where('status_value',1)->count();

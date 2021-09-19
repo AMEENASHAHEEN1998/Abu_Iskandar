@@ -34,7 +34,7 @@ class ProductController extends Controller
         $search_text = $request->input('query');
         $Products=[];
         $Category_id=[];
-        
+
         $Products =Product::where('product_name_ar', 'LIKE', '%' . $search_text . '%')
         ->pluck('id')
         ->toarray();
@@ -122,7 +122,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -133,7 +134,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**

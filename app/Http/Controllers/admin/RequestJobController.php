@@ -101,6 +101,7 @@ class RequestJobController extends Controller
      */
     public function edit($id)
     {
+        return view('errors.404');
 
     }
 

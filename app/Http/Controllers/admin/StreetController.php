@@ -20,7 +20,7 @@ class StreetController extends Controller
     {
         $streets=Street::orderBy('id' , 'desc')->paginate(5);
         $neighborhoods=Neighborhood::all();
-        
+
         return view('admin.street.index',compact('streets','neighborhoods'));
 
     }
@@ -32,7 +32,8 @@ class StreetController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -66,7 +67,8 @@ class StreetController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -77,6 +79,7 @@ class StreetController extends Controller
      */
     public function edit($id)
     {
+        return view('errors.404');
 
     }
 

@@ -32,7 +32,8 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**
@@ -43,7 +44,8 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -54,7 +56,8 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -65,7 +68,8 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -77,7 +81,8 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -88,7 +93,8 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     public function sendtoaddnote($id)

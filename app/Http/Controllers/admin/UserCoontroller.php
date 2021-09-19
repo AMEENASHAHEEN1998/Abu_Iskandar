@@ -39,7 +39,8 @@ class UserCoontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -78,7 +79,8 @@ class UserCoontroller extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -89,7 +91,8 @@ class UserCoontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**
@@ -131,8 +134,8 @@ class UserCoontroller extends Controller
         } catch (\Throwable $th) {
             $role_user ='مستخدم';
         }
-      
-        
+
+
 
         $role = Role::findById($request->roles_name);
 
