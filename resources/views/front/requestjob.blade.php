@@ -1,4 +1,7 @@
 @extends('front.layout.layout')
+@section('title')
+    {{ trans('front/header.Job') }}
+@endsection
 @section('content')
     <!--banner-->
     {{-- <div class="banner-top">
@@ -11,7 +14,7 @@
     </div>
     <div class="clearfix"> </div> --}}
 
-
+    <div class="container">
     <div class="row">
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
@@ -19,7 +22,7 @@
 
 
 
-                    <h2>{{ trans('admin/requestjob.add_requestjob') }}</h2>
+                    <h2 >{{ trans('admin/requestjob.add_requestjob') }}</h2>
                     <hr>
 
 
@@ -169,7 +172,7 @@
 
 
     </div>
-
+    </div>
 
 
     </div>

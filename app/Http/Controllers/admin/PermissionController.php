@@ -10,9 +10,9 @@ class PermissionController extends Controller
 {
     public function index()
     {
-        $permissions=Permission::all();
+        $permissions = Permission::all();
         // return $permissions;
-        return view('admin.permission.index',compact('permissions'));
+        return view('admin.permission.index', compact('permissions'));
     }
 
     /**
@@ -34,12 +34,15 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        Permission::create([
-            'name' =>$request->name,
-            'guard_name' =>'web',
-        ]);
-        return redirect()->route('admin.permission.index')->with('success',trans('admin/permission.succes_message'));
-
+        try {
+            Permission::create([
+                'name' => $request->name,
+                'guard_name' => 'web',
+            ]);
+            return redirect()->route('admin.permission.index')->with('success', trans('admin/permission.succes_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.permission.index')->with('errormsg', trans('admin/permission.error_message'));
+        }
     }
 
     /**
@@ -89,6 +92,6 @@ class PermissionController extends Controller
     {
 
         Permission::find($id)->delete();
-        return redirect()->route('admin.permission.index')->with('success',trans('admin/permission.delete_message'));
+        return redirect()->route('admin.permission.index')->with('success', trans('admin/permission.delete_message'));
     }
 }

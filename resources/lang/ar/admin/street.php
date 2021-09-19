@@ -16,4 +16,5 @@ return
     'delete_street'  => 'حذف الشارع',
     'success_message' => 'تم اضافة الشارع بنجاح',
     'delete_message'  => 'تم حذف الشارع بنجاح ',
+    'error_message' => 'شارع موجود مسبقا',
 ];

@@ -17,4 +17,6 @@ return
     'delete_city'  => 'حذف المنصب',
     'success_message' => 'تم اضافة المنصب بنجاح',
     'delete_message'  => 'تم حذف المنصب بنجاح ',
+    'error_message' =>' المنصب موجود مسبقا',
+
 ];

@@ -1,12 +1,12 @@
 
-<div class="footer" style="font-family: 'Amiri', serif ;">
+<div class="footer">
     <div class="container">
         <div class="col-md-4 footer-grid">
-            <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.About_Us') }}</h3>
-            <p style="font-family: 'Amiri', serif ;">{{ trans('front/header.about_us') }}</p>
+            <h3 >{{ trans('front/header.About_Us') }}</h3>
+            <p >{{ trans('front/header.about_us') }}</p>
         </div>
         <div class="col-md-4 footer-grid ">
-            <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.Menu') }}</h3>
+            <h3 >{{ trans('front/header.Menu') }}</h3>
             <ul>
                 <li><a href="index.html">{{ trans('front/header.Home') }}</a></li>
                 <li><a href="kitchen.html">{{ trans('front/header.Products') }}</a></li>
@@ -23,7 +23,7 @@
 
         </div>
         <div class="col-md-4 footer-grid ">
-            <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.branches') }}</h3>
+            <h3 >{{ trans('front/header.branches') }}</h3>
             <ul>
                 <li>
                     <span><i class="fa fa-location-arrow"></i> الفرع الرئيسي : شارع الصفطاوى  </span>
@@ -73,7 +73,7 @@
         </div>
 
         <div class="copy-right" >
-            <p style="font-family: 'Amiri', serif">&copy; {{ trans('admin/dashboard.copyright') }}</p>
+            <p >&copy; {{ trans('admin/dashboard.copyright') }}</p>
         </div>
     </div>
 </div>

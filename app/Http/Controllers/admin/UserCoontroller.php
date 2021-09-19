@@ -28,7 +28,7 @@ class UserCoontroller extends Controller
 
         $users = User::orderBy('id', 'desc')->paginate(5);
         $roles = Role::all();
-        //  return $roles;
+        //  return $users;
         return view('admin.users.index', compact('users', 'roles'));
     }
 

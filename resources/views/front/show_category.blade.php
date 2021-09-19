@@ -13,7 +13,7 @@
           <div class="product">
           <div class="container">
               <div class="spec ">
-                  <h3 class="text-center"  style="font-family: 'Amiri', serif">{{$CategoryImage->category_name_ar}}</h3>
+                  <h3 class="text-center"  >{{$CategoryImage->category_name_ar}}</h3>
                   <div class="ser-t">
                       <b></b>
                       <span><i>  </i></span>
@@ -41,7 +41,7 @@
                                 <div class="women">
 
                                     <h6>
-                                        <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ $Product->product_name_ar }}</h4 >
+                                        <h4 class="text-center">{{ $Product->product_name_ar }}</h4 >
                                         <a class="btn btn-info btn-sm" data-toggle="modal"
                                         data-target="#show{{ $Product->id }}">التفاصيل</a>
                                         {{-- <a class="btn btn-info btn-sm" data-toggle="modal"

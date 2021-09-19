@@ -36,12 +36,19 @@ class NeighborhoodsController extends Controller
 
     public function store(Request $request)
     {
-        Neighborhood::create([
-            'name'=>$request->name,
-            'city_id' =>  $request->city
-        ]);
-        return redirect()->route('admin.neighborhood.index')->with('success',trans('admin/neighborhood.success_message'));
+        
 
+        try {
+            Neighborhood::create([
+                'name'=>$request->name,
+                'city_id' =>  $request->city
+            ]);
+            return redirect()->route('admin.neighborhood.index')->with('success',trans('admin/neighborhood.success_message'));
+    
+        } catch (\Throwable $th) {
+            // return redirect()->route('admin.car.index');
+            return redirect()->route('admin.neighborhood.index')->with('errormsg',trans('admin/neighborhood.error_message'));
+        }
     }
 
     /**

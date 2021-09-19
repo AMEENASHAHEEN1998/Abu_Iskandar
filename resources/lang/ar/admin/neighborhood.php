@@ -15,4 +15,5 @@ return
     'delete_neighborhood'  => 'حذف الحي',
     'success_message' => 'تم اضافة الحي بنجاح',
     'delete_message'  => 'تم حذف الحي بنجاح ',
+    'error_message' =>'اسم الحي موجود مسبقا',
 ];
