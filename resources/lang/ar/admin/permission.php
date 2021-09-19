@@ -6,7 +6,7 @@ return
     'id' => 'رقم' ,
     'name' => ' اسم الصلاحية' ,
     'permissions' =>'الصلاحيات',
-    'addpermission' =>'اضافة منصب ',
+    'addpermission' =>'اضافة صلاحية ',
     'date'   =>' تاريخ الاضافة',
     'close'  => 'اغلاق',
     'action' => 'العمليات' ,
@@ -16,4 +16,6 @@ return
     'delete_permission'  => 'حذف الصلاحية',
     'success_message' => 'تم اضافة الصلاحية بنجاح',
     'delete_message'  => 'تم حذف الصلاحية بنجاح ',
+    'error_message' =>' صلاحية موجود مسبقا',
+
 ];

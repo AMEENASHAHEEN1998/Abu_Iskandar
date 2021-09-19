@@ -10,7 +10,7 @@
     <div class="content-top offer-w3agile">
         <div class="container ">
             <div class="spec ">
-                <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.offers') }}</h3>
+                <h3 >{{ trans('front/header.offers') }}</h3>
                 <div class="ser-t">
                     <b></b>
                     <span><i></i></span>
@@ -31,7 +31,7 @@
               <a  data-toggle="modal"
               data-target="#offer{{ $Offer->id }}" class="offer-img">
                       <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
-                      <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>{{ trans('front/header.offers') }}</span></p></div>
+                      <div class="offer"><p ><span>{{ trans('front/header.offers') }}</span></p></div>
 
                   </a>
 
@@ -39,9 +39,9 @@
                       <div class="women">
 
                         <h6>
-                              <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
+                              <h4 class="text-center"  >{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
                               <a class="btn btn-info btn-sm" data-toggle="modal"
-                              data-target="#offer{{ $Offer->id }}" style="font-family: 'Amiri', serif ;">التفاصيل</a>
+                              data-target="#offer{{ $Offer->id }}" >التفاصيل</a>
                               {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
                               data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a> --}}
 

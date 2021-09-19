@@ -4,11 +4,17 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+@import url(//db.onlinewebfonts.com/c/63137a821976b7fdfcf941ab1528cb19?family=AG_Helvetica);
+@font-face {font-family: "Helvetica Neue W23 for SKY Reg"; src: url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.eot"); src: url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.woff") format("woff"), url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2e6ae3642c879522873a28ede1eaac69.svg#Helvetica Neue W23 for SKY Reg") format("svg"); }
+
 body{
 	margin:0;
 	padding:0;
 	background:#fff;
-	font-family: 'Noto Sans', sans-serif;
+    font-family: "Helvetica Neue W23 for SKY Reg";
+	/* font-family: 'Noto Sans', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    
  }
 body a{
 	transition:0.5s all;
@@ -37,7 +43,7 @@ body a{
 
 h1,h2,h3,h4,h5,h6{
 	margin:0;
-	font-family: 'Montserrat', sans-serif;
+	/* font-family: 'Montserrat', sans-serif; */
 }
 p,label{
 	margin:0;
@@ -61,7 +67,7 @@ ul{
 .agileinfo h6{
 	font-size: 2em;
     color: #62BF43;
-    font-family: 'Glegoo', serif;
+    /* font-family: 'Glegoo', serif; */
     margin-bottom: 0.3em;
 	    font-weight: bold;
 }
@@ -286,7 +292,7 @@ button.close.close-w3 {
     line-height: 1.9;
 }
 .distribute h2{
-    font-family: 'Amiri';
+    /* font-family: 'Amiri'; */
     color: #006aab;
     font-weight: 600;
     padding: 8px;}
@@ -547,7 +553,7 @@ ul.multi-column-dropdown h6 {
     padding: 0.7em 0;
     border-bottom: 2px solid #62BF43;
     text-transform: capitalize;
-    font-family: 'Glegoo', serif;
+    /* font-family: 'Glegoo', serif; */
 }
 
 .dropdown-menu.multi {
@@ -1188,7 +1194,7 @@ ul.product-qty {
     margin: 4em 0 0;
 }
 .footer-bottom h2 {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     font-size: 3.5em;
     display: inline-block;
 	position:relative;
@@ -1202,7 +1208,7 @@ ul.product-qty {
     display: block;
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Noto Sans', sans-serif; */
     padding-top: 6px;
 }
 .footer-bottom h2 b {
@@ -1618,7 +1624,7 @@ h2.resp-accordion:first-child {
 	margin-right: 3px;
 	border: none;
 	border-radius: 0;
-	font-family: 'Open Sans', sans-serif;
+	/* font-family: 'Open Sans', sans-serif; */
 	font-size: 14px;
 	color: #555;
 	padding: 12px 20px;

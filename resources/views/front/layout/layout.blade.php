@@ -61,16 +61,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
 
     <!-- start-smoth-scrolling -->
-    <link href="{{ asset('front/css/font-awesome.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('front/css/font-awesome.css') }}" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-    <!--- start-rate---->
+    <!--- start-rate----> --}}
 
-    
+    <link href="//db.onlinewebfonts.com/c/2e6ae3642c879522873a28ede1eaac69?family=Helvetica+Neue+W23+for+SKY+Reg" rel="stylesheet" type="text/css"/>
 
-    <script src="{{ asset('front/js/jstarbox.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('front/css/jstarbox.css') }}" type="text/css" media="screen"
-        charset="utf-8" />
+    {{-- <script src="{{ asset('front/js/jstarbox.js') }}"></script> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('front/css/jstarbox.css') }}" type="text/css" media="screen" --}}
+        {{-- charset="utf-8" /> --}}
     <script type="text/javascript">
         jQuery(function() {
             jQuery('.starbox').each(function() {

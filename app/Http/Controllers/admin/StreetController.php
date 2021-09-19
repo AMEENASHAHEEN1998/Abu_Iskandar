@@ -43,12 +43,19 @@ class StreetController extends Controller
      */
     public function store(Request $request)
     {
-        Street::create([
-            'name'=>$request->name,
-            'id_neighborhood' =>  $request->neighborhood
-        ]);
-        return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
+      
 
+        try {
+            Street::create([
+                'name'=>$request->name,
+                'id_neighborhood' =>  $request->neighborhood
+            ]);
+            return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
+    
+        } catch (\Throwable $th) {
+            // return redirect()->route('admin.car.index');
+            return redirect()->route('admin.street.index')->with('errormsg',trans('admin/street.error_message'));
+        }
     }
 
     /**

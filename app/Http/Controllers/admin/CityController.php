@@ -37,9 +37,16 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        City::create(['name' => $request->name]);
-        return redirect()->route('admin.city.index')->with('success',trans('admin/city.success_message'));
+        
 
+        try {
+            City::create(['name' => $request->name]);
+            return redirect()->route('admin.city.index')->with('success',trans('admin/city.success_message'));
+
+        } catch (\Throwable $th) {
+            // return redirect()->route('admin.car.index');
+            return redirect()->route('admin.city.index')->with('errormsg',trans('admin/city.error_message'));
+        }
     }
 
     /**

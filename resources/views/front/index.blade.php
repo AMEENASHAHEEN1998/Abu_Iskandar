@@ -150,14 +150,14 @@
     <div class="content-top ">
         <div class="container ">
             <div class="spec ">
-                <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.our_products') }}</h3>
+                <h3 >{{ trans('front/header.our_products') }}</h3>
                 <div class="ser-t">
                     <b></b>
                     <span><i></i></span>
                     <b class="line"></b>
                 </div>
             </div>
-                <div class="tab-head "  style="font-family: 'Amiri', serif ; font-weight : bold">
+                <div class="tab-head "  style=" font-weight : bold">
                     <nav class="nav-sidebar">
                         <ul class="nav tabs justify-content-center">
                             @foreach ($Categories as $Category )
@@ -198,7 +198,7 @@
                                           <div class="women">
 
                                               <h6>
-                                                  <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ $Product->product_name_ar }}</h4 >
+                                                  <h4 class="text-center"  >{{ $Product->product_name_ar }}</h4 >
                                                   <a class="btn btn-info btn-sm" data-toggle="modal"
                                                   data-target="#show{{ $Product->id }}">التفاصيل</a>
                                                   {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
@@ -295,7 +295,7 @@
      </div>
     {{-- معارض --}}
     <div class="spec ">
-        <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.company_exhibitions') }}</h3>
+        <h3 >{{ trans('front/header.company_exhibitions') }}</h3>
         <div class="ser-t">
             <b></b>
             <span><i></i></span>
@@ -311,7 +311,7 @@
                         <img src="{{ asset('front/images/index/amenalam.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض الأمن العام</b> </span></h4>
+                            <h4 ><span><b>معرض الأمن العام</b> </span></h4>
 
                         </div>
                     </a>
@@ -325,7 +325,7 @@
                         <img src="{{ asset('front/images/index/nasser.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض النصر</b> </span></h4>
+                            <h4 ><span><b>معرض النصر</b> </span></h4>
 
                         </div>
                     </a>
@@ -338,7 +338,7 @@
                         <img src="{{ asset('front/images/index/saftawe.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض الصفطاوي</b> </span></h4>
+                            <h4 ><span><b>معرض الصفطاوي</b> </span></h4>
 
                         </div>
                     </a>
@@ -350,7 +350,7 @@
                         <img src="{{ asset('front/images/index/jaalia.png') }}" class="img-responsive img" alt="">
                         <div class="big-sa">
                             {{-- <h6>New Collections</h6> --}}
-                            <h4 style="font-family: 'Amiri', serif ;"><span><b>معرض جباليا</b> </span></h4>
+                            <h4 ><span><b>معرض جباليا</b> </span></h4>
 
                         </div>
                     </a>
@@ -405,7 +405,7 @@
         <br>
         <br>
         <div class="spec ">
-            <h3 style="font-family: 'Amiri', serif ;">{{ trans('admin/dashboard.staff') }}</h3>
+            <h3 >{{ trans('admin/dashboard.staff') }}</h3>
             <div class="ser-t">
                 <b> </b>
                 <span><i> </i></span>
@@ -425,8 +425,8 @@
                         alt="Generic placeholder image" width="120" height="120">
                     <br>
                     <br>
-                    <h3 style="font-family: 'Amiri', serif ;">{{ $employe->{'employee_name_' . $lng} }}</h3>
-                    <p style="font-family: 'Amiri', serif ;">{{ $employe->job_title_ar }}</p>
+                    <h3 >{{ $employe->{'employee_name_' . $lng} }}</h3>
+                    <p >{{ $employe->job_title_ar }}</p>
                 </div><!-- /.col-lg-4 -->
             @endforeach
 
@@ -434,7 +434,7 @@
             <div class="product">
                 <div class="container">
                     <div class="spec ">
-                        <h3 style="font-family: 'Amiri', serif ;">{{ trans('front/header.offers') }}</h3>
+                        <h3 >{{ trans('front/header.offers') }}</h3>
                         <div class="ser-t">
                             <b></b>
                             <span><i></i></span>
@@ -449,7 +449,7 @@
                           <a  data-toggle="modal"
                           data-target="#offer{{ $Offer->id }}" class="offer-img">
                                   <img src="{{asset('upload/admin/offer/'.$Offer->image)}}" class="img-responsive" alt="">
-                                  <div class="offer"><p style="font-family: 'Amiri', serif ;"><span>{{ trans('front/header.offers') }}</span></p></div>
+                                  <div class="offer"><p ><span>{{ trans('front/header.offers') }}</span></p></div>
 
                               </a>
 
@@ -457,9 +457,9 @@
                                   <div class="women">
 
                                     <h6>
-                                          <h4 class="text-center"  style="font-family: 'Amiri', serif">{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
+                                          <h4 class="text-center"  >{{ (app()->getLocale() == 'en' ? $Offer->offer_title_en :$Offer->offer_title_ar)  }}</h4 >
                                           <a class="btn btn-info btn-sm" data-toggle="modal"
-                                          data-target="#offer{{ $Offer->id }}" style="font-family: 'Amiri', serif ;">التفاصيل</a>
+                                          data-target="#offer{{ $Offer->id }}" >التفاصيل</a>
                                           {{-- <a class="btn btn-info btn-sm" data-toggle="modal"
                                           data-target="#show{{ $Product->id }}">{{ $Product->product_name_ar }}</a> --}}
 

@@ -44,7 +44,7 @@
                     <div class="row" >
                         <div class="col-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="query"
+                                <input type="text" class="form-control search" name="query"
                                         placeholder=" البحث"
                                         value="{{ request()->input('query') }}">
                                 <span class="text-danger">@error('query'){{ $message }} @enderror</span>
@@ -370,6 +370,8 @@ footer -->
 </div>
 </div>
 </div>
+
+
 @endsection
 
 

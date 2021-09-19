@@ -16,4 +16,6 @@ return
     'delete_classes'  => 'حذف الصنف',
     'success_message' => 'تم اضافة الصنف بنجاح',
     'delete_message'  => 'تم حذف الصنف بنجاح ',
+    'error_message' =>'اسم الصنف موجود مسبقا',
+
 ];

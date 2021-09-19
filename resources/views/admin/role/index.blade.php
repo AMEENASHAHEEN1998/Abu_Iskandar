@@ -42,7 +42,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>{{ trans('admin/role.name') }}</th>
-                                    <th>{{ trans('admin/permission.permission') }}</th>
+                                    <th>{{ trans('admin/permission.permissions') }}</th>
                                     <th>{{ trans('admin/role.action') }}</th>
 
                                 </tr>
@@ -274,6 +274,9 @@
                                         </div>
 
                                         <div class="row">
+
+                                          
+
                                             @foreach ($permissions as $permission)
                                             <div class="col-3">
                                                 <div class="form-check">
@@ -282,6 +285,10 @@
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                       {{$permission->name}}
                                                     </label>
+                                                    
+                                                    
+
+
                                                   </div> 
                                             </div>
                                            
@@ -338,3 +345,4 @@
     </div>
     </div>
 @endsection
+

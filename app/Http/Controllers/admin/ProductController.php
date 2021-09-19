@@ -54,6 +54,8 @@ class ProductController extends Controller
         return view('admin.products.index')->with(['Categories' => $Categories, 'Subcategories' => $Subcategories, 'Products' => $Products]);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

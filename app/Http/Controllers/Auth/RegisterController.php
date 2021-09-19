@@ -70,13 +70,17 @@ class RegisterController extends Controller
         $role = Role::find(2);
         // return $role->name;
 
-        return User::create([
+        $user =User::create([
             'name' => $data['name'],
             //'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'status' => 1,
             'roles_name' => $role->name
         ]);
+
+        $user->assignRole($role->name);
+
+        return $user;
 
     }
 }

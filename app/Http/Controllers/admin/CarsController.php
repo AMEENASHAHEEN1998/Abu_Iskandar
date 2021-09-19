@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CarsController extends Controller
 {
@@ -38,8 +39,16 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        Car::create(['name' => $request->name]);
-        return redirect()->route('admin.car.index')->with('success',trans('admin/car.success_message'));
+        try {
+            Car::create(['name' => $request->name]);
+            return redirect()->route('admin.car.index')->with('success',trans('admin/car.success_message'));
+        } catch (\Throwable $th) {
+            // return redirect()->route('admin.car.index');
+            return redirect()->route('admin.car.index')->with('errormsg',trans('admin/car.error_message'));
+        }
+
+            
+        
     }
 
     /**

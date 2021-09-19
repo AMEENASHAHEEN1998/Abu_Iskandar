@@ -38,9 +38,14 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
-        ClassModel::create(['name' => $request->name]);
-        return redirect()->route('admin.classes.index')->with('success',trans('admin/classes.success_message'));
-
+        try {
+            ClassModel::create(['name' => $request->name]);
+            return redirect()->route('admin.classes.index')->with('success',trans('admin/classes.success_message'));
+        
+        } catch (\Throwable $th) {
+            // return redirect()->route('admin.car.index');
+            return redirect()->route('admin.classes.index')->with('errormsg',trans('admin/classes.error_message'));
+        }
     }
 
     /**

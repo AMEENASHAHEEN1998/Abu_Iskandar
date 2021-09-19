@@ -39,24 +39,29 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-
-        $role = Role::create([
-            'name' => $request->name,
-            'guard_name' => 'web',
-
-        ]);
-        // return $role;
-        $permissions = $request->name_permission;
-        if ($request->has('name_permission')) {
-
-            foreach ($permissions as $permission) {
-                $p = Permission::where('id', '=', $permission)->firstOrFail();
-
-                // $role = Role::where('name', '=', $request->name)->first();
-                $role->givePermissionTo($p);
+        try {
+            $role = Role::create([
+                'name' => $request->name,
+                'guard_name' => 'web',
+    
+            ]);
+            // return $role;
+            $permissions = $request->name_permission;
+            if ($request->has('name_permission')) {
+    
+                foreach ($permissions as $permission) {
+                    $p = Permission::where('id', '=', $permission)->firstOrFail();
+    
+                    // $role = Role::where('name', '=', $request->name)->first();
+                    $role->givePermissionTo($p);
+                }
             }
+            return redirect()->route('admin.role.index')->with('success', trans('admin/role.success_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.role.index')->with('errormsg',trans('admin/role.error_message'));
         }
-        return redirect()->route('admin.role.index')->with('success', trans('admin/role.success_message'));
+
+        
     }
 
     public function show($id)

@@ -15,4 +15,5 @@ return
     'delete_city'  => 'حذف المدينة',
     'success_message' => 'تم اضافة المدينة بنجاح',
     'delete_message'  => 'تم حذف المدينة بنجاح ',
+    'error_message' =>' اسم المدينة موجود مسبقا',
 ];
