@@ -45,7 +45,7 @@ class CustomerController extends Controller
         $cuctomer=[];
 
         try {
-            
+
             $userid = User::where('name', 'LIKE', '%' . $search_text . '%')->first()->id;
             // return $userid;
 
@@ -54,8 +54,8 @@ class CustomerController extends Controller
             ->orWhere('middle_name', 'LIKE', '%' . $search_text . '%')
             ->orWhere('last_name', 'LIKE', '%' . $search_text . '%')
             ->orWhere('phone_number', 'LIKE',  $search_text )
-            // ->first()->id;            
-            ->pluck('id')->toarray(); 
+            // ->first()->id;
+            ->pluck('id')->toarray();
         }
 
 
@@ -65,7 +65,7 @@ class CustomerController extends Controller
             ->orwhere('user_id', $userid)
             ->orwhere('original_number', $search_text)
             ->get();
-        
+
         $Cars = Car::orderBy('id' , 'desc')->get();
         $Classes = ClassModel::orderBy('id' , 'desc')->get();
         $Cities = City::orderBy('id' , 'desc')->get();
@@ -172,7 +172,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**

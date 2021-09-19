@@ -26,7 +26,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
     }
 
     /**
@@ -50,7 +50,8 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -61,7 +62,8 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -73,7 +75,8 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**

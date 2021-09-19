@@ -33,7 +33,7 @@ class DriverRequestController extends Controller
 
     function find(Request $request)
     {
-  
+
         $search_text = $request->input('query');
 
         $user = '';
@@ -60,23 +60,23 @@ class DriverRequestController extends Controller
                     $product_name = Product::
                     where('product_name_ar', 'LIKE', '%' . $search_text . '%')
                     ->orwhere('product_name_ar', 'LIKE', '')
-                    ->first()->id;                
+                    ->first()->id;
                 }
-            
-               
+
+
             } catch (\Throwable $th) {
 
                 try {
-                    $status_id = DriverRequest::where('status', 'LIKE', $search_text)->pluck('id')->toarray(); 
+                    $status_id = DriverRequest::where('status', 'LIKE', $search_text)->pluck('id')->toarray();
                     // return $status_id;
                 } catch (\Throwable $th) {
                     return redirect()->route('admin.driverrequest.index')->with('success', 'غير موجود');
                 }
-               
+
             }
             // $Orders = DriverRequest::with('User', 'Category', 'Product')->all();
-           
-           
+
+
 
         }
 
@@ -153,6 +153,8 @@ class DriverRequestController extends Controller
      */
     public function edit($id)
     {
+        return view('errors.404');
+
     }
 
     /**

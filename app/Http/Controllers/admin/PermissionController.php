@@ -22,7 +22,8 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -49,7 +50,8 @@ class PermissionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -60,7 +62,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -72,7 +75,8 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**
@@ -83,7 +87,7 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        
+
         Permission::find($id)->delete();
         return redirect()->route('admin.permission.index')->with('success',trans('admin/permission.delete_message'));
     }

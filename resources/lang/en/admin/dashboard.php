@@ -79,4 +79,10 @@ return [
     'stats_order' => 'Statistical percentage of orders',
     'copyright'=>' 2021  Abu Eskandar Comapy General Trade and Industries. All Rights Reserved | Design by  Gadeer Dawwas & Ameena Shaheen',
 
+
+
+    'sorry' => 'Oops! Page Not Be Found',
+    'message_404' => 'Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable',
+    'back_404' => 'Back to homepage',
+
 ];

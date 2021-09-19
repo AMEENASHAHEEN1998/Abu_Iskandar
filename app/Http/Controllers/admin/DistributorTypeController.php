@@ -26,6 +26,7 @@ class DistributorTypeController extends Controller
      */
     public function create()
     {
+        return view('errors.404');
 
     }
 
@@ -40,7 +41,7 @@ class DistributorTypeController extends Controller
         $request->validate([
             'name_ar' =>'required',
             'name_en' =>'required',
-            
+
         ]);
 
         DistributorType::create([
@@ -62,7 +63,8 @@ class DistributorTypeController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
+
     }
 
     /**
@@ -73,7 +75,7 @@ class DistributorTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
     }
 
     /**

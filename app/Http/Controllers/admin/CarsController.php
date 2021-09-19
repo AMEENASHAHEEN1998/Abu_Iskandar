@@ -26,7 +26,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-
+        return view('errors.404');
 
     }
 
@@ -50,7 +50,7 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
     }
 
     /**
@@ -63,6 +63,7 @@ class CarsController extends Controller
     {
         // $car=Car::find($id);
         // return
+        return view('errors.404');
 
     }
 
@@ -75,7 +76,8 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**
