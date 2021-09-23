@@ -41,7 +41,7 @@ class PermissionController extends Controller
             ]);
             return redirect()->route('admin.permission.index')->with('success', trans('admin/permission.succes_message'));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.permission.index')->with('errormsg', trans('admin/permission.error_message'));
+            return redirect()->route('admin.permission.index')->with('warning', trans('admin/permission.error_message'));
         }
     }
 

@@ -22,27 +22,29 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $Cars = Car::orderBy('id' , 'desc')->get();
-        $Classes = ClassModel::orderBy('id' , 'desc')->get();
-        $Cities = City::orderBy('id' , 'desc')->get();
-        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
-        $Neighborhood = Neighborhood::orderBy('id' , 'desc')->get();
-        $Streets = Street::orderBy('id' , 'desc')->get();
+        $Cars = Car::orderBy('id', 'desc')->get();
+        $Classes = ClassModel::orderBy('id', 'desc')->get();
+        $Cities = City::orderBy('id', 'desc')->get();
+        $Users = User::where('roles_name', 'supervisor')->orderBy('id', 'desc')->get();
+        $Neighborhood = Neighborhood::orderBy('id', 'desc')->get();
+        $Streets = Street::orderBy('id', 'desc')->get();
         $CustomerCars = CustomerCar::get();
-        return view('admin.customer.index')->with(['CustomerCars' => $CustomerCars ,
-        'Cars' => $Cars , 'Classes' => $Classes ,
-        'Cities' => $Cities , 'Users' => $Users ,
-        'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
+        return view('admin.customer.index')->with([
+            'CustomerCars' => $CustomerCars,
+            'Cars' => $Cars, 'Classes' => $Classes,
+            'Cities' => $Cities, 'Users' => $Users,
+            'Neighborhood' => $Neighborhood, 'Streets' => $Streets
+        ]);
     }
 
     function findCustomer(Request $request)
     {
         $search_text = $request->input('query');
 
-        $id='';
-        $name='';
-        $userid='';
-        $cuctomer=[];
+        $id = '';
+        $name = '';
+        $userid = '';
+        $cuctomer = [];
 
         try {
 
@@ -50,37 +52,37 @@ class CustomerController extends Controller
             // return $userid;
 
         } catch (\Throwable $th) {
-            $cuctomer=Customer::where('first_name', 'LIKE', '%' . $search_text . '%')
-            ->orWhere('middle_name', 'LIKE', '%' . $search_text . '%')
-            ->orWhere('last_name', 'LIKE', '%' . $search_text . '%')
-            ->orWhere('phone_number', 'LIKE',  $search_text )
-            // ->first()->id;
-            ->pluck('id')->toarray();
+            $cuctomer = Customer::where('first_name', 'LIKE', '%' . $search_text . '%')
+                ->orWhere('middle_name', 'LIKE', '%' . $search_text . '%')
+                ->orWhere('last_name', 'LIKE', '%' . $search_text . '%')
+                ->orWhere('phone_number', 'LIKE',  $search_text)
+                // ->first()->id;
+                ->pluck('id')->toarray();
         }
 
 
         $CustomersCar = CustomerCar::with('User', 'Customer')
-            ->where('id',$id)
+            ->where('id', $id)
             ->orwhereIn('customer_id', $cuctomer)
             ->orwhere('user_id', $userid)
             ->orwhere('original_number', $search_text)
             ->get();
 
-        $Cars = Car::orderBy('id' , 'desc')->get();
-        $Classes = ClassModel::orderBy('id' , 'desc')->get();
-        $Cities = City::orderBy('id' , 'desc')->get();
-        $Users = User::where('roles_name' , 'supervisor')->orderBy('id' , 'desc')->get();
-        $Neighborhood = Neighborhood::orderBy('id' , 'desc')->get();
-        $Streets = Street::orderBy('id' , 'desc')->get();
+        $Cars = Car::orderBy('id', 'desc')->get();
+        $Classes = ClassModel::orderBy('id', 'desc')->get();
+        $Cities = City::orderBy('id', 'desc')->get();
+        $Users = User::where('roles_name', 'supervisor')->orderBy('id', 'desc')->get();
+        $Neighborhood = Neighborhood::orderBy('id', 'desc')->get();
+        $Streets = Street::orderBy('id', 'desc')->get();
         // $CustomersCar = CustomerCar::with('User', 'Customer')->find(2);
         // return $CustomersCar;
 
         return view('admin.customer.index')->with([
-        'CustomerCars' => $CustomersCar ,
-        'Cars' => $Cars , 'Classes' => $Classes ,
-        'Cities' => $Cities , 'Users' => $Users ,
-        'Neighborhood' =>$Neighborhood , 'Streets' => $Streets]);
-
+            'CustomerCars' => $CustomersCar,
+            'Cars' => $Cars, 'Classes' => $Classes,
+            'Cities' => $Cities, 'Users' => $Users,
+            'Neighborhood' => $Neighborhood, 'Streets' => $Streets
+        ]);
     }
 
     /**
@@ -90,12 +92,16 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        $Cars = Car::orderBy('id' , 'desc')->get();
-        $Classes = ClassModel::orderBy('id' , 'desc')->get();
-        $Cities = City::orderBy('id' , 'desc')->get();
-        $Users = User::where('roles_name' , 'مشرف')->orderBy('id' , 'desc')->get();
-        // dd($Users);
-        return view('admin.customer.create')->with(['Cars' => $Cars , 'Classes' => $Classes , 'Cities' => $Cities , 'Users' => $Users]);
+        try {
+            $Cars = Car::orderBy('id', 'desc')->get();
+            $Classes = ClassModel::orderBy('id', 'desc')->get();
+            $Cities = City::orderBy('id', 'desc')->get();
+            $Users = User::where('roles_name', 'مشرف')->orderBy('id', 'desc')->get();
+            // dd($Users);
+            return view('admin.customer.create')->with(['Cars' => $Cars, 'Classes' => $Classes, 'Cities' => $Cities, 'Users' => $Users]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.job.index')->with('warning', trans('admin/job.error_message'));
+        }
     }
 
     /**
@@ -106,8 +112,8 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-     // dd($request->all());
+        try {
+            // dd($request->all());
             $customer = Customer::create([
                 'first_name' => $request->first_name,
                 'middle_name' => $request->middle_name,
@@ -127,7 +133,7 @@ class CustomerController extends Controller
             ]);
 
             $list_cars = $request->list_cars;
-            foreach($list_cars as $list_car){
+            foreach ($list_cars as $list_car) {
                 CustomerCar::create([
                     'customer_id' => $customer->id,
                     'user_id' => $list_car['name'],
@@ -137,15 +143,11 @@ class CustomerController extends Controller
 
                 ]);
             }
-
-
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-        return redirect()->route('admin.customers.index')->with('success' , 'تم اضافة الزبون بنجاح');
-
-
-       }
+        return redirect()->route('admin.customers.index')->with('success', 'تم اضافة الزبون بنجاح');
+    }
 
     /**
      * Display the specified resource.
@@ -160,8 +162,10 @@ class CustomerController extends Controller
         $Neighborhoods = Neighborhood::get();
         $Cities = City::get();
         $Classes = ClassModel::get();
-        return view('admin.customer.show')->with(['CustomerCar' => $CustomerCar , 'Streets' => $Streets ,
-         'Neighborhoods' => $Neighborhoods , 'Cities' => $Cities , 'Classes' => $Classes ]);
+        return view('admin.customer.show')->with([
+            'CustomerCar' => $CustomerCar, 'Streets' => $Streets,
+            'Neighborhoods' => $Neighborhoods, 'Cities' => $Cities, 'Classes' => $Classes
+        ]);
     }
 
     /**
@@ -173,7 +177,6 @@ class CustomerController extends Controller
     public function edit($id)
     {
         return view('errors.404');
-        
     }
 
     /**
@@ -185,7 +188,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try{
+        try {
             // dd($request->all());
             $customer = Customer::findOrFail($id);
             $customer->update([
@@ -195,8 +198,8 @@ class CustomerController extends Controller
                 'phone_number' => $request->phone_number,
                 'job_name' => $request->job_name,
                 'city_id'  => $request->city_id,
-                'street_id' => ($request->street_id == null?$customer->street_id :$request->street_id) ,
-                'id_neighborhood' => ($request->id_neighborhood == null?$customer->id_neighborhood :$request->id_neighborhood),
+                'street_id' => ($request->street_id == null ? $customer->street_id : $request->street_id),
+                'id_neighborhood' => ($request->id_neighborhood == null ? $customer->id_neighborhood : $request->id_neighborhood),
                 'area'  => $request->area,
                 'user_id' => auth()->user()->id,
                 'class_id' => $request->class_id,
@@ -204,20 +207,17 @@ class CustomerController extends Controller
             ]);
 
 
-            $customer_car = CustomerCar::where('customer_id' , $customer->id);
+            $customer_car = CustomerCar::where('customer_id', $customer->id);
             $customer_car->update([
                 'user_id' => $request->name,
                 'car_id' => $request->car_id,
                 'original_number' => $request->original_number,
                 'note_supervisor' => $request->note_supervisor,
             ]);
-
-            }catch (\Exception $e){
-                return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-            }
-            return redirect()->route('admin.customers.index')->with('success' , 'تم تعديل الزبون بنجاح');
-
-
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        return redirect()->route('admin.customers.index')->with('success', 'تم تعديل الزبون بنجاح');
     }
 
     /**
@@ -230,7 +230,6 @@ class CustomerController extends Controller
     {
         $CustomerCar = CustomerCar::findOrFail($id);
         $CustomerCar->delete();
-        return redirect()->route('admin.customers.index')->with('delete' ,  'تم حذف حرف السيارة لهذا الزبون بنجاح');
-
+        return redirect()->route('admin.customers.index')->with('delete',  'تم حذف حرف السيارة لهذا الزبون بنجاح');
     }
 }

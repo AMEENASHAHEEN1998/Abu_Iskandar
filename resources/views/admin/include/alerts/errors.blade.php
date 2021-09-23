@@ -4,9 +4,7 @@
                     id="type-error">{{Session::get('success')}}
             </button>
     </div> --}}
+
     <div class="alert alert-danger">{{ session('errormsg') }}</div>
 
 @endif
-
-
-

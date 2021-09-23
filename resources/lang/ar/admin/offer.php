@@ -33,4 +33,5 @@ return
     'success_message' => 'تم اضافة العرض بنجاح',
     'update_message' => 'تم تعديل العرض بنجاح ',
     'delete_message' => 'تم حذف العرض بنجاح ',
+    'error_message' => ' يوجد خطا في بيانات المدخلة  ',
 ];

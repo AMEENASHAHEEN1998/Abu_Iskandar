@@ -39,28 +39,29 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeRequest $request)
     {
-        $file=$request->file;
-        $file_name='';
-        if($request->has('image')){
-            $FileEx=$request->file('image')->getClientOriginalExtension();
-            $file_name=time().'_'.rand().'.'.$FileEx;
-            $request->file('image')->move(public_path('upload/admin/employee'),$file_name);
+        try {
+            $file=$request->file;
+            $file_name='';
+            if($request->has('image')){
+                $FileEx=$request->file('image')->getClientOriginalExtension();
+                $file_name=time().'_'.rand().'.'.$FileEx;
+                $request->file('image')->move(public_path('upload/admin/employee'),$file_name);
+            }
+            Employee::create([
+                'employee_name_ar' =>$request->employee_name_ar ,
+                'employee_name_en' =>$request->employee_name_en ,
+                'job_title_ar' =>$request->job_title_ar ,
+                'job_title_en' =>$request->job_title_en ,
+                'image' =>$file_name,
+                'status' => 'مفعل',
+                'status_value' => 1
+            ]);
+    
+            return redirect()->route('admin.employee.index')->with('success' , trans('admin/employee.success_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.employee.index')->with('warning',trans('admin/employee.error_message'));
         }
-
-
-
-        Employee::create([
-            'employee_name_ar' =>$request->employee_name_ar ,
-            'employee_name_en' =>$request->employee_name_en ,
-            'job_title_ar' =>$request->job_title_ar ,
-            'job_title_en' =>$request->job_title_en ,
-            'image' =>$file_name,
-            'status' => 'مفعل',
-            'status_value' => 1
-        ]);
-
-        return redirect()->route('admin.employee.index')->with('success' , trans('admin/employee.success_message'));
-
+        
     }
 
     /**

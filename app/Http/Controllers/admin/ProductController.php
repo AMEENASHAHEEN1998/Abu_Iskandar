@@ -63,10 +63,14 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $Categories = Category::orderBy('id', 'desc')->get();
-        $Subcategories = SubCategory::orderBy('id', 'desc')->get();
-        return view('admin.products.create')->with(['Categories' => $Categories, 'Subcategories' => $Subcategories]);
-    }
+        try {
+            $Categories = Category::orderBy('id', 'desc')->get();
+            $Subcategories = SubCategory::orderBy('id', 'desc')->get();
+            return view('admin.products.create')->with(['Categories' => $Categories, 'Subcategories' => $Subcategories]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.products.index')->with('warning' , trans('admin/products.error_message'));
+        }
+        }
 
     /**
      * Store a newly created resource in storage.

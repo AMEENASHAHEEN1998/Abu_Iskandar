@@ -38,21 +38,25 @@ class DistributorTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name_ar' =>'required',
-            'name_en' =>'required',
-
-        ]);
-
-        DistributorType::create([
-            'name_ar' =>$request->name_ar,
-            'name_en' =>$request->name_en,
-            'user_id' =>$request->user_id,
-            'created_at' =>now()
-
-        ]);
-
-        return redirect()->route('admin.distributortype.index')->with('success' , trans('admin/distributortype.success_message'));
+        try {
+            $request->validate([
+                'name_ar' =>'required',
+                'name_en' =>'required',
+    
+            ]);
+    
+            DistributorType::create([
+                'name_ar' =>$request->name_ar,
+                'name_en' =>$request->name_en,
+                'user_id' =>$request->user_id,
+                'created_at' =>now()
+    
+            ]);
+            return redirect()->route('admin.distributortype.index')->with('success' , trans('admin/distributortype.success_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.distributortype.index')->with('warning',trans('admin/distributortype.error_message'));
+        }
+        
     }
 
     /**

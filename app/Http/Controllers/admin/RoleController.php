@@ -60,7 +60,7 @@ class RoleController extends Controller
             }
             return redirect()->route('admin.role.index')->with('success', trans('admin/role.success_message'));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.role.index')->with('errormsg',trans('admin/role.error_message'));
+            return redirect()->route('admin.role.index')->with('warning',trans('admin/role.error_message'));
         }
 
         

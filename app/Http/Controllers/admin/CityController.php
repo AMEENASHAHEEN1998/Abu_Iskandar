@@ -45,7 +45,7 @@ class CityController extends Controller
 
         } catch (\Throwable $th) {
             // return redirect()->route('admin.car.index');
-            return redirect()->route('admin.city.index')->with('errormsg',trans('admin/city.error_message'));
+            return redirect()->route('admin.city.index')->with('warning',trans('admin/city.error_message'));
         }
     }
 

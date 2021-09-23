@@ -36,4 +36,6 @@ return [
     'edit_product' => 'تعديل منتج',
     'product_number' => 'رقم المنتج',
     'decription' =>'وصف المنتج' ,
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

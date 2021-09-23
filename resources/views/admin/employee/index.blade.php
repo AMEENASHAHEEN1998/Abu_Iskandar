@@ -11,9 +11,10 @@
     <!-- main-content -->
     <!-- row -->
     <div class="row">
+        @include('sweetalert::alert')
 
-        @include('admin.include.alerts.success')
-        @include('admin.include.alerts.errors')
+        {{-- @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors') --}}
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">

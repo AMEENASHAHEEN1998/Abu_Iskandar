@@ -6,15 +6,5 @@
     </div> --}}
 
     <div class="alert alert-success">{{ session('success') }}</div>
-    <script>
 
-        function fireSweetAlert() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!'
-            })
-        }
-    
-    </script>
 @endif

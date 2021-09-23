@@ -101,11 +101,15 @@ class DriverRequestController extends Controller
      */
     public function create()
     {
-        $Categories = Category::orderBy('id', 'desc')->get();
-        $Subcategories = SubCategory::orderBy('id', 'desc')->get();
-
-        return view('admin.driverRequest.create')->with(['Categories' => $Categories, 'Subcategories' => $Subcategories]);
-    }
+        try {
+            $Categories = Category::orderBy('id', 'desc')->get();
+            $Subcategories = SubCategory::orderBy('id', 'desc')->get();
+    
+            return view('admin.driverRequest.create')->with(['Categories' => $Categories, 'Subcategories' => $Subcategories]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.driverRequest.index')->with('warning',trans('admin/driverRequest.error_message'));
+        }
+        }
 
     /**
      * Store a newly created resource in storage.

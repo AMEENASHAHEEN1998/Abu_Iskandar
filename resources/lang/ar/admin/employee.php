@@ -37,4 +37,6 @@ return
     'success_message' => 'تم اضافة الموظف بنجاح',
     'update_message'  => 'تم تعديل الموظف بنجاح ',
     'delete_message'  => 'تم حذف الموظف بنجاح ',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

@@ -61,9 +61,9 @@ class InformationController extends Controller
             $request->file('image')->move(public_path('uploads') , $company_image_name);
 
         }catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+            return redirect()->route('admin.information.index')->with('warning',trans('admin/information.error_message'));
         }
-        return redirect()->route('admin.information.index')->with('success' , trans('admin/categories.success_message'));
+        return redirect()->route('admin.information.index')->with('success' , trans('admin/information.success_message'));
 
     }
 

@@ -48,5 +48,8 @@ return
     'success_message' => 'تم اضافة الموزع بنجاح',
     'update_message'  => 'تم تعديل بيانات الموزع بنجاح ',
     'delete_message'  => 'تم حذف الموزع بنجاح ',
+    'error_message'  => 'يوجد خطا ما ',
     'ack' =>'العودة',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

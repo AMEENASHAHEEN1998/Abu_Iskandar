@@ -45,7 +45,7 @@ class ClassesController extends Controller
         
         } catch (\Throwable $th) {
             // return redirect()->route('admin.car.index');
-            return redirect()->route('admin.classes.index')->with('errormsg',trans('admin/classes.error_message'));
+            return redirect()->route('admin.classes.index')->with('warning',trans('admin/classes.error_message'));
         }
     }
 

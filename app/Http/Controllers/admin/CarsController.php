@@ -44,7 +44,7 @@ class CarsController extends Controller
             return redirect()->route('admin.car.index')->with('success',trans('admin/car.success_message'));
         } catch (\Throwable $th) {
             // return redirect()->route('admin.car.index');
-            return redirect()->route('admin.car.index')->with('errormsg',trans('admin/car.error_message'));
+            return redirect()->route('admin.car.index')->with('warning',trans('admin/car.error_message'));
         }
 
             

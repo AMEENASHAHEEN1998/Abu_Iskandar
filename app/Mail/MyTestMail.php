@@ -31,6 +31,6 @@ class MyTestMail extends Mailable
     {
         // return $this->view('view.name');
         // return 'ok';
-        return $this->subject('Mail from AbuEskandar.com')->view('front.myTestMail');
+        return $this->subject('AbuEskandar.com')->view('front.myTestMail');
     }
 }

@@ -11,7 +11,7 @@
     <!-- main-content -->
 <!-- row -->
 <div class="row">
-    @if (session('success'))
+    {{-- @if (session('success'))
       <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     @if (session('update'))
@@ -19,7 +19,10 @@
     @endif
     @if (session('delete'))
       <div class="alert alert-danger">{{ session('delete') }}</div>
-    @endif
+    @endif --}}
+
+    @include('sweetalert::alert')
+
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">

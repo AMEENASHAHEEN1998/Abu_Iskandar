@@ -8,6 +8,7 @@ use App\Models\Neighborhood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+Use Alert;
 
 class StreetController extends Controller
 {
@@ -51,11 +52,14 @@ class StreetController extends Controller
                 'name'=>$request->name,
                 'id_neighborhood' =>  $request->neighborhood
             ]);
-            return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
+            return redirect()->route('admin.street.index')->with('success', trans('admin/street.success_message'));
+
+            // return redirect()->route('admin.street.index')->with('success',trans('admin/street.success_message'));
     
         } catch (\Throwable $th) {
+           
             // return redirect()->route('admin.car.index');
-            return redirect()->route('admin.street.index')->with('errormsg',trans('admin/street.error_message'));
+            return redirect()->route('admin.street.index')->with('warning',trans('admin/street.error_message'));
         }
     }
 

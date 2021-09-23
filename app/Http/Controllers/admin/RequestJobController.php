@@ -51,34 +51,37 @@ class RequestJobController extends Controller
     public function store(RequestJobRequest $request)
     {
         // return $request;
+        try {
+            $personal_image ='' ;
 
-        $personal_image ='' ;
-
-        if ($request->has('image')) {
-            $FileEx=$request->file('image')->getClientOriginalExtension();
-            $personal_image=time().'_'.rand().'.'.$FileEx;
-            $request->file('image')->move(public_path('upload/admin/requestjob'),$personal_image);
+            if ($request->has('image')) {
+                $FileEx=$request->file('image')->getClientOriginalExtension();
+                $personal_image=time().'_'.rand().'.'.$FileEx;
+                $request->file('image')->move(public_path('upload/admin/requestjob'),$personal_image);
+            }
+    
+            RequestJob::create([
+                'name'  =>$request->name,
+                'specialization'  =>$request->specialization,
+                'university' =>$request->university,
+                'comments_user' =>$request->comments_user,
+                'phone_number' =>$request->phone_number,
+                'Date_of_Birth' =>$request->Date_of_Birth,
+                'address' =>$request->address,
+                'status' =>'قيد الانتظار',
+                'status_value' =>1,
+                'personal_image' =>$personal_image,
+                'job_id' =>  $request->job_id,
+                'user_id' => $request->user_id,
+                'comments_admin' =>'',
+                'start_date' => '',
+            ]);
+            return redirect()->route('AbuEskandar.Employment_applications')->with('success' , trans('admin/requestjob.success_message'));
+            // return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.success_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('AbuEskandar.Employment_applications')->with('warning' , trans('admin/requestjob.error_message'));
         }
-
-        RequestJob::create([
-            'name'  =>$request->name,
-            'specialization'  =>$request->specialization,
-            'university' =>$request->university,
-            'comments_user' =>$request->comments_user,
-            'phone_number' =>$request->phone_number,
-            'Date_of_Birth' =>$request->Date_of_Birth,
-            'address' =>$request->address,
-            'status' =>'قيد الانتظار',
-            'status_value' =>1,
-            'personal_image' =>$personal_image,
-            'job_id' =>  $request->job_id,
-            'user_id' => $request->user_id,
-            'comments_admin' =>'',
-            'start_date' => '',
-        ]);
-        return redirect()->route('AbuEskandar.Employment_applications')->with('success' , trans('admin/requestjob.success_message'));
-        // return redirect()->route('admin.requestjob.index')->with('success' , trans('admin/requestjob.success_message'));
-
+        
     }
 
     /**

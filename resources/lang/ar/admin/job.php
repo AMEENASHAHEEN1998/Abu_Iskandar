@@ -44,4 +44,6 @@ return
     'success_message' => 'تم اضافة الوظيفة بنجاح',
     'update_message'  => 'تم تعديل الوظيفة بنجاح ',
     'delete_message'  => 'تم حذف الوظيفة بنجاح ',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

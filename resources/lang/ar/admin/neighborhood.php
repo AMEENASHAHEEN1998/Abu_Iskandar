@@ -16,4 +16,6 @@ return
     'success_message' => 'تم اضافة الحي بنجاح',
     'delete_message'  => 'تم حذف الحي بنجاح ',
     'error_message' =>'اسم الحي موجود مسبقا',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

@@ -12,9 +12,10 @@
     <!-- row -->
     <div class="row">
 
-        @include('admin.include.alerts.success')
-        @include('admin.include.alerts.errors')
+        {{-- @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors') --}}
 
+        @include('sweetalert::alert')
 
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
@@ -346,3 +347,21 @@
     </div>
 @endsection
 
+<script>
+    function AllChecked(){
+     $('.checkbox').attr("checked");
+  }
+
+
+  $('.all_checked').on('click', function () {
+    const allCheckedCheckbox = $(this);
+    $('.checkbox').each(function () {
+        $(this).prop('checked', allCheckedCheckbox.prop('checked'));
+    });
+});
+
+
+$("#selectAll").click(function () {
+        $('input:checkbox').not(this).prop('checked', this.checked);     
+    });
+</script>
