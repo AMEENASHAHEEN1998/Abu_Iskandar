@@ -20,10 +20,11 @@ return
     'update'=>'تعديل',
 
     'warning_user' => '?هل أنت متأكد من عملية الحذف',
-    'delete_user'  => 'حذف المدينة',
-    'success_message' => 'تم اضافة المدينة بنجاح',
+    'delete_user'  => 'حذف المستخدم',
+    'success_message' => 'تم اضافة المستخدم بنجاح',
     'update_message'  => 'تم تعديل بيانات الموزع بنجاح ',
 
-    'delete_message'  => 'تم حذف المدينة بنجاح ',
-    'error_message' => '  اسم المستخدم موجود مسبقا'
+    'delete_message'  => 'تم حذف المستخدم بنجاح ',
+    'error_message' => '  اسم المستخدم موجود مسبقا' ,
+    'error_update_message' =>'لم يتم التعديل',
 ];

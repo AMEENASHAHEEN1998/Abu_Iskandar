@@ -162,6 +162,8 @@ button.close.close-w3 {
             position: absolute;
             top:0;
             width: 75px;
+
+            
             /* left: 130px; */
         }
     }
@@ -292,7 +294,6 @@ button.close.close-w3 {
     line-height: 1.9;
 }
 .distribute h2{
-    /* font-family: 'Amiri'; */
     color: #006aab;
     font-weight: 600;
     padding: 8px;}
@@ -761,8 +762,7 @@ ul.nav.tabs {
 	margin-bottom: 4em;
 }
 .tabs li a {
-    font-size: 1em;
-    color: #8A8A8A;
+    font-size: 1.2em;
     padding: 16px 17px !important;
     display: inline-block;
 }
@@ -3075,6 +3075,21 @@ img.img-head {
     font-size: 0.85em;
     margin: 0 0.3em;
 }
+@media (max-width: 600px){
+    .head-t ul {
+        
+        margin-top: -65px;
+    }
+    .card li a {
+        
+        font-size: 0.85em;
+        margin: 0 -13.7em;
+    }
+    h2 b, p {
+        font-size: 16px;
+    }
+}
+
 .banner-info h3 {
     font-size: 1.4em;
 }
@@ -3366,7 +3381,6 @@ img.img-head {
     position: absolute;
     top: 0;
     width: 63px;
-    /* right: 18px; */
     left: 21px;
 
 }}

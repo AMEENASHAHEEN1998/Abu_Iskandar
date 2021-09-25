@@ -5,13 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Models\Car;
 use App\Models\City;
 use App\Models\User;
+use App\Models\Street;
 use App\Models\Customer;
 use App\Models\ClassModel;
 use App\Models\CustomerCar;
+use App\Models\Neighborhood;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Neighborhood;
-use App\Models\Street;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -22,6 +23,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        // return Auth::user()->roles_name;
         $Cars = Car::orderBy('id', 'desc')->get();
         $Classes = ClassModel::orderBy('id', 'desc')->get();
         $Cities = City::orderBy('id', 'desc')->get();
@@ -29,11 +31,13 @@ class CustomerController extends Controller
         $Neighborhood = Neighborhood::orderBy('id', 'desc')->get();
         $Streets = Street::orderBy('id', 'desc')->get();
         $CustomerCars = CustomerCar::get();
+        $Customer = Customer::get();
         return view('admin.customer.index')->with([
             'CustomerCars' => $CustomerCars,
             'Cars' => $Cars, 'Classes' => $Classes,
             'Cities' => $Cities, 'Users' => $Users,
-            'Neighborhood' => $Neighborhood, 'Streets' => $Streets
+            'Neighborhood' => $Neighborhood, 'Streets' => $Streets,
+            'Customer' => $Customer
         ]);
     }
 
@@ -114,6 +118,9 @@ class CustomerController extends Controller
     {
         try {
             // dd($request->all());
+            // $validated = $request->validate([
+            //     'phone_number' => 'required|max:10',
+            // ]);
             $customer = Customer::create([
                 'first_name' => $request->first_name,
                 'middle_name' => $request->middle_name,

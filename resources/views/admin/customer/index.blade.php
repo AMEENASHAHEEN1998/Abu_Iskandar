@@ -20,6 +20,7 @@
     @if (session('delete'))
       <div class="alert alert-danger">{{ session('delete') }}</div>
     @endif --}}
+    
     @include('sweetalert::alert')
 
 
@@ -185,7 +186,10 @@
                             <label for="phone_number"
                                     class="mr-sm-2">  رقم الجوال
                                 :</label>
-                            <input id="phone_number" class="form-control" value="{{ $CustomerCar->Customer->phone_number }}" type="text" name="phone_number" required />
+                            <input id="phone_number" class="form-control" value="{{ $CustomerCar->Customer->phone_number }}" type="text" name="phone_number" class="@error('phone_number') is-invalid @enderror" required />
+                            @error('phone_number')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         </div>
                     </div>
                     <div class="row">
@@ -243,14 +247,21 @@
                             <label
                                     class="mr-sm-2"> الحي
                                 :</label>
-                                @foreach ($Neighborhood as $Neighbor )
+                                {{-- @foreach ($Neighborhood as $Neighbor )
                                 {{ ($CustomerCar->Customer->id_neighborhood == $Neighbor->id ? $Neighbor->name : "") }}
+                                {{$Neighbor->id}}
 
-                                @endforeach
+                                @endforeach --}}
                             <div class="box ">
                                 <select class="form-control form-control-lg " name="id_neighborhood">
+                                    @foreach ($Neighborhood as $Neighbor )
+
+                                    <option {{ ($CustomerCar->Customer->id_neighborhood == $Neighbor->id? "selected"  : "") }} value="{{ $Neighbor->id }}">{{ $Neighbor->name }}</option>
+                                    @endforeach
 
                                 </select>
+
+                                
                             </div>
 
                         </div>
@@ -260,13 +271,16 @@
                             <label
                                     class="mr-sm-2"> الشارع
                                 :</label>
-                                @foreach ($Streets as $Street )
+                                {{-- @foreach ($Streets as $Street )
                                 {{ ($CustomerCar->Customer->street_id == $Street->id ? $Street->name : "") }}
 
-                                @endforeach
+                                @endforeach --}}
                             <div class="box ">
                                 <select class="form-control form-control-lg " name="street_id">
+                                    @foreach ($Streets as $Street )
+                                    <option {{ ($CustomerCar->Customer->street_id == $Street->id? "selected"  : "") }} value="{{ $Street->id }}">{{ $Street->name }}</option>
 
+                                    @endforeach
                                 </select>
                             </div>
 

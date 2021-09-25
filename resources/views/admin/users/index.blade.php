@@ -12,9 +12,10 @@
     <!-- row -->
     <div class="row">
 
-        @include('admin.include.alerts.success')
-        @include('admin.include.alerts.errors')
+        {{-- @include('admin.include.alerts.success')
+        @include('admin.include.alerts.errors') --}}
 
+        @include('sweetalert::alert')
 
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
@@ -119,7 +120,7 @@
                                                                     class="mr-sm-2">{{ trans('admin/user.username') }}
                                                                     :</label>
                                                                 <input id="Name" type="text" name="name"
-                                                                    value="{{ $user->name }}" class="form-control">
+                                                                    value="{{ $user->name }}" class="form-control" disabled>
                                                                 @error('name')
                                                                     <span class="text-danger">{{ $message }}</span>
                                                                 @enderror
