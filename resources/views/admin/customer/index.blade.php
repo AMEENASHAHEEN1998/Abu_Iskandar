@@ -11,7 +11,7 @@
     <!-- main-content -->
 <!-- row -->
 <div class="row">
-    @if (session('success'))
+    {{-- @if (session('success'))
       <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     @if (session('update'))
@@ -19,7 +19,10 @@
     @endif
     @if (session('delete'))
       <div class="alert alert-danger">{{ session('delete') }}</div>
-    @endif
+    @endif --}}
+    @include('sweetalert::alert')
+
+
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
@@ -290,7 +293,7 @@
                                             <select class="form-control form-control-lg " name="car_id">
                                                 @foreach ($Cars as $Car)
 
-                                                    <option value="{{ $Car->id }}">{{ $Car->name }}</option>
+                                                    <option {{ ($CustomerCar->Car->name == $Car->name? "selected"  : "") }} value="{{ $Car->id }}">{{ $Car->name }}</option>
 
                                                 @endforeach
                                             </select>
@@ -316,8 +319,8 @@
                                         <div class="box col-md-6 ">
                                             <select class="form-control form-control-lg " name="name">
                                                 @foreach ($Users as $User)
+                                                <option {{ ($CustomerCar->User->name == $User->name? "selected"  : "") }} value="{{ $User->id }}">{{ $User->name }}</option>
 
-                                                    <option value="{{ $User->id }}">{{ $User->name }}</option>
 
                                                 @endforeach
                                             </select>

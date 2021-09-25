@@ -67,7 +67,8 @@ class UserCoontroller extends Controller
 
             return redirect()->route('admin.users.index')->with('success', trans('admin/user.success_message'));
         } catch (\Throwable $e) {
-            return redirect()->back()->withErrors(['errors' => 'اسم المستخدم موجود مسبقا']);
+            return redirect()->route('admin.users.index')->with('warning', trans('admin/user.error_message'));
+
         }
     }
 

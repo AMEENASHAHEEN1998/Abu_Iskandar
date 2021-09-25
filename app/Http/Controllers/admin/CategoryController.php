@@ -55,18 +55,11 @@ class CategoryController extends Controller
             'views' => 0,
             'user_id' => auth()->user()->id,
         ]);
-        // dd($request->id);
-        // $category = Category::where('category_name_ar' , $request->name );
-
-        // $category->Image()->create([
-        //     'url' => $category_image_name,
-        //     'title' => 'Category Image',
-        //     'alt' =>'Category Image',
-        // ]);
+      
         $request->file('image')->move(public_path('uploads') , $category_image_name);
 
         }catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+            return redirect()->route('admin.categories.index')->with('warning',trans('admin/categories.error_message'));
         }
         return redirect()->route('admin.categories.index')->with('success' , trans('admin/categories.success_message'));
     }

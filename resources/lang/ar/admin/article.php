@@ -40,5 +40,6 @@ return
     'success_message' => 'تم اضافة المقال بنجاح',
     'update_message'  => 'تم تعديل المقال بنجاح ',
     'delete_message'  => 'تم حذف المقال بنجاح ',
+    'error_message'  => ' لم تتم عملية الاضافة ',
     'more' =>'قراءة المزيد',
 ];

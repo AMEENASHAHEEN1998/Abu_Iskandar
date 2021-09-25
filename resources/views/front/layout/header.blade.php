@@ -144,7 +144,7 @@
 
 
                                     <div class="col-sm-3 w3l">
-                                    <a href="kitchen.html"><img src="{{asset('front/images/me.png')}}" class="img-responsive"
+                                    <a href="#"><img src="{{asset('front/images/me.png')}}" class="img-responsive"
                                             alt=""></a>
                                 </div>
                                     <div class="clearfix"></div>

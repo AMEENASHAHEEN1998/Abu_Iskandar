@@ -29,5 +29,7 @@ return [
     'no' => 'لا',
     'update_status' => 'تم تغير حالة الطلب',
     'product_number' => 'رقم المنتج',
-    'create_at' =>'تاريخ الطلبية'
+    'create_at' =>'تاريخ الطلبية',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

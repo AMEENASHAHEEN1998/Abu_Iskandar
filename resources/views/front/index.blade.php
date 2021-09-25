@@ -32,119 +32,16 @@
     </script>
     <script src="{{ asset('front/js/jquery.vide.min.js') }}"></script>
 
-    <!--content-->
-    {{-- @if ($offers->count() >= 1)
-
-
-
-
-<!--content-->
-
-
-    <div class="content-tops ">
-            <div class="container ">
-                <div class="spec ">
-                    <h3>{{ trans('front/header.Offer') }}</h3>
-                    <div class="ser-t">
-                        <b></b>
-                        <span><i></i></span>
-                        <b class="line"></b>
-                    </div>
-                </div>
-                <div class="tab-head ">
-                    <nav class="nav-sidebar">
-                        <ul class="nav tabs ">
-
-                        </ul>
-                    </nav>
-                    <div class=" tab-content tab-content-t ">
-                        <?php
-                        $lng = app()->getLocale();
-                        ?>
-
-                        <div class="tab-pane active text-style" id="tab1">
-                            <div class=" con-w3l">
-
-
-                                @foreach ($offers as $offer)
-                                    <div class="col-md-3 m-wthree">
-                                        <div class="col-m">
-                                            <a href="#" data-toggle="modal" data-target="#show{{ $offer->id }}"
-                                                class="offer-img">
-                                                <img src="{{ asset('upload/admin/offer/' . $offer->image) }}"
-                                                    class="img-responsive" alt="">
-                                            </a>
-                                            <div class="mid-1">
-                                                <div class="women">
-                                                    <h6><a>{{ $offer->{'offer_title_' . $lng} }}</a></h6>
-                                                </div>
-                                                <div class="mid-2">
-                                                    <p><label></label><em class="item_price">{{ $offer->price }}</em>
-                                                    </p>
-
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="modal fade" id="show{{ $offer->id }}" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                                                        id="exampleModalLabel">
-                                                        عرض المنتج
-                                                    </h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
-                                                        id="exampleModalLabel">
-                                                        {{ $offer->{'offer_title_' . $lng} }}
-                                                    </h5>
-                                                    <br>
-
-                                                    <img src="{{ asset('upload/admin/offer/' . $offer->image) }}"
-                                                        class="img-responsive" alt="">
-
-                                                    <br>
-                                                    <p>السعر : {{ $offer->price }}</p>
-
-                                                    <p>
-
-
-                                                        </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @else
-
-                         @endif
 
 
 
 
 
+    <?php
+    $lng = app()->getLocale();
+    ?>
 
-                    <div class="clearfix"></div>
-                    </div>
-                </div>
-
-            </div>
-                </div>
-
-                </div>
-            </div>
-    </div> --}}
+     
 
     <!--content-->
     <div class="content-top ">
@@ -184,7 +81,7 @@
                         @endif" id="tab{{$Category->id}}">
 
                             <div class=" con-w3l ">
-                                @foreach (App\Models\Product::where('category_id' , $Category->id)->take(4)->get() as $Product)
+                                @foreach (App\Models\Product::where('category_id' , $Category->id)->latest()->take(4)->get() as $Product)
 
                                 <div class="col-md-3 m-wthree">
                                   <div class="col-m">

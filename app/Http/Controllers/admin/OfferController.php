@@ -16,7 +16,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::orderBy('id','desc')->paginate(5);
+        $offers = Offer::orderBy('id', 'desc')->paginate(5);
         // dd($offers);
         return view('admin.offer.index', compact('offers'));
     }
@@ -41,35 +41,33 @@ class OfferController extends Controller
     public function store(OfferRequest $request)
     {
 
-        // if ($request->has('status') == 1) {
-        //     $request->status = 1;
-        // } else {
-        //     $request->status = 0;
-        // }
-        // return $request;
-        $image_name ='' ;
+        try {
+            $image_name = '';
 
-        if ($request->has('image')) {
-            $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'.'.$FileEx;
-            $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
+            if ($request->has('image')) {
+                $FileEx = $request->file('image')->getClientOriginalExtension();
+                $image_name = time() . '_' . rand() . '.' . $FileEx;
+                $request->file('image')->move(public_path('upload/admin/offer'), $image_name);
+            }
+
+            // return   $file_name;
+            Offer::create([
+                'user_id' => $request->user_id,
+                'offer_title_en' => $request->offer_title_en,
+                'description_en' => $request->description_en,
+                'offer_title_ar' => $request->offer_title_ar,
+                'description_ar' => $request->description_ar,
+                'price' => $request->price,
+                'views' => 0,
+                'status' => 'مفعل',
+                'status_value' => 1,
+                'image' => $image_name,
+
+            ]);
+            return redirect()->route('admin.offer.index')->with('success', trans('admin/offer.success_message'));
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.offer.index')->with('warning', trans('admin/offer.error_message'));
         }
-
-        // return   $file_name;
-        Offer::create([
-            'user_id' => $request->user_id,
-            'offer_title_en' => $request->offer_title_en,
-            'description_en' => $request->description_en,
-            'offer_title_ar' => $request->offer_title_ar,
-            'description_ar' => $request->description_ar,
-            'price' => $request->price,
-            'views' => 0,
-            'status' => 'مفعل',
-            'status_value' => 1,
-            'image' => $image_name,
-
-        ]);
-        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.success_message'));
     }
 
     /**
@@ -80,8 +78,8 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-        $offer =Offer::find($id);
-        return view('admin.offer.show',compact('offer'));
+        $offer = Offer::find($id);
+        return view('admin.offer.show', compact('offer'));
     }
 
     /**
@@ -93,9 +91,9 @@ class OfferController extends Controller
     public function edit($id)
     {
 
-        $offer =Offer::find($id);
+        $offer = Offer::find($id);
         // return $offer;
-        return view('admin.offer.edit',compact('offer'));
+        return view('admin.offer.edit', compact('offer'));
     }
 
 
@@ -108,7 +106,6 @@ class OfferController extends Controller
         } else {
             $request->status_value = 0;
             $status = 'غير مفعل ';
-
         }
 
         $offer = Offer::findOrFail($id);
@@ -116,9 +113,9 @@ class OfferController extends Controller
         // return $image_name;
 
         if ($request->has('image')) {
-            $FileEx=$request->file('image')->getClientOriginalExtension();
-            $image_name=time().'_'.rand().'.'.$FileEx;
-            $request->file('image')->move(public_path('upload/admin/offer'),$image_name);
+            $FileEx = $request->file('image')->getClientOriginalExtension();
+            $image_name = time() . '_' . rand() . '.' . $FileEx;
+            $request->file('image')->move(public_path('upload/admin/offer'), $image_name);
         }
 
         // return $image_name;
@@ -135,21 +132,23 @@ class OfferController extends Controller
             'status_value' => $request->status_value,
 
         ]);
-        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.update_message'));
+        return redirect()->route('admin.offer.index')->with('success', trans('admin/offer.update_message'));
     }
     public function destroy($id)
     {
 
         Offer::find($id)->delete();
-        return redirect()->route('admin.offer.index')->with('success' , trans('admin/offer.delete_message'));
+        return redirect()->route('admin.offer.index')->with('success', trans('admin/offer.delete_message'));
     }
 
-    public function activeoffer(){
-        $offers=Offer::where('status_value' ,1)->orderBy('id','desc')->paginate(5);
-        return view('admin.offer.active',compact('offers'));
+    public function activeoffer()
+    {
+        $offers = Offer::where('status_value', 1)->orderBy('id', 'desc')->paginate(5);
+        return view('admin.offer.active', compact('offers'));
     }
-    public function noactiveoffer(){
-        $offers=Offer::where('status_value' ,0)->orderBy('id','desc')->paginate(5);
-        return view('admin.offer.noactive',compact('offers'));
+    public function noactiveoffer()
+    {
+        $offers = Offer::where('status_value', 0)->orderBy('id', 'desc')->paginate(5);
+        return view('admin.offer.noactive', compact('offers'));
     }
 }

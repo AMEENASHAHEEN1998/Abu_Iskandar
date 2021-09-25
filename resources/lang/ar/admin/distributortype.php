@@ -37,5 +37,7 @@ return
     'success_message' => 'تم اضافة قسم بنجاح',
     'update_message'  => 'تم تعديل بيانات قسم بنجاح ',
     'delete_message'  => 'تم حذف قسم بنجاح ',
+    'error_message'  => ' لم تتم عملية الاضافة ',
     'ack' =>'العودة',
+    
 ];

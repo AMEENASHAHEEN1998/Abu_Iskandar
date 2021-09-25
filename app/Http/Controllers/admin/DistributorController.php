@@ -49,6 +49,8 @@ class DistributorController extends Controller
     public function store(DistributorRequest $request)
     {
         //  return $request;
+
+    try {
         Distributor::create([
             'name_en' => $request->name_en,
             'name_ar' => $request->name_ar,
@@ -62,6 +64,10 @@ class DistributorController extends Controller
         ]);
 
         return redirect()->route('admin.distributor.index')->with('success' , trans('admin/distributor.success_message'));
+    } catch (\Throwable $th) {
+        return redirect()->route('admin.distributor.index')->with('warning' , trans('admin/distributor.error_message'));
+    }
+
 
     }
 

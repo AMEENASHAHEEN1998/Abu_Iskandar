@@ -182,6 +182,8 @@ return [
 
         // chart
         Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
+        //sweet alert
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
     ],
 
@@ -239,6 +241,9 @@ return [
 
         //export excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        //sweet alert
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
 
     ],

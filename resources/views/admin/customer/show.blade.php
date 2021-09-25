@@ -11,7 +11,7 @@
     <!-- main-content -->
 <!-- row -->
 <div class="row">
-    @if (session('success'))
+    {{-- @if (session('success'))
       <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     @if (session('update'))
@@ -19,7 +19,9 @@
     @endif
     @if (session('delete'))
       <div class="alert alert-danger">{{ session('delete') }}</div>
-    @endif
+    @endif --}}
+    @include('sweetalert::alert')
+
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
@@ -211,7 +213,7 @@
                                              :</label>
 
                                          <div class="box col-md-6 ">
-                                             <input class="form-control" disabled value="{{ $CustomerCar->User->name }}">
+                                             <input class="form-control" disabled value="{{ (( $CustomerCar->User)? $CustomerCar->User->name:"غير معرف") }}">
 
                                          </div>
 
@@ -226,13 +228,6 @@
                                          <textarea name="note_supervisor" disabled class="form-control" id="note_supervisor" cols="30" rows="10">{{ $CustomerCar->note_supervisor}}</textarea>
                                      </div>
                                  </div>
-
-
-
-
-
-
-
             </div>
             </div>
         </div>

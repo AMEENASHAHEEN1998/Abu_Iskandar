@@ -17,4 +17,6 @@ return[
     'subcategory_name_ar' => 'اسم القسم الفرعي بالعربية',
     'subcategory_name_en' => 'اسم القسم الفرعي الانجليزية',
     'delete_subcategory' => 'حذف القسم الفرعي',
+    'error_message'  => ' لم تتم عملية الاضافة ',
+
 ];

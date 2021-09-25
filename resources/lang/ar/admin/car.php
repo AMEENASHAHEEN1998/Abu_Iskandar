@@ -16,4 +16,5 @@ return
     'success_message' => 'تم اضافة سيارة بنجاح',
     'delete_message'  => 'تم حذف سيارة بنجاح ',
     'error_message' => 'حرف السيارة موجود مسبقا'
+    
 ];

@@ -33,14 +33,14 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request)
     {
-        $file_name='';
+
+        try {
+            $file_name='';
         if($request->has('image')){
             $FileEx=$request->file('image')->getClientOriginalExtension();
             $file_name=time().'_'.rand().'.'.$FileEx;
             $request->file('image')->move(public_path('upload/admin/article'),$file_name);
         }
-
-
         Article::create([
             'user_id' => $request->user_id,
             'article_name_ar'  => $request->article_name_ar,
@@ -57,6 +57,11 @@ class ArticleController extends Controller
 
         ]);
         return redirect()->route('admin.article.index')->with('success' , trans('admin/article.success_message'));
+    
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.article.index')->with('warning',trans('admin/article.error_message'));
+        }
+
     }
 
     /**

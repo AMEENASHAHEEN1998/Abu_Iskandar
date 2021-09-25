@@ -49,7 +49,8 @@ class SubCategoryController extends Controller
 
 
         }catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+            return redirect()->route('admin.subcategories.index')->with('warning',trans('admin/subcategories.error_message'));
+
         }
         return redirect()->route('admin.subcategories.index')->with('success' , trans('admin/subcategories.success_message'));
 

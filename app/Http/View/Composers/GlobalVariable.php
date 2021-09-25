@@ -9,9 +9,7 @@ class GlobalVariable
 {
     public function compose(View $view)
     {
-        $Categories = Category::orderBy('id' , 'desc')->get();
-
-
+        $Categories = Category::get();
         $view->with(['Categories' => $Categories]);
     }
 }
