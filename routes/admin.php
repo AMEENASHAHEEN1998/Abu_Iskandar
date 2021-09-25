@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\CarsController;
 use App\Http\Controllers\admin\CityController;
 use App\Http\Controllers\admin\NoteController;
+use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\OfferController;
 use App\Http\Controllers\admin\UserCoontroller;
 use App\Http\Controllers\admin\StreetController;
@@ -25,21 +26,24 @@ use App\Http\Controllers\admin\RequestJobController;
 use App\Http\Controllers\admin\DistributorController;
 use App\Http\Controllers\admin\InformationController;
 use App\Http\Controllers\admin\SubCategoryController;
+use App\Http\Controllers\front\AbuEskandarController;
 use App\Http\Controllers\admin\DriverRequestController;
 use App\Http\Controllers\admin\NeighborhoodsController;
 use App\Http\Controllers\admin\DistributorTypeController;
-use App\Http\Controllers\admin\RoleController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+Route::get('/' , [AbuEskandarController::class , 'index'])->name('home');
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' , 'admin']
     ], function(){
-        Route::get('/' , [HomeController::class , 'index'])->name('dashboard');
 
-        Auth::routes();
-        Auth::routes(['register' => false]);
+        Route::get('/admin' , [HomeController::class , 'index'])->name('dashboard');
+
+        // Auth::routes();
+        // Auth::routes(['register' => false]);
 
 
         Route::prefix('admin')->name('admin.')->group(function () {

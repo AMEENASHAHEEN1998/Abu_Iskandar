@@ -17,18 +17,17 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-// Route::get('/AbuEskandar',function(){
-//     return view('front.index');
-// });
+Route::get('/' , [AbuEskandarController::class , 'index'])->name('home');
+
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-         Route::get('/' , [AbuEskandarController::class , 'index'])->name('home');
+        Route::get('/' , [AbuEskandarController::class , 'index'])->name('home');
 
-        // Auth::routes();
+        Auth::routes();
         // // Auth::routes(['register' => false]);
 
         Route::prefix('AbuEskandar')->name('AbuEskandar.')->group(function(){

@@ -27,47 +27,50 @@
                     <!-- Authentication Links -->
                     @guest
 
-                        <li class="{{(request()->routeIs('login')) ? 'auth' : '' }}"><a href="{{ route('login') }}"><i class="fa fa-user"
-                            aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
+                    <li class="{{(request()->routeIs('login')) ? 'auth' : '' }}"><a href="{{ route('login') }}"><i class="fa fa-user"
+                        aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
 
-                        @if (Route::has('register'))
+                    @if (Route::has('register'))
 
-                            <li class="{{ (request()->routeIs('register')) ? 'auth' : '' }}">
-                                <a href="{{ route('register') }}">
-                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                {{ trans('front/header.Register') }}
-                                </a>
-                            </li>
+                        <li class="{{ (request()->routeIs('register')) ? 'auth' : '' }}">
+                            <a href="{{ route('register') }}">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            {{ trans('front/header.Register') }}
+                            </a>
+                        </li>
 
 
-                        @endif
-                    @else
-                        <li class="nav-item dropdown" >
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              <strong><span><i class="fa fa-user"></i> {{ Auth::user()->name }}</span></strong>
+                    @endif
+                @else
+                    <li class="nav-item dropdown" >
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                          <strong><span><i class="fa fa-user"></i> {{ Auth::user()->name }}</span></strong>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @if (auth()->user()->roles_name  != "مستخدم")
+                        <li class="nav-item" ><a href="{{ route('dashboard') }}"> رابط لوحة التحكم </a></li>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                {{-- </ul> --}}
+                    @endif
+                @endguest
+            {{-- </ul> --}}
 
 
-                {{-- <li><a href="{{ route('login') }}"><i class="fa fa-user"
-                            aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
-                <li><a href="{{ route('register') }}"><i class="fa fa-arrow-right"
-                            aria-hidden="true"></i>{{ trans('front/header.Register') }}</a></li> --}}
-
+            {{-- <li><a href="{{ route('login') }}"><i class="fa fa-user"
+                        aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
+            <li><a href="{{ route('register') }}"><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i>{{ trans('front/header.Register') }}</a></li> --}}
             </ul>
         </div>
 
