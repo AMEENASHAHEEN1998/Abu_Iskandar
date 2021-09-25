@@ -8266,7 +8266,7 @@ a.fc-more:hover {
   height: 1em;
   line-height: 1em;
   font-size: 1em;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -8591,7 +8591,7 @@ a.fc-more:hover {
   overflow: hidden;
   line-height: 8px;
   font-size: 11px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   text-align: center;
   cursor: s-resize; }
 
@@ -19801,7 +19801,7 @@ h1, h2, h3, h4, h5, h6, p, span, ul, li, a, ol {
 h1, h2, h3, h4, h5, h6 {
   color: #323232;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   margin-bottom: 0.5rem; }
 
 h1 {
@@ -21989,7 +21989,8 @@ footer a {
   border: solid 2px #eeeeee;
   font-size: 12px;
   text-align: center;
-  font-family: 'Poppins', sans-serif !important; }
+  /* font-family: 'Poppins', sans-serif !important;  */
+}
   .morris-hover.morris-default-style .morris-hover-row-label {
     font-weight: bold;
     margin: 0.25em 0; }
@@ -22638,7 +22639,8 @@ select.form-control-sm:not([size]):not([multiple]) {
   line-height: 43px; }
 
 .custom-file-label:after {
-  font-family: 'Poppins', sans-serif; }
+  /* font-family: 'Poppins', sans-serif;  */
+}
 
 /*hide-axis*/
 .hide-axis text[text-anchor="middle"] {
@@ -24038,6 +24040,8 @@ img.img-head {
     right: 18px;
 
 
+
+
 }}
 }
 
@@ -24089,11 +24093,25 @@ img.img-head {
   @media(max-width:900px){
       img.img-head {
         position: absolute;
-        top: 0;
-        width: 65px;
-        right: 20px;
-    }
-      }
+        top: 6px;
+        /* width: 52px;
+        right: 19px; */
+
+        width: 68px;
+        right: 79px;
+    
+      }  @media(max-width:900px){
+        img.img-head {
+
+         width: 52px;
+        right: 19px;
+      }}
+      .head-t ul {
+        /* float: right; */
+        padding: 0px;
+
+        margin-top: -74px;
+        font-size: 1px;}
   }
   
  
