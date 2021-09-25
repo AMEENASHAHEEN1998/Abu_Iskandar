@@ -11,15 +11,17 @@
     <!-- main-content -->
 <!-- row -->
 <div class="row">
-    @if (session('success'))
-      <div class="alert alert-success">{{ session('success') }}</div>
+    {{-- @if (session('success')) --}}
+      {{-- <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     @if (session('update'))
       <div class="alert alert-info">{{ session('update') }}</div>
     @endif
     @if (session('delete'))
       <div class="alert alert-danger">{{ session('delete') }}</div>
-    @endif
+    @endif --}}
+    @include('sweetalert::alert')
+
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
@@ -221,7 +223,7 @@
                                                 <select class="form-control form-control-lg " name="name">
                                                     @foreach ($Users as $User)
 
-                                                        <option value="{{ $User->id }}">{{ $User->name }}</option>
+                                                        <option value="{{ $User->id }}" >{{ $User->name }}</option>
 
                                                     @endforeach
                                                 </select>

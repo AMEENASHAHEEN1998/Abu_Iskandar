@@ -186,8 +186,8 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect()->route('admin.products.index')->with('delete',  trans('admin/products.delete_message'));
-    }
+        return redirect()->route('admin.products.index')->with('success',  trans('admin/products.delete_message'));
+    }       
 
     public function get_products($id)
     {

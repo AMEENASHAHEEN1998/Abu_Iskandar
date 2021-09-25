@@ -25,7 +25,7 @@ class CustomerController extends Controller
         $Cars = Car::orderBy('id', 'desc')->get();
         $Classes = ClassModel::orderBy('id', 'desc')->get();
         $Cities = City::orderBy('id', 'desc')->get();
-        $Users = User::where('roles_name', 'supervisor')->orderBy('id', 'desc')->get();
+        $Users = User::where('roles_name', 'مشرف')->orderBy('id', 'desc')->get();
         $Neighborhood = Neighborhood::orderBy('id', 'desc')->get();
         $Streets = Street::orderBy('id', 'desc')->get();
         $CustomerCars = CustomerCar::get();
@@ -230,6 +230,6 @@ class CustomerController extends Controller
     {
         $CustomerCar = CustomerCar::findOrFail($id);
         $CustomerCar->delete();
-        return redirect()->route('admin.customers.index')->with('delete',  'تم حذف حرف السيارة لهذا الزبون بنجاح');
+        return redirect()->route('admin.customers.index')->with('success',  'تم حذف حرف السيارة لهذا الزبون بنجاح');
     }
 }
