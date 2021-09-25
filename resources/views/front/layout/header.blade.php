@@ -20,13 +20,13 @@
                     </a>
                 </li>
                 @endif
-    
+
                 @endforeach
                    <!-- Right Side Of Navbar -->
                    {{-- <ul class="navbar-nav ml-auto"> --}}
                     <!-- Authentication Links -->
                     @guest
-             
+
                         <li class="{{(request()->routeIs('login')) ? 'auth' : '' }}"><a href="{{ route('login') }}"><i class="fa fa-user"
                             aria-hidden="true"></i>{{ trans('front/header.Login') }}</a></li>
 
@@ -44,7 +44,7 @@
                     @else
                         <li class="nav-item dropdown" >
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              <strong><span><i class="fa fa-user"></i> {{ Auth::user()->name }}</span></strong>  
+                              <strong><span><i class="fa fa-user"></i> {{ Auth::user()->name }}</span></strong>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -101,7 +101,7 @@
                                         <ul class="multi-column-dropdown">
                                             @foreach ($Categories as $Category  )
                                             @if ($loop->iteration <= 4)
-                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->id) }}">
+                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->category_name_en) }}">
                                                 <i class="fab fa-battle-net"></i>
                                                 @if (App::getLocale() == 'en')
 
@@ -121,7 +121,7 @@
                                         <ul class="multi-column-dropdown">
                                             @foreach ($Categories as $Category  )
                                             @if ($loop->iteration > 4)
-                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->id) }}">
+                                            <li><a href="{{ route('AbuEskandar.show_category' , $Category->category_name_en) }}">
                                                 <i class="fab fa-battle-net"></i>
                                                     @if (App::getLocale() == 'en')
 
@@ -163,7 +163,7 @@
                         <li class="  @if(Route::currentRouteName() =='AbuEskandar.Employment_applications') active @endif" ><a href="{{route('AbuEskandar.Employment_applications')}}" class="hyper">
                                 <span>{{ trans('front/header.Employment_applications') }}</span></a></li>
                         <li class="  @if(Route::currentRouteName() =='AbuEskandar.distributor') active @endif" ><a href="{{route('AbuEskandar.distributor')}}" class="hyper">
-                                
+
                             <span>{{ trans('front/header.Delivery_Points') }}
                             </span>
                         </a></li>
@@ -186,7 +186,7 @@
 
         <div class="cart">
 
-         
+
         </div>
         {{-- <div class="clearfix"></div> --}}
 

@@ -24,7 +24,7 @@ class AbuEskandarController extends Controller
     {
 
 
-        
+
         $offers=Offer::where('status_value',1)->skip(0)->take(4)->get();
         $employes=Employee::where('status_value',1)->latest()->take(4)->get();
         return view('front.index',compact('offers','employes'));
@@ -64,12 +64,12 @@ class AbuEskandarController extends Controller
        return view('front.requestjob',compact('job'));
     }
 
-    public function show_category($id)
+    public function show_category(Category $category)
     {
-        $CategoryImage = Category::where('id' , $id)->get();
+        $CategoryImage = Category::where('id' , $category->id)->get();
         // dd($CategoryImage);
         // $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->get();
-        $Products = Product::where('category_id' , $id)->orderBy('id' , 'desc')->paginate(20);
+        $Products = Product::where('category_id' , $category->id)->orderBy('id' , 'desc')->paginate(20);
     //    dd($Products);
         return view('front.show_category')->with(['Products' => $Products , 'CategoryImage' => $CategoryImage]);
     }

@@ -146,7 +146,7 @@
                             <li><a href="{{ route('admin.customers.index') }}">عرض الزبائن</a>
                             </li>
                             @endcan
-                            
+
                             <li><a href="{{ route('admin.customers.create') }}">اضافة زبون</a>
                             </li>
 
@@ -382,7 +382,7 @@
                     @endcan
 
 
-           
+
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#site_link">
                             <div class="pull-left"><i class="fa fa-link" aria-hidden="true"></i><span
