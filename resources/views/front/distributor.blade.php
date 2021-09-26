@@ -34,35 +34,54 @@
             <img src="{{asset('front/images/index/bus.jpg')}}" alt="">
 
             <h1>{{ trans('front/header.Delivery_Points') }}</h1>
-            @foreach ($distributes as  $place =>$distribute)
+            {{-- @foreach ($distributes as  $place =>$distribute)
 
-                   
+
                     <ul>
 
-                   
+
                     @foreach ($distribute as $d)
-                    
+
                     @foreach ($cites as $city)
                     {{-- $place=$place-1 --}}
-                        @if ($city->id == $place)
+                        {{-- @if ($city->id == $place)
                             <h2>{{$city->name}}</h2>
-                        @endif
+                        @endif --}}
 
-                    @endforeach
+                    {{-- @endforeach
                         <li><strong>الاسم :{{ $d->{'name_' . $lng} }} </strong>
                             <strong>
                                  <i class="fa fa-phone"></i>  {{$d->phone_number}}
                             </strong>
                         </li>
 
-                    @endforeach
+                    @endforeach --}}
 
-                    <br>
+                    {{-- <br>
                 </ul>
 
 
 
-            @endforeach
+            @endforeach  --}}
+
+
+                @foreach ($Cites as $City )
+                     <h2>{{ $City->name }}</h2>
+
+                    @foreach ($distributor_types as $distributor_type )
+                    <li><strong>{{ $distributor_type->name_ar }}</strong></li>
+
+                        @foreach ($distributors as $distributor )
+                             @if ($City->id == $distributor->city_id and $distributor_type->id == $distributor->distributor_type_id )
+                             <strong>
+                                <i class="fa fa-phone"></i>  {{ $distributor->phone_number }}
+                           </strong>
+                             @endif
+                        @endforeach
+                    @endforeach
+                @endforeach
+
+
 
         </div>
 

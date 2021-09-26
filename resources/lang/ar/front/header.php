@@ -10,7 +10,7 @@ return [
     'Articles' =>'المقالات',
     'Offer' =>'العروض',
     'Employment_applications' =>'طلبات التوظيف',
-    'Delivery_Points' =>'نقاط التوزيع',
+    'Delivery_Points' =>'مندوبي التوزيع',
     'Contact_Us' =>'تواصل معنا',
     'about'=>'من نحن',
     'Login'=> 'تسجيل الدخول',

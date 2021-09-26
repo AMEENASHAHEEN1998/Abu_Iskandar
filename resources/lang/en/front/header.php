@@ -9,7 +9,7 @@ return [
     'Articles' =>'Articles',
     'Offer' =>'Offer',
     'Employment_applications' =>'Employment Applications',
-    'Delivery_Points' =>'Delivery Points',
+    'Delivery_Points' =>'Delivery_Points',
     'Contact_Us' =>'Contact Us',
     'about'=>'about',
 
