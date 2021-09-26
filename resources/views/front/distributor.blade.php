@@ -34,36 +34,7 @@
             <img src="{{asset('front/images/index/bus.jpg')}}" alt="">
 
             <h1>{{ trans('front/header.Delivery_Points') }}</h1>
-            {{-- @foreach ($distributes as  $place =>$distribute)
-
-
-                    <ul>
-
-
-                    @foreach ($distribute as $d)
-
-                    @foreach ($cites as $city)
-                    {{-- $place=$place-1 --}}
-                        {{-- @if ($city->id == $place)
-                            <h2>{{$city->name}}</h2>
-                        @endif --}}
-
-                    {{-- @endforeach
-                        <li><strong>الاسم :{{ $d->{'name_' . $lng} }} </strong>
-                            <strong>
-                                 <i class="fa fa-phone"></i>  {{$d->phone_number}}
-                            </strong>
-                        </li>
-
-                    @endforeach --}}
-
-                    {{-- <br>
-                </ul>
-
-
-
-            @endforeach  --}}
-
+        
 
                 @foreach ($Cites as $City )
                      <h2>{{ $City->name }}</h2>
@@ -92,8 +63,24 @@
 
 
     </div>
-    </div>
+    <br>
 
+    <div class="row justify-content-center">
+        <div class="col-3">
+               <strong><i class="fa fa-phone"> </i>     مشرف الشمال 0595513130 </strong>
+        </div>
+        <div class="col-3">
+            <strong><i class="fa fa-phone"> </i>     مشرف غزة 0592028005 </strong>
+
+        </div>
+        <div class="col-3">
+            <strong><i class="fa fa-phone"> </i>     مشرف الجنوب 0598513135 </strong>
+        </div>
+      </div>
+    </div>
+<br>
+
+<br>
     <!-- //article -->
 
 @endsection

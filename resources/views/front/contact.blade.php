@@ -115,6 +115,8 @@
                                                 الثالث - مفترق الغزالي</li>
                                             <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الرابع: معسكر
                                                 جباليا - الترنس</li>
+                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الخامس: مفترق ابو طلال - بجوار مخبز العائلات
+                                            </li>
 
                                         </ul>
                                     </div>
