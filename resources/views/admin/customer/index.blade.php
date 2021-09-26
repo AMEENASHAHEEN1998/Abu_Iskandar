@@ -333,8 +333,7 @@
                                         <div class="box col-md-6 ">
                                             <select class="form-control form-control-lg " name="name">
                                                 @foreach ($Users as $User)
-                                                <option {{ ($CustomerCar->User->name == $User->name? "selected"  : "") }} value="{{ $User->id }}">{{ $User->name }}</option>
-
+                                                <option {{($CustomerCar->User->name == $User->name? "selected"  : "") }} value="{{ $User->id }}">{{ $User->name }}</option>
 
                                                 @endforeach
                                             </select>

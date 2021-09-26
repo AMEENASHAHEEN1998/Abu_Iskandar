@@ -109,7 +109,7 @@ class AbuEskandarController extends Controller
         $Product->update([
             'views' => $request->views ,
         ]);
-        return redirect()->route('AbuEskandar.show_category' , [$request->category_id]);
+        return redirect()->back();
     }
     public function mail(Request $request){
         // return $request;

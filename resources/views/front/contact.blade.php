@@ -33,18 +33,10 @@
                     <img src="images/cac.jpg" class="img-responsive" alt="">
 
 
-                    {{-- <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=Al%20Saftawi%20Street,%20opposite%20to%20Abdul%20Bari%20Supermarket,%20Gaza%20Gaza%20+()&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                    </iframe> <a href='https://www.symptoma.ae/ar/info/covid-19#info'>COVID 2019</a>
-                     <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=59350f6decf55c5576423223ebdda27e51fe4fe1'></script>
-             --}}
-
 
 
                    <div class="mapouter"><div class="gmap_canvas">
                        <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Al%20Saftawi%20Street,%20opposite%20to%20Abdul%20Bari%20Supermarket%D8%8C%20Gaza&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:500px;}</style><a href="https://www.embedgooglemap.net">insert google map into wordpress</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
-                       {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1700.247522455014!2d34.480473!3d31.538026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1f8a824a06acd13c!2z2LTYsdmD2Kkg2KPYqNmIINin2LPZg9mG2K_YsSDZhNmE2KrYrNin2LHYqSDZiNin2YTYtdmG2KfYudip!5e0!3m2!1sen!2sus!4v1630221140949!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
-
-                       {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1700.247522455014!2d34.480473!3d31.538026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1f8a824a06acd13c!2z2LTYsdmD2Kkg2KPYqNmIINin2LPZg9mG2K_YsSDZhNmE2KrYrNin2LHYqSDZiNin2YTYtdmG2KfYudip!5e0!3m2!1sen!2sus!4v1630221140949!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
 
                 </div>
 
@@ -55,18 +47,18 @@
                     </p>
                     <ul class="contact-list">
                         <li> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            غزة شارع الصفطاوى - مقابل سوبر ماركت عبد الباري
+                             غزة شارع الصفطاوى - مقابل سوبر ماركت عبد الباري
                         </li>
                         <br>
 						<br>
                         <li><i class="fa fa-envelope" aria-hidden="true"></i>
 							<a href="mailto:example@mail.com">
-                                m2100036@hotmail.com
+                                  m2100036@hotmail.com
                             </a>
                         </li>
 						<br>
 						<br>
-                        <li> <i class="fa fa-phone" aria-hidden="true"></i>0592100038</li>
+                        <li> <i class="fa fa-phone" aria-hidden="true"></i>   0592100038  </li>
                     </ul>
                     <div id="container">
                         <!--Horizontal Tab-->
@@ -115,11 +107,11 @@
                                             <li>رقم الجوال : 0594222079</li>
 
 
-											<li>رق الجوال : 0594222074</li>
+											{{-- <li>رق الجوال : 0594222074</li>
                                             <li>رق الجوال : 0594222078</li>
                                             <li>رق الجوال : 0594222075</li>
                                             <li>رق الجوال : 0594222076</li>
-                                            <li>رق الجوال : 0594222079</li>
+                                            <li>رق الجوال : 0594222079</li> --}}
 
 
 
