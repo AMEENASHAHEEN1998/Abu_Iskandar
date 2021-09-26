@@ -23721,7 +23721,10 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
 
 @media (max-width: 600px) {
   .navbar-nav{
-    width: 16%;
+    width: 46%;
+    /* width: 16%; */
+    margin: 0 19px;
+
   }
   .admin-header .navbar-nav .dropdown-big {
     min-width: 250px;
@@ -23909,6 +23912,7 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
 }
 nav.navbar.navbar-default {
     float: right;
+    z-index: 1;
     /* height: 44px; */
 }
 /*

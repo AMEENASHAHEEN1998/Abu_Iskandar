@@ -4,7 +4,7 @@
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper text-center" >
                 <h6 class="text-center"></h6>
-                <p style="font-size: 20px">@include('front.layout.title')</p>
+                <p style="font-size: 20px;color: #083789;">شركة أبو اسكندر</p>
                 {{-- <h4 class="text-center"><strong>Abu Eskandar</strong></h4> --}}
             </div>
             <!-- Top bar left -->

@@ -1360,6 +1360,7 @@ ul.product-qty {
 }
 .contact-right iframe{
 	width:100%;
+	/* width:50%; */
 	height:298px;
 }
 .contact-right img{
@@ -3248,7 +3249,7 @@ ol {
     font-size: 1.7em;
 }
 .banner-top h4 {
-    margin-top: 0.5em;
+    margin-top: -0.5em;
 }
 .banner-top {
     height: 76px;
@@ -3374,6 +3375,18 @@ h1.t-button {
 
 
 @media(max-width:767px){
+    .distribute img {
+        position: absolute;
+        top: 286px;
+        left: 73px;
+    }
+    .distribute h1 {
+        font-weight: bold;
+        margin-top: 157px;
+        color: #695e5e;
+        padding: 4px 0;
+    }
+
 @media(max-width:400px){
 
 
@@ -3383,11 +3396,43 @@ img.img-head {
     width: 63px;
     left: 21px;
 
-}}
+}
+.distribute img {
+    position: absolute;
+    top: 246px;
+    left: -2px;
+}
+.distribute h1 {
+    font-weight: bold;
+    color: #695e5e;
+    padding: 10px 0;
+    margin-top:120px;
+}
+
 }
 
     .admin-header {
         margin-top: 22px;
 }
+}
 
+.mapouter {
+    position: relative;
+    text-align: right;
+    /* height: 500px; */
+    /* width: 500px; */
+    width: 100%;
+    height: 100%;
+
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    /* height: 500px; */
+    height: 100%;
+
+    /* width: 500px; */
+    width: 100%;
+
+}
 

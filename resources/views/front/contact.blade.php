@@ -16,10 +16,12 @@
             <div class="clearfix"> </div>
         </div>
     </div>
+    <div class="clearfix"> </div>
 
     <!-- contact -->
     <div class="contact">
         <div class="container">
+
             <div class="spec ">
                 <h3>{{ trans('front/header.Contact') }}</h3>
                 <div class="ser-t">
@@ -28,6 +30,7 @@
                     <b class="line"></b>
                 </div>
             </div>
+            
             <div class=" contact-w3">
                 <div class="col-md-5 contact-right">
                     <img src="images/cac.jpg" class="img-responsive" alt="">
@@ -35,42 +38,58 @@
 
 
 
-                   <div class="mapouter"><div class="gmap_canvas">
-                       <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Al%20Saftawi%20Street,%20opposite%20to%20Abdul%20Bari%20Supermarket%D8%8C%20Gaza&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:500px;}</style><a href="https://www.embedgooglemap.net">insert google map into wordpress</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="500" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=Al%20Saftawi%20Street,%20opposite%20to%20Abdul%20Bari%20Supermarket%D8%8C%20Gaza&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://fmovies-online.net"></a><br>
+                            {{-- <style>
+                               
+
+                            </style> --}}
+                            {{-- <a href="https://www.embedgooglemap.net">insert google map into wordpress</a> --}}
+                            {{-- <style>
+                              
+                            </style> --}}
+                        </div>
+                    </div>
 
                 </div>
 
                 <div class="col-md-7 contact-left">
-                    <h4>{{trans('front/header.Contact_Information')}}</h4>
+                    <h4>{{ trans('front/header.Contact_Information') }}</h4>
                     <p>
 
                     </p>
                     <ul class="contact-list">
                         <li> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                             غزة شارع الصفطاوى - مقابل سوبر ماركت عبد الباري
+                            غزة شارع الصفطاوى - مقابل سوبر ماركت عبد الباري
                         </li>
                         <br>
-						<br>
+                        <br>
                         <li><i class="fa fa-envelope" aria-hidden="true"></i>
-							<a href="mailto:example@mail.com">
-                                  m2100036@hotmail.com
+                            <a href="mailto:example@mail.com">
+                                m2100036@hotmail.com
                             </a>
                         </li>
-						<br>
-						<br>
-                        <li> <i class="fa fa-phone" aria-hidden="true"></i>   0592100038  </li>
+                        <br>
+                        <br>
+                        <li> <i class="fa fa-phone" aria-hidden="true"></i> 0592100038 </li>
                     </ul>
                     <div id="container">
                         <!--Horizontal Tab-->
                         <div id="parentHorizontalTab">
+
                             <ul class="resp-tabs-list hor_1">
                                 <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
                                 <li> <i class="fa fa-map-marker" aria-hidden="true"></i> </span></li>
                                 <li> <i class="fa fa-phone" aria-hidden="true"></i></li>
                             </ul>
+
                             <div class="resp-tabs-container hor_1">
                                 <div>
-                                    <form action="{{route('AbuEskandar.mail')}}" method="post">
+                                    <form action="{{ route('AbuEskandar.mail') }}" method="post">
                                         @csrf
                                         <input type="text" value="الاسم" name="Name" onfocus="this.value = '';"
                                             onblur="if (this.value == '') {this.value = 'Name';}" required="">
@@ -84,30 +103,36 @@
 
                                 </div>
                                 <div>
+
                                     <div class="map-grid">
-                                        <h5>{{trans('front/header.branches')}}</h5>
+                                        <h5>{{ trans('front/header.branches') }}</h5>
                                         <ul>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الرئيسي : شارع الصفطاوى.</li>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>الفرع التاني: غزة - النصر - مفترق الأمن العام</li>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>الفرع الثالث: الشارع الثالث - مفترق الغزالي</li>
-                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الرابع: معسكر جباليا - الترنس</li>
+                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الرئيسي : شارع
+                                                الصفطاوى.</li>
+                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>الفرع التاني: غزة -
+                                                النصر - مفترق الأمن العام</li>
+                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i>الفرع الثالث: الشارع
+                                                الثالث - مفترق الغزالي</li>
+                                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i> الفرع الرابع: معسكر
+                                                جباليا - الترنس</li>
 
                                         </ul>
                                     </div>
                                 </div>
                                 <div>
+
                                     <div class="map-grid">
-                                        <h5>{{trans('front/header.Contact_Me_Through')}}</h5>
+                                        <h5>{{ trans('front/header.Contact_Me_Through') }}</h5>
                                         <ul>
 
-											<li>رقم الجوال : 0594222074</li>
+                                            <li>رقم الجوال : 0594222074</li>
                                             <li>رقم الجوال : 0594222078</li>
                                             <li>رقم الجوال : 0594222075</li>
                                             <li>رقم الجوال : 0594222076</li>
                                             <li>رقم الجوال : 0594222079</li>
 
 
-											{{-- <li>رق الجوال : 0594222074</li>
+                                            {{-- <li>رق الجوال : 0594222074</li>
                                             <li>رق الجوال : 0594222078</li>
                                             <li>رق الجوال : 0594222075</li>
                                             <li>رق الجوال : 0594222076</li>
@@ -117,8 +142,11 @@
 
                                         </ul>
                                     </div>
+
+
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -172,12 +200,16 @@
 
                 </div>
 
-                <div class="clearfix"></div>
+                {{-- <div class="clearfix"></div> --}}
             </div>
-            </div>
+
         </div>
     </div>
-  <!-- //contact -->
+    {{-- </div> --}}
+
+
+    {{-- </div> --}}
+    <!-- //contact -->
 
 @endsection
 
