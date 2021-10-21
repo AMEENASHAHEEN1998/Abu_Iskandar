@@ -37,7 +37,7 @@ Route::group(
             Route::get('contact',[AbuEskandarController::class ,'contact'])->name('contact');
             Route::get('category/{category:category_name_en}' , [AbuEskandarController::class , 'show_category'])->name('show_category');
             Route::get('Employment_applications',[AbuEskandarController::class ,'Employment_applications'])->name('Employment_applications');
-            Route::get('requestjob/{id}',[AbuEskandarController::class ,'requestjob'])->name('requestjob');
+            Route::get('requestjob/{id}',[AbuEskandarController::class ,'requestjob'])->name('requestjob')->middleware('auth');
             Route::get('articles',[AbuEskandarController::class ,'articles'])->name('articles');
             Route::get('article/{id}',[AbuEskandarController::class ,'article'])->name('article');
             // Route::get('articleupdate/{id}',[AbuEskandarController::class ,'articleupdate'])->name('articleupdate');

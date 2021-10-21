@@ -29,12 +29,10 @@
                     <form action="{{ route('admin.requestjob.store') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
+                        
 
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                         <input type="hidden" name="job_id" value="{{ $job->id }}">
-
-
-
 
                         <div class="row">
 

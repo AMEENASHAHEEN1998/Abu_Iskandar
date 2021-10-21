@@ -20,7 +20,10 @@ class CheckAdmin
         if(isset(auth()->user()->roles_name) and auth()->user()->roles_name  == "مدير"){
             return $next($request);
 
-        }else{
+        }if (isset(auth()->user()->roles_name) and auth()->user()->roles_name  == "مشرف") {
+            return $next($request);
+        }
+        else{
             return redirect()->route('home');
 
         }

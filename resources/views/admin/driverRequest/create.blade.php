@@ -3,162 +3,76 @@
 {{ trans('admin/driverrequest.add_request') }}
 @endsection
 @section('content')
-    <!--=================================
-                     Main content -->
-    <!-- main-content -->
-    <!-- row -->
-    <div class="row">
-        <div class="col-xl-12 mb-30">
-            <div class="card card-statistics h-100">
-                <div class="card-body">
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+<main class="page-content">
 
-                    <a href="{{ route('admin.driverrequest.index') }}"  class="btn btn-success">
-                        {{ trans('admin/driverrequest.back') }}
-                    </a>
-                    <h2>{{ trans('admin/driverrequest.add_request') }}</h2>
+<section class="section-50 section-sm-top-90 section-sm-bottom-100 bg-image-6">
+    <div class="shell text-center">
+      <h3>Our Menu</h3>
+      <div class="range range-xs-center">
 
-                    <hr>
+        <div class="row">
 
-
-                    <form class=" row mb-30" action="{{ route('admin.driverrequest.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="card-body">
-
-
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <label for="Name_en"
-                                                        class="mr-sm-2">{{ trans('admin/driverrequest.primary_category') }}
-                                                    :</label>
-
-                                                <div class="box ">
-                                                    <select class="form-control form-control-lg" name="category_id" onclick="console.log($(this).val())"
-                                                    onchange="console.log('change is firing')">
-                                                        @foreach ($Categories as $Category)
-                                                        @if (App::getLocale() == 'en')
-                                                            <option value="{{ $Category->id }}">{{ $Category->category_name_en }}</option>
-                                                        @else
-                                                            <option value="{{ $Category->id }}">{{ $Category->category_name_ar }}</option>
-                                                        @endif
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                            <div class="col">
-                                                <label for="Name_en"
-                                                    class="mr-sm-2">{{ trans('admin/driverrequest.sub_category') }}
-                                                    :</label>
-
-                                                <div class="box ">
-                                                    <select class="form-control form-control-lg" name="sub_category_id">
-                                                        @foreach ($Subcategories as $Category)
-                                                        @if (App::getLocale() == 'en')
-                                                            <option value="{{ $Category->id }}">{{ $Category->sub_category_name_en }}</option>
-                                                        @else
-                                                            <option value="{{ $Category->id }}">{{ $Category->sub_category_name_ar }}</option>
-                                                        @endif
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <label for="product"
-                                                        class="mr-sm-2">{{ trans('admin/driverrequest.product') }}
-                                                    :</label>
-
-
-                                                    <select class="form-control form-control-lg" id="product" name="product">
-
-                                                    </select>
-
-
-
-                                            </div>
-
-
-                                            <div class="col">
-                                                <label for="number"
-                                                        class="mr-sm-2">{{ trans('admin/driverrequest.number') }}
-                                                    :</label>
-                                                <input id="number" class="form-control form-control-lg" type="text" name="number" required />
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="modal-footer">
-
-                                    <button type="submit"
-                                            class="btn btn-success">{{ trans('admin/driverrequest.submit') }}</button>
-
-                                </div>
-
-                    </form>
-
-
+            <div class="col-md-4">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Sushi</a></h5>
+                  </div>
                 </div>
-            </div>
+              </div>
+      
+              <div class="col-md-4 offset-top-50 offset-sm-top-0">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Burgers</a></h5>
+                  </div>
+                </div>
+              </div>
+      
+      
+              
+              <div class="col-md-4 offset-top-50 offset-md-top-0">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Pizzas</a></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 offset-top-50">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Barbecue</a></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 offset-top-50">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Sandwiches</a></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 offset-top-50">
+                <div class="menu-variant-1"><img src="{{asset('upload/admin/driverRequest/sushi-7-310x260.png')}}" alt="" width="310" height="260" class="img-responsive reveal-inline-block"/>
+                  <div class="caption">
+                    <h5 class="title"><a href="menu-single.html" class="link-white">Tacos</a></h5>
+                  </div>
+                </div>
+              </div>
         </div>
-
-
-
+      
+      </div>
     </div>
+</section>
+</main>
 
 
 
-
-    </div><!-- main content wrapper end-->
-    </div>
-    </div>
-    </div>
 @endsection
+
 @section('js')
-    <script>
-        $(document).ready(function() {
-            $('select[name="category_id"]').on('change', function() {
-                var SectionId = $(this).val();
-                if (SectionId) {
-                    $.ajax({
-                        url: "{{ URL::to('admin/get_products') }}/" + SectionId,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="product"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="product"]').append('<option value="' +
-                                    key + '">' + value + '</option>');
-
-                            });
-                        },
-                    });
-                } else {
-                    console.log('AJAX load did not work');
-                }
-            });
-        });
-    </script>
-
+    
 @endsection
+
+
+

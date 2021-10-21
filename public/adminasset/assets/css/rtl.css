@@ -23566,7 +23566,7 @@ div.style-customizer .content-chooser input[type=radio]:checked ~ label {
 @media (max-width: 991px) {
   .content-wrapper {
     margin-right: 0;
-    padding: 20px 20px; }
+    padding: 0px 20px; }
   .side-menu-fixed {
     right: -230px; }
   .slide-menu .side-menu-fixed {
@@ -24119,4 +24119,212 @@ img.img-head {
   }
   
  
-  
+  /* ///////////////////  deriver request ////////////////////////// */
+
+  .section-50 {
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
+  .section-sm-top-90 {
+    /* padding-top: 90px; */
+  }
+  .section-sm-bottom-100 {
+    padding-bottom: 100px;
+  }
+  .bg-image-6{
+    background-size: cover;
+  }
+
+  .shell {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.shell {
+  min-width: 300px;
+  max-width: 480px;
+}
+
+@media (min-width: 768px) {
+  .shell{
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .shell {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ui[class*="bottom right attached"].label {
+    max-width: 1200px;
+  }
+}
+.range {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.range > .range {
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (min-width: 480px) {
+
+  .range-xs-center {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+.range > .cell-sm-6 {
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+html.lt-ie-10 .range > .cell-sm-6 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+html.lt-ie-10 .range > .cell-md-4 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 33.33333%;
+}
+
+.range > .cell-md-4 {
+  -webkit-flex-basis: 33.33333%;
+  -ms-flex-preferred-size: 33.33333%;
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+}
+
+.menu-variant-1 {
+  position: relative;
+  max-width: 351px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.menu-variant-1 img {
+  height: auto;
+  max-width: 100%;
+}
+
+.menu-variant-1 .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 71px;
+  z-index: 1;
+  text-align: left;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.menu-variant-1 .caption .title {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  min-height: 36px;
+  transition: 350ms ease-in;
+  color: #fff;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.caption .title  h5 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.menu-variant-1 .caption .link-white:hover {
+  color: #f16121;
+}
+
+.menu-variant-1 .caption:before {
+  position: absolute;
+  top: 15px;
+  bottom: -30px;
+  right: -10px;
+  left: -10px;
+  content: "";
+  display: inline-block;
+  background-color: #bfdb39;
+  z-index: -1;
+  -webkit-transform: skewY(5deg);
+  transform: skewY(5deg);
+  transition: 350ms ease-in;
+
+}
+
+.tablet .menu-variant-1 .caption:before,
+.mobile .menu-variant-1 .caption:before {
+  will-change: transform;
+}
+
+.desktop .menu-variant-1:hover .caption .title {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.desktop .menu-variant-1:hover .caption:before {
+  top: 0;
+  -webkit-transform: skewY(0deg);
+  transform: skewY(0deg);
+}
+.page .link-white, .page .link-white:active, .page .link-white:focus {
+  color: #fff;
+}
+
+.page .link-white:hover {
+  color: #f9b129;
+}
+
+.page .link-white:hover {
+  border-color: #f9b129;
+}
+
+@media (min-width: 768px) {
+  .page .link-white-sm, .page .link-white-sm:active, .page .link-white-sm:focus {
+    color: #fff;
+  }
+  .page .link-white-sm:hover {
+    color: #f16121;
+  }
+  .page .link-white-sm:hover {
+    border-color: #f16121;
+  }
+}
+.one-screen-page .page-content {
+  padding: calc(1em + 4vh) 0;
+}
+@media (min-width: 1800px) {
+   .page-content {
+    padding: 10px 0 35px;
+  }
+
+}
+caption {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  color: #9b9b9b;
+  text-align: left;
+}
