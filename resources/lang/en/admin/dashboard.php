@@ -63,6 +63,7 @@ return [
     'pending_note' => 'Pending Note',
     'show_notes' => 'Show Notes',
     'site_link' => 'Website Link',
+    'customer' => 'customer',
 
     'role' =>'role',
     'permission' =>'permission',

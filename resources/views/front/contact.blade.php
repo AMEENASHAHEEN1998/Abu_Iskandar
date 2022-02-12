@@ -44,14 +44,8 @@
                                 src="https://maps.google.com/maps?q=Al%20Saftawi%20Street,%20opposite%20to%20Abdul%20Bari%20Supermarket%D8%8C%20Gaza&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
                                 href="https://fmovies-online.net"></a><br>
-                            {{-- <style>
-                               
 
-                            </style> --}}
-                            {{-- <a href="https://www.embedgooglemap.net">insert google map into wordpress</a> --}}
-                            {{-- <style>
-                              
-                            </style> --}}
+
                         </div>
                     </div>
 
